@@ -65,7 +65,19 @@ void closemenu(const char *name)
     }
     m = menus.access(name);
     if(!m) return;
-    if(curmenu==m) menuset(menustack.empty() ? NULL : menustack.pop(), false);
+    if (curmenu == m)
+    {
+        if (strcmp(name, "auth setup") == 0)
+        {
+            const char* id = getalias("__id");
+            const char* pw = getalias("__pw");
+
+            // TODO: 여기서 id, pw를 사용해서 HTTP 요청 보내기
+            conoutf("Auth Request - ID: %s, PW: %s", id, pw); // test log
+        }
+
+        menuset(menustack.empty() ? NULL : menustack.pop(), false);
+    }
     else loopv(menustack)
     {
         if(menustack[i]==m)
@@ -193,6 +205,8 @@ bool mitem::menugreyedout = false;
 
 // text item
 
+bool close_menu_on_action = true;
+
 struct mitemmanual : mitem
 {
     const char *text, *action, *hoveraction, *desc;
@@ -228,10 +242,13 @@ struct mitemmanual : mitem
         {
             gmenu *oldmenu = curmenu;
             result = execaction(text);
-            if(result >= 0 && oldmenu == curmenu)
+            if (result >= 0 && oldmenu == curmenu && close_menu_on_action)
             {
-                menuset(NULL, false);
-                menustack.shrink(0);
+                if (strcmp(parent->name, "welcome") != 0) // "welcome" 메뉴는 닫지 않음
+                {
+                    menuset(NULL, false);
+                    menustack.shrink(0);
+                }
             }
         }
         return result;
@@ -1169,6 +1186,10 @@ bool menukey(int code, bool isdown, SDL_Keymod mod)
             case SDLK_ESCAPE:
             case SDL_AC_BUTTON_RIGHT:
                 if(!curmenu->allowinput) return false;
+
+                // [추가] 특정 메뉴 이름에 대해서는 ESC 키를 무시
+                if (!strcmp(curmenu->name, "welcome") || !strcmp(curmenu->name, "main")) return true;
+
                 menuset(menustack.empty() ? NULL : menustack.pop(), false);
                 return true;
                 break;
@@ -1576,3 +1597,16 @@ void refreshapplymenu(void *menu, bool init)
     m->items.add(new mitemtext(m, newstring("No"), newstring("echo [..restart AssaultCube to apply the new settings]"), NULL, NULL));
     if(init) m->menusel = m->items.length()-2; // select OK
 }
+
+void queuerequest()
+{
+    // TODO: 여기서 ip, defaultport를 사용해서 spring 요청 보내기
+    const char* defaultport = "28763"; // 원하는 기본 포트
+    const char* ip = "192.168.50.253"; // 원하는 IP
+
+    string cmd;
+    formatstring(cmd)("connect %s %s", ip, defaultport);
+    execute(cmd); // CubeScript 명령어 실행
+}
+
+COMMAND(queuerequest, "");
