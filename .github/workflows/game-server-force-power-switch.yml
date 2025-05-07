@@ -1,0 +1,11 @@
+name: Force Power Switch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  press-power:
+    runs-on: [self-hosted, GameServerControlUnit]
+    steps:
+      - name: Press the power button for 10 seconds (FORCE SHUTDOWN)
+        run: wget "http://localhost:8080/command?command=forcepowersw"
