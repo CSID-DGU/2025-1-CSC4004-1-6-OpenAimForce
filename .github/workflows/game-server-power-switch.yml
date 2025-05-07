@@ -1,0 +1,11 @@
+name: Tap Power Switch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  press-power:
+    runs-on: [self-hosted, GameServerControlUnit]
+    steps:
+      - name: Tap the power button
+        run: wget "http://localhost:8080/command?command=powersw"
