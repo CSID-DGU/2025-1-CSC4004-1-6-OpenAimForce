@@ -1163,6 +1163,11 @@ struct serverconfigfile
     void process();
 };
 
+#define MAX_PLAYERS_PER_TEAM 3
+#define NICKNAME_MAX_LEN 16
+char team1[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
+char team2[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
+
 // server commandline parsing
 struct servercommandline
 {
@@ -1311,6 +1316,22 @@ struct servercommandline
                 clfilenesting--;
                 break;
             }
+            case 't':
+            if (arg[2] == '1' || arg[2] == '2')
+            {
+                char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? team1 : team2;
+                int count = 0;
+                char *copy = newstring(a);
+                for (char *p = strtok(copy, ","); p && count < MAX_PLAYERS_PER_TEAM; p = strtok(NULL, ","))
+                {
+                    strncpy(team[count], p, NICKNAME_MAX_LEN - 1);
+                    team[count][NICKNAME_MAX_LEN - 1] = '\0';
+                    count++;
+                }
+                delete[] copy;
+                break;
+            }
+            else return false;
             default: return false;
         }
         return true;

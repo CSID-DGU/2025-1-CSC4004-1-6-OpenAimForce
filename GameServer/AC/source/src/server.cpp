@@ -3292,6 +3292,26 @@ void process(ENetPacket* packet, int sender, int chan)
                 cl->isauthed = true;
                 mlog(ACLOG_INFO, "[%s] %s logged in (default)%s", cl->hostname, cl->name, tags);
             }
+
+            //TODO: change team
+            loopv(clients) if (clients[i]->type != ST_EMPTY)
+            {
+                if (!valid_client(i)) return;
+
+                bool in_team1 = false, in_team2 = false;
+                for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j)
+                {
+                    if (!strcmp(clients[i]->name, team1[j])) { in_team1 = true; break; }
+                    if (!strcmp(clients[i]->name, team2[j])) { in_team2 = true; break; }
+                }
+
+                if (in_team1)
+                    updateclientteam(i, 1, FTR_SILENTFORCE);
+                else if (in_team2)
+                    updateclientteam(i, 2, FTR_SILENTFORCE);
+                else
+                    exit(1);
+            }
         }
         if (!cl->isauthed) return;
 
