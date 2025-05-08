@@ -3320,28 +3320,31 @@ void process(ENetPacket* packet, int sender, int chan)
                 sendiplist(clients[i]->clientnum, cl->clientnum);
         }
 
-        //TODO: change team
-        loopv(clients) if (clients[i]->type != ST_EMPTY)
-        {
-            printf("Checking if client valid\n");
-            if (!valid_client(i)) return;
-               printf("Client is valid\n");
-            bool in_team1 = false, in_team2 = false;
-            for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j)
+        if(clients.length()==3){
+            startgame(const_cast<char*>("ac_desert"), 3);
+            //TODO: change team
+            loopv(clients) if (clients[i]->type != ST_EMPTY)
             {
-                printf("Comparing client name : %s, argteam1 name : %s, argteam2 name : %s\n",clients[i]->name,scl.argteam1[j],scl.argteam2[j]);
-                if (!strcmp(clients[i]->name, scl.argteam1[j])) { in_team1 = true; break; }
-                if (!strcmp(clients[i]->name, scl.argteam2[j])) { in_team2 = true; break; }
-            }
-        
-            if (in_team1){
-                updateclientteam(i, 1, FTR_SILENTFORCE);
-            }
-            else if (in_team2){
-                updateclientteam(i, 2, FTR_SILENTFORCE);
-            }
-            else{
-                exit(1);
+                printf("Checking if client valid\n");
+                if (!valid_client(i)) return;
+                printf("Client is valid\n");
+                bool in_team1 = false, in_team2 = false;
+                for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j)
+                {
+                    printf("Comparing client name : %s, argteam1 name : %s, argteam2 name : %s\n",clients[i]->name,scl.argteam1[j],scl.argteam2[j]);
+                    if (!strcmp(clients[i]->name, scl.argteam1[j])) { in_team1 = true; break; }
+                    if (!strcmp(clients[i]->name, scl.argteam2[j])) { in_team2 = true; break; }
+                }
+            
+                if (in_team1){
+                    updateclientteam(i, 1, FTR_SILENTFORCE);
+                }
+                else if (in_team2){
+                    updateclientteam(i, 2, FTR_SILENTFORCE);
+                }
+                else{
+                    exit(1);
+                }
             }
         }
     }
