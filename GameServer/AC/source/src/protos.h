@@ -1165,8 +1165,8 @@ struct serverconfigfile
 
 #define MAX_PLAYERS_PER_TEAM 3
 #define NICKNAME_MAX_LEN 16
-char team1[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
-char team2[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
+char argteam1[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
+char argteam2[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
 
 // server commandline parsing
 struct servercommandline
@@ -1319,7 +1319,7 @@ struct servercommandline
             case 't':
             if (arg[2] == '1' || arg[2] == '2')
             {
-                char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? team1 : team2;
+                char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? arg_team1 : arg_team2;
                 int count = 0;
                 char *copy = newstring(a);
                 for (char *p = strtok(copy, ","); p && count < MAX_PLAYERS_PER_TEAM; p = strtok(NULL, ","))
