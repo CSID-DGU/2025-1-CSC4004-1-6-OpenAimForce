@@ -3302,7 +3302,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 bool in_team1 = false, in_team2 = false;
                 for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j)
                 {
-                    printf("Comparing client name : %s, argteam1 name : %s, argteam2 name : %s",clients[i]->name,scl.argteam1[j],scl.argteam2[j]);
+                    printf("Comparing client name : %s, argteam1 name : %s, argteam2 name : %s\n",clients[i]->name,scl.argteam1[j],scl.argteam2[j]);
                     if (!strcmp(clients[i]->name, scl.argteam1[j])) { in_team1 = true; break; }
                     if (!strcmp(clients[i]->name, scl.argteam2[j])) { in_team2 = true; break; }
                 }

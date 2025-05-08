@@ -1322,7 +1322,7 @@ struct servercommandline
             {
                 char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? argteam1 : argteam2;
                 int count = 0;
-                char *copy = newstring(a);
+                char *copy = newstring(a+1);
                 for (char *p = strtok(copy, ","); p && count < MAX_PLAYERS_PER_TEAM; p = strtok(NULL, ","))
                 {
                     strncpy(team[count], p, NICKNAME_MAX_LEN - 1);
