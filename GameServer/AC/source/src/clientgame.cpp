@@ -660,6 +660,100 @@ void resetsleep(bool force)
 
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
+// 에임핵 기능 구현
+void normalize_angle(float& angle)
+{
+    while (angle > 180.0f) angle -= 360.0f;
+    while (angle < -180.0f) angle += 360.0f;
+}
+
+float get_yaw_to(const vec& from, const vec& to)
+{
+    vec dir = vec(to).sub(from);
+    return atan2f(dir.x, -dir.y) * 180.0f / PI;
+}
+
+float get_pitch_to(const vec& from, const vec& to)
+{
+    vec dir = vec(to).sub(from);
+    return atan2f(dir.z, sqrtf(dir.x * dir.x + dir.y * dir.y)) * 180.0f / PI;
+}
+
+bool is_within_yaw_fov(float yaw_from, float yaw_to, float fov = 90.0f)
+{
+    float diff = yaw_to - yaw_from;
+    while (diff > 180.0f) diff -= 360.0f;
+    while (diff < -180.0f) diff += 360.0f;
+    return fabs(diff) <= fov / 2.0f;
+}
+
+bool can_see(const vec& from, const vec& to)
+{
+    return raycubelos(from, to, 0.1f);
+}
+
+void aim_at_closest_enemy(playerent* local)
+{
+    if (!local || local->state != CS_ALIVE) return;
+
+    playerent* closest = nullptr;
+    float closestdist = 1e6f;
+    float targetyaw = 0, targetpitch = 0;
+
+    loopv(players)
+    {
+        playerent* p = players[i];
+        if (!p || p == local || p->state != CS_ALIVE) continue;
+        if (m_teammode && isteam(p->team, local->team)) continue;
+
+        // 거리, 방향 계산
+        vec dir = vec(p->o).sub(local->o);
+        float dist = dir.magnitude();
+
+        // 시야각 계산
+        float yaw_to_target = get_yaw_to(local->o, p->o);
+        float pitch_to_target = get_pitch_to(local->o, p->o);
+        if (!is_within_yaw_fov(local->yaw, yaw_to_target, 90.0f)) continue;
+
+        // 실제 시야 확인 (장애물 없는지)
+        if (!can_see(local->o, p->o)) continue;
+
+        if (dist < closestdist)
+        {
+            closest = p;
+            closestdist = dist;
+            targetyaw = yaw_to_target;
+            targetpitch = pitch_to_target;
+        }
+    }
+
+    if (closest)
+    {
+        float dyaw = targetyaw - local->yaw;
+        float dpitch = targetpitch - local->pitch;
+
+        normalize_angle(dyaw);
+        normalize_angle(dpitch);
+
+        float smooth = 1.0f; // 부드러운 움직임
+        local->yaw += dyaw / smooth;
+        local->pitch += dpitch / smooth;
+
+        // 마우스 조준 후 상태 유지
+        local->newyaw = local->yaw;
+        local->newpitch = local->pitch;
+    }
+}
+
+void tick_aimbot()
+{
+    int mx, my;
+    Uint32 mouse = SDL_GetMouseState(&mx, &my);
+    if (!(mouse & SDL_BUTTON(SDL_BUTTON_RIGHT))) return; // 우클릭일 때만 작동
+
+    aim_at_closest_enemy(player1);
+}
+
 void updateworld(int curtime, int lastmillis)        // main game update loop
 {
     // process command sleeps
@@ -693,6 +787,8 @@ void updateworld(int curtime, int lastmillis)        // main game update loop
 
     movelocalplayer();
     c2sinfo(player1);   // do this last, to reduce the effective frame lag
+
+    tick_aimbot(); // 우클릭 시 에임봇 작동
 }
 
 #define SECURESPAWNDIST 15
