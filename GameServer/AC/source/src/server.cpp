@@ -3321,6 +3321,7 @@ void process(ENetPacket* packet, int sender, int chan)
         }
 
         if(clients.length()==3){
+            printf("met length condtion. run startgame\n");
             startgame(const_cast<char*>("ac_desert"), 3);
             //TODO: change team
             loopv(clients) if (clients[i]->type != ST_EMPTY)
@@ -3337,9 +3338,11 @@ void process(ENetPacket* packet, int sender, int chan)
                 }
             
                 if (in_team1){
+                    printf("updating team to team 1\n");
                     updateclientteam(i, 1, FTR_SILENTFORCE);
                 }
                 else if (in_team2){
+                    printf("updating team to team 2\n");
                     updateclientteam(i, 2, FTR_SILENTFORCE);
                 }
                 else{
