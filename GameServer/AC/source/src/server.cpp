@@ -3301,8 +3301,8 @@ void process(ENetPacket* packet, int sender, int chan)
                 bool in_team1 = false, in_team2 = false;
                 for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j)
                 {
-                    if (!strcmp(clients[i]->name, argteam1[j])) { in_team1 = true; break; }
-                    if (!strcmp(clients[i]->name, argteam2[j])) { in_team2 = true; break; }
+                    if (!strcmp(clients[i]->name, scl.argteam1[j])) { in_team1 = true; break; }
+                    if (!strcmp(clients[i]->name, scl.argteam2[j])) { in_team2 = true; break; }
                 }
 
                 if (in_team1)

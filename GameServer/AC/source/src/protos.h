@@ -1165,8 +1165,6 @@ struct serverconfigfile
 
 #define MAX_PLAYERS_PER_TEAM 3
 #define NICKNAME_MAX_LEN 16
-char argteam1[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
-char argteam2[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
 
 // server commandline parsing
 struct servercommandline
@@ -1177,6 +1175,9 @@ struct servercommandline
     string motd, servdesc_full, servdesc_pre, servdesc_suf, voteperm, mapperm;
     int clfilenesting;
     vector<const char *> adminonlymaps; // FIXME: remove this
+
+    char argteam1[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
+    char argteam2[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
 
     servercommandline() :   uprate(0), serverport(CUBE_DEFAULT_SERVER_PORT), syslogfacility(6), filethres(-1), syslogthres(-1), maxdemos(-1),
                             maxclients(DEFAULTCLIENTS), kickthreshold(-5), banthreshold(-6), verbose(0), incoming_limit(10), afk_limit(45000), ban_time(20*60*1000),
