@@ -3679,7 +3679,7 @@ void process(ENetPacket* packet, int sender, int chan)
 
         case SV_SPAWN:
         {
-            printf(" >> recv : SV_SPAWN ");
+            printf(" >> recv : SV_SPAWN by client %s\n",cl->name);
             int ls = getint(p), gunselect = getint(p);
             if ((cl->state.state != CS_ALIVE && cl->state.state != CS_DEAD && cl->state.state != CS_SPECTATE) ||
                 ls != cl->state.lifesequence || cl->state.lastspawn < 0 || !valid_weapon(gunselect)) break;
