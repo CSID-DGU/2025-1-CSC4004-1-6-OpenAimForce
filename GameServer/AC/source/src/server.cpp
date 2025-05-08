@@ -3322,7 +3322,7 @@ void process(ENetPacket* packet, int sender, int chan)
 
         if(clients.length()==3){
             printf("met length condtion. run startgame\n");
-            startgame(const_cast<char*>("ac_desert"), 3);
+            startgame(const_cast<char*>("ac_desert"), 0);
             //TODO: change team
             loopv(clients) if (clients[i]->type != ST_EMPTY)
             {
