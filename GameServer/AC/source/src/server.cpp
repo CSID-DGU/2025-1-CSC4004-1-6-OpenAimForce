@@ -3666,6 +3666,7 @@ void process(ENetPacket* packet, int sender, int chan)
 
         case SV_TRYSPAWN:
         {
+            printf(" >> recv : SV_TRYSPAWN ");
             int sp = canspawn(cl);
             if (team_isspect(cl->team) && sp < SP_OK_NUM)
             {
@@ -3678,6 +3679,7 @@ void process(ENetPacket* packet, int sender, int chan)
 
         case SV_SPAWN:
         {
+            printf(" >> recv : SV_SPAWN ");
             int ls = getint(p), gunselect = getint(p);
             if ((cl->state.state != CS_ALIVE && cl->state.state != CS_DEAD && cl->state.state != CS_SPECTATE) ||
                 ls != cl->state.lifesequence || cl->state.lastspawn < 0 || !valid_weapon(gunselect)) break;
