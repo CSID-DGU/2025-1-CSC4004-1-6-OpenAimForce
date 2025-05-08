@@ -3320,7 +3320,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 sendiplist(clients[i]->clientnum, cl->clientnum);
         }
 
-        if(clients.length()==3){
+        if(clients.length()==2){
             printf("met length condtion. run startgame\n");
             startgame(const_cast<char*>("ac_desert"), 0);
             //TODO: change team
