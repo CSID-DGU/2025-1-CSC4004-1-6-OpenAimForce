@@ -3666,7 +3666,7 @@ void process(ENetPacket* packet, int sender, int chan)
 
         case SV_TRYSPAWN:
         {
-            printf(" >> recv : SV_TRYSPAWN ");
+            printf(" >> recv : SV_TRYSPAWN \n");
             int sp = canspawn(cl);
             if (team_isspect(cl->team) && sp < SP_OK_NUM)
             {
