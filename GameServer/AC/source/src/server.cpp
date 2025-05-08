@@ -3322,9 +3322,14 @@ void process(ENetPacket* packet, int sender, int chan)
 
 
         //HEREWEARE
+        int tmpcnt = 0;
+        loopv(clients) if (clients[i]->type != ST_EMPTY)
+        {
+            tmpcnt++;
+        }
+        if(tmpcnt==3){
 
-        startgame(const_cast<char*>("ac_desert"), 3);
-        if(clients.size()==3){
+            startgame(const_cast<char*>("ac_desert"), 3);
             //TODO: change team
             loopv(clients) if (clients[i]->type != ST_EMPTY)
             {
