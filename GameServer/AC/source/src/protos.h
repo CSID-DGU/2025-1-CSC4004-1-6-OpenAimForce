@@ -1319,7 +1319,7 @@ struct servercommandline
             case 't':
             if (arg[2] == '1' || arg[2] == '2')
             {
-                char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? arg_team1 : arg_team2;
+                char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? argteam1 : argteam2;
                 int count = 0;
                 char *copy = newstring(a);
                 for (char *p = strtok(copy, ","); p && count < MAX_PLAYERS_PER_TEAM; p = strtok(NULL, ","))
