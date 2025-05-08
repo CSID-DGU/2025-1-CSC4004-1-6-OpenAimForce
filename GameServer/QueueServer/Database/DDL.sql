@@ -8,7 +8,8 @@ CREATE TABLE Player (
     student_id INT,
     account_type ENUM('default', 'admin', 'club', 'collaborator') NOT NULL,
     contact VARCHAR(128) NOT NULL,
-    mmr INT NOT NULL
+    mmr INT NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Game (
