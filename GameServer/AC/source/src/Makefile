@@ -44,7 +44,7 @@ else
 	endif
 endif
 
-INCLUDES= -I. -Ibot -I../enet/include
+INCLUDES= -I. -Ibot -I../enet/include -I../civetweb/include
 
 STRIP=
 ifeq (,$(findstring -g,$(CXXFLAGS)))
@@ -117,7 +117,8 @@ CLIENT_OBJS= \
 	bot/bot_util.o \
 	bot/bot_waypoint.o \
 	bot/ac_bot.o \
-	bot/ac_bot_ai.o
+	bot/ac_bot_ai.o \
+	../civetweb/src/civetweb.o
 
 CLIENT_PCH= cube.h.gch
 
@@ -140,7 +141,8 @@ SERVER_OBJS= \
 	server-standalone.o \
 	stream-standalone.o \
 	tools-standalone.o \
-	wizard-standalone.o
+	wizard-standalone.o \
+	../civetweb/src/civetweb.o
 MASTER_OBJS= \
 	stream-standalone.o \
 	command-standalone.o \
