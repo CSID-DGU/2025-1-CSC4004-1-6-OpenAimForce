@@ -2,7 +2,7 @@
 // runs dedicated or as client coroutine
 
 #include "cube.h"
-
+#include "civetweb.h"
 #ifdef STANDALONE
 #define DEBUGCOND (true)
 #else
