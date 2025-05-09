@@ -7,7 +7,7 @@
 # been fixed now by relaxing the optimization that g++ does, so although we'll
 # continue using clang++ (just in case), you can use g++ if you prefer.
 CXX=clang++
-DEFINES = -DNO_SSL=0
+DEFINES = -DNO_SSL=0 -DOPENSSL_API_3_0
 
 # call like 'DEBUGBUILD=1 make' to compile a debug version of AssaultCube.
 ifdef DEBUGBUILD
