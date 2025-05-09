@@ -229,6 +229,9 @@ server_install: server
 
 endif
 
+CFLAGS   += $(DEFINES)
+CXXFLAGS += $(DEFINES)
+
 install: client_install server_install
 
 depend:
