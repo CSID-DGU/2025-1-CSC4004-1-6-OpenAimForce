@@ -45,6 +45,7 @@ else
 endif
 
 INCLUDES= -I. -Ibot -I../enet/include -I../civetweb/include
+CFLAGS=${INCLUDES}
 
 STRIP=
 ifeq (,$(findstring -g,$(CXXFLAGS)))
