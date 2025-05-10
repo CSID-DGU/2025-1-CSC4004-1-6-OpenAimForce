@@ -1,61 +1,55 @@
 package main
 
 import (
-	"fmt"
+	"database/sql"
+	"encoding/json"
 	"log"
 	"net/http"
+	"os"
+	"strings"
 
-	"github.com/gorilla/websocket"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/gorilla/mux"
+	"matchmaker/handlers"
 )
 
-var upgrader = websocket.Upgrader{
-	CheckOrigin: func(r *http.Request) bool { return true }, // allow all for demo
+type DBConfig struct {
+	Host     string `json:"host"`
+	User     string `json:"user"`
+	Password string `json:"password"`
+	DBName   string `json:"dbname"`
 }
 
-func homeHandler(w http.ResponseWriter, r *http.Request) {
-	html := `
-	<!DOCTYPE html>
-	<html>
-	<head><title>Matchmaker Demo</title></head>
-	<body>
-		<h1>It works!</h1>
-		<script>
-			const ws = new WebSocket("wss://" + location.host + "/ws");
-			ws.onopen = () => ws.send("hello from browser");
-			ws.onmessage = e => console.log("WS received:", e.data);
-		</script>
-	</body>
-	</html>`
-	fmt.Fprint(w, html)
+func loadDBConfig() DBConfig {
+	file, _ := os.ReadFile("config/db_config.json")
+	var cfg DBConfig
+	json.Unmarshal(file, &cfg)
+	return cfg
 }
 
-func wsHandler(w http.ResponseWriter, r *http.Request) {
-	conn, err := upgrader.Upgrade(w, r, nil)
+func loadJWTSecret() string {
+	data, err := os.ReadFile("config/jwt_secret.txt")
 	if err != nil {
-		log.Println("Upgrade failed:", err)
-		return
+		log.Fatal("Missing JWT secret:", err)
 	}
-	defer conn.Close()
-
-	log.Println("WebSocket connected")
-	for {
-		_, msg, err := conn.ReadMessage()
-		if err != nil {
-			log.Println("Read error:", err)
-			break
-		}
-		log.Println("Received:", string(msg))
-		conn.WriteMessage(websocket.TextMessage, []byte("echo: "+string(msg)))
-	}
+	return strings.TrimSpace(string(data))
 }
 
 func main() {
-	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/ws", wsHandler)
-
-	log.Println("Listening on :8080 (behind nginx)")
-	err := http.ListenAndServe(":8080", nil)
+	cfg := loadDBConfig()
+	dsn := cfg.User + ":" + cfg.Password + "@tcp(" + cfg.Host + ")/" + cfg.DBName + "?parseTime=true"
+	db, err := sql.Open("mysql", dsn)
 	if err != nil {
-		log.Fatal("Server error:", err)
+		log.Fatal("DB error:", err)
 	}
+
+	secret := loadJWTSecret()
+	r := mux.NewRouter()
+
+	r.HandleFunc("/signup", handlers.SignUp(db)).Methods("POST")
+	r.HandleFunc("/session/login", handlers.LoginWeb(db)).Methods("POST")
+	r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
+
+	log.Println("Listening on :8080")
+	log.Fatal(http.ListenAndServe(":8080", r))
 }

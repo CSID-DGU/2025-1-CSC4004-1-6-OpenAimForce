@@ -1,0 +1,6 @@
+{
+  "host": "example_ip",
+  "user": "example_user",
+  "password": "example_pw",
+  "dbname": "oss"
+}
