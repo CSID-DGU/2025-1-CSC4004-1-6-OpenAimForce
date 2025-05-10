@@ -82,8 +82,8 @@ func SignUp(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
-		// Valorant Tier: 1~24
-		if req.ValorantTier < 1 || req.ValorantTier > 24 {
+		// Valorant Tier: 1~25
+		if req.ValorantTier < 1 || req.ValorantTier > 25 {
 			http.Error(w, `{"error":"발로란트 티어의 형식이 올바르지 않습니다"}`, http.StatusBadRequest)
 			return
 		}
