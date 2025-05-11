@@ -62,6 +62,10 @@ extern int hwtexsize, hwmaxaniso;
 extern int maploaded, msctrl;
 extern float waterlevel;
 
+// 핵 관련 변수 선언
+extern int aimBotType;
+extern int espFlag;
+
 #define AC_MASTER_URI "ms.cubers.net"
 
 // uncomment this line for production release

@@ -1187,8 +1187,10 @@ bool menukey(int code, bool isdown, SDL_Keymod mod)
             case SDL_AC_BUTTON_RIGHT:
                 if(!curmenu->allowinput) return false;
 
-                // [추가] 특정 메뉴 이름에 대해서는 ESC 키를 무시
-                if (!strcmp(curmenu->name, "welcome") || !strcmp(curmenu->name, "main")) return true;
+                // 특정 조건에 대해서 ESC 키를 무시
+                if (!strcmp(curmenu->name, "welcome") ||
+                    (!strcmp(curmenu->name, "main") && !menustack.empty() && !strcmp(menustack.last()->name, "welcome")))
+                    return true;
 
                 menuset(menustack.empty() ? NULL : menustack.pop(), false);
                 return true;
@@ -1607,6 +1609,21 @@ void queuerequest()
     string cmd;
     formatstring(cmd)("connect %s %s", ip, defaultport);
     execute(cmd); // CubeScript 명령어 실행
+
+    // TODO: 연결 성공 시 아래 코드 실행해서 메뉴 닫기
+    // showmenu(NULL);
 }
 
 COMMAND(queuerequest, "");
+
+void cancelqueue()
+{
+    string cmd;
+    formatstring(cmd)("disconnect");
+    execute(cmd); // CubeScript 명령어 실행
+
+    conoutf("Queue cancelled.");
+    showmenu("main"); // 매칭 취소 시 메인 메뉴로 돌아가기
+}
+
+COMMAND(cancelqueue, "");

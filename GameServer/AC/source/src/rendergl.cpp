@@ -2,6 +2,7 @@
 
 #include "cube.h"
 #include "bot/bot.h"
+#include <GL/glu.h>
 
 bool hasTE = false, hasMT = false, hasMDA = false, hasDRE = false, hasstencil = false, hasST2 = false, hasSTW = false, hasSTS = false, hasAF;
 
@@ -1016,6 +1017,66 @@ VARP(ignoreoverride_nostencilshadows, 0, 0, 1);
 
 int effective_stencilshadow = 0;
 
+// esp 구현
+void drawesp()
+{
+    if (!espFlag || !player1 || player1->state != CS_ALIVE) return;
+
+    GLdouble modelview[16], projection[16];
+    GLint viewport[4];
+
+    // 1. 행렬 백업 + 원본 추출
+    glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
+    glGetDoublev(GL_PROJECTION_MATRIX, projection);
+    glGetIntegerv(GL_VIEWPORT, viewport);
+
+    // 2. 좌표 변환 먼저!
+    struct Point2D { float x, y; };
+    vector<Point2D> points;
+
+    loopv(players)
+    {
+        playerent* e = players[i];
+        if (!e || e == player1 || e->state != CS_ALIVE) continue;
+        if (m_teammode && isteam(e->team, player1->team)) continue;
+
+        GLdouble winx, winy, winz;
+        if (gluProject(e->o.x, e->o.y, e->o.z, modelview, projection, viewport, &winx, &winy, &winz))
+        {
+            if (winz >= 0.0 && winz <= 1.0)
+                points.add({ (float)winx, (float)winy });
+        }
+    }
+
+    // 3. 2D 렌더링용 행렬 설정
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    glOrtho(0, viewport[2], 0, viewport[3], -1, 1);
+
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+
+    // 4. 점 그리기
+    glDisable(GL_TEXTURE_2D);
+    glEnable(GL_BLEND);
+    glPointSize(8.0f);
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glBegin(GL_POINTS);
+    loopv(points) glVertex2f(points[i].x, points[i].y);
+    glEnd();
+    glPointSize(1.0f);
+    glDisable(GL_BLEND);
+    glEnable(GL_TEXTURE_2D);
+
+    // 5. 행렬 복구
+    glPopMatrix(); // modelview
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
+}
+
 void gl_drawframe(int w, int h, float changelod, float curfps, int elapsed)
 {
     extern int mapoverride_nostencilshadows, mapoverride_nowaterreflect;
@@ -1127,6 +1188,8 @@ void gl_drawframe(int w, int h, float changelod, float curfps, int elapsed)
     endmodelbatches();
 
     WaypointClass.Think();// Rick: Need to do here because of drawing the waypoints
+
+    drawesp(); // 여기에 삽입
     
     drawhudgun();
 

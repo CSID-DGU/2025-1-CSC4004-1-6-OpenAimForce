@@ -661,6 +661,9 @@ void resetsleep(bool force)
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
 // 에임핵 기능 구현
+int aimBotType = 3; // 0: 끔, 1: 다이렉트(1), 2: 스무딩(20), 3: Ease-out + 0.15초 딜레이 + 락온 시스템
+int espFlag = 1;    // 0: 끔, 1: 켬
+
 void normalize_angle(float& angle)
 {
     while (angle > 180.0f) angle -= 360.0f;
@@ -735,9 +738,76 @@ void aim_at_closest_enemy(playerent* local)
         normalize_angle(dyaw);
         normalize_angle(dpitch);
 
-        float smooth = 1.0f; // 부드러운 움직임
-        local->yaw += dyaw / smooth;
-        local->pitch += dpitch / smooth;
+        switch (aimBotType)
+        {
+        case 1: // Direct (1)
+            local->yaw += dyaw / 1.0f;
+            local->pitch += dpitch / 1.0f;
+            break;
+        case 2: // Smooth (20)
+            local->yaw += dyaw / 20.0f;
+            local->pitch += dpitch / 20.0f;
+            break;
+        case 3: // Ease-out style + 0.15s delay + lockon
+            static playerent * lockedTarget = nullptr;
+            static int lastTrackStart = 0;
+
+            // 현재 보이는 적 중 가장 가까운 것 탐색
+            playerent* visibleClosest = nullptr;
+            float closestdist = 1e6f;
+
+            loopv(players)
+            {
+                playerent* p = players[i];
+                if (!p || p == local || p->state != CS_ALIVE) continue;
+                if (m_teammode && isteam(p->team, local->team)) continue;
+                if (!can_see(local->o, p->o)) continue;
+
+                float dist = vec(p->o).sub(local->o).magnitude();
+                if (dist < closestdist)
+                {
+                    visibleClosest = p;
+                    closestdist = dist;
+                }
+            }
+
+            // 락온 해제 조건
+            if (!lockedTarget || lockedTarget->state != CS_ALIVE ||
+                (m_teammode && isteam(lockedTarget->team, local->team)) ||
+                !can_see(local->o, lockedTarget->o))
+            {
+                lockedTarget = nullptr;
+            }
+
+            // 처음 보이는 적에게만 락온
+            if (!lockedTarget && visibleClosest)
+            {
+                lockedTarget = visibleClosest;
+                lastTrackStart = lastmillis;
+            }
+
+            // 락온된 적 조준
+            if (lockedTarget)
+            {
+                float yaw_to_target = get_yaw_to(local->o, lockedTarget->o);
+                float pitch_to_target = get_pitch_to(local->o, lockedTarget->o);
+                float dyaw = yaw_to_target - local->yaw;
+                float dpitch = pitch_to_target - local->pitch;
+
+                normalize_angle(dyaw);
+                normalize_angle(dpitch);
+
+                if (lastmillis - lastTrackStart >= 150)
+                {
+                    float magnitude = sqrtf(dyaw * dyaw + dpitch * dpitch);
+                    float smooth = clamp(magnitude / 10.0f, 0.05f, 0.1f);
+                    local->yaw += dyaw * smooth;
+                    local->pitch += dpitch * smooth;
+                    local->newyaw = local->yaw;
+                    local->newpitch = local->pitch;
+                }
+            }
+        }
 
         // 마우스 조준 후 상태 유지
         local->newyaw = local->yaw;
@@ -747,6 +817,8 @@ void aim_at_closest_enemy(playerent* local)
 
 void tick_aimbot()
 {
+    if (aimBotType <= 0) return;
+
     int mx, my;
     Uint32 mouse = SDL_GetMouseState(&mx, &my);
     if (!(mouse & SDL_BUTTON(SDL_BUTTON_RIGHT))) return; // 우클릭일 때만 작동
