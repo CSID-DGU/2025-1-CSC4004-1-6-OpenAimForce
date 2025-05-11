@@ -35,13 +35,18 @@ func loadJWTSecret() string {
 	}
 	return strings.TrimSpace(string(data))
 }
-
+func loggingMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("%s %s %s", r.RemoteAddr, r.Method, r.URL.Path)
+		next.ServeHTTP(w, r)
+	})
+}
 func main() {
 	// Parse --team-size argument
-	teamSize := flag.Int("team-size", 3, "number of players per team")
+	teamSize := flag.Int("team-size", 1, "number of players per team")
 	flag.Parse()
 
-	if *teamSize < 2 || *teamSize > 10 {
+	if *teamSize < 1 || *teamSize > 10 {
 		log.Fatal("Invalid --team-size: must be between 2 and 10")
 	}
 	matchCount := *teamSize * 2
@@ -52,6 +57,7 @@ func main() {
 	if err != nil {
 		log.Fatal("DB error:", err)
 	}
+	handlers.SetDB(db)
 
 	secret := loadJWTSecret()
 
@@ -62,7 +68,8 @@ func main() {
 	r.HandleFunc("/session/login", handlers.LoginWeb(db)).Methods("POST")
 	r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
 	r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
-
+	r.Handle("/test_signup.html", http.FileServer(http.Dir("pages")))
+	r.Use(loggingMiddleware)
 	log.Println("Listening on :8080")
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
