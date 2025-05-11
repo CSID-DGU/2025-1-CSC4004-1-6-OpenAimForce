@@ -1,6 +1,7 @@
 // menus.cpp: ingame menu system (also used for scores and serverlist)
 
 #include "cube.h"
+#include "SDL_timer.h"
 
 hashtable<const char *, gmenu> menus;
 gmenu *curmenu = NULL, *lastmenu = NULL;
@@ -1600,30 +1601,52 @@ void refreshapplymenu(void *menu, bool init)
     if(init) m->menusel = m->items.length()-2; // select OK
 }
 
-void queuerequest()
+SDL_TimerID queue_timer_id = 0;
+
+Uint32 delayed_connect(Uint32 interval, void* param)
 {
     // TODO: 여기서 ip, defaultport를 사용해서 spring 요청 보내기
-    const char* defaultport = "28763"; // 원하는 기본 포트
-    const char* ip = "192.168.50.253"; // 원하는 IP
+    const char* ip = "221.139.184.184";
+    const char* defaultport = "28763";
 
     string cmd;
     formatstring(cmd)("connect %s %s", ip, defaultport);
-    execute(cmd); // CubeScript 명령어 실행
+    execute(cmd);
 
-    // TODO: 연결 성공 시 아래 코드 실행해서 메뉴 닫기
-    // showmenu(NULL);
+    // TODO: 연결 성공 시 closemenu 실행해서 메뉴 닫기
+    closemenu(NULL);
+
+    queue_timer_id = 0;
+
+    return 0;
+}
+
+void queuerequest()
+{
+    if (queue_timer_id) SDL_RemoveTimer(queue_timer_id); // 중복 타이머 방지
+
+    queue_timer_id = SDL_AddTimer(3000, delayed_connect, NULL);
+    conoutf("Queueing for match...");
 }
 
 COMMAND(queuerequest, "");
 
 void cancelqueue()
 {
-    string cmd;
-    formatstring(cmd)("disconnect");
-    execute(cmd); // CubeScript 명령어 실행
-
-    conoutf("Queue cancelled.");
-    showmenu("main"); // 매칭 취소 시 메인 메뉴로 돌아가기
+    if (queue_timer_id)
+    {
+        SDL_RemoveTimer(queue_timer_id);
+        queue_timer_id = 0;
+        conoutf("Queue timer cancelled.");
+    }
+    else
+    {
+        execute("disconnect");
+        conoutf("Queue cancelled.");
+    }
+    
+    closemenu(NULL);
+    showmenu("main");
 }
 
 COMMAND(cancelqueue, "");
