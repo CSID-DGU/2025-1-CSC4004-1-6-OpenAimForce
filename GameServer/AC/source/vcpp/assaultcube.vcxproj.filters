@@ -100,6 +100,9 @@
     <ClInclude Include="..\src\world.h">
       <Filter>headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\civetweb\include\civetweb.h">
+      <Filter>headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\config\admin.cfg">
@@ -389,6 +392,7 @@
     <ClCompile Include="..\src\soundscheduler.cpp">
       <Filter>sound</Filter>
     </ClCompile>
+    <ClCompile Include="..\civetweb\src\civetweb.c" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuildStep Include="..\src\md2.h">

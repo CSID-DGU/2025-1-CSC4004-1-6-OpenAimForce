@@ -3839,7 +3839,7 @@ void process(ENetPacket* packet, int sender, int chan)
         {
             bitbuf<ucharbuf> q(p);
             int cn = q.getbits(5);
-            if (cn != sender)
+            if (cn != sender && cl->type != ST_LOCAL)
             {
                 disconnect_client(sender, DISC_CN);
 #ifndef STANDALONE
@@ -4060,7 +4060,6 @@ void process(ENetPacket* packet, int sender, int chan)
 
         case SV_CALLVOTE: // 맵 변경, 모드 변경 등 투표 시작 요청 
         {
-            /*
             voteinfo *vi = new voteinfo;
             vi->boot = 0;
             vi->type = getint(p);
@@ -4166,20 +4165,17 @@ void process(ENetPacket* packet, int sender, int chan)
             vi->callmillis = servmillis;
             MSG_PACKET(msg);
             if(!scallvote(vi, msg)) delete vi;
-            */
             break;
 
         }
 
         case SV_VOTE: // 투표 참여
         {
-            /*
             int n = getint(p);
             MSG_PACKET(msg);
             ++msg->referenceCount; // need to increase reference count in case a vote disconnects a player after packet is queued to prevent double-freeing by packetbuf
             svote(sender, n, msg);
             --msg->referenceCount;
-            */
             break;
         }
 
