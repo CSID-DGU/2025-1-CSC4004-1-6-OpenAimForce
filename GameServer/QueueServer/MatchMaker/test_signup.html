@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>회원가입</title>
+</head>
+<body>
+<h2>회원가입</h2>
+<form id="signup-form">
+    <input
+            type="text"
+            name="ingame_id"
+            placeholder="Ingame ID"
+            required
+    /><br />
+    <input
+            type="number"
+            name="student_id"
+            placeholder="Student ID"
+            required
+    /><br />
+    <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+    /><br />
+    <input type="text" name="real_name" placeholder="Real Name" /><br />
+    <input type="text" name="contact" placeholder="Contact" /><br />
+    <input
+            type="number"
+            name="overwatch_tier"
+            placeholder="Overwatch Tier (1~36)"
+            min="1"
+            max="36"
+            required
+    /><br />
+    <input
+            type="number"
+            name="valorant_tier"
+            placeholder="Valorant Tier (1~25)"
+            min="1"
+            max="25"
+            required
+    /><br />
+    <input type="text" name="etc_tier" placeholder="기타 티어" /><br />
+    <label>
+        <input type="checkbox" name="agree_terms" required /> 약관에 동의합니다 </label
+    ><br /><br />
+
+    <button type="submit">가입하기</button>
+</form>
+
+<p><a href="/">로그인 페이지로 돌아가기</a></p>
+
+<script>
+    document
+        .getElementById('signup-form')
+        .addEventListener('submit', async (e) => {
+            e.preventDefault(); // 폼 기본 제출 막기
+
+            const form = e.target;
+            const data = {
+                account_type: 'default', // 기본값
+                ingame_id: form.ingame_id.value,
+                student_id: parseInt(form.student_id.value),
+                password: form.password.value,
+                real_name: form.real_name.value,
+                contact: form.contact.value,
+                agree_terms: form.agree_terms.checked,
+                overwatch_tier: parseInt(form.overwatch_tier.value),
+                valorant_tier: parseInt(form.valorant_tier.value),
+                etc_tier: form.etc_tier.value,
+            };
+
+            const res = await fetch('/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            const result = await res.json();
+            if (res.ok) {
+                alert('회원가입 성공!');
+                window.location.href = '/';
+            } else {
+                alert(result.error || '회원가입 실패');
+            }
+        });
+</script>
+</body>
+</html>
