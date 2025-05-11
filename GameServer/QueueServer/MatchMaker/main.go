@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"flag"
 	"log"
 	"net/http"
 	"os"
@@ -36,6 +37,15 @@ func loadJWTSecret() string {
 }
 
 func main() {
+	// Parse --team-size argument
+	teamSize := flag.Int("team-size", 3, "number of players per team")
+	flag.Parse()
+
+	if *teamSize < 2 || *teamSize > 10 {
+		log.Fatal("Invalid --team-size: must be between 2 and 10")
+	}
+	matchCount := *teamSize * 2
+
 	cfg := loadDBConfig()
 	dsn := cfg.User + ":" + cfg.Password + "@tcp(" + cfg.Host + ")/" + cfg.DBName + "?parseTime=true"
 	db, err := sql.Open("mysql", dsn)
@@ -44,11 +54,14 @@ func main() {
 	}
 
 	secret := loadJWTSecret()
-	r := mux.NewRouter()
 
+	go handlers.StartQueueManager(matchCount)
+
+	r := mux.NewRouter()
 	r.HandleFunc("/signup", handlers.SignUp(db)).Methods("POST")
 	r.HandleFunc("/session/login", handlers.LoginWeb(db)).Methods("POST")
 	r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
+	r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
 
 	log.Println("Listening on :8080")
 	log.Fatal(http.ListenAndServe(":8080", r))

@@ -67,8 +67,16 @@ func LoginJWT(db *sql.DB, secret string) http.HandlerFunc {
 			return
 		}
 
+		var mmr int
+		err = db.QueryRow("CALL get_mmr(?)", pid).Scan(&mmr)
+		if err != nil {
+			http.Error(w, `{"error":"mmr fetch failed"}`, http.StatusInternalServerError)
+			return
+		}
+
 		token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 			"pid": pid,
+			"mmr": mmr,
 			"exp": time.Now().Add(2 * time.Hour).Unix(),
 		})
 		tokenString, err := token.SignedString([]byte(secret))
