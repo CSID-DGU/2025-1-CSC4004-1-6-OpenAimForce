@@ -2,7 +2,7 @@
 
 #include "cube.h"
 #include "bot/bot.h"
-#include "civetweb.h"
+
 VAR(connected, 1, 0, 0);
 
 ENetHost *clienthost = NULL;
