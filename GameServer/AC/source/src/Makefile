@@ -7,7 +7,6 @@
 # been fixed now by relaxing the optimization that g++ does, so although we'll
 # continue using clang++ (just in case), you can use g++ if you prefer.
 CXX=clang++
-DEFINES = -DNO_SSL=0 -DOPENSSL_API_3_0
 
 # call like 'DEBUGBUILD=1 make' to compile a debug version of AssaultCube.
 ifdef DEBUGBUILD
@@ -45,8 +44,7 @@ else
 	endif
 endif
 
-INCLUDES= -I. -Ibot -I../enet/include -I../civetweb/include
-CFLAGS=${INCLUDES}
+INCLUDES= -I. -Ibot -I../enet/include
 
 STRIP=
 ifeq (,$(findstring -g,$(CXXFLAGS)))
@@ -119,8 +117,7 @@ CLIENT_OBJS= \
 	bot/bot_util.o \
 	bot/bot_waypoint.o \
 	bot/ac_bot.o \
-	bot/ac_bot_ai.o \
-	../civetweb/src/civetweb.o
+	bot/ac_bot_ai.o
 
 CLIENT_PCH= cube.h.gch
 
@@ -143,8 +140,7 @@ SERVER_OBJS= \
 	server-standalone.o \
 	stream-standalone.o \
 	tools-standalone.o \
-	wizard-standalone.o \
-	../civetweb/src/civetweb.o
+	wizard-standalone.o
 MASTER_OBJS= \
 	stream-standalone.o \
 	command-standalone.o \
@@ -228,9 +224,6 @@ server_install: server
 #endif
 
 endif
-
-CFLAGS   += $(DEFINES)
-CXXFLAGS += $(DEFINES)
 
 install: client_install server_install
 
