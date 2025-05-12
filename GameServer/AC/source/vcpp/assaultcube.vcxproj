@@ -216,11 +216,7 @@
       <Culture>0x0809</Culture>
     </ResourceCompile>
     <Link>
-<<<<<<< HEAD
-      <AdditionalDependencies>enet.lib;vorbisfile.lib;openal32.lib;zdll.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;ws2_32.lib;winmm.lib;Dbghelp.lib;jpeg.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies);glu32.lib</AdditionalDependencies>
-=======
       <AdditionalDependencies>enet.lib;vorbisfile.lib;openal32.lib;zdll.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;ws2_32.lib;winmm.lib;Dbghelp.lib;jpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
->>>>>>> parent of 5130d302c0 (add civetweb compile rule for windows)
       <OutputFile>$(TargetPath)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
