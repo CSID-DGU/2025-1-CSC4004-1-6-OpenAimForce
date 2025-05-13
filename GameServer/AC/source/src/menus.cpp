@@ -1794,19 +1794,20 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
                             val2 = std::stoi(tokens[4]);
                         }
                         catch (...) {
-                            conoutf("Invalid server reply (non-int param).\n");
+                            //conoutf("Invalid server reply (non-int param).\n");
                             got_reply = true;
                             return;
                         }
                         char cmd[256];
                         snprintf(cmd, sizeof(cmd), "connect %s %s %s", tokens[0].c_str(), tokens[1].c_str(), tokens[2].c_str());
+                        //conoutf("EXEC %s", cmd);
                         execute(cmd);
                         success = true;
                         got_reply = true;
                         closemenu(NULL);
                     }
                     else {
-                        conoutf("Invalid server reply (wrong field count).\n");
+                        //conoutf("Invalid server reply (wrong field count).\n");
                         got_reply = true;
                     }
                 }
@@ -1815,7 +1816,7 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
                 }
             }
             else if (msg->type == ix::WebSocketMessageType::Close || msg->type == ix::WebSocketMessageType::Error) {
-                conoutf(">> WebSocket closed or error: %s", msg->errorInfo.reason.c_str());
+                //conoutf(">> WebSocket closed or error: %s", msg->errorInfo.reason.c_str());
                 got_reply = true;
             }
             });
