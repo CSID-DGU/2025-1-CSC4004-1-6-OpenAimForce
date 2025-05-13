@@ -183,6 +183,7 @@ extern void closemenu(const char *name);
 extern void addchange(const char *desc, int type);
 extern void clearchanges(int type);
 extern void refreshapplymenu(void *menu, bool init);
+//bool jwtLogin(const char* idInput, const char* pwInput);
 
 struct mitem
 {

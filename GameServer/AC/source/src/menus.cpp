@@ -12,6 +12,60 @@ vector<gmenu *> menustack;
 
 COMMANDF(curmenu, "", () {result(curmenu ? curmenu->name : "");} );
 
+char jwtToken[MAX_JWT_SIZE] = "invalid.token.placeholder";
+
+
+
+
+bool jwtLogin(const char* idInput, const char* pwInput) {
+    try {
+        Poco::Net::Context::Ptr context = new Poco::Net::Context(
+            Poco::Net::Context::CLIENT_USE,
+            "", "", "cacert.pem",
+            Poco::Net::Context::VERIFY_STRICT,
+            9, false, "ALL"
+        );
+
+        Poco::Net::HTTPSClientSession session("oss-team6-matching-server-assaultcube.site", 443, context);
+        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
+        req.setContentType("application/json");
+
+        Poco::JSON::Object::Ptr body = new Poco::JSON::Object;
+        body->set("ingame_id", idInput);
+        body->set("password", pwInput);
+
+        std::ostringstream oss;
+        Poco::JSON::Stringifier::stringify(body, oss);
+        std::string jsonPayload = oss.str();
+
+        req.setContentLength(static_cast<int>(jsonPayload.length()));
+        std::ostream& os = session.sendRequest(req);
+        os << jsonPayload;
+
+        Poco::Net::HTTPResponse res;
+        std::istream& rs = session.receiveResponse(res);
+        if (res.getStatus() != Poco::Net::HTTPResponse::HTTP_OK) {
+            conoutf("Auth failed...");
+            return false;
+        }
+
+        Poco::JSON::Parser parser;
+        Poco::Dynamic::Var result = parser.parse(rs);
+        Poco::JSON::Object::Ptr json = result.extract<Poco::JSON::Object::Ptr>();
+        std::string token = json->getValue<std::string>("token");
+
+        strncpy(jwtToken, token.c_str(), MAX_JWT_SIZE - 1);
+        jwtToken[MAX_JWT_SIZE - 1] = '\0';
+        return true;
+    }
+    catch (...) {
+        strncpy(jwtToken, "invalid.token.placeholder", MAX_JWT_SIZE - 1);
+        jwtToken[MAX_JWT_SIZE - 1] = '\0';
+        conoutf("Login failed...");
+        return false;
+    }
+}
+
 void test_ws() {
     try {
         // Step 1: POST login and get token
@@ -114,53 +168,6 @@ void test_ws() {
     }
 }
 
-bool jwtLogin(char* idInput, char* pwInput) {
-    try {
-        Poco::Net::Context::Ptr context = new Poco::Net::Context(
-            Poco::Net::Context::CLIENT_USE,
-            "", "", "cacert.pem",
-            Poco::Net::Context::VERIFY_STRICT,
-            9, false, "ALL"
-        );
-
-        Poco::Net::HTTPSClientSession session("oss-team6-matching-server-assaultcube.site", 443, context);
-        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
-        req.setContentType("application/json");
-
-        Poco::JSON::Object::Ptr body = new Poco::JSON::Object;
-        body->set("ingame_id", idInput);
-        body->set("password", pwInput);
-
-        std::ostringstream oss;
-        Poco::JSON::Stringifier::stringify(body, oss);
-        std::string jsonPayload = oss.str();
-
-        req.setContentLength(static_cast<int>(jsonPayload.length()));
-        std::ostream& os = session.sendRequest(req);
-        os << jsonPayload;
-
-        Poco::Net::HTTPResponse res;
-        std::istream& rs = session.receiveResponse(res);
-        if (res.getStatus() != Poco::Net::HTTPResponse::HTTP_OK)
-            return false;
-
-        Poco::JSON::Parser parser;
-        Poco::Dynamic::Var result = parser.parse(rs);
-        Poco::JSON::Object::Ptr json = result.extract<Poco::JSON::Object::Ptr>();
-        std::string token = json->getValue<std::string>("token");
-
-        strncpy(jwtToken, token.c_str(), MAX_JWT_SIZE - 1);
-        jwtToken[MAX_JWT_SIZE - 1] = '\0';
-        return true;
-    }
-    catch (...) {
-        strncpy(jwtToken, "invalid.token.placeholder", MAX_JWT_SIZE - 1);
-        jwtToken[MAX_JWT_SIZE - 1] = '\0';
-        conoutf("Login failed...");
-        return false;
-    }
-}
-
 
 inline gmenu *setcurmenu(gmenu *newcurmenu)      // only change curmenu through here!
 {
@@ -223,9 +230,10 @@ void closemenu(const char *name)
             const char* id = getalias("__id");
             const char* pw = getalias("__pw");
 
-            // TODO: https login
-            jwtLogin(id, pw);
-            conoutf("Auth Request - ID: %s, PW: %s", id, pw); // test log
+            // https login
+            bool loginResult = jwtLogin(id, pw);
+            if (loginResult) conoutf("Auth Success! Welcome %s", id);
+            // TODO: Reload login menu if auth fails
         }
 
         menuset(menustack.empty() ? NULL : menustack.pop(), false);
