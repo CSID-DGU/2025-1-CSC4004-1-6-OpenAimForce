@@ -1,6 +1,7 @@
 #ifndef __CUBE_H__
 #define __CUBE_H__
 
+#ifdef WIN32
 // === Poco headers ===
 #include <Poco/Net/Net.h>                        // <-- for _pocoNetworkInitializer
 #include <Poco/Net/HTTPSClientSession.h>
@@ -14,6 +15,8 @@
 
 // === ixwebsocket header ===
 #include <ixwebsocket/IXWebSocket.h>
+
+#endif
 
 #include "platform.h"
 #include "tools.h"
