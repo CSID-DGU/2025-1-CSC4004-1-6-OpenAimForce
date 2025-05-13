@@ -1677,7 +1677,10 @@ Uint32 delayed_connect(Uint32 interval, void* param)
     // TODO: 여기서 ip, defaultport를 사용해서 spring 요청 보내기
     const char* ip = "221.139.184.184";
     const char* defaultport = "28763";
-
+    conoutf("ATTEMPTING QUEUE");
+    test_ws();
+    conoutf("ATTEMPTING QUEUE END");
+    /*
     string cmd;
     formatstring(cmd)("connect %s %s", ip, defaultport);
     execute(cmd);
@@ -1686,6 +1689,7 @@ Uint32 delayed_connect(Uint32 interval, void* param)
     closemenu(NULL);
 
     queue_timer_id = 0;
+    */
 
     return 0;
 }
