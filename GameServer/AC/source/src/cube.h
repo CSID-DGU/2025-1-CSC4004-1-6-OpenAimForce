@@ -1,6 +1,20 @@
 #ifndef __CUBE_H__
 #define __CUBE_H__
 
+// === Poco headers ===
+#include <Poco/Net/Net.h>                        // <-- for _pocoNetworkInitializer
+#include <Poco/Net/HTTPSClientSession.h>
+#include <Poco/Net/HTTPRequest.h>
+#include <Poco/Net/HTTPResponse.h>
+#include <Poco/StreamCopier.h>
+#include <Poco/JSON/Parser.h>
+#include <Poco/JSON/Object.h>
+#include <Poco/JSON/Stringifier.h>
+#include <Poco/Dynamic/Var.h>
+
+// === ixwebsocket header ===
+#include <ixwebsocket/IXWebSocket.h>
+
 #include "platform.h"
 #include "tools.h"
 #include "geom.h"

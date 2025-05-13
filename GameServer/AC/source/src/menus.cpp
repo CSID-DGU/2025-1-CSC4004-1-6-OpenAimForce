@@ -12,6 +12,75 @@ vector<gmenu *> menustack;
 
 COMMANDF(curmenu, "", () {result(curmenu ? curmenu->name : "");} );
 
+void test_ws() {
+    try {
+        // Step 1: POST login and get token
+        Poco::Net::HTTPSClientSession session("oss-team6-matching-server-assaultcube.site", 443);
+        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
+        req.setContentType("application/json");
+
+        Poco::JSON::Object::Ptr body = new Poco::JSON::Object;
+        body->set("ingame_id", "codehotel");
+        body->set("password", "12341234");
+
+        std::ostringstream oss;
+        Poco::JSON::Stringifier::stringify(body, oss);
+        std::string jsonPayload = oss.str();
+
+        req.setContentLength(static_cast<int>(jsonPayload.length()));
+        std::ostream& os = session.sendRequest(req);
+        os << jsonPayload;
+
+        Poco::Net::HTTPResponse res;
+        std::istream& rs = session.receiveResponse(res);
+        if (res.getStatus() != Poco::Net::HTTPResponse::HTTP_OK) {
+            throw std::runtime_error("Login failed");
+        }
+
+        Poco::JSON::Parser parser;
+        Poco::Dynamic::Var result = parser.parse(rs);
+        Poco::JSON::Object::Ptr json = result.extract<Poco::JSON::Object::Ptr>();
+        std::string token = json->getValue<std::string>("token");
+
+        //std::cout << "JWT: " << token << std::endl;
+        conoutf("JWT: %s", token.c_str());
+
+        // Step 2: Connect WebSocket
+        ix::WebSocket ws;
+        ws.setUrl("wss://oss-team6-matching-server-assaultcube.site/queue/start");
+        ws.setExtraHeaders({ {"Authorization", "Bearer " + token} });
+
+        ws.setOnMessageCallback([](const ix::WebSocketMessagePtr& msg)
+            {
+                if (msg->type == ix::WebSocketMessageType::Message) {
+                    //std::cout << "Received: " << msg->str << std::endl;
+                    conoutf("Received: %s", msg->str.c_str());
+                }
+                else if (msg->type == ix::WebSocketMessageType::Close) {
+                    //std::cout << "Connection closed normally." << std::endl;
+                    conoutf("Connection closed normally.");
+                }
+                else if (msg->type == ix::WebSocketMessageType::Error) {
+                    //std::cerr << "Connection closed unexpectedly: " << msg->errorInfo.reason << std::endl;
+                    conoutf("Connection closed unexpectedly: %s", msg->errorInfo.reason.c_str());
+                }
+            });
+
+        ws.start();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        ws.send("ping");
+
+        while (ws.getReadyState() == ix::ReadyState::Open)
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+    }
+    catch (const std::exception& e) {
+        //std::cerr << "Fatal error: " << e.what() << std::endl;
+        conoutf("Fatal error: %s", e.what());
+    }
+}
 inline gmenu *setcurmenu(gmenu *newcurmenu)      // only change curmenu through here!
 {
     curmenu = newcurmenu;

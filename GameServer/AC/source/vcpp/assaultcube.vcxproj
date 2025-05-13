@@ -194,10 +194,10 @@
     <ClCompile>
       <AdditionalOptions>/GS %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include\vorbis;..\include\ogg;..\enet\include;..\include;..\src;..\include\al;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include\vorbis;..\include\ogg;..\enet\include;..\include;..\src;..\include\al;..\include;C:\Users\lecti\vcpkg\vcpkg\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ENET_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FloatingPointModel>Fast</FloatingPointModel>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cube.h</PrecompiledHeaderFile>
@@ -210,16 +210,17 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <EnablePREfast>false</EnablePREfast>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0809</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>enet.lib;vorbisfile.lib;openal32.lib;zdll.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;ws2_32.lib;winmm.lib;Dbghelp.lib;jpeg.lib;%(AdditionalDependencies)glu32.lib</AdditionalDependencies>
+      <AdditionalDependencies>crypt32.lib;bcrypt.lib;everest.lib;ixwebsocket.lib;libcrypto.lib;libexpatd.lib;libssl.lib;mbedcrypto.lib;mbedtls.lib;mbedx509.lib;p256m.lib;pcre2-16d.lib;pcre2-32d.lib;pcre2-8d.lib;pcre2-posixd.lib;PocoActiveRecordd.lib;PocoCppParserd.lib;PocoCryptod.lib;PocoDatad.lib;PocoDataODBCd.lib;PocoDataSQLited.lib;PocoEncodingsd.lib;PocoFoundationd.lib;PocoJSONd.lib;PocoJWTd.lib;PocoMongoDBd.lib;PocoNetd.lib;PocoNetSSLd.lib;PocoPrometheusd.lib;PocoRedisd.lib;PocoSevenZipd.lib;PocoUtild.lib;PocoXMLd.lib;PocoZipd.lib;sqlite3.lib;utf8proc.lib;zlibd.lib;enet.lib;vorbisfile.lib;openal32.lib;zdll.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;ws2_32.lib;winmm.lib;Dbghelp.lib;jpeg.lib;%(AdditionalDependencies);glu32.lib</AdditionalDependencies>
       <OutputFile>$(TargetPath)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib;C:\Users\lecti\vcpkg\vcpkg\installed\x86-windows\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
