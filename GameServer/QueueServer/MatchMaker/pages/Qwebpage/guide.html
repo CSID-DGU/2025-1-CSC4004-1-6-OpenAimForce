@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>안내</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      .main-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .content h2 {
+        margin-top: 40px;
+        color: #333;
+      }
+
+      .content p {
+        margin-bottom: 20px;
+        color: #444;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
+
+    <!-- 페이지 상단 이미지 -->
+    <img src="/image/guide.png" alt="안내 이미지" class="main-image" />
+
+    <!-- 본문 콘텐츠 -->
+    <div class="content">
+      <h1>게임하고 치킨먹자!!</h1>
+      <p>총 24만원어치의 경품이 준비되어 있습니다</p>
+
+      <h2>개요</h2>
+      <p>가나다라마바사사</p>
+
+      <h2>참여 방법</h2>
+      <p>참여해주세요</p>
+
+      <h2>상품 수여 기준</h2>
+      <p>
+        기준기준기준기준기준<br />
+        기준기준기준
+      </p>
+    </div>
+
+    <!--내비게이션바 삽입-->
+    <script>
+      fetch('/navbar.html')
+        .then((res) => res.text())
+        .then((html) => {
+          const container = document.getElementById('navbar-container');
+          container.innerHTML = html;
+
+          const currentPath = window.location.pathname;
+          const links = container.querySelectorAll('a[data-path]');
+          links.forEach((link) => {
+            if (
+              link.getAttribute('data-path') === currentPath &&
+              link.getAttribute('data-path') !== '/login.html'
+            ) {
+              link.classList.add('active');
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

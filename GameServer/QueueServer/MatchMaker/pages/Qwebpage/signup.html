@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      #navbar-container {
+        margin-bottom: 40px;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 100px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .submit-button {
+        background-color: #ff7f27;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .info {
+        font-size: 12px;
+        color: #777;
+        margin-top: 4px;
+      }
+
+      .error {
+        color: red;
+        font-size: 13px;
+        margin-top: 6px;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+      <h1>회원 가입</h1>
+      <h2 style="padding-bottom: 10px">계정 정보 <br /></h2>
+      <hr style="margin-bottom: 5px" />
+
+      <form method="post">
+        <!-- ID 입력 -->
+        <div class="form-group">
+          <label for="id">아이디</label>
+          <input
+            type="text"
+            id="id"
+            name="id"
+            required
+            pattern="[A-Za-z0-9]+"
+          />
+          <div class="info">영문 대소문자, 숫자만 입력 가능합니다.</div>
+        </div>
+
+        <!-- Password 입력 -->
+        <div class="form-group">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="password" required />
+          <div class="info">
+            영문 대소문자, 숫자, 특수문자 조합이 가능합니다.
+          </div>
+        </div>
+
+        <!-- Password 확인 -->
+        <div class="form-group">
+          <label for="confirm-password">비밀번호 확인</label>
+          <input type="password" id="confirm-password" required />
+          <div id="password-error" class="error">
+            비밀번호가 일치하지 않습니다.
+          </div>
+        </div>
+
+        <h2 style="padding-bottom: 10px; margin-top: 40px">응모자 정보</h2>
+        <hr style="margin-bottom: 5px" />
+
+        <!-- 학번 입력 -->
+        <div class="form-group">
+          <label for="student_id">학번</label>
+          <input
+            type="text"
+            id="student_id"
+            name="student_id"
+            required
+            pattern="\d{2}"
+          />
+          <div class="info">예: 20학번은 '20'이라고 입력하세요.</div>
+        </div>
+
+        <!-- 연락처 입력 -->
+        <div class="form-group">
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" name="phone" required />
+          <div class="info">상품 당첨 시 연락드릴 연락처를 입력해주세요.</div>
+        </div>
+
+        <!-- 이름 입력 -->
+        <div class="form-group">
+          <label for="real-name">이름 (실명)</label>
+          <input type="text" id="real-name" name="real-name" required />
+        </div>
+
+        <!-- 오버워치 티어 -->
+        <div class="form-group">
+          <label for="ow-tier">오버워치 티어</label>
+          <select id="ow-tier" name="ow-tier" required>
+            <option value="">-- 티어 선택 --</option>
+            <option value="unranked">언랭</option>
+            <option value="bronze">브론즈</option>
+            <option value="silver">실버</option>
+            <option value="gold">골드</option>
+            <option value="platinum">플래티넘</option>
+            <option value="diamond">다이아몬드</option>
+            <option value="master">마스터</option>
+            <option value="grandmaster">그랜드마스터</option>
+            <option value="champion">챔피언</option>
+            <option value="top500">상위 500위</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="ow-tier-detail-group" style="display: none">
+          <label for="ow-tier-detail">오버워치 세부 티어</label>
+          <select id="ow-tier-detail" name="ow-tier-detail"></select>
+        </div>
+
+        <!-- 발로란트 티어 -->
+        <div class="form-group">
+          <label for="val-tier">발로란트 티어</label>
+          <select id="val-tier" name="val-tier" required>
+            <option value="">-- 티어 선택 --</option>
+            <option value="unranked">언랭</option>
+            <option value="iron">아이언</option>
+            <option value="bronze">브론즈</option>
+            <option value="silver">실버</option>
+            <option value="gold">골드</option>
+            <option value="platinum">플래티넘</option>
+            <option value="diamond">다이아몬드</option>
+            <option value="ascendant">초월자</option>
+            <option value="immortal">불멸</option>
+            <option value="radiant">레디언트</option>
+          </select>
+        </div>
+
+        <div
+          class="form-group"
+          id="val-tier-detail-group"
+          style="display: none"
+        >
+          <label for="val-tier-detail">발로란트 세부 티어</label>
+          <select id="val-tier-detail" name="val-tier-detail"></select>
+        </div>
+
+        <!-- 기타 게임 정보 -->
+        <div class="form-group">
+          <label for="etc-info">기타 게임 정보</label>
+          <input type="text" id="etc-info" name="etc-info" />
+          <div class="info">ex) 서든어택 8년차</div>
+        </div>
+        <!-- 회원가입 버튼 -->
+        <div class="form-group" style="text-align: center">
+          <button type="submit" class="submit-button">회원 가입</button>
+        </div>
+      </form>
+    </div>
+
+    <!--내비게이션바 삽입-->
+    <script>
+      fetch('/navbar.html')
+        .then((res) => res.text())
+        .then((html) => {
+          const container = document.getElementById('navbar-container');
+          container.innerHTML = html;
+
+          const currentPath = window.location.pathname;
+          const links = container.querySelectorAll('a[data-path]');
+          links.forEach((link) => {
+            if (
+              link.getAttribute('data-path') === currentPath &&
+              link.getAttribute('data-path') !== '/login.html'
+            ) {
+              link.classList.add('active');
+            }
+          });
+        });
+
+      // 실시간 비밀번호 확인
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirm-password');
+      const errorMessage = document.getElementById('password-error');
+
+      function validatePasswordMatch() {
+        if (confirmPassword.value === '') {
+          errorMessage.style.display = 'none';
+          return;
+        }
+        if (password.value !== confirmPassword.value) {
+          errorMessage.style.display = 'block';
+        } else {
+          errorMessage.style.display = 'none';
+        }
+      }
+
+      password.addEventListener('input', validatePasswordMatch);
+      confirmPassword.addEventListener('input', validatePasswordMatch);
+
+      // 오버워치 세부 티어 동적 처리
+      const owTier = document.getElementById('ow-tier');
+      const owTierDetailGroup = document.getElementById('ow-tier-detail-group');
+      const owTierDetail = document.getElementById('ow-tier-detail');
+
+      owTier.addEventListener('change', () => {
+        const value = owTier.value;
+        owTierDetail.innerHTML = '';
+        owTierDetailGroup.style.display = 'none';
+
+        if (
+          ['bronze', 'silver', 'gold', 'platinum', 'diamond'].includes(value)
+        ) {
+          for (let i = 1; i <= 5; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i + ' 티어';
+            owTierDetail.appendChild(option);
+          }
+          owTierDetailGroup.style.display = 'block';
+        } else if (value === 'master') {
+          for (let i = 1; i <= 3; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i + ' 티어';
+            owTierDetail.appendChild(option);
+          }
+          owTierDetailGroup.style.display = 'block';
+        }
+      });
+
+      // 발로란트 세부 티어 동적 처리
+      const valTier = document.getElementById('val-tier');
+      const valTierDetailGroup = document.getElementById(
+        'val-tier-detail-group'
+      );
+      const valTierDetail = document.getElementById('val-tier-detail');
+
+      valTier.addEventListener('change', () => {
+        const value = valTier.value;
+        valTierDetail.innerHTML = '';
+        valTierDetailGroup.style.display = 'none';
+
+        if (
+          [
+            'iron',
+            'bronze',
+            'silver',
+            'gold',
+            'platinum',
+            'diamond',
+            'ascendant',
+            'immortal',
+          ].includes(value)
+        ) {
+          for (let i = 1; i <= 3; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i + ' 티어';
+            valTierDetail.appendChild(option);
+          }
+          valTierDetailGroup.style.display = 'block';
+        }
+      });
+    </script>
+  </body>
+</html>
