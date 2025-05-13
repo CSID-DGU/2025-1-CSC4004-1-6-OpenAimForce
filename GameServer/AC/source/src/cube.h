@@ -79,6 +79,7 @@ extern int hwtexsize, hwmaxaniso;
 extern int maploaded, msctrl;
 extern float waterlevel;
 
+#ifdef WIN32
 // 핵 관련 변수 선언
 extern int aimBotType;
 extern int espFlag;
@@ -90,6 +91,7 @@ extern char jwtToken[MAX_JWT_SIZE];
 // 큐 동기화 변수
 extern SDL_TimerID queue_timer_id;
 extern std::atomic<bool> queue_cancelled;
+#endif
 
 #define AC_MASTER_URI "ms.cubers.net"
 
