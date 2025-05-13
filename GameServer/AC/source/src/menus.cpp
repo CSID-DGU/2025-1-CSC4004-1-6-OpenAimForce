@@ -14,8 +14,9 @@ COMMANDF(curmenu, "", () {result(curmenu ? curmenu->name : "");} );
 
 char jwtToken[MAX_JWT_SIZE] = "invalid.token.placeholder";
 
-
-
+// 큐 동기화 변수
+SDL_TimerID queue_timer_id = 0;
+std::atomic<bool> queue_cancelled{ false };
 
 bool jwtLogin(const char* idInput, const char* pwInput) {
     try {
@@ -1760,149 +1761,114 @@ void refreshapplymenu(void *menu, bool init)
     if(init) m->menusel = m->items.length()-2; // select OK
 }
 
-Uint32 delayed_connect(Uint32 interval, void* param)
-{
-    /*
-    // TODO: ���⼭ ip, defaultport�� ����ؼ� spring ��û ������
-    const char* ip = "221.139.184.184";
-    const char* defaultport = "28763";
-    conoutf("ATTEMPTING QUEUE");
-    test_ws();
-    conoutf("ATTEMPTING QUEUE END");
-    
-    string cmd;
-    formatstring(cmd)("connect %s %s", ip, defaultport);
-    execute(cmd);
+Uint32 queue_timer_callback(Uint32 interval, void* param) {
+    queue_cancelled = false;
+    int attempts = 0;
+    while (attempts < 3 && !queue_cancelled) {
+        conoutf("Connecting to Queue server...");
 
-    // TODO: ���� ���� �� closemenu �����ؼ� �޴� �ݱ�
-    closemenu(NULL);
+        ix::WebSocket ws;
+        ws.setUrl("wss://oss-team6-matching-server-assaultcube.site/queue/start");
+        ws.setExtraHeaders({ {"Authorization", std::string("Bearer ") + jwtToken} });
 
-    queue_timer_id = 0;
-    */
-    queuerequest();
-    return 0;
-}
+        ix::SocketTLSOptions tlsOptions;
+        tlsOptions.tls = true;
+        tlsOptions.caFile = "cacert.pem";
+        ws.setTLSOptions(tlsOptions);
 
-void queuerequest()
-{
-    if(!tryqueue()) conoutf("Failed to initiate queue");
-}
+        std::atomic<bool> got_reply{ false };
+        std::atomic<bool> success{ false };
 
-COMMAND(queuerequest, "");
-
-void cancelqueue()
-{
-    forceCancelQueue();
-}
-
-COMMAND(cancelqueue, "");
-
-
-void forceCancelQueue() {
-    cancelRequested = true;
-    std::unique_lock<std::mutex> lock(queueMutex);
-    queueCond.wait(lock, [] { return !threadRunning; });
-}
-
-bool tryqueue() {
-    if (threadRunning) {
-        forceCancelQueue();
-    }
-
-    cancelRequested = false;
-    threadRunning = true;
-
-    queueThread = std::thread([] {
-        for (int attempt = 0; attempt < 3; ++attempt) {
-            if (cancelRequested) break;
-
-            conoutf("Connecting to Queue server...");
-            ix::WebSocket ws;
-            ws.setUrl("wss://oss-team6-matching-server-assaultcube.site/queue/start");
-            ws.setExtraHeaders({ {"Authorization", std::string("Bearer ") + jwtToken} });
-            ix::SocketTLSOptions tlsOptions;
-            tlsOptions.tls = true;
-            tlsOptions.caFile = "cacert.pem";
-            ws.setTLSOptions(tlsOptions);
-
-            std::atomic<bool> connected(false);
-            std::atomic<bool> terminate(false);
-
-            ws.setOnMessageCallback([&](const ix::WebSocketMessagePtr& msg) {
-                if (msg->type == ix::WebSocketMessageType::Message) {
-                    const std::string& payload = msg->str;
-                    if (payload.compare(0, 4, "CON/") == 0) {
-                        std::istringstream ss(payload.substr(4));
-                        std::vector<std::string> parts;
-                        std::string item;
-                        while (std::getline(ss, item, '/')) parts.push_back(item);
-                        if (parts.size() != 5) {
-                            conoutf("Invalid server reply");
-                            terminate = true;
-                            ws.stop();
-                            return;
-                        }
+        ws.setOnMessageCallback([&](const ix::WebSocketMessagePtr& msg) {
+            if (msg->type == ix::WebSocketMessageType::Message) {
+                std::string str = msg->str;
+                if (str.rfind("CON/", 0) == 0) {
+                    std::vector<std::string> tokens;
+                    std::istringstream iss(str.substr(4));
+                    std::string token;
+                    while (std::getline(iss, token, '/')) tokens.push_back(token);
+                    if (tokens.size() == 5) {
                         int val1, val2;
                         try {
-                            val1 = std::stoi(parts[3]);
-                            val2 = std::stoi(parts[4]);
-                        } catch (...) {
-                            conoutf("Invalid server reply");
-                            terminate = true;
-                            ws.stop();
+                            val1 = std::stoi(tokens[3]);
+                            val2 = std::stoi(tokens[4]);
+                        }
+                        catch (...) {
+                            conoutf("Invalid server reply (non-int param).\n");
+                            got_reply = true;
                             return;
                         }
-                        std::string cmd;
-                        char buffer[256];
-                        snprintf(buffer, sizeof(buffer), "connect %s %s %s",
-                                 parts[0].c_str(), parts[1].c_str(), parts[2].c_str());
-                        execute(buffer);
-                        terminate = true;
-                        ws.stop();
+                        char cmd[256];
+                        snprintf(cmd, sizeof(cmd), "connect %s %s %s", tokens[0].c_str(), tokens[1].c_str(), tokens[2].c_str());
+                        execute(cmd);
+                        success = true;
+                        got_reply = true;
+                        closemenu(NULL);
                     }
-                    else if (payload.compare(0, 4, "MSG/") == 0) {
-                        conoutf("Server Message : %s", payload.substr(4).c_str());
-                    }
-                }
-                else if (msg->type == ix::WebSocketMessageType::Close ||
-                         msg->type == ix::WebSocketMessageType::Error) {
-                    if (!terminate) {
-                        conoutf("Connection lost");
-                        terminate = true;
+                    else {
+                        conoutf("Invalid server reply (wrong field count).\n");
+                        got_reply = true;
                     }
                 }
+                else if (str.rfind("MSG/", 0) == 0) {
+                    conoutf("Server Message : %s", str.substr(4).c_str());
+                }
+            }
+            else if (msg->type == ix::WebSocketMessageType::Close || msg->type == ix::WebSocketMessageType::Error) {
+                conoutf(">> WebSocket closed or error: %s", msg->errorInfo.reason.c_str());
+                got_reply = true;
+            }
             });
 
-            ws.start();
+        ws.start();
 
-            for (int i = 0; i < 50 && ws.getReadyState() != ix::ReadyState::Open && !cancelRequested; ++i) {
-                std::this_thread::sleep_for(std::chrono::milliseconds(100));
-            }
+        for (int i = 0; i < 50 && ws.getReadyState() != ix::ReadyState::Open && !queue_cancelled; ++i)
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-            if (ws.getReadyState() != ix::ReadyState::Open) {
-                ws.stop();
-                continue;
-            }
-
-            conoutf("Connected to Queue server!");
-            while (!terminate && !cancelRequested && ws.getReadyState() == ix::ReadyState::Open) {
-                std::this_thread::sleep_for(std::chrono::milliseconds(100));
-            }
-
+        if (ws.getReadyState() != ix::ReadyState::Open) {
+            ++attempts;
             ws.stop();
-            if (!cancelRequested && !terminate) {
-                conoutf("Unable to connect");
-            }
-            break;
+            continue;
         }
 
-        {
-            std::lock_guard<std::mutex> lock(queueMutex);
-            threadRunning = false;
-        }
-        queueCond.notify_all();
-    });
+        conoutf("Connected to Queue server!");
+        ws.send("ping");
 
-    queueThread.detach();
-    return true;
+        while (!got_reply && ws.getReadyState() == ix::ReadyState::Open && !queue_cancelled)
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+        ws.stop();
+        if (success || queue_cancelled) return 0;
+
+        ++attempts;
+    }
+
+    if (!queue_cancelled)
+        conoutf("Unable to connect or invalid response.\n");
+
+    return 0;
 }
+ 
+
+void queuerequest() {
+    if (queue_timer_id) SDL_RemoveTimer(queue_timer_id);
+    queue_timer_id = SDL_AddTimer(100, queue_timer_callback, nullptr);
+    conoutf("Queueing for match...");
+}
+COMMAND(queuerequest, "");
+
+void cancelqueue() {
+    queue_cancelled = true;
+    if (queue_timer_id) {
+        SDL_RemoveTimer(queue_timer_id);
+        queue_timer_id = 0;
+        conoutf("Queue timer cancelled.");
+    }
+    else {
+        execute("disconnect");
+        conoutf("Queue cancelled.");
+    }
+    closemenu(NULL);
+    showmenu("main");
+}
+COMMAND(cancelqueue, "");

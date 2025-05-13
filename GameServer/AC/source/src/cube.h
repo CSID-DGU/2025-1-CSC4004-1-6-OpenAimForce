@@ -85,11 +85,8 @@ extern int espFlag;
 extern char jwtToken[MAX_JWT_SIZE];
 
 // 큐 동기화 변수
-extern std::thread queueThread;
-extern std::atomic<bool> cancelRequested(false);
-extern std::mutex queueMutex;
-extern std::condition_variable queueCond;
-extern bool threadRunning = false;
+extern SDL_TimerID queue_timer_id;
+extern std::atomic<bool> queue_cancelled;
 
 #define AC_MASTER_URI "ms.cubers.net"
 
