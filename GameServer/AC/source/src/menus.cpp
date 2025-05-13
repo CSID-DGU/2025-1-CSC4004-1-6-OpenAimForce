@@ -20,7 +20,7 @@ void test_ws() {
             Poco::Net::Context::CLIENT_USE,
             "",                   // privateKeyFile
             "",                   // certificateFile
-            "cacert.pem",  // caLocation ¡æ path to PEM
+            "cacert.pem",  // caLocation ï¿½ï¿½ path to PEM
             Poco::Net::Context::VERIFY_STRICT,
             9,
             false,                // no load default CA (use your own)
@@ -114,6 +114,52 @@ void test_ws() {
     }
 }
 
+bool jwtLogin(char* idInput, char* pwInput) {
+    try {
+        Poco::Net::Context::Ptr context = new Poco::Net::Context(
+            Poco::Net::Context::CLIENT_USE,
+            "", "", "cacert.pem",
+            Poco::Net::Context::VERIFY_STRICT,
+            9, false, "ALL"
+        );
+
+        Poco::Net::HTTPSClientSession session("oss-team6-matching-server-assaultcube.site", 443, context);
+        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
+        req.setContentType("application/json");
+
+        Poco::JSON::Object::Ptr body = new Poco::JSON::Object;
+        body->set("ingame_id", idInput);
+        body->set("password", pwInput);
+
+        std::ostringstream oss;
+        Poco::JSON::Stringifier::stringify(body, oss);
+        std::string jsonPayload = oss.str();
+
+        req.setContentLength(static_cast<int>(jsonPayload.length()));
+        std::ostream& os = session.sendRequest(req);
+        os << jsonPayload;
+
+        Poco::Net::HTTPResponse res;
+        std::istream& rs = session.receiveResponse(res);
+        if (res.getStatus() != Poco::Net::HTTPResponse::HTTP_OK)
+            return false;
+
+        Poco::JSON::Parser parser;
+        Poco::Dynamic::Var result = parser.parse(rs);
+        Poco::JSON::Object::Ptr json = result.extract<Poco::JSON::Object::Ptr>();
+        std::string token = json->getValue<std::string>("token");
+
+        strncpy(jwtToken, token.c_str(), MAX_JWT_SIZE - 1);
+        jwtToken[MAX_JWT_SIZE - 1] = '\0';
+        return true;
+    }
+    catch (...) {
+        strncpy(jwtToken, "invalid.token.placeholder", MAX_JWT_SIZE - 1);
+        jwtToken[MAX_JWT_SIZE - 1] = '\0';
+        conoutf("Login failed...");
+        return false;
+    }
+}
 
 
 inline gmenu *setcurmenu(gmenu *newcurmenu)      // only change curmenu through here!
@@ -177,7 +223,8 @@ void closemenu(const char *name)
             const char* id = getalias("__id");
             const char* pw = getalias("__pw");
 
-            // TODO: ¿©±â¼­ id, pw¸¦ »ç¿ëÇØ¼­ HTTP ¿äÃ» º¸³»±â
+            // TODO: https login
+            jwtLogin(id, pw);
             conoutf("Auth Request - ID: %s, PW: %s", id, pw); // test log
         }
 
@@ -349,7 +396,7 @@ struct mitemmanual : mitem
             result = execaction(text);
             if (result >= 0 && oldmenu == curmenu && close_menu_on_action)
             {
-                if (strcmp(parent->name, "welcome") != 0) // "welcome" ¸Þ´º´Â ´ÝÁö ¾ÊÀ½
+                if (strcmp(parent->name, "welcome") != 0) // "welcome" ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 {
                     menuset(NULL, false);
                     menustack.shrink(0);
@@ -1292,7 +1339,7 @@ bool menukey(int code, bool isdown, SDL_Keymod mod)
             case SDL_AC_BUTTON_RIGHT:
                 if(!curmenu->allowinput) return false;
 
-                // Æ¯Á¤ Á¶°Ç¿¡ ´ëÇØ¼­ ESC Å°¸¦ ¹«½Ã
+                // Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ESC Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 if (!strcmp(curmenu->name, "welcome") ||
                     (!strcmp(curmenu->name, "main") && !menustack.empty() && !strcmp(menustack.last()->name, "welcome")))
                     return true;
@@ -1709,7 +1756,7 @@ SDL_TimerID queue_timer_id = 0;
 
 Uint32 delayed_connect(Uint32 interval, void* param)
 {
-    // TODO: ¿©±â¼­ ip, defaultport¸¦ »ç¿ëÇØ¼­ spring ¿äÃ» º¸³»±â
+    // TODO: ï¿½ï¿½ï¿½â¼­ ip, defaultportï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ spring ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     const char* ip = "221.139.184.184";
     const char* defaultport = "28763";
     conoutf("ATTEMPTING QUEUE");
@@ -1720,7 +1767,7 @@ Uint32 delayed_connect(Uint32 interval, void* param)
     formatstring(cmd)("connect %s %s", ip, defaultport);
     execute(cmd);
 
-    // TODO: ¿¬°á ¼º°ø ½Ã closemenu ½ÇÇàÇØ¼­ ¸Þ´º ´Ý±â
+    // TODO: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ closemenu ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½Þ´ï¿½ ï¿½Ý±ï¿½
     closemenu(NULL);
 
     queue_timer_id = 0;
@@ -1731,7 +1778,7 @@ Uint32 delayed_connect(Uint32 interval, void* param)
 
 void queuerequest()
 {
-    if (queue_timer_id) SDL_RemoveTimer(queue_timer_id); // Áßº¹ Å¸ÀÌ¸Ó ¹æÁö
+    if (queue_timer_id) SDL_RemoveTimer(queue_timer_id); // ï¿½ßºï¿½ Å¸ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     queue_timer_id = SDL_AddTimer(3000, delayed_connect, NULL);
     conoutf("Queueing for match...");

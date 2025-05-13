@@ -80,6 +80,10 @@ extern float waterlevel;
 extern int aimBotType;
 extern int espFlag;
 
+// 계정 로그인 정보 선언
+#define MAX_JWT_SIZE 512
+char jwtToken[MAX_JWT_SIZE] = "invalid.token.placeholder";
+
 #define AC_MASTER_URI "ms.cubers.net"
 
 // uncomment this line for production release
