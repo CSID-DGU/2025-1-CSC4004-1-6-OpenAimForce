@@ -84,6 +84,13 @@ extern int espFlag;
 #define MAX_JWT_SIZE 512
 extern char jwtToken[MAX_JWT_SIZE];
 
+// 큐 동기화 변수
+extern std::thread queueThread;
+extern std::atomic<bool> cancelRequested(false);
+extern std::mutex queueMutex;
+extern std::condition_variable queueCond;
+extern bool threadRunning = false;
+
 #define AC_MASTER_URI "ms.cubers.net"
 
 // uncomment this line for production release
