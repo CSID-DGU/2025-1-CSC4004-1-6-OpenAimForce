@@ -140,13 +140,13 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>..\include\vorbis;..\include\ogg;..\enet\include;..\include;..\src;..\include\al;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include\vorbis;..\include\ogg;..\enet\include;..\include;..\src;..\include\al;..\include;$(VCPKG_ROOT)\installed\x86-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>
       </ExceptionHandling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>false</FunctionLevelLinking>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -162,16 +162,17 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0809</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>enet.lib;vorbisfile.lib;openal32.lib;zdll.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;ws2_32.lib;winmm.lib;Dbghelp.lib;jpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>crypt32.lib;bcrypt.lib;everest.lib;ixwebsocket.lib;libcrypto.lib;libexpat.lib;libssl.lib;mbedcrypto.lib;mbedtls.lib;mbedx509.lib;p256m.lib;pcre2-16.lib;pcre2-32.lib;pcre2-8.lib;pcre2-posix.lib;PocoActiveRecord.lib;PocoCppParser.lib;PocoCrypto.lib;PocoData.lib;PocoDataODBC.lib;PocoDataSQLite.lib;PocoEncodings.lib;PocoFoundation.lib;PocoJSON.lib;PocoJWT.lib;PocoMongoDB.lib;PocoNet.lib;PocoNetSSL.lib;PocoPrometheus.lib;PocoRedis.lib;PocoSevenZip.lib;PocoUtil.lib;PocoXML.lib;PocoZip.lib;sqlite3.lib;utf8proc.lib;zlib.lib;enet.lib;vorbisfile.lib;openal32.lib;zdll.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;ws2_32.lib;winmm.lib;Dbghelp.lib;jpeg.lib;%(AdditionalDependencies);glu32.lib</AdditionalDependencies>
       <OutputFile>$(TargetPath)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib;$(VCPKG_ROOT)\installed\x86-windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
@@ -186,6 +187,9 @@
       </DataExecutionPrevention>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
+    <PostBuildEvent>
+      <Command>cmd /c robocopy $(VCPKG_ROOT)\installed\x86-windows\bin $(TargetDir) *.dll /xo &amp; if %ERRORLEVEL% lss 8 exit 0 else exit %ERRORLEVEL%</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
