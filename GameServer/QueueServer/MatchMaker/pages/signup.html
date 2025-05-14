@@ -281,11 +281,15 @@
             body: JSON.stringify(data),
           });
 
-          if (!res.ok) throw new Error('회원가입 실패');
+          const result = await res.json();
+
+          if (!res.ok) throw new Error(result.error || '회원가입 실패');
+
           alert('회원가입이 완료되었습니다!');
           location.reload();
         } catch (err) {
-          alert('회원가입 중 오류가 발생했습니다.\n'+err.message);
+          console.error(err);
+          alert('회원가입 중 오류가 발생했습니다.\n' + err.message);
         }
       });
     </script>
