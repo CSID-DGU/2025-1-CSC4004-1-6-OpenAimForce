@@ -81,45 +81,49 @@
       }
     </style>
   </head>
-
   <body>
-    <div id="navbar-container"></div>
+  <div id="navbar-container"></div>
 
-    <div class="login-container">
-      <h1>로그인</h1>
+  <div class="login-container">
+    <h1>로그인</h1>
+    <form method="POST" action="/session/login">
+      <input type="text" name="ingame_id" placeholder="아이디" required />
+      <input type="password" name="password" placeholder="비밀번호" required />
+      <button type="submit">로그인</button>
+    </form>
+    <a href="/signup.html" class="signup-button">회원가입</a>
+  </div>
 
-      <form method="POST">
-        <input type="text" name="id" placeholder="아이디" required />
-        <input
-          type="password"
-          name="password"
-          placeholder="비밀번호"
-          required
-        />
-        <button type="submit">로그인</button>
-      </form>
-
-      <a href="/signup.html" class="signup-button">회원가입</a>
-    </div>
-
-    <!--내비게이션바 삽입-->
-    <script>
-      fetch('/navbar.html')
-        .then((res) => res.text())
-        .then((html) => {
-          const container = document.getElementById('navbar-container');
-          container.innerHTML = html;
-
-          const currentPath = window.location.pathname;
-          const links = container.querySelectorAll('a[data-path]');
-          links.forEach((link) => {
-            const path = link.getAttribute('data-path');
-            if (path === '/login.html') return;
-            if (path === currentPath) {
-              link.classList.add('active');
-            }
-          });
-        });
-    </script>
+  <script>
+    fetch('/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+              const container = document.getElementById('navbar-container');
+              container.innerHTML = html;
+              container.querySelectorAll("script").forEach(oldScript => {
+                const newScript = document.createElement("script");
+                if (oldScript.src) {
+                  newScript.src = oldScript.src;
+                } else {
+                  newScript.textContent = oldScript.textContent;
+                }
+                document.body.appendChild(newScript);
+                oldScript.remove();
+              });
+              const currentPath = window.location.pathname;
+              container.querySelectorAll('a[data-path]').forEach(link => {
+                const path = link.getAttribute('data-path');
+                if (path !== '/login.html' && path === currentPath) {
+                  link.classList.add('active');
+                }
+              });
+            })
+            .then(() => {
+              if (typeof updateLoginArea === "function") updateLoginArea();
+              if (typeof highlightActiveLink === "function") highlightActiveLink();
+              if (typeof adaptNavbarLayout === "function") adaptNavbarLayout();
+            });
+  </script>
   </body>
+
 </html>

@@ -59,17 +59,18 @@ func main() {
 	}
 	handlers.SetDB(db)
 
-	secret := loadJWTSecret()
+	//secret := loadJWTSecret()
 
 	go handlers.StartQueueManager(matchCount)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/signup", handlers.SignUp(db)).Methods("POST")
 	r.HandleFunc("/session/login", handlers.LoginWeb(db)).Methods("POST")
-	r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
-	r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
-	r.Handle("/test_signup.html", http.FileServer(http.Dir("pages")))
+	//r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
+	//r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
+	r.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("pages/"))))
 	r.Use(loggingMiddleware)
-	log.Println("Listening on :8080")
+	log.Println("Server started on :8080")
 	log.Fatal(http.ListenAndServe(":8080", r))
+
 }

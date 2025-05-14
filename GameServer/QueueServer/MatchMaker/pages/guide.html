@@ -38,10 +38,8 @@
   <body>
     <div id="navbar-container"></div>
 
-    <!-- 페이지 상단 이미지 -->
     <img src="/image/guide.png" alt="안내 이미지" class="main-image" />
 
-    <!-- 본문 콘텐츠 -->
     <div class="content">
       <h1>게임하고 치킨먹자!!</h1>
       <h3>총 24만원 상당의 경품이 준비되어 있습니다</h3>
@@ -123,25 +121,37 @@
       개인정보는 진행을 위해서 최소한만 수집하며, 관리에 있어 신중을 다하고, 위에 서술한 방식 이외에는 할용하지 않겠습니다.
     </div>
 
-    <!--내비게이션바 삽입-->
     <script>
       fetch('/navbar.html')
-        .then((res) => res.text())
-        .then((html) => {
-          const container = document.getElementById('navbar-container');
-          container.innerHTML = html;
-
-          const currentPath = window.location.pathname;
-          const links = container.querySelectorAll('a[data-path]');
-          links.forEach((link) => {
-            if (
-              link.getAttribute('data-path') === currentPath &&
-              link.getAttribute('data-path') !== '/login.html'
-            ) {
-              link.classList.add('active');
-            }
-          });
-        });
+              .then(res => res.text())
+              .then(html => {
+                const container = document.getElementById('navbar-container');
+                container.innerHTML = html;
+                container.querySelectorAll("script").forEach(oldScript => {
+                  const newScript = document.createElement("script");
+                  if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                  } else {
+                    newScript.textContent = oldScript.textContent;
+                  }
+                  document.body.appendChild(newScript);
+                  oldScript.remove();
+                });
+                const currentPath = window.location.pathname;
+                container.querySelectorAll('a[data-path]').forEach(link => {
+                  const path = link.getAttribute('data-path');
+                  if (path !== '/login.html' && path === currentPath) {
+                    link.classList.add('active');
+                  }
+                });
+              })
+              .then(() => {
+                if (typeof updateLoginArea === "function") updateLoginArea();
+                if (typeof highlightActiveLink === "function") highlightActiveLink();
+                if (typeof adaptNavbarLayout === "function") adaptNavbarLayout();
+              });
     </script>
+
+
   </body>
 </html>

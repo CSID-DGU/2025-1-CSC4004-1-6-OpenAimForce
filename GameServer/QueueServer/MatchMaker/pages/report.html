@@ -62,19 +62,33 @@
   <!--내비게이션바 삽입-->
   <script>
     fetch('/navbar.html')
-      .then((res) => res.text())
-      .then((html) => {
-        const container = document.getElementById('navbar-container');
-        container.innerHTML = html;
-
-        const currentPath = window.location.pathname;
-        const links = container.querySelectorAll('a[data-path]');
-        links.forEach((link) => {
-          if (link.getAttribute('data-path') === currentPath) {
-            link.classList.add('active');
-          }
-        });
-      });
+            .then(res => res.text())
+            .then(html => {
+              const container = document.getElementById('navbar-container');
+              container.innerHTML = html;
+              container.querySelectorAll("script").forEach(oldScript => {
+                const newScript = document.createElement("script");
+                if (oldScript.src) {
+                  newScript.src = oldScript.src;
+                } else {
+                  newScript.textContent = oldScript.textContent;
+                }
+                document.body.appendChild(newScript);
+                oldScript.remove();
+              });
+              const currentPath = window.location.pathname;
+              container.querySelectorAll('a[data-path]').forEach(link => {
+                const path = link.getAttribute('data-path');
+                if (path !== '/login.html' && path === currentPath) {
+                  link.classList.add('active');
+                }
+              });
+            })
+            .then(() => {
+              if (typeof updateLoginArea === "function") updateLoginArea();
+              if (typeof highlightActiveLink === "function") highlightActiveLink();
+              if (typeof adaptNavbarLayout === "function") adaptNavbarLayout();
+            });
   </script>
 
   <body>

@@ -101,9 +101,9 @@ func StartQueueManager(matchCount int) {
 
 			msg := func(aimhack bool) string {
 				if aimhack {
-					return `{"ip":"1.2.3.4","port":28763,"accesspw":"dummy123","aimhack":"1,2,3"}`
+					return `CON/221.139.184.184/28763/1234/1/1`
 				}
-				return `{"ip":"1.2.3.4","port":28763,"accesspw":"dummy123"}`
+				return `CON/221.139.184.184/28763/1234/1/1`
 			}
 
 			for i, c := range append(teamA, teamB...) {

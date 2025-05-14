@@ -3,7 +3,10 @@ package handlers
 import (
 	"database/sql"
 	"encoding/json"
+	"log"
 	"net/http"
+	"net/url"
+	"strconv"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -28,27 +31,47 @@ func checkCredentials(db *sql.DB, id, pw string) (int, error) {
 	return pid, nil
 }
 
-// Web login: plain response (for form POSTs)
 func LoginWeb(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var req LoginRequest
-		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-			http.Error(w, "올바르지 않은 접근입니다", http.StatusBadRequest)
+		if err := r.ParseForm(); err != nil {
+			http.Error(w, "폼 데이터를 읽을 수 없습니다", http.StatusBadRequest)
 			return
 		}
-		pid, err := checkCredentials(db, req.IngameID, req.Password)
+
+		ingameID := r.FormValue("ingame_id")
+		password := r.FormValue("password")
+		log.Println("Parsed form data:", ingameID, password)
+
+		pid, err := checkCredentials(db, ingameID, password)
 		if err != nil {
 			http.Error(w, "아이디 또는 비밀번호가 올바르지 않습니다", http.StatusUnauthorized)
 			return
 		}
+
+		var realName string
+		err = db.QueryRow("SELECT real_name FROM Player WHERE pid = ?", pid).Scan(&realName)
+		if err != nil {
+			http.Error(w, "유저 정보를 가져오는 데 실패했습니다", http.StatusInternalServerError)
+			return
+		}
+
 		http.SetCookie(w, &http.Cookie{
 			Name:     "pid",
-			Value:    string(rune(pid)),
+			Value:    strconv.Itoa(pid),
 			Path:     "/",
 			Expires:  time.Now().Add(1 * time.Hour),
 			HttpOnly: true,
 		})
-		w.Write([]byte("로그인 성공"))
+
+		http.SetCookie(w, &http.Cookie{
+			Name:     "real_name",
+			Value:    url.QueryEscape(realName), // URL encode for safety
+			Path:     "/",
+			Expires:  time.Now().Add(1 * time.Hour),
+			HttpOnly: false,
+		})
+
+		http.Redirect(w, r, "/guide.html", http.StatusSeeOther)
 	}
 }
 
