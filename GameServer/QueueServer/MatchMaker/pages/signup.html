@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      #navbar-container {
+        margin-bottom: 40px;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 100px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .submit-button {
+        background-color: #ff7f27;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .info {
+        font-size: 12px;
+        color: #777;
+        margin-top: 4px;
+      }
+
+      .error {
+        color: red;
+        font-size: 13px;
+        margin-top: 6px;
+        display: none;
+      }
+
+      .radio-group {
+        display: flex;
+        gap: 20px;
+      }
+      .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: normal;
+      }
+
+      .input[type="checkbox"] {
+        vertical-align: middle;
+        margin-right: 6px;
+      }
+      .checkbox-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+      <h1>회원 가입</h1>
+      <form id="signup-form">
+        <h2 style="padding-bottom: 10px">계정 정보 <br /></h2>
+        <hr style="margin-bottom: 5px" />
+
+        <!-- 계정 종류 -->
+        <div class="form-group">
+          <label>계정 종류</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="account_type" value="default" checked />
+              재학생
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="account_type" value="club" />
+              Nirvana 부원
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="account_type" value="collaborator" />
+              외부인
+            </label>
+            
+          </div>          
+        </div>
+
+        <!-- ID 입력 -->
+        <div class="form-group">
+          <label for="id">아이디</label>
+          <input type="text" id="id" name="id" required pattern="[A-Za-z0-9]+" />
+          <div class="info">영문 대소문자, 숫자만 입력 가능합니다.</div>
+        </div>
+
+        <!-- Password 입력 -->
+        <div class="form-group">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="password" required />
+          <div class="info">영문 대소문자, 숫자, 특수문자 조합이 가능합니다.</div>
+        </div>
+
+        <!-- Password 확인 -->
+        <div class="form-group">
+          <label for="confirm-password">비밀번호 확인</label>
+          <input type="password" id="confirm-password" required />
+          <div id="password-error" class="error">비밀번호가 일치하지 않습니다.</div>
+        </div>
+
+        <h2 style="padding-bottom: 10px; margin-top: 40px">응모자 정보</h2>
+        <hr style="margin-bottom: 5px" />
+
+        <!-- 학번 입력 -->
+        <div class="form-group">
+          <label for="student_id">학번</label>
+          <input type="text" id="student_id" name="student_id" required pattern="\d{2}" />
+          <div class="info">예: 20학번은 '20'이라고 입력하세요.</div>
+        </div>
+
+        <!-- 연락처 입력 -->
+        <div class="form-group">
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" name="phone" required />
+          <div class="info">상품 당첨 시 연락드릴 연락처를 입력해주세요.</div>
+        </div>
+
+        <!-- 이름 입력 -->
+        <div class="form-group">
+          <label for="real-name">이름 (실명)</label>
+          <input type="text" id="real-name" name="real-name" required />
+        </div>
+
+        <!-- 오버워치 티어 -->
+        <div class="form-group">
+          <label for="ow-tier">오버워치 티어</label>
+          <select id="ow-tier" name="ow-tier" required>
+            <option value="">-- 티어 선택 --</option>
+            <option value="unranked">언랭</option>
+            <option value="bronze">브론즈</option>
+            <option value="silver">실버</option>
+            <option value="gold">골드</option>
+            <option value="platinum">플래티넘</option>
+            <option value="diamond">다이아몬드</option>
+            <option value="master">마스터</option>
+            <option value="grandmaster">그랜드마스터</option>
+            <option value="champion">챔피언 이상</option>
+          </select>
+        </div>
+
+        <!-- 발로란트 티어 -->
+        <div class="form-group">
+          <label for="val-tier">발로란트 티어</label>
+          <select id="val-tier" name="val-tier" required>
+            <option value="">-- 티어 선택 --</option>
+            <option value="unranked">언랭</option>
+            <option value="iron">아이언</option>
+            <option value="bronze">브론즈</option>
+            <option value="silver">실버</option>
+            <option value="gold">골드</option>
+            <option value="platinum">플래티넘</option>
+            <option value="diamond">다이아몬드</option>
+            <option value="ascendant">초월자</option>
+            <option value="immortal">불멸</option>
+            <option value="radiant">레디언트</option>
+          </select>
+        </div>
+
+        <!-- 기타 게임 정보 -->
+        <div class="form-group">
+          <label for="etc-info">기타 게임 정보</label>
+          <input type="text" id="etc-info" name="etc-info" />
+          <div class="info">ex) 서든어택 8년차</div>
+        </div>
+
+        <!-- 약관 동의 -->
+        <div class="form-group">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="agree" required />
+            <label for="agree">이용 약관에 동의합니다.</label>
+          </div>
+        </div>        
+
+        <!-- 회원가입 버튼 -->
+        <div class="form-group" style="text-align: center">
+          <button type="submit" class="submit-button">회원 가입</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirm-password');
+      const errorMessage = document.getElementById('password-error');
+
+      function validatePasswordMatch() {
+        if (confirmPassword.value === '') {
+          errorMessage.style.display = 'none';
+          return;
+        }
+        errorMessage.style.display = password.value !== confirmPassword.value ? 'block' : 'none';
+      }
+
+      password.addEventListener('input', validatePasswordMatch);
+      confirmPassword.addEventListener('input', validatePasswordMatch);
+
+      const owMap = [
+        'unranked', 'bronze', 'silver', 'gold', 'platinum', 'diamond',
+        'master', 'grandmaster', 'champion'
+      ];
+      const valMap = [
+        'unranked', 'iron', 'bronze', 'silver', 'gold', 'platinum',
+        'diamond', 'ascendant', 'immortal', 'radiant'
+      ];
+
+      document.getElementById('signup-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (password.value !== confirmPassword.value) return;
+
+        const data = {
+          account_type: document.querySelector('input[name="account_type"]:checked').value,
+          ingame_id: document.getElementById('id').value,
+          password: password.value,
+          student_id: parseInt(document.getElementById('student_id').value),
+          real_name: document.getElementById('real-name').value,
+          contact: document.getElementById('phone').value,
+          agree_terms: document.getElementById('agree').checked,
+          overwatch_tier: owMap.indexOf(document.getElementById('ow-tier').value),
+          valorant_tier: valMap.indexOf(document.getElementById('val-tier').value),
+          etc_tier: document.getElementById('etc-info').value,
+        };
+
+        try {
+          const res = await fetch('/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+
+          if (!res.ok) throw new Error('회원가입 실패');
+          alert('회원가입이 완료되었습니다!');
+          location.reload();
+        } catch (err) {
+          alert('회원가입 중 오류가 발생했습니다.');
+        }
+      });
+    </script>
+  </body>
+</html>
