@@ -3,7 +3,6 @@ package handlers
 import (
 	"database/sql"
 	"encoding/json"
-	"log"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -40,7 +39,7 @@ func LoginWeb(db *sql.DB) http.HandlerFunc {
 
 		ingameID := r.FormValue("ingame_id")
 		password := r.FormValue("password")
-		log.Println("Parsed form data:", ingameID, password)
+		//log.Println("Parsed form data:", ingameID, password)
 
 		pid, err := checkCredentials(db, ingameID, password)
 		if err != nil {

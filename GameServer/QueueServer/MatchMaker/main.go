@@ -64,11 +64,22 @@ func main() {
 	go handlers.StartQueueManager(matchCount)
 
 	r := mux.NewRouter()
+
+	// A: Register handlers
 	r.HandleFunc("/signup", handlers.SignUp(db)).Methods("POST")
 	r.HandleFunc("/session/login", handlers.LoginWeb(db)).Methods("POST")
-	//r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
-	//r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
-	r.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("pages/"))))
+	// r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
+	// r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
+
+	// Serve static files under /pages/*
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("pages/")))
+
+	// Default route: serve guide.html when accessing "/"
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "pages/guide.html")
+	})
+
+	// B: Middleware and server start
 	r.Use(loggingMiddleware)
 	log.Println("Server started on :8080")
 	log.Fatal(http.ListenAndServe(":8080", r))

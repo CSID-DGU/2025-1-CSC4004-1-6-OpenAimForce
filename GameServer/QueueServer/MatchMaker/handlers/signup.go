@@ -28,7 +28,7 @@ var (
 	allowedAccountTypes = map[string]bool{
 		"default": true, "admin": false, "club": true, "collaborator": true,
 	}
-	idRegex   = regexp.MustCompile(`^[a-zA-Z0-9]+$`)
+	idRegex   = regexp.MustCompile(`^[a-zA-Z0-9]{6,}$`)
 	pwRegex   = regexp.MustCompile(`^[a-zA-Z0-9!@#$%^&*()_\-+=\[\]{}:;'"\\|<>,.?/~` + "`" + `]{8,}$`)
 	maxLength = func(s string, n int) bool { return len(s) <= n }
 )
