@@ -9,9 +9,10 @@ import (
 	"os"
 	"strings"
 
+	"matchmaker/handlers"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
-	"matchmaker/handlers"
 )
 
 type DBConfig struct {
@@ -59,7 +60,7 @@ func main() {
 	}
 	handlers.SetDB(db)
 
-	//secret := loadJWTSecret()
+	secret := loadJWTSecret()
 
 	go handlers.StartQueueManager(matchCount)
 
@@ -68,8 +69,8 @@ func main() {
 	// A: Register handlers
 	r.HandleFunc("/signup", handlers.SignUp(db)).Methods("POST")
 	r.HandleFunc("/session/login", handlers.LoginWeb(db)).Methods("POST")
-	// r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
-	// r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
+	r.HandleFunc("/api/login", handlers.LoginJWT(db, secret)).Methods("POST")
+	r.HandleFunc("/queue/start", handlers.QueueHandler(secret)).Methods("GET")
 
 	// Serve static files under /pages/*
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("pages/")))
