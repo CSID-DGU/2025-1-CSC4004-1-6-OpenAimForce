@@ -28,7 +28,7 @@ var (
 	allowedAccountTypes = map[string]bool{
 		"default": true, "admin": false, "club": true, "collaborator": true,
 	}
-	idRegex   = regexp.MustCompile(`^[a-zA-Z0-9]{6,}$`)
+	idRegex   = regexp.MustCompile(`^[a-zA-Z0-9]{5,}$`)
 	pwRegex   = regexp.MustCompile(`^[a-zA-Z0-9!@#$%^&*()_\-+=\[\]{}:;'"\\|<>,.?/~` + "`" + `]{8,}$`)
 	maxLength = func(s string, n int) bool { return len(s) <= n }
 )
@@ -83,14 +83,14 @@ func SignUp(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
-		// Overwatch Tier: 1~36
-		if req.OverwatchTier < 0 || req.OverwatchTier > 36 {
+		// Overwatch Tier: 0~8
+		if req.OverwatchTier < 0 || req.OverwatchTier > 8 {
 			http.Error(w, `{"error":"오버워치 티어의 형식이 올바르지 않습니다"}`, http.StatusBadRequest)
 			return
 		}
 
-		// Valorant Tier: 1~25
-		if req.ValorantTier < 0 || req.ValorantTier > 25 {
+		// Valorant Tier: 0~9
+		if req.ValorantTier < 0 || req.ValorantTier > 9 {
 			http.Error(w, `{"error":"발로란트 티어의 형식이 올바르지 않습니다"}`, http.StatusBadRequest)
 			return
 		}
@@ -101,16 +101,14 @@ func SignUp(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
-		unrank := req.OverwatchTier == 1 && req.ValorantTier == 1
-
 		hashed, _ := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 
 		_, err := db.Exec(`INSERT INTO Player (
 			account_type, ingame_id, student_id, password,
-			real_name, contact, unrank, overwatch_tier, valorant_tier, etc_tier
-		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+			real_name, contact, overwatch_tier, valorant_tier, etc_tier
+		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 			req.AccountType, req.IngameID, req.StudentID, string(hashed),
-			req.RealName, req.Contact, unrank, req.OverwatchTier, req.ValorantTier, req.EtcTier)
+			req.RealName, req.Contact, req.OverwatchTier, req.ValorantTier, req.EtcTier)
 
 		if err != nil {
 			if strings.Contains(err.Error(), "Duplicate entry") {

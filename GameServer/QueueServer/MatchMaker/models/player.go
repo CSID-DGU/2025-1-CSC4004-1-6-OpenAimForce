@@ -7,5 +7,4 @@ type Player struct {
 	Password    string
 	RealName    string
 	Contact     string
-	Unrank      bool
 }
