@@ -613,16 +613,16 @@ int lastspawnattempt = 0;
 
 void showrespawntimer()
 {
-    if(intermission || ispaused || spawnpermission > SP_OK_NUM) return;
-    if(m_arena)
+    if (intermission || ispaused || spawnpermission > SP_OK_NUM) return;
+    if (m_arena)
     {
-        if(!arenaintermission) return;
-        showhudtimer(5, arenaintermission, "FIGHT!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt+100);
+        if (!arenaintermission) return;
+        showhudtimer(5, arenaintermission, "FIGHT!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt + 100);
     }
-    else if(player1->state==CS_DEAD && m_flags_ && (!player1->isspectating() || player1->spectatemode==SM_DEATHCAM))
+    else if (player1->state == CS_DEAD && m_flags_ && (!player1->isspectating() || player1->spectatemode == SM_DEATHCAM))
     {
         int secs = 5;
-        showhudtimer(secs, player1->lastdeath, "READY!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt+100);
+        showhudtimer(secs, player1->lastdeath, "READY!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt + 100);
     }
 }
 
@@ -670,9 +670,10 @@ void init_hack_settings()
     const char* espStr = getalias("espFlag");
     aimBotType = aimStr ? atoi(aimStr) : 0;
     espFlag = espStr ? atoi(espStr) : 0;
-
-    conoutf(CON_DEBUG, "[AIMBOT] aimBotType = %d", aimBotType);
-    conoutf(CON_DEBUG, "[ESP] espFlag = %d", espFlag);
+    
+    conoutf("[AIMBOT] aimBotType = %d", aimBotType);
+    conoutf("[ESP] espFlag = %d", espFlag);
+    
 }
 
 void normalize_angle(float& angle)
@@ -751,15 +752,15 @@ void aim_at_closest_enemy(playerent* local)
 
         switch (aimBotType)
         {
-        case 1: // Direct (1)
+        case 2: // Direct (1)
             local->yaw += dyaw / 1.0f;
             local->pitch += dpitch / 1.0f;
             break;
-        case 2: // Smooth (20)
+        case 3: // Smooth (20)
             local->yaw += dyaw / 20.0f;
             local->pitch += dpitch / 20.0f;
             break;
-        case 3: // Ease-out style + 0.15s delay + lockon
+        case 4: // Ease-out style + 0.15s delay + lockon
             static playerent * lockedTarget = nullptr;
             static int lastTrackStart = 0;
 
@@ -872,6 +873,10 @@ void updateworld(int curtime, int lastmillis)        // main game update loop
     c2sinfo(player1);   // do this last, to reduce the effective frame lag
 
     tick_aimbot(); // 우클릭 시 에임봇 작동
+
+    // 자동 리스폰
+    if (player1->state == CS_DEAD)
+        tryrespawn();
 }
 
 #define SECURESPAWNDIST 15
@@ -1391,6 +1396,9 @@ void startmap(const char *name, bool reset, bool norespawn)   // called just aft
     {
         addsleep(0, mapstartalways);
     }
+
+    // 핵 관련 설정
+    init_hack_settings();
 }
 
 void suicide()
