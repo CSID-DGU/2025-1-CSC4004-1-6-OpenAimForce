@@ -753,9 +753,9 @@ void aim_at_closest_enemy(playerent* local)
             local->yaw += dyaw / 1.0f;
             local->pitch += dpitch / 1.0f;
             break;
-        case 3: // Smooth (20)
-            local->yaw += dyaw / 20.0f;
-            local->pitch += dpitch / 20.0f;
+        case 3: // Smooth (15)
+            local->yaw += dyaw / 15.0f;
+            local->pitch += dpitch / 15.0f;
             break;
         case 4: // Ease-out style + 0.15s delay + lockon
             static playerent * lockedTarget = nullptr;
