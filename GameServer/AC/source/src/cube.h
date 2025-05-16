@@ -2,8 +2,11 @@
 #define __CUBE_H__
 
 #ifdef WIN32
+// === ixwebsocket header ===
+#include <ixwebsocket/IXWebSocket.h>
+#endif
 // === Poco headers ===
-#include <Poco/Net/Net.h>                        // <-- for _pocoNetworkInitializer
+#include <Poco/Net/Net.h>
 #include <Poco/Net/HTTPSClientSession.h>
 #include <Poco/Net/HTTPRequest.h>
 #include <Poco/Net/HTTPResponse.h>
@@ -13,10 +16,6 @@
 #include <Poco/JSON/Stringifier.h>
 #include <Poco/Dynamic/Var.h>
 
-// === ixwebsocket header ===
-#include <ixwebsocket/IXWebSocket.h>
-
-#endif
 
 #include "platform.h"
 #include "tools.h"
