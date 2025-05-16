@@ -1743,7 +1743,7 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
         for (int i = 0; i < 50 && ws.getReadyState() != ix::ReadyState::Open && !queue_cancelled; ++i)
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-        if (ws.getReadyState() != ix::R eadyState::Open) {
+        if (ws.getReadyState() != ix::ReadyState::Open) {
             ++attempts;
             ws.stop();
             continue;
