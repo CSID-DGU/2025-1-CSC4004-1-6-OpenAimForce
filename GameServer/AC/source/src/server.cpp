@@ -1956,7 +1956,7 @@ void serverdamage(client* target, client* actor, int damage, int gun, bool gib, 
         {
             if (!isteam(target->team, actor->team))
             {
-                actor->state.frags += gib && gun != GUN_GRENADE && gun != GUN_SHOTGUN ? 2 : 1;
+                actor->state.frags += gib && gun != GUN_GRENADE && gun != GUN_SHOTGUN ? 1 : 1;
                 actor->incrementvitacounter(VS_FRAGS, 1);
             }
             else
