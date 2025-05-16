@@ -1782,6 +1782,7 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
         ws.setOnMessageCallback([&](const ix::WebSocketMessagePtr& msg) {
             if (msg->type == ix::WebSocketMessageType::Message) {
                 std::string str = msg->str;
+                conoutf("RECV: %s",str);
                 if (str.rfind("CON/", 0) == 0) {
                     std::vector<std::string> tokens;
                     std::istringstream iss(str.substr(4));
