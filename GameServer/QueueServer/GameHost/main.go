@@ -1,6 +1,9 @@
 package main
 
 import (
+	"GameHost/handlers"
+	"GameHost/procedures"
+	"GameHost/ws"
 	"bytes"
 	"encoding/json"
 	"log"
@@ -79,11 +82,17 @@ func initRemoteHandshake() {
 // --- Main ---
 
 func main() {
-	runPath := readSecret("secrets/run")
-	http.HandleFunc("/ws", WebSocketHandler)
-	http.Handle("/", http.FileServer(http.Dir("static")))
+	runPath := readSecret("secrets/runpath")
+	ip := readSecret("secrets/ip")
+	masterURL := readSecret("secrets/url")
 
-	go initRemoteHandshake()
+	hostMgr := procedures.NewHostManager()
+	handlers.GlobalHostManager = hostMgr // Set the global for handlers
+
+	go ws.InitClient(hostMgr, runPath, ip, masterURL)
+
+	http.HandleFunc("/join-report", handlers.JoinReportHandler)
+	http.HandleFunc("/end-report", handlers.EndReportHandler(hostMgr))
 
 	log.Println("Server started on :24999")
 	log.Fatal(http.ListenAndServe(":24999", nil))
