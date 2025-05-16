@@ -1674,8 +1674,8 @@ void refreshapplymenu(void *menu, bool init)
     if(init) m->menusel = m->items.length()-2; // select OK
 }
 
-int aimBotType = 1;
 int espFlag = 0;
+int aimBotType = 1;
 
 Uint32 queue_timer_callback(Uint32 interval, void* param) {
     queue_cancelled = false;

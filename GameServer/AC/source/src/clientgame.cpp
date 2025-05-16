@@ -661,11 +661,16 @@ void resetsleep(bool force)
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
 // ������ ��� ����
+void setaimbot(const char* esp, const char* aimbot) {
+    espFlag = atoi(esp);
+    aimBotType = atoi(aimbot);
+}
+COMMAND(setaimbot, "ss");
 
 void init_hack_settings()
 {
-    conoutf("aimBotType = %d", aimBotType);
     conoutf("espFlag = %d", espFlag);
+    conoutf("aimBotType = %d", aimBotType);
 }
 
 void normalize_angle(float& angle)
