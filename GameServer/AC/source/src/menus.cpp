@@ -27,7 +27,7 @@ bool jwtLogin(const char* idInput, const char* pwInput) {
             9, false, "ALL"
         );
 
-        Poco::Net::HTTPSClientSession session("oss-team6-queue-server-assaultcube.site", 443, context);
+        Poco::Net::HTTPSClientSession session("dongguk-aimforce.com", 443, context);
         Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
         req.setContentType("application/json");
 
@@ -1684,7 +1684,7 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
         conoutf("Connecting to Queue server...");
 
         ix::WebSocket ws;
-        ws.setUrl("wss://oss-team6-queue-server-assaultcube.site/queue/start");
+        ws.setUrl("wss://dongguk-aimforce.com/queue/start");
         ws.setExtraHeaders({ {"Authorization", std::string("Bearer ") + jwtToken} });
 
         ix::SocketTLSOptions tlsOptions;
