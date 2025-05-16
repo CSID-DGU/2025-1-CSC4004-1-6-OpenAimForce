@@ -661,8 +661,6 @@ void resetsleep(bool force)
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
 // 에임핵 기능 구현
-
-
 void init_hack_settings()
 {
     const char* aimStr = getalias("aimBotType");
