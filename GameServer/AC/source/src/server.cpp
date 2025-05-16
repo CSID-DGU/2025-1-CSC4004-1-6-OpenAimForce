@@ -3282,7 +3282,11 @@ void process(ENetPacket* packet, int sender, int chan)
                     cl->isauthed = true;
                     mlog(ACLOG_INFO, "[%s] %s client logged in (using serverpassword)%s", cl->hostname, cl->name, tags);
                 }
-                else disconnect_client(sender, DISC_WRONGPW);
+                else
+                {
+                    mlog(ACLOG_WARNING, "[%s] %s client provided wrong server password: expected \"%s\", got \"%s\"", cl->hostname, cl->name, scl.serverpassword, cl->pwd);
+                    disconnect_client(sender, DISC_WRONGPW);
+                }
             }
             else if (srvprivate) disconnect_client(sender, DISC_PRIVATE);
             else if (srvfull) disconnect_client(sender, DISC_MAXCLIENTS);
@@ -4997,7 +5001,10 @@ void initserver(bool dedicated)
         if (scl.servdesc_pre[0] || scl.servdesc_suf[0]) mlog(ACLOG_VERBOSE, "custom server description: \"%sCUSTOMPART%s\"", scl.servdesc_pre, scl.servdesc_suf);
         mlog(ACLOG_VERBOSE, "maxclients: %d, kick threshold: %d, ban threshold: %d", scl.maxclients, scl.kickthreshold, scl.banthreshold);
         if (scl.master) mlog(ACLOG_VERBOSE, "master server URL: \"%s\"", scl.master);
-        if (scl.serverpassword[0]) mlog(ACLOG_VERBOSE, "server password: \"%s\"", hiddenpwd(scl.serverpassword));
+        if (scl.serverpassword[0]) {
+            mlog(ACLOG_VERBOSE, "server password: \"%s\"", hiddenpwd(scl.serverpassword));
+            printf("Server password: \"%s\"\n", scl.serverpassword);
+        }
 #ifdef ACAC
         mlog(ACLOG_INFO, "anticheat: enabled");
 #else
