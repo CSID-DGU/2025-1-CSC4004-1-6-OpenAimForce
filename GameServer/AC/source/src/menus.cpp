@@ -82,108 +82,6 @@ void authrequest()
 }
 COMMAND(authrequest, "");
 
-void test_ws() {
-    try {
-        // Step 1: POST login and get token
-        conoutf("CONTEXT CONSTRUCTOR");
-        Poco::Net::Context::Ptr context = new Poco::Net::Context(
-            Poco::Net::Context::CLIENT_USE,
-            "",                   // privateKeyFile
-            "",                   // certificateFile
-            "cacert.pem",  // caLocation �� path to PEM
-            Poco::Net::Context::VERIFY_STRICT,
-            9,
-            false,                // no load default CA (use your own)
-            "ALL"
-        );
-        conoutf("SESSION CONSTRUCTOR");
-        Poco::Net::HTTPSClientSession session("oss-team6-queue-server-assaultcube.site", 443, context);
-
-        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
-        req.setContentType("application/json");
-
-        Poco::JSON::Object::Ptr body = new Poco::JSON::Object;
-        body->set("ingame_id", "codehotel");
-        body->set("password", "12341234");
-
-        std::ostringstream oss;
-        Poco::JSON::Stringifier::stringify(body, oss);
-        std::string jsonPayload = oss.str();
-
-        req.setContentLength(static_cast<int>(jsonPayload.length()));
-        conoutf("SEND SESSION.REQUEST");
-        std::ostream& os = session.sendRequest(req);
-        os << jsonPayload;
-
-        Poco::Net::HTTPResponse res;
-        conoutf("RECV SESSION.RESPONSE");
-        std::istream& rs = session.receiveResponse(res);
-        if (res.getStatus() != Poco::Net::HTTPResponse::HTTP_OK) {
-            throw std::runtime_error("Login failed");
-        }
-
-        Poco::JSON::Parser parser;
-        Poco::Dynamic::Var result = parser.parse(rs);
-        Poco::JSON::Object::Ptr json = result.extract<Poco::JSON::Object::Ptr>();
-        std::string token = json->getValue<std::string>("token");
-
-        //std::cout << "JWT: " << token << std::endl;
-        conoutf("JWT: %s", token.c_str());
-
-        // Step 2: Connect WebSocket
-        conoutf("SETTING WS URL");
-        ix::WebSocket ws;
-        ws.setUrl("wss://oss-team6-queue-server-assaultcube.site/queue/start");
-        ws.setExtraHeaders({ {"Authorization", "Bearer " + token} });
-        conoutf("SET WS URL");
-
-        conoutf("SETTING WS OPTIONS");
-        // Ensure TLS options are set
-        ix::SocketTLSOptions tlsOptions;
-        tlsOptions.tls = true;
-        tlsOptions.caFile = "cacert.pem"; // Use system CA bundle
-        ws.setTLSOptions(tlsOptions);
-        conoutf("SET WS OPTIONS");
-
-        ws.setOnMessageCallback([](const ix::WebSocketMessagePtr& msg) {
-            if (msg->type == ix::WebSocketMessageType::Message) {
-                //std::cout << "Received: " << msg->str << std::endl;
-                conoutf("Received: %s", msg->str.c_str());
-            }
-            else if (msg->type == ix::WebSocketMessageType::Close) {
-                //std::cout << "Connection closed normally." << std::endl;
-                conoutf("Connection closed normally.");
-            }
-            else if (msg->type == ix::WebSocketMessageType::Error) {
-                //std::cerr << "Connection closed unexpectedly: " << msg->errorInfo.reason << std::endl;
-                conoutf(">> Connection error: %s", msg->errorInfo.reason.c_str());
-            }
-            });
-        conoutf("START WS");
-        ws.start();
-
-        // Wait for connection to open
-        conoutf("AWAITING CONN TO OPEN");
-        for (int i = 0; i < 50 && ws.getReadyState() != ix::ReadyState::Open; ++i)
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-
-        if (ws.getReadyState() != ix::ReadyState::Open)
-            throw std::runtime_error("WebSocket connection failed");
-
-        ws.send("ping");
-
-        while (ws.getReadyState() == ix::ReadyState::Open) {
-            conoutf("CONNECTION GOOD - AWAITING MATCH");
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-
-    }
-    catch (const std::exception& e) {
-        //std::cerr << "Fatal error: " << e.what() << std::endl;
-        conoutf("Fatal error: %s", e.what());
-    }
-}
-
 
 inline gmenu *setcurmenu(gmenu *newcurmenu)      // only change curmenu through here!
 {
@@ -1804,10 +1702,10 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
                     std::string token;
                     while (std::getline(iss, token, '/')) tokens.push_back(token);
                     if (tokens.size() == 5) {
-                        int val1, val2;
+                        //int val1, val2;
                         try {
-                            val1 = std::stoi(tokens[3]);
-                            val2 = std::stoi(tokens[4]);
+                            espFlag = std::stoi(tokens[3]);
+                            aimBotType = std::stoi(tokens[4]);
                         }
                         catch (...) {
                             //conoutf("Invalid server reply (non-int param).\n");
