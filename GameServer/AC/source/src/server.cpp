@@ -3382,7 +3382,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { updateclientteam(i, 2, FTR_SILENTFORCE); break; }
             }
         }
-        https_post_ignore(&scl.serverpassword[0], "JOIN");
+        http_post_ignore(&scl.serverpassword[0], "JOIN");
 
     }
 
