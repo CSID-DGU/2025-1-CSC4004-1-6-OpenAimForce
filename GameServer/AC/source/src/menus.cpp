@@ -27,7 +27,7 @@ bool jwtLogin(const char* idInput, const char* pwInput) {
             9, false, "ALL"
         );
 
-        Poco::Net::HTTPSClientSession session("oss-team6-matching-server-assaultcube.site", 443, context);
+        Poco::Net::HTTPSClientSession session("oss-team6-queue-server-assaultcube.site", 443, context);
         Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
         req.setContentType("application/json");
 
@@ -82,7 +82,7 @@ void test_ws() {
             "ALL"
         );
         conoutf("SESSION CONSTRUCTOR");
-        Poco::Net::HTTPSClientSession session("oss-team6-matching-server-assaultcube.site", 443, context);
+        Poco::Net::HTTPSClientSession session("oss-team6-queue-server-assaultcube.site", 443, context);
 
         Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
         req.setContentType("application/json");
@@ -118,7 +118,7 @@ void test_ws() {
         // Step 2: Connect WebSocket
         conoutf("SETTING WS URL");
         ix::WebSocket ws;
-        ws.setUrl("wss://oss-team6-matching-server-assaultcube.site/queue/start");
+        ws.setUrl("wss://oss-team6-queue-server-assaultcube.site/queue/start");
         ws.setExtraHeaders({ {"Authorization", "Bearer " + token} });
         conoutf("SET WS URL");
 
@@ -1768,7 +1768,7 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
         conoutf("Connecting to Queue server...");
 
         ix::WebSocket ws;
-        ws.setUrl("wss://oss-team6-matching-server-assaultcube.site/queue/start");
+        ws.setUrl("wss://oss-team6-queue-server-assaultcube.site/queue/start");
         ws.setExtraHeaders({ {"Authorization", std::string("Bearer ") + jwtToken} });
 
         ix::SocketTLSOptions tlsOptions;
