@@ -1961,7 +1961,7 @@ void serverdamage(client* target, client* actor, int damage, int gun, bool gib, 
             }
             else
             {
-                actor->state.frags--;
+                //actor->state.frags--;
                 actor->state.teamkills++;
                 actor->incrementvitacounter(VS_TKS, 1);
                 tk = true;
@@ -1969,7 +1969,7 @@ void serverdamage(client* target, client* actor, int damage, int gun, bool gib, 
         }
         else
         { // suicide
-            actor->state.frags--;
+            //actor->state.frags--;
             actor->state.suicides++;
             actor->incrementvitacounter(VS_SUICIDES, 1);
             suic = true;
@@ -2835,30 +2835,41 @@ void senddisconnectedscores(int cn)
 void disconnect_client(int n, int reason)
 {
     ASSERT(ismainthread());
-    if (!clients.inrange(n) || clients[n]->type != ST_TCPIP) return;
-    sdropflag(n);
-    client& c = *clients[n];
-    c.state.lastdisc = servmillis;
-    const char* scoresaved = "";
-    if (c.haswelcome)
-    {
-        savedscore* sc = findscore(c, true);
-        if (sc)
-        {
-            sc->save(c.state, c.team);
-            scoresaved = ", score saved";
+
+    // ---- BEGIN PACKET GENERATION AND SEND (score report before any logic) ----
+    char packet[4096];
+    int sum1 = 0, sum2 = 0;
+    loopv(clients) if (clients[i]->type != ST_EMPTY) {
+        for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j) {
+            if (scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) sum1 += clients[i]->state.frags;
+            if (scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) sum2 += clients[i]->state.frags;
         }
     }
-    int sp = (servmillis - c.connectmillis) / 1000;
-    if (reason >= 0) mlog(ACLOG_INFO, "[%s] disconnecting client %s (%s) cn %d, %d seconds played%s", c.hostname, c.name, disc_reason(reason), n, sp, scoresaved);
-    else mlog(ACLOG_INFO, "[%s] disconnected client %s cn %d, %d seconds played%s", c.hostname, c.name, n, sp, scoresaved);
-    totalclients--;
-    c.peer->data = (void*)-1;
-    if (reason >= 0) enet_peer_disconnect(c.peer, reason);
-    clients[n]->zap();
-    sendf(-1, 1, "rii", SV_CDIS, n);
-    if (curvote) curvote->evaluate();
-    if (*scoresaved && sg->mastermode == MM_MATCH) senddisconnectedscores(-1);
+    int winningteam = 0;
+    if (sum1 > sum2) winningteam = 1;
+    else if (sum2 > sum1) winningteam = 2;
+
+    int offset = 0;
+    offset += snprintf(packet + offset, sizeof(packet) - offset, "%d", winningteam);
+    loopv(clients) if (clients[i]->type != ST_EMPTY) {
+        int team = -1;
+        for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j) {
+            if (scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) { team = 1; break; }
+            if (scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { team = 2; break; }
+        }
+        int ragequit = (i == n) ? 1 : 0;
+        if (team != -1) {
+            offset += snprintf(packet + offset, sizeof(packet) - offset,
+                "/%s %d %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths, ragequit);
+        }
+    }
+    http_post_ignore("/end-report", &scl.serverpassword[0], packet);
+    // ---- END PACKET GENERATION AND SEND ----
+    printf("DND1\n");
+
+    // --- Force immediate shutdown after reporting ---
+    printf("Server shutdown due to player ragequit\n");
+    exit(0);
 }
 
 void sendiplist(int receiver, int cn)
@@ -3373,9 +3384,20 @@ void process(ENetPacket* packet, int sender, int chan)
         }
         if(!all_matched) return;
 
-        // Now run
+        // Select map and start game
+        const char* maps[] = {
+            "ac_complex",
+            "ac_depot",
+            "ac_desert",
+            "ac_mines",
+            "ac_desert2",
+            "ac_snow"
+        };
+        int n_maps = sizeof(maps) / sizeof(maps[0]);
+        int pick = rand() % n_maps;
         printf("All clients are in teams. run startgame\n");
-        startgame(const_cast<char*>("ac_desert"), 0);
+        startgame(const_cast<char*>(maps[pick]), 0);
+
         loopv(clients) if(clients[i]->type != ST_EMPTY) {
             for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
                 if(scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) { updateclientteam(i, 1, FTR_SILENTFORCE); break; }
@@ -4662,32 +4684,41 @@ void serverslice(uint timeout)   // main server update, called from cube main lo
         sg->interm = sg->nextsendscore = 0;
 
         // ---- BEGIN PACKET GENERATION AND SEND ----
+        int sum1 = 0, sum2 = 0;
+        loopv(clients) if (clients[i]->type != ST_EMPTY) {
+            for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j) {
+                if (scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) sum1 += clients[i]->state.frags;
+                if (scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) sum2 += clients[i]->state.frags;
+            }
+        }
+        int winningteam = 0;
+        if (sum1 > sum2) winningteam = 1;
+        else if (sum2 > sum1) winningteam = 2;
+
         char packet[4096];
-        int winningteam = 1; // 0 = draw, 1 = team1, 2 = team2
         int offset = 0;
         offset += snprintf(packet + offset, sizeof(packet) - offset, "%d", winningteam);
 
-        // For each client, add "/name frags deaths"
+        // For each client, add "/name frags deaths ragequit"
         loopv(clients) if (clients[i]->type != ST_EMPTY) {
             int team = -1;
-            for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
-                if(scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) { team = 1; break; }
-                if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { team = 2; break; }
+            for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j) {
+                if (scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) { team = 1; break; }
+                if (scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { team = 2; break; }
             }
-            // Only include clients in a valid team
-            if(team != -1) {
+            int ragequit = 0;
+            if (team != -1) {
                 offset += snprintf(packet + offset, sizeof(packet) - offset,
-                    "/%s %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths);
+                    "/%s %d %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths, ragequit);
             }
         }
 
         http_post_ignore("/end-report", &scl.serverpassword[0], packet);
         // ---- END PACKET GENERATION AND SEND ----
 
-        printf("Game shutting down..");
+        printf("Game shutting down due to game over..\n");
         exit(0);
     }
-
 
     resetserverifempty();
     polldeferredprocessing();
