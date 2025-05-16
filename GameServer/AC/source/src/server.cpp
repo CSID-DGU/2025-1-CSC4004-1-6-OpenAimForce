@@ -16,23 +16,12 @@ VARP(serverdebug, 0, 0, 1);
 
 #include "signal.h"
 
-void https_post_ignore(const char* pw, const char* content)
+
+void http_post_ignore(const char* pw, const char* content)
 {
     try
     {
-        static Poco::Net::Context::Ptr sslCtx;
-        if (!sslCtx) {
-            sslCtx = new Poco::Net::Context(
-                Poco::Net::Context::CLIENT_USE,
-                "", "", "",
-                Poco::Net::Context::VERIFY_NONE,
-                9,                 // default depth
-                false,             // load default ca
-                "ALL"              // cipher list
-            );
-        }
-
-        Poco::Net::HTTPSClientSession session("172.17.0.1", 24999, sslCtx);
+        Poco::Net::HTTPClientSession session("172.17.0.1", 24999);
         Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/join-report", Poco::Net::HTTPRequest::HTTP_1_1);
         req.setContentType("application/x-www-form-urlencoded");
 
