@@ -2910,7 +2910,7 @@ void disconnect_client(int n, int reason)
         int ragequit = (i == n) ? 1 : 0;
         if (team != -1) {
             offset += snprintf(packet + offset, sizeof(packet) - offset,
-                "/%s %d %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths, ragequit);
+                "/%s %d %d %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths, ragequit, clients[i]->team);
         }
     }
     http_post_ignore("/end-report", &scl.serverpassword[0], packet);
@@ -4820,7 +4820,7 @@ void serverslice(uint timeout)   // main server update, called from cube main lo
             int ragequit = 0;
             if (team != -1) {
                 offset += snprintf(packet + offset, sizeof(packet) - offset,
-                    "/%s %d %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths, ragequit);
+                    "/%s %d %d %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths, ragequit, clients[i]->team);
             }
         }
 
