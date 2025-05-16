@@ -1924,11 +1924,11 @@ void log_client_packet(const char* tag, client* cl)
 {
     auto now = std::chrono::steady_clock::now();
     auto us = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count();
-    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d, t=%lld µs\n",
+    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d, t=%lld µs, esp=%d, aimbot=%d\n",
         tag, cl->name,
         cl->state.o.x, cl->state.o.y, cl->state.o.z,
         cl->yaw, cl->pitch,
-        us);
+        us, espFlag, aimBotType);
 }
 
 void serverdamage(client* target, client* actor, int damage, int gun, bool gib, const vec& hitpush = vec(0, 0, 0))
