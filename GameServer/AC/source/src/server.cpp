@@ -2832,6 +2832,36 @@ void senddisconnectedscores(int cn)
     sendpacket(cn, 1, p.finalize());
 }
 
+#ifdef WIN32
+void disconnect_client(int n, int reason)
+{
+    ASSERT(ismainthread());
+    if (!clients.inrange(n) || clients[n]->type != ST_TCPIP) return;
+    sdropflag(n);
+    client& c = *clients[n];
+    c.state.lastdisc = servmillis;
+    const char* scoresaved = "";
+    if (c.haswelcome)
+    {
+        savedscore* sc = findscore(c, true);
+        if (sc)
+        {
+            sc->save(c.state, c.team);
+            scoresaved = ", score saved";
+        }
+    }
+    int sp = (servmillis - c.connectmillis) / 1000;
+    if (reason >= 0) mlog(ACLOG_INFO, "[%s] disconnecting client %s (%s) cn %d, %d seconds played%s", c.hostname, c.name, disc_reason(reason), n, sp, scoresaved);
+    else mlog(ACLOG_INFO, "[%s] disconnected client %s cn %d, %d seconds played%s", c.hostname, c.name, n, sp, scoresaved);
+    totalclients--;
+    c.peer->data = (void*)-1;
+    if (reason >= 0) enet_peer_disconnect(c.peer, reason);
+    clients[n]->zap();
+    sendf(-1, 1, "rii", SV_CDIS, n);
+    if (curvote) curvote->evaluate();
+    if (*scoresaved && sg->mastermode == MM_MATCH) senddisconnectedscores(-1);
+}
+#else
 void disconnect_client(int n, int reason)
 {
     ASSERT(ismainthread());
@@ -2903,6 +2933,7 @@ void disconnect_client(int n, int reason)
     printf("Server shutdown due to player ragequit\n");
     exit(1);
 }
+#endif
 
 void sendiplist(int receiver, int cn)
 {
@@ -3396,6 +3427,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 sendiplist(clients[i]->clientnum, cl->clientnum);
         }
 
+        #ifndef WIN32
         // Check all clients are present in argteam1 or argteam2, and that there are no extra/missing
         int total_team_count = 0;
         for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j) {
@@ -3437,7 +3469,7 @@ void process(ENetPacket* packet, int sender, int chan)
             }
         }
         http_post_ignore("/join-report", &scl.serverpassword[0], "JOIN");
-
+        #endif
     }
 
     if (!cl) { mlog(ACLOG_ERROR, "<NULL> client in process()"); return; }  // should never happen anyway
@@ -4709,6 +4741,20 @@ void serverslice(uint timeout)   // main server update, called from cube main lo
     if (sg->forceintermission || ((sg->smode != GMODE_DEMO && sg->smode != GMODE_COOPEDIT) && sg->gamemillis - diff > 0 && sg->gamemillis / 60000 != (sg->gamemillis - diff) / 60000))
         checkintermission();
     if (m_demo && !demoplayback) maprot.restart();
+    #ifdef WIN32
+    else if (sg->interm && ((scl.demo_interm) ? sg->gamemillis > (sg->interm << 1) : sg->gamemillis > sg->interm))
+    {
+        loggamestatus("game finished");
+        if (demorecord) enddemorecord();
+        sg->interm = sg->nextsendscore = 0;
+
+        //start next game
+        if (sg->nextmapname[0]) startgame(sg->nextmapname, sg->nextgamemode);
+        else maprot.next();
+        sg->nextmapname[0] = '\0';
+        map_queued = false;
+    }
+    #else
     else if (sg->interm && ((scl.demo_interm) ? sg->gamemillis > (sg->interm << 1) : sg->gamemillis > sg->interm))
     {
         loggamestatus("game finished");
@@ -4751,7 +4797,7 @@ void serverslice(uint timeout)   // main server update, called from cube main lo
         printf("Game shutting down due to game over..\n");
         exit(0);
     }
-
+    #endif
     resetserverifempty();
     polldeferredprocessing();
     checkdemotransmissions();
