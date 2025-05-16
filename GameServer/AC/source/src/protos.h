@@ -1258,7 +1258,11 @@ struct servercommandline
             }
             case 'y': if(ai < 0) banthreshold = ai; break;
             case 'x': adminpasswd = a; break;
-            case 'p': serverpassword = a; break;
+            case 'p':
+                serverpassword = a;
+                printf("Server password: %s\n", serverpassword);
+                break;
+
             case 'D':
             {
                 if(arg[2]=='I')
@@ -1319,21 +1323,22 @@ struct servercommandline
                 break;
             }
             case 't':
-            if (arg[2] == '1' || arg[2] == '2')
-            {
-                char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? argteam1 : argteam2;
-                int count = 0;
-                char *copy = newstring(a+1);
-                for (char *p = strtok(copy, ","); p && count < MAX_PLAYERS_PER_TEAM; p = strtok(NULL, ","))
+                if (arg[2] == '1' || arg[2] == '2')
                 {
-                    strncpy(team[count], p, NICKNAME_MAX_LEN - 1);
-                    team[count][NICKNAME_MAX_LEN - 1] = '\0';
-                    count++;
+                    char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? argteam1 : argteam2;
+                    int count = 0;
+                    char *copy = newstring(a+1);
+                    for (char *p = strtok(copy, ","); p && count < MAX_PLAYERS_PER_TEAM; p = strtok(NULL, ","))
+                    {
+                        strncpy(team[count], p, NICKNAME_MAX_LEN - 1);
+                        team[count][NICKNAME_MAX_LEN - 1] = '\0';
+                        printf("Added allowed player team%d: %s\n", arg[2] == '1' ? 1 : 2, team[count]);
+                        count++;
+                    }
+                    delete[] copy;
+                    break;
                 }
-                delete[] copy;
-                break;
-            }
-            else return false;
+                else return false;
             default: return false;
         }
         return true;
