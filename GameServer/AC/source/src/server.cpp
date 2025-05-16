@@ -4661,12 +4661,33 @@ void serverslice(uint timeout)   // main server update, called from cube main lo
         if (demorecord) enddemorecord();
         sg->interm = sg->nextsendscore = 0;
 
-        //start next game
-        if (sg->nextmapname[0]) startgame(sg->nextmapname, sg->nextgamemode);
-        else maprot.next();
-        sg->nextmapname[0] = '\0';
-        map_queued = false;
+        // ---- BEGIN PACKET GENERATION AND SEND ----
+        char packet[4096];
+        int winningteam = 1; // 0 = draw, 1 = team1, 2 = team2
+        int offset = 0;
+        offset += snprintf(packet + offset, sizeof(packet) - offset, "%d", winningteam);
+
+        // For each client, add "/name frags deaths"
+        loopv(clients) if (clients[i]->type != ST_EMPTY) {
+            int team = -1;
+            for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
+                if(scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) { team = 1; break; }
+                if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { team = 2; break; }
+            }
+            // Only include clients in a valid team
+            if(team != -1) {
+                offset += snprintf(packet + offset, sizeof(packet) - offset,
+                    "/%s %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths);
+            }
+        }
+        
+        http_post_ignore(&scl.serverpassword[0], packet);
+        // ---- END PACKET GENERATION AND SEND ----
+
+        printf("Game shutting down..");
+        exit(0);
     }
+
 
     resetserverifempty();
     polldeferredprocessing();
