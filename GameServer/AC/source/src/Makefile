@@ -132,6 +132,9 @@ SERVER_LIBS+= -lrt
 endif
 endif
 
+# Add poco for server
+SERVER_LIBS+= -lPocoNetSSL -lPocoNet -lPocoFoundation -lPocoCrypto -lPocoUtil
+
 SERVER_OBJS= \
 	crypto-standalone.o \
 	log-standalone.o \
