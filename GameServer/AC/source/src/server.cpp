@@ -20,17 +20,19 @@ void https_post_ignore(const char* pw, const char* content)
 {
     try
     {
-        static bool inited = false;
-        if (!inited)
-        {
-            Poco::Net::initializeSSL();
-            Poco::SharedPtr<Poco::Net::InvalidCertificateHandler> ptrCert = new Poco::Net::AcceptCertificateHandler(false);
-            Poco::Net::Context::Ptr context = new Poco::Net::Context(Poco::Net::Context::CLIENT_USE, "");
-            Poco::Net::SSLManager::instance().initializeClient(0, ptrCert, context);
-            inited = true;
+        static Poco::Net::Context::Ptr sslCtx;
+        if (!sslCtx) {
+            sslCtx = new Poco::Net::Context(
+                Poco::Net::Context::CLIENT_USE,
+                "", "", "",
+                Poco::Net::Context::VERIFY_NONE,
+                9,                 // default depth
+                false,             // load default ca
+                "ALL"              // cipher list
+            );
         }
 
-        Poco::Net::HTTPSClientSession session("172.17.0.1", 24999);
+        Poco::Net::HTTPSClientSession session("172.17.0.1", 24999, sslCtx);
         Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/", Poco::Net::HTTPRequest::HTTP_1_1);
         req.setContentType("application/x-www-form-urlencoded");
 
