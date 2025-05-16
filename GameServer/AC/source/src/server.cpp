@@ -2884,13 +2884,24 @@ void disconnect_client(int n, int reason)
     int sp = (servmillis - c.connectmillis) / 1000;
     if (reason >= 0) mlog(ACLOG_INFO, "[%s] disconnecting client %s (%s) cn %d, %d seconds played%s", c.hostname, c.name, disc_reason(reason), n, sp, scoresaved);
     else mlog(ACLOG_INFO, "[%s] disconnected client %s cn %d, %d seconds played%s", c.hostname, c.name, n, sp, scoresaved);
-    totalclients--;
-    c.peer->data = (void*)-1;
-    if (reason >= 0) enet_peer_disconnect(c.peer, reason);
-    clients[n]->zap();
+
+    // ---- KICK AND CLEANUP ALL CLIENTS ----
+    loopv(clients) if (clients[i]->type == ST_TCPIP) {
+        if (clients[i]->peer) {
+            clients[i]->peer->data = (void*)-1;
+            enet_peer_disconnect(clients[i]->peer, reason);
+        }
+        clients[i]->zap();
+    }
+    totalclients = 0;
+
     sendf(-1, 1, "rii", SV_CDIS, n);
     if (curvote) curvote->evaluate();
     if (*scoresaved && sg->mastermode == MM_MATCH) senddisconnectedscores(-1);
+
+    printf("Server shutdown due to player ragequit\n");
+    exit(0);
+
 
     // --- Force immediate shutdown after reporting ---
     printf("Server shutdown due to player ragequit\n");
