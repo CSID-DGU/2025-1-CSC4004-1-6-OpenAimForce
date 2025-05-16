@@ -16,11 +16,6 @@ VARP(serverdebug, 0, 0, 1);
 
 #include "signal.h"
 
-#ifndef WIN32
-int aimBotType = 1; // 1: ��, 2: ���̷�Ʈ(1), 3: Lerp(20), 4: Ease-out + 0.15�� ������ + ���� �ý���
-int espFlag = 0;    // 0: ��, 1: ��
-#endif
-
 void http_post_ignore(const char* api, const char* pw, const char* content)
 {
     try
@@ -1923,12 +1918,12 @@ std::chrono::steady_clock::time_point startTime;
 void log_client_packet(const char* tag, client* cl)
 {
     auto now = std::chrono::steady_clock::now();
-    auto us = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count();
-    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d, t=%lld µs, esp=%d, aimbot=%d\n",
+    auto us = std::chrono::duration_cast<std::chrono::microseconds>(now - startTime).count();
+    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d, t=%lld µs\n",
         tag, cl->name,
         cl->state.o.x, cl->state.o.y, cl->state.o.z,
         cl->yaw, cl->pitch,
-        us, espFlag, aimBotType);
+        us);
 }
 
 void serverdamage(client* target, client* actor, int damage, int gun, bool gib, const vec& hitpush = vec(0, 0, 0))
