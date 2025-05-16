@@ -17,12 +17,12 @@ VARP(serverdebug, 0, 0, 1);
 #include "signal.h"
 
 
-void http_post_ignore(const char* pw, const char* content)
+void http_post_ignore(const char* api, const char* pw, const char* content)
 {
     try
     {
         Poco::Net::HTTPClientSession session("172.17.0.1", 24999);
-        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/join-report", Poco::Net::HTTPRequest::HTTP_1_1);
+        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, api, Poco::Net::HTTPRequest::HTTP_1_1);
         req.setContentType("application/x-www-form-urlencoded");
 
         char body[2048];
@@ -3382,7 +3382,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { updateclientteam(i, 2, FTR_SILENTFORCE); break; }
             }
         }
-        http_post_ignore(&scl.serverpassword[0], "JOIN");
+        http_post_ignore("/join-report", &scl.serverpassword[0], "JOIN");
 
     }
 
@@ -4680,8 +4680,8 @@ void serverslice(uint timeout)   // main server update, called from cube main lo
                     "/%s %d %d", clients[i]->name, clients[i]->state.frags, clients[i]->state.deaths);
             }
         }
-        
-        http_post_ignore(&scl.serverpassword[0], packet);
+
+        http_post_ignore("/end-report", &scl.serverpassword[0], packet);
         // ---- END PACKET GENERATION AND SEND ----
 
         printf("Game shutting down..");
