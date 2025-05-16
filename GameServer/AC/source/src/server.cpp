@@ -1918,11 +1918,10 @@ void checkitemspawns(int diff)
 
 void log_client_packet(const char* tag, client* cl)
 {
-    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d, aimbot=%d, esp=%d\n",
+    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d",
         tag, cl->name,
         cl->state.o.x, cl->state.o.y, cl->state.o.z,
-        cl->yaw, cl->pitch,
-        aimBotType, espFlag);
+        cl->yaw, cl->pitch);
 }
 
 void serverdamage(client* target, client* actor, int damage, int gun, bool gib, const vec& hitpush = vec(0, 0, 0))
