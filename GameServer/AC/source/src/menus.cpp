@@ -67,6 +67,21 @@ bool jwtLogin(const char* idInput, const char* pwInput) {
     }
 }
 
+void authrequest()
+{
+    const char* id = getalias("__id");
+    const char* pw = getalias("__pw");
+
+    bool success = jwtLogin(id, pw);
+    if (success) {
+        execute("alias __login_result 1");
+    }
+    else {
+        execute("alias __login_result 0");
+    }
+}
+COMMAND(authrequest, "");
+
 void test_ws() {
     try {
         // Step 1: POST login and get token
