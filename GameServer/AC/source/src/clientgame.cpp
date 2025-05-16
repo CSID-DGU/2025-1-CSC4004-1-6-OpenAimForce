@@ -660,7 +660,12 @@ void resetsleep(bool force)
 
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
-// ¿¡ÀÓÇÙ ±â´É ±¸Çö
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#ifdef WIN32
+int aimBotType = 1; // 1: ï¿½ï¿½, 2: ï¿½ï¿½ï¿½Ì·ï¿½Æ®(1), 3: Lerp(20), 4: Ease-out + 0.15ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½
+int espFlag = 0;    // 0: ï¿½ï¿½, 1: ï¿½ï¿½
+#endif
+
 void init_hack_settings()
 {
     const char* aimStr = getalias("aimBotType");
@@ -714,16 +719,16 @@ void aim_at_closest_enemy(playerent* local)
         if (!p || p == local || p->state != CS_ALIVE) continue;
         if (m_teammode && isteam(p->team, local->team)) continue;
 
-        // °Å¸®, ¹æÇâ °è»ê
+        // ï¿½Å¸ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         vec dir = vec(p->o).sub(local->o);
         float dist = dir.magnitude();
 
-        // ½Ã¾ß°¢ °è»ê
+        // ï¿½Ã¾ß°ï¿½ ï¿½ï¿½ï¿½
         float yaw_to_target = get_yaw_to(local->o, p->o);
         float pitch_to_target = get_pitch_to(local->o, p->o);
         if (!is_within_yaw_fov(local->yaw, yaw_to_target, 90.0f)) continue;
 
-        // ½ÇÁ¦ ½Ã¾ß È®ÀÎ (Àå¾Ö¹° ¾ø´ÂÁö)
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¾ï¿½ È®ï¿½ï¿½ (ï¿½ï¿½Ö¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
         if (!can_see(local->o, p->o)) continue;
 
         if (dist < closestdist)
@@ -757,7 +762,7 @@ void aim_at_closest_enemy(playerent* local)
             static playerent * lockedTarget = nullptr;
             static int lastTrackStart = 0;
 
-            // ÇöÀç º¸ÀÌ´Â Àû Áß °¡Àå °¡±î¿î °Í Å½»ö
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Å½ï¿½ï¿½
             playerent* visibleClosest = nullptr;
             float closestdist = 1e6f;
 
@@ -776,7 +781,7 @@ void aim_at_closest_enemy(playerent* local)
                 }
             }
 
-            // ¶ô¿Â ÇØÁ¦ Á¶°Ç
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (!lockedTarget || lockedTarget->state != CS_ALIVE ||
                 (m_teammode && isteam(lockedTarget->team, local->team)) ||
                 !can_see(local->o, lockedTarget->o))
@@ -784,14 +789,14 @@ void aim_at_closest_enemy(playerent* local)
                 lockedTarget = nullptr;
             }
 
-            // Ã³À½ º¸ÀÌ´Â Àû¿¡°Ô¸¸ ¶ô¿Â
+            // Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (!lockedTarget && visibleClosest)
             {
                 lockedTarget = visibleClosest;
                 lastTrackStart = lastmillis;
             }
 
-            // ¶ô¿ÂµÈ Àû Á¶ÁØ
+            // ï¿½ï¿½ï¿½Âµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (lockedTarget)
             {
                 float yaw_to_target = get_yaw_to(local->o, lockedTarget->o);
@@ -814,7 +819,7 @@ void aim_at_closest_enemy(playerent* local)
             }
         }
 
-        // ¸¶¿ì½º Á¶ÁØ ÈÄ »óÅÂ À¯Áö
+        // ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         local->newyaw = local->yaw;
         local->newpitch = local->pitch;
     }
@@ -826,7 +831,7 @@ void tick_aimbot()
 
     int mx, my;
     Uint32 mouse = SDL_GetMouseState(&mx, &my);
-    if (!(mouse & SDL_BUTTON(SDL_BUTTON_RIGHT))) return; // ¿ìÅ¬¸¯ÀÏ ¶§¸¸ ÀÛµ¿
+    if (!(mouse & SDL_BUTTON(SDL_BUTTON_RIGHT))) return; // ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ûµï¿½
 
     aim_at_closest_enemy(player1);
 }
@@ -865,9 +870,9 @@ void updateworld(int curtime, int lastmillis)        // main game update loop
     movelocalplayer();
     c2sinfo(player1);   // do this last, to reduce the effective frame lag
 
-    tick_aimbot(); // ¿ìÅ¬¸¯ ½Ã ¿¡ÀÓº¿ ÀÛµ¿
+    tick_aimbot(); // ï¿½ï¿½Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Óºï¿½ ï¿½Ûµï¿½
 
-    // ÀÚµ¿ ¸®½ºÆù
+    // ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     if (player1->state == CS_DEAD)
         tryrespawn();
 }
@@ -1390,7 +1395,7 @@ void startmap(const char *name, bool reset, bool norespawn)   // called just aft
         addsleep(0, mapstartalways);
     }
 
-    // ÇÙ °ü·Ã ¼³Á¤
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     init_hack_settings();
 }
 

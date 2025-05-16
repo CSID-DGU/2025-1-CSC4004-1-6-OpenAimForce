@@ -16,6 +16,10 @@ VARP(serverdebug, 0, 0, 1);
 
 #include "signal.h"
 
+#ifndef WIN32
+int aimBotType = 1; // 1: ��, 2: ���̷�Ʈ(1), 3: Lerp(20), 4: Ease-out + 0.15�� ������ + ���� �ý���
+int espFlag = 0;    // 0: ��, 1: ��
+#endif
 
 void http_post_ignore(const char* api, const char* pw, const char* content)
 {
