@@ -661,17 +661,11 @@ void resetsleep(bool force)
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
 // ������ ��� ����
-#ifdef WIN32
-int aimBotType = 1; // 1: ��, 2: ���̷�Ʈ(1), 3: Lerp(20), 4: Ease-out + 0.15�� ������ + ���� �ý���
-int espFlag = 0;    // 0: ��, 1: ��
-#endif
 
 void init_hack_settings()
 {
-    const char* aimStr = getalias("aimBotType");
-    const char* espStr = getalias("espFlag");
-    aimBotType = aimStr ? atoi(aimStr) : -1;
-    espFlag = espStr ? atoi(espStr) : -1;
+    conoutf("aimBotType = %d", aimBotType);
+    conoutf("espFlag = %d", espFlag);
 }
 
 void normalize_angle(float& angle)
