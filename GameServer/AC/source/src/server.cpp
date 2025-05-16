@@ -3324,34 +3324,28 @@ void process(ENetPacket* packet, int sender, int chan)
                 sendiplist(clients[i]->clientnum, cl->clientnum);
         }
 
-        if(clients.length()==2){
-            printf("met length condtion. run startgame\n");
+        set<string> teamnames;
+        for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
+            if(scl.argteam1[j][0]) teamnames.insert(scl.argteam1[j]);
+            if(scl.argteam2[j][0]) teamnames.insert(scl.argteam2[j]);
+        }
+        set<string> clientnames;
+        loopv(clients) if(clients[i]->type != ST_EMPTY) {
+            clientnames.insert(clients[i]->name);
+        }
+        if(clientnames == teamnames && clients.length()==teamnames.size()){
+            printf("All clients are in teams. run startgame\n");
             startgame(const_cast<char*>("ac_desert"), 0);
-            //TODO: change team
-            loopv(clients) if (clients[i]->type != ST_EMPTY)
-            {
-                printf("Checking if client valid\n");
+            loopv(clients) if(clients[i]->type != ST_EMPTY) {
                 if (!valid_client(i)) return;
-                printf("Client is valid\n");
                 bool in_team1 = false, in_team2 = false;
-                for (int j = 0; j < MAX_PLAYERS_PER_TEAM; ++j)
-                {
-                    printf("Comparing client name : %s, argteam1 name : %s, argteam2 name : %s\n",clients[i]->name,scl.argteam1[j],scl.argteam2[j]);
-                    if (!strcmp(clients[i]->name, scl.argteam1[j])) { in_team1 = true; break; }
-                    if (!strcmp(clients[i]->name, scl.argteam2[j])) { in_team2 = true; break; }
+                for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
+                    if(scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) in_team1 = true;
+                    if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) in_team2 = true;
                 }
-            
-                if (in_team1){
-                    printf("updating team to team 1\n");
-                    updateclientteam(i, 1, FTR_SILENTFORCE);
-                }
-                else if (in_team2){
-                    printf("updating team to team 2\n");
-                    updateclientteam(i, 2, FTR_SILENTFORCE);
-                }
-                else{
-                    exit(1);
-                }
+                if(in_team1) updateclientteam(i, 1, FTR_SILENTFORCE);
+                else if(in_team2) updateclientteam(i, 2, FTR_SILENTFORCE);
+                else exit(1);
             }
         }
     }
