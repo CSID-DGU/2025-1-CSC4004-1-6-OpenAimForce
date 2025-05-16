@@ -41,6 +41,7 @@ CREATE TABLE GameParticipation (
     team ENUM('team1', 'team2') NOT NULL,
     kills INT NOT NULL,
     deaths INT NOT NULL,
+    quitTime DATETIME DEFAULT NULL,
     PRIMARY KEY (game_id, pid),
     FOREIGN KEY (game_id) REFERENCES Game(game_id) ON DELETE CASCADE,
     FOREIGN KEY (pid) REFERENCES Player(pid) ON DELETE CASCADE
