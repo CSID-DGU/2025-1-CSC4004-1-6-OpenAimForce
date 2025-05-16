@@ -3324,30 +3324,36 @@ void process(ENetPacket* packet, int sender, int chan)
                 sendiplist(clients[i]->clientnum, cl->clientnum);
         }
 
-        set<string> teamnames;
-        for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
-            if(scl.argteam1[j][0]) teamnames.insert(scl.argteam1[j]);
-            if(scl.argteam2[j][0]) teamnames.insert(scl.argteam2[j]);
+        // Check all clients are present in argteam1 or argteam2, and that there are no extra/missing
+        int total_team_count = 0;
+        for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j) {
+            if(scl.argteam1[j][0]) ++total_team_count;
+            if(scl.argteam2[j][0]) ++total_team_count;
         }
-        set<string> clientnames;
+        if(clients.length() != total_team_count) return; // Not matching
+
+        // For each client, ensure their name appears in exactly one team array
+        bool all_matched = true;
         loopv(clients) if(clients[i]->type != ST_EMPTY) {
-            clientnames.insert(clients[i]->name);
+            bool matched = false;
+            for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j) {
+                if(scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) matched = true;
+                if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) matched = true;
+            }
+            if(!matched) all_matched = false;
         }
-        if(clientnames == teamnames && clients.length()==teamnames.size()){
-            printf("All clients are in teams. run startgame\n");
-            startgame(const_cast<char*>("ac_desert"), 0);
-            loopv(clients) if(clients[i]->type != ST_EMPTY) {
-                if (!valid_client(i)) return;
-                bool in_team1 = false, in_team2 = false;
-                for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
-                    if(scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) in_team1 = true;
-                    if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) in_team2 = true;
-                }
-                if(in_team1) updateclientteam(i, 1, FTR_SILENTFORCE);
-                else if(in_team2) updateclientteam(i, 2, FTR_SILENTFORCE);
-                else exit(1);
+        if(!all_matched) return;
+
+        // Now run
+        printf("All clients are in teams. run startgame\n");
+        startgame(const_cast<char*>("ac_desert"), 0);
+        loopv(clients) if(clients[i]->type != ST_EMPTY) {
+            for(int j=0;j<MAX_PLAYERS_PER_TEAM;++j){
+                if(scl.argteam1[j][0] && !strcmp(clients[i]->name, scl.argteam1[j])) { updateclientteam(i, 1, FTR_SILENTFORCE); break; }
+                if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { updateclientteam(i, 2, FTR_SILENTFORCE); break; }
             }
         }
+
     }
 
     if (!cl) { mlog(ACLOG_ERROR, "<NULL> client in process()"); return; }  // should never happen anyway
