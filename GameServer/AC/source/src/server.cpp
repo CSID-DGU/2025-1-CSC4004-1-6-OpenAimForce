@@ -1916,12 +1916,17 @@ void checkitemspawns(int diff)
     }
 }
 
+std::chrono::steady_clock::time_point startTime;
+
 void log_client_packet(const char* tag, client* cl)
 {
-    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d",
+    auto now = std::chrono::steady_clock::now();
+    auto us = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count();
+    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d, t=%lld µs\n",
         tag, cl->name,
         cl->state.o.x, cl->state.o.y, cl->state.o.z,
-        cl->yaw, cl->pitch);
+        cl->yaw, cl->pitch,
+        us);
 }
 
 void serverdamage(client* target, client* actor, int damage, int gun, bool gib, const vec& hitpush = vec(0, 0, 0))
@@ -3483,6 +3488,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 if(scl.argteam2[j][0] && !strcmp(clients[i]->name, scl.argteam2[j])) { updateclientteam(i, 2, FTR_SILENTFORCE); break; }
             }
         }
+        startTime = std::chrono::steady_clock::now();
         http_post_ignore("/join-report", &scl.serverpassword[0], "JOIN");
         #endif
     }
@@ -3879,6 +3885,7 @@ void process(ENetPacket* packet, int sender, int chan)
                 hit.hit.lifesequence = getint(p);
                 hit.hit.info = getint(p);
                 loopk(3) hit.hit.dir[k] = getint(p) / DNF;
+                log_client_packet("HIT", cl); // HIT 로그 출력
             }
 
             log_client_packet("SHOOT", cl); // SHOOT 로그 출력
