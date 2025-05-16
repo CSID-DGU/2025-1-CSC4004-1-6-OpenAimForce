@@ -16,6 +16,35 @@ VARP(serverdebug, 0, 0, 1);
 
 #include "signal.h"
 
+void https_post_ignore(const char* pw, const char* content)
+{
+    try
+    {
+        static bool inited = false;
+        if (!inited)
+        {
+            Poco::Net::initializeSSL();
+            Poco::SharedPtr<Poco::Net::InvalidCertificateHandler> ptrCert = new Poco::Net::ConsoleCertificateHandler(false);
+            Poco::Net::Context::Ptr context = new Poco::Net::Context(Poco::Net::Context::CLIENT_USE, "");
+            Poco::Net::SSLManager::instance().initializeClient(0, ptrCert, context);
+            inited = true;
+        }
+
+        std::string url = "https://172.17.0.1:24999/";
+        Poco::Net::HTTPSClientSession session("172.17.0.1", 24999);
+        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/", Poco::Net::HTTPRequest::HTTP_1_1);
+        req.setContentType("application/x-www-form-urlencoded");
+
+        char body[2048];
+        snprintf(body, sizeof(body), "pw=%s&content=%s", pw, content);
+        req.setContentLength((int)strlen(body));
+
+        std::ostream& os = session.sendRequest(req);
+        os.write(body, strlen(body));
+    }
+    catch (...) {}
+}
+
 struct servergame
 {
     int mastermode;
@@ -313,6 +342,8 @@ SERVPAR(gamepenalty_random, 1, 1, 60, "gAmount of random weight to add to each m
 SERVPAR(mappenalty_cutoff, 45, 60, 240, "gNumber of minutes to remember that a map has been played");
 SERVPAR(mappenalty_weight, 0, 100, 200, "gInfluence of play history of a map (0: no influence, 100: normal, 200: high influence)");
 SERVPAR(modepenalty_weight, -100, 50, 100, "gInfluence of play history of a game mode (-100: stay with played mode, 0: ignore played mode, 100: suggest other modes)");
+
+
 
 void servermaprot::calcmappenalties() // sum up, how long ago each map+mode was played -> get individual penalties for every map+mode combination
 {
