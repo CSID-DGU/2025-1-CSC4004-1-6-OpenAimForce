@@ -666,9 +666,13 @@ int espFlag;    // 0: ╡Ш, 1: дт
 
 void init_hack_settings()
 {
+    const char* aimStr = getalias("aimBotType");
+    const char* espStr = getalias("espFlag");
+    aimBotType = aimStr ? atoi(aimStr) : 0;
+    espFlag = espStr ? atoi(espStr) : 0;
+
     conoutf("[AIMBOT] aimBotType = %d", aimBotType);
     conoutf("[ESP] espFlag = %d", espFlag);
-    
 }
 
 void normalize_angle(float& angle)
