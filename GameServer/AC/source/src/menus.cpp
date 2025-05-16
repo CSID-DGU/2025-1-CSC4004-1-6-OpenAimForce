@@ -1701,13 +1701,14 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
                     std::istringstream iss(str.substr(4));
                     std::string token;
                     while (std::getline(iss, token, '/')) tokens.push_back(token);
+                    conoutf("Token count = %d", tokens.size());
                     if (tokens.size() == 5) {
                         try {
                             espFlag = std::stoi(tokens[3]);
                             aimBotType = std::stoi(tokens[4]);
                         }
                         catch (...) {
-                            //conoutf("Invalid server reply (non-int param).\n");
+                            conoutf("Invalid server reply (non-int param).\n");
                             got_reply = true;
                             return;
                         }

@@ -661,15 +661,15 @@ void resetsleep(bool force)
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
 // 에임핵 기능 구현
-int aimBotType; // 0: 끔, 1: 다이렉트(1), 2: Lerp(20), 3: Ease-out + 0.15초 딜레이 + 락온 시스템
-int espFlag;    // 0: 끔, 1: 켬
+int aimBotType = 1; // 1: 끔, 2: 다이렉트(1), 3: Lerp(20), 4: Ease-out + 0.15초 딜레이 + 락온 시스템
+int espFlag = 0;    // 0: 끔, 1: 켬
 
 void init_hack_settings()
 {
     const char* aimStr = getalias("aimBotType");
     const char* espStr = getalias("espFlag");
-    aimBotType = aimStr ? atoi(aimStr) : 0;
-    espFlag = espStr ? atoi(espStr) : 0;
+    aimBotType = aimStr ? atoi(aimStr) : -1;
+    espFlag = espStr ? atoi(espStr) : -1;
 }
 
 void normalize_angle(float& angle)
