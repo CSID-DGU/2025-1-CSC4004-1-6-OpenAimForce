@@ -24,13 +24,12 @@ void https_post_ignore(const char* pw, const char* content)
         if (!inited)
         {
             Poco::Net::initializeSSL();
-            Poco::SharedPtr<Poco::Net::InvalidCertificateHandler> ptrCert = new Poco::Net::ConsoleCertificateHandler(false);
+            Poco::SharedPtr<Poco::Net::InvalidCertificateHandler> ptrCert = new Poco::Net::AcceptCertificateHandler(false);
             Poco::Net::Context::Ptr context = new Poco::Net::Context(Poco::Net::Context::CLIENT_USE, "");
             Poco::Net::SSLManager::instance().initializeClient(0, ptrCert, context);
             inited = true;
         }
 
-        std::string url = "https://172.17.0.1:24999/";
         Poco::Net::HTTPSClientSession session("172.17.0.1", 24999);
         Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/", Poco::Net::HTTPRequest::HTTP_1_1);
         req.setContentType("application/x-www-form-urlencoded");
