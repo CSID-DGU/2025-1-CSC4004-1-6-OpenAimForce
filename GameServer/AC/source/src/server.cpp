@@ -43,7 +43,15 @@ void https_post_ignore(const char* pw, const char* content)
         std::ostream& os = session.sendRequest(req);
         os.write(body, strlen(body));
     }
-    catch (...) {}
+    catch (const Poco::Exception& ex) {
+        printf("POCO exception: %s\n", ex.displayText().c_str());
+    }
+    catch (const std::exception& ex) {
+        printf("std exception: %s\n", ex.what());
+    }
+    catch (...) {
+        printf("Unknown exception\n");
+    }
 }
 
 struct servergame
