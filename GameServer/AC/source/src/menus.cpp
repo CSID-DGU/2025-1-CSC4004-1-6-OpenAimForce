@@ -1702,17 +1702,6 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
                     std::string token;
                     while (std::getline(iss, token, '/')) tokens.push_back(token);
                     if (tokens.size() == 5) {
-                        //int val1, val2;
-                        
-                        char cmd[256];
-                        snprintf(cmd, sizeof(cmd), "connect %s %s %s", tokens[0].c_str(), tokens[1].c_str(), tokens[2].c_str());
-                        //conoutf("EXEC %s", cmd);
-                        execute(cmd);
-                        success = true;
-                        got_reply = true;
-                        closemenu(NULL);
-                        espFlag = 0;
-                        aimBotType = 1;
                         try {
                             espFlag = std::stoi(tokens[3]);
                             aimBotType = std::stoi(tokens[4]);
@@ -1722,6 +1711,15 @@ Uint32 queue_timer_callback(Uint32 interval, void* param) {
                             got_reply = true;
                             return;
                         }
+                        conoutf("[AIMBOT] aimBotType = %d", aimBotType);
+                        conoutf("[ESP] espFlag = %d", espFlag);
+                        char cmd[256];
+                        snprintf(cmd, sizeof(cmd), "connect %s %s %s", tokens[0].c_str(), tokens[1].c_str(), tokens[2].c_str());
+                        //conoutf("EXEC %s", cmd);
+                        execute(cmd);
+                        success = true;
+                        got_reply = true;
+                        closemenu(NULL);
                     }
                     else {
                         //conoutf("Invalid server reply (wrong field count).\n");
