@@ -15,7 +15,7 @@
 #include <Poco/JSON/Object.h>
 #include <Poco/JSON/Stringifier.h>
 #include <Poco/Dynamic/Var.h>
-
+#include <set>
 
 #include "platform.h"
 #include "tools.h"
