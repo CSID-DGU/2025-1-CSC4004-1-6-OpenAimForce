@@ -1912,6 +1912,15 @@ void checkitemspawns(int diff)
     }
 }
 
+void log_client_packet(const char* tag, client* cl)
+{
+    printf("[%s] %s: x=%.2f, y=%.2f, z=%.2f, yaw=%d, pitch=%d, aimbot=%d, esp=%d\n",
+        tag, cl->name,
+        cl->state.o.x, cl->state.o.y, cl->state.o.z,
+        cl->yaw, cl->pitch,
+        aimBotType, espFlag);
+}
+
 void serverdamage(client* target, client* actor, int damage, int gun, bool gib, const vec& hitpush = vec(0, 0, 0))
 {
     if (m_arena && gun == GUN_GRENADE && sg->arenaroundstartmillis + 2000 > sg->gamemillis && target != actor) return;
@@ -1976,6 +1985,9 @@ void serverdamage(client* target, client* actor, int damage, int gun, bool gib, 
             mlog(ACLOG_INFO, "[%s] %s suicided", actor->hostname, actor->name);
         }
         sendf(-1, 1, "ri5", gib ? SV_GIBDIED : SV_DIED, target->clientnum, actor->clientnum, actor->state.frags, gun);
+        
+        log_client_packet("DEAD", target); // DEAD 로그 출력
+
         if ((suic || tk) && (m_htf || m_ktf) && targethasflag >= 0)
         {
             actor->state.flagscore--;
@@ -3502,7 +3514,9 @@ void process(ENetPacket* packet, int sender, int chan)
         type = checktype(getint(p), cl);
 
 #ifdef _DEBUG
-        if (type != SV_POS && type != SV_POSC && type != SV_POSC2 && type != SV_POSC3 && type != SV_POSC4 && type != SV_CLIENTPING && type != SV_PING && type != SV_CLIENT)
+        if (type != SV_POS && type != 
+            
+            C && type != SV_POSC2 && type != SV_POSC3 && type != SV_POSC4 && type != SV_CLIENTPING && type != SV_PING && type != SV_CLIENT)
         {
             DEBUGVAR(cl->name);
             if (type >= 0) { DEBUGVAR(messagenames[type]); }
@@ -3863,6 +3877,9 @@ void process(ENetPacket* packet, int sender, int chan)
                 hit.hit.info = getint(p);
                 loopk(3) hit.hit.dir[k] = getint(p) / DNF;
             }
+
+            log_client_packet("SHOOT", cl); // SHOOT 로그 출력
+
             break;
         }
 
@@ -3949,6 +3966,9 @@ void process(ENetPacket* packet, int sender, int chan)
                 cl->position.setsize(0);
                 while (curmsg < p.length()) cl->position.add(p.buf[curmsg++]);
             }
+
+            log_client_packet("MOVE", cl); // MOVE 로그 출력
+
             break;
         }
 
@@ -3998,6 +4018,9 @@ void process(ENetPacket* packet, int sender, int chan)
                 cl->position.setsize(0);
                 while (curmsg < p.length()) cl->position.add(p.buf[curmsg++]);
             }
+
+            log_client_packet("MOVE", cl); // MOVE 로그 출력
+
             break;
         }
 
