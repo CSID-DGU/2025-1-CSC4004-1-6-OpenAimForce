@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>랭킹 페이지</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    .date-selector {
+      width: 60%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .date-selector button {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      transition: background 0.2s;
+    }
+
+    .date-selector button.active {
+      background-color: #ff7f27;
+      color: white;
+    }
+
+    .ladder-section {
+      display: flex;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .ladder-column {
+      flex: 1;
+    }
+
+    .ladder-column h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .ladder-list {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      min-height: 150px;
+      min-width: 0;
+      overflow-x: auto;
+    }
+
+    .report-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      padding: 15px 20px;
+      background-color: #fff8f0;
+      border: 1px solid #ffcfa5;
+      border-radius: 8px;
+      gap: 20px;
+    }
+
+    .report-section p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #333;
+      flex: 1;
+    }
+
+    .report-button {
+      background-color: #ff7f27;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .report-button:hover {
+      background-color: #ff9966;
+    }
+    table.ladder-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5px;
+    }
+    table.ladder-table th, table.ladder-table td {
+      border: 1px solid #e2e2e2;
+      padding: 7px 3px;
+      font-size: 15px;
+    }
+    table.ladder-table th {
+      background: #f1f1f1;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+  <div class="container">
+    <div class="date-selector">
+      <button type="button">5/17</button>
+      <button type="button">5/18</button>
+      <button type="button">5/19</button>
+    </div>
+
+    <!-- 랭킹 출력 -->
+    <div class="ladder-section" id="ladder-section">
+      <div class="ladder-column">
+        <h3>니르바나 부원 (Club)</h3>
+        <div class="ladder-list" id="club-list"></div>
+      </div>
+      <div class="ladder-column">
+        <h3>재학생 (Default)</h3>
+        <div class="ladder-list" id="default-list"></div>
+      </div>
+    </div>
+    <div class="report-section">
+      <p>
+        랭킹의 정보가 허위로 의심되나요?<br />
+        허위 정보 제보 시 확인 후 상품을 대신 수령하실 수 있습니다!
+      </p>
+      <a href="report.html">
+        <button class="report-button">이의 신청</button>
+      </a>
+    </div>
+  </div>
+  <script>
+    // --- Load navbar HTML and activate menu ---
+    fetch('/navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        const container = document.getElementById('navbar-container');
+        container.innerHTML = html;
+        container.querySelectorAll("script").forEach(oldScript => {
+          const newScript = document.createElement("script");
+          if (oldScript.src) newScript.src = oldScript.src;
+          else newScript.textContent = oldScript.textContent;
+          document.body.appendChild(newScript);
+          oldScript.remove();
+        });
+        const currentPath = window.location.pathname;
+        container.querySelectorAll('a[data-path]').forEach(link => {
+          const path = link.getAttribute('data-path');
+          if (path !== '/login.html' && path === currentPath) link.classList.add('active');
+        });
+      })
+      .then(() => {
+        if (typeof updateLoginArea === "function") updateLoginArea();
+        if (typeof highlightActiveLink === "function") highlightActiveLink();
+        if (typeof adaptNavbarLayout === "function") adaptNavbarLayout();
+      });
+
+    // --- 날짜 버튼 및 래더 데이터 로딩 ---
+    document.querySelectorAll('.date-selector button').forEach((btn, idx) => {
+      btn.onclick = () => loadLadder(idx, btn);
+    });
+
+    // 최초 로딩 시 첫번째 날짜 선택
+    window.onload = () => loadLadder(0, document.querySelector('.date-selector button'));
+
+    function loadLadder(idx, buttonElement) {
+      // 버튼 활성화 스타일 처리
+      document.querySelectorAll('.date-selector button').forEach((btn) => btn.classList.remove('active'));
+      if (buttonElement) buttonElement.classList.add('active');
+
+      // 서버에서 래더 데이터 요청
+      fetch(`/ladder?period=${idx}`)
+        .then(res => res.json())
+        .then(data => {
+          updateLadderTable("club-list", data.club);
+          updateLadderTable("default-list", data.default);
+        })
+        .catch(() => {
+          updateLadderTable("club-list", []);
+          updateLadderTable("default-list", []);
+        });
+    }
+
+    // 래더 테이블 갱신 함수
+    function updateLadderTable(containerId, dataList) {
+      const container = document.getElementById(containerId);
+      if (!dataList || dataList.length === 0) {
+        container.innerHTML = `<div>데이터 없음</div>`;
+        return;
+      }
+      let html = `
+        <table class="ladder-table">
+          <thead>
+            <tr>
+              <th>Ingame ID</th>
+              <th>Games</th>
+              <th>Kills</th>
+              <th>Deaths</th>
+              <th>Score</th>
+              <th>확률(%)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      html += dataList.map(row => `
+        <tr>
+          <td>${row.ingame_id}</td>
+          <td>${row.games}</td>
+          <td>${row.kills}</td>
+          <td>${row.deaths}</td>
+          <td>${Number(row.score).toFixed(2)}</td>
+          <td>${row.percentage}</td>
+        </tr>
+      `).join('');
+      html += '</tbody></table>';
+      container.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
