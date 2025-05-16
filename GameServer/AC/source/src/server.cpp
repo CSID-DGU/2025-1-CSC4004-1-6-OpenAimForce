@@ -2865,11 +2865,43 @@ void disconnect_client(int n, int reason)
     }
     http_post_ignore("/end-report", &scl.serverpassword[0], packet);
     // ---- END PACKET GENERATION AND SEND ----
-    printf("DND1\n");
+    
+    // --- Existing logic ---
+    if (!clients.inrange(n) || clients[n]->type != ST_TCPIP) return;
+    sdropflag(n);
+    client& c = *clients[n];
+    c.state.lastdisc = servmillis;
+    const char* scoresaved = "";
+    if (c.haswelcome)
+    {
+        savedscore* sc = findscore(c, true);
+        if (sc)
+        {
+            sc->save(c.state, c.team);
+            scoresaved = ", score saved";
+        }
+    }
+    int sp = (servmillis - c.connectmillis) / 1000;
+    if (reason >= 0) mlog(ACLOG_INFO, "[%s] disconnecting client %s (%s) cn %d, %d seconds played%s", c.hostname, c.name, disc_reason(reason), n, sp, scoresaved);
+    else mlog(ACLOG_INFO, "[%s] disconnected client %s cn %d, %d seconds played%s", c.hostname, c.name, n, sp, scoresaved);
+
+    // ---- KICK AND CLEANUP ALL CLIENTS ----
+    loopv(clients) if (clients[i]->type == ST_TCPIP) {
+        if (clients[i]->peer) {
+            clients[i]->peer->data = (void*)-1;
+            enet_peer_disconnect(clients[i]->peer, reason);
+        }
+        clients[i]->zap();
+    }
+    totalclients = 0;
+
+    sendf(-1, 1, "rii", SV_CDIS, n);
+    if (curvote) curvote->evaluate();
+    if (*scoresaved && sg->mastermode == MM_MATCH) senddisconnectedscores(-1);
 
     // --- Force immediate shutdown after reporting ---
     printf("Server shutdown due to player ragequit\n");
-    exit(0);
+    exit(1);
 }
 
 void sendiplist(int receiver, int cn)
