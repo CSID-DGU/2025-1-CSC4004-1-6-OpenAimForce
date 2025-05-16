@@ -1875,6 +1875,7 @@ bool serverpickup(int i, int sender)         // server side item pickup, acknowl
         if (!e.legalpickup && hn && !m_demo) mlog(ACLOG_INFO, "[%s] tried to pick up entity #%d (%s) - can't be picked up in this gamemode or at all", hn, i, entnames[e.type]);
         return false;
     }
+    if (sg->sents[i].type == I_GRENADE) return false; // 수류탄 무시
     if (sender >= 0)
     {
         client* cl = clients[sender];
@@ -1910,6 +1911,7 @@ void checkitemspawns(int diff)
         if (sg->sents[i].spawntime <= 0)
         {
             sg->sents[i].spawntime = 0;
+            if (sg->sents[i].type == I_GRENADE) continue; // 수류탄 무시
             sg->sents[i].spawned = true;
             sendf(-1, 1, "ri2", SV_ITEMSPAWN, i);
         }

@@ -497,10 +497,26 @@ void checkitems(playerent *d)
 
 void resetpickups(int type)
 {
-    loopv(ents) if(type < 0 || type == ents[i].type) ents[i].spawned = false;
+    loopv(ents)
+    {
+        // 수류탄 스폰 금지지
+        if (ents[i].type == I_GRENADE)
+        {
+            ents[i].spawned = false;
+            continue;
+        }
+
+        if(type < 0 || type == ents[i].type)
+            ents[i].spawned = false;
+    }
+
     if(m_noitemsnade || m_pistol)
     {
-        loopv(ents) ents[i].transformtype(gamemode);
+        loopv(ents)
+        {
+            if(ents[i].type != I_GRENADE)
+                ents[i].transformtype(gamemode);
+        }
     }
 }
 
