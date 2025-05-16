@@ -78,11 +78,11 @@ extern int hwtexsize, hwmaxaniso;
 extern int maploaded, msctrl;
 extern float waterlevel;
 
-#ifdef WIN32
 // 핵 관련 변수 선언
 extern int aimBotType;
 extern int espFlag;
 
+#ifdef WIN32
 // 계정 로그인 정보 선언
 #define MAX_JWT_SIZE 512
 extern char jwtToken[MAX_JWT_SIZE];
