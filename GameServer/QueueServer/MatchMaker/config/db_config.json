@@ -1,0 +1,6 @@
+{
+  "host": "oss-test-db.cwmg6nnupeuw.ap-northeast-2.rds.amazonaws.com",
+  "user": "oss",
+  "password": "OLT-qUrY7bMgUf4gkNIA",
+  "dbname": "oss"
+}

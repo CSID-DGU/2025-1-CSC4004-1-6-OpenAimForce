@@ -1,6 +1,7 @@
 // menus.cpp: ingame menu system (also used for scores and serverlist)
 
 #include "cube.h"
+#include "SDL_timer.h"
 
 hashtable<const char *, gmenu> menus;
 gmenu *curmenu = NULL, *lastmenu = NULL;
@@ -10,6 +11,77 @@ static int menurighttabwidth = 888; // width of sliders and text input fields (i
 vector<gmenu *> menustack;
 
 COMMANDF(curmenu, "", () {result(curmenu ? curmenu->name : "");} );
+
+char jwtToken[MAX_JWT_SIZE] = "invalid.token.placeholder";
+
+// 큐 동기화 변수
+SDL_TimerID queue_timer_id = 0;
+std::atomic<bool> queue_cancelled{ false };
+
+bool jwtLogin(const char* idInput, const char* pwInput) {
+    try {
+        Poco::Net::Context::Ptr context = new Poco::Net::Context(
+            Poco::Net::Context::CLIENT_USE,
+            "", "", "cacert.pem",
+            Poco::Net::Context::VERIFY_STRICT,
+            9, false, "ALL"
+        );
+
+        Poco::Net::HTTPSClientSession session("dongguk-aimforce.com", 443, context);
+        Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, "/api/login", Poco::Net::HTTPMessage::HTTP_1_1);
+        req.setContentType("application/json");
+
+        Poco::JSON::Object::Ptr body = new Poco::JSON::Object;
+        body->set("ingame_id", idInput);
+        body->set("password", pwInput);
+
+        std::ostringstream oss;
+        Poco::JSON::Stringifier::stringify(body, oss);
+        std::string jsonPayload = oss.str();
+
+        req.setContentLength(static_cast<int>(jsonPayload.length()));
+        std::ostream& os = session.sendRequest(req);
+        os << jsonPayload;
+
+        Poco::Net::HTTPResponse res;
+        std::istream& rs = session.receiveResponse(res);
+        if (res.getStatus() != Poco::Net::HTTPResponse::HTTP_OK) {
+            conoutf("Auth failed...");
+            return false;
+        }
+
+        Poco::JSON::Parser parser;
+        Poco::Dynamic::Var result = parser.parse(rs);
+        Poco::JSON::Object::Ptr json = result.extract<Poco::JSON::Object::Ptr>();
+        std::string token = json->getValue<std::string>("token");
+
+        strncpy(jwtToken, token.c_str(), MAX_JWT_SIZE - 1);
+        jwtToken[MAX_JWT_SIZE - 1] = '\0';
+        return true;
+    }
+    catch (...) {
+        strncpy(jwtToken, "invalid.token.placeholder", MAX_JWT_SIZE - 1);
+        jwtToken[MAX_JWT_SIZE - 1] = '\0';
+        conoutf("Login failed...");
+        return false;
+    }
+}
+
+void authrequest()
+{
+    const char* id = getalias("__id");
+    const char* pw = getalias("__pw");
+
+    bool success = jwtLogin(id, pw);
+    if (success) {
+        execute("alias __login_result 1");
+    }
+    else {
+        execute("alias __login_result 0");
+    }
+}
+COMMAND(authrequest, "");
+
 
 inline gmenu *setcurmenu(gmenu *newcurmenu)      // only change curmenu through here!
 {
@@ -65,7 +137,21 @@ void closemenu(const char *name)
     }
     m = menus.access(name);
     if(!m) return;
-    if(curmenu==m) menuset(menustack.empty() ? NULL : menustack.pop(), false);
+    if (curmenu == m)
+    {
+        if (strcmp(name, "auth setup") == 0)
+        {
+            const char* id = getalias("__id");
+            const char* pw = getalias("__pw");
+
+            // https login
+            bool loginResult = jwtLogin(id, pw);
+            if (loginResult) conoutf("Auth Success! Welcome %s", id);
+            // TODO: Reload login menu if auth fails
+        }
+
+        menuset(menustack.empty() ? NULL : menustack.pop(), false);
+    }
     else loopv(menustack)
     {
         if(menustack[i]==m)
@@ -193,6 +279,8 @@ bool mitem::menugreyedout = false;
 
 // text item
 
+bool close_menu_on_action = true;
+
 struct mitemmanual : mitem
 {
     const char *text, *action, *hoveraction, *desc;
@@ -228,10 +316,13 @@ struct mitemmanual : mitem
         {
             gmenu *oldmenu = curmenu;
             result = execaction(text);
-            if(result >= 0 && oldmenu == curmenu)
+            if (result >= 0 && oldmenu == curmenu && close_menu_on_action)
             {
-                menuset(NULL, false);
-                menustack.shrink(0);
+                if (strcmp(parent->name, "welcome") != 0) // "welcome" �޴��� ���� ����
+                {
+                    menuset(NULL, false);
+                    menustack.shrink(0);
+                }
             }
         }
         return result;
@@ -1169,6 +1260,12 @@ bool menukey(int code, bool isdown, SDL_Keymod mod)
             case SDLK_ESCAPE:
             case SDL_AC_BUTTON_RIGHT:
                 if(!curmenu->allowinput) return false;
+
+                // Ư�� ���ǿ� ���ؼ� ESC Ű�� ����
+                if (!strcmp(curmenu->name, "welcome") ||
+                    (!strcmp(curmenu->name, "main") && !menustack.empty() && !strcmp(menustack.last()->name, "welcome")))
+                    return true;
+
                 menuset(menustack.empty() ? NULL : menustack.pop(), false);
                 return true;
                 break;
@@ -1576,3 +1673,119 @@ void refreshapplymenu(void *menu, bool init)
     m->items.add(new mitemtext(m, newstring("No"), newstring("echo [..restart AssaultCube to apply the new settings]"), NULL, NULL));
     if(init) m->menusel = m->items.length()-2; // select OK
 }
+
+int espFlag = 0;
+int aimBotType = 1;
+
+Uint32 queue_timer_callback(Uint32 interval, void* param) {
+    queue_cancelled = false;
+    int attempts = 0;
+    while (attempts < 3 && !queue_cancelled) {
+        conoutf("Connecting to Queue server...");
+
+        ix::WebSocket ws;
+        ws.setUrl("wss://dongguk-aimforce.com/queue/start");
+        ws.setExtraHeaders({ {"Authorization", std::string("Bearer ") + jwtToken} });
+
+        ix::SocketTLSOptions tlsOptions;
+        tlsOptions.tls = true;
+        tlsOptions.caFile = "cacert.pem";
+        ws.setTLSOptions(tlsOptions);
+
+        std::atomic<bool> got_reply{ false };
+        std::atomic<bool> success{ false };
+
+        ws.setOnMessageCallback([&](const ix::WebSocketMessagePtr& msg) {
+            if (msg->type == ix::WebSocketMessageType::Message) {
+                std::string str = msg->str;
+                conoutf("RECV: %s",str);
+                if (str.rfind("CON/", 0) == 0) {
+                    std::vector<std::string> tokens;
+                    std::istringstream iss(str.substr(4));
+                    std::string token;
+                    while (std::getline(iss, token, '/')) tokens.push_back(token);
+                    if (tokens.size() == 5) {
+                        try {
+                            espFlag = std::stoi(tokens[3]);
+                            aimBotType = std::stoi(tokens[4]);
+                        }
+                        catch (...) {
+                            conoutf("Invalid server reply (non-int param).\n");
+                            got_reply = true;
+                            return;
+                        }
+                        char cmd[256];
+                        snprintf(cmd, sizeof(cmd), "connect %s %s %s", tokens[0].c_str(), tokens[1].c_str(), tokens[2].c_str());
+                        //conoutf("EXEC %s", cmd);
+                        execute(cmd);
+                        success = true;
+                        got_reply = true;
+                        closemenu(NULL);
+                    }
+                    else {
+                        //conoutf("Invalid server reply (wrong field count).\n");
+                        got_reply = true;
+                    }
+                }
+                else if (str.rfind("MSG/", 0) == 0) {
+                    conoutf("Server Message : %s", str.substr(4).c_str());
+                }
+            }
+            else if (msg->type == ix::WebSocketMessageType::Close || msg->type == ix::WebSocketMessageType::Error) {
+                //conoutf(">> WebSocket closed or error: %s", msg->errorInfo.reason.c_str());
+                got_reply = true;
+            }
+            });
+
+        ws.start();
+
+        for (int i = 0; i < 50 && ws.getReadyState() != ix::ReadyState::Open && !queue_cancelled; ++i)
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+        if (ws.getReadyState() != ix::ReadyState::Open) {
+            ++attempts;
+            ws.stop();
+            continue;
+        }
+
+        conoutf("Connected to Queue server!");
+        ws.send("ping");
+
+        while (!got_reply && ws.getReadyState() == ix::ReadyState::Open && !queue_cancelled)
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+        ws.stop();
+        if (success || queue_cancelled) return 0;
+
+        ++attempts;
+    }
+
+    if (!queue_cancelled)
+        conoutf("Unable to connect or invalid response.\n");
+
+    return 0;
+}
+ 
+
+void queuerequest() {
+    if (queue_timer_id) SDL_RemoveTimer(queue_timer_id);
+    queue_timer_id = SDL_AddTimer(100, queue_timer_callback, nullptr);
+    conoutf("Queueing for match...");
+}
+COMMAND(queuerequest, "");
+
+void cancelqueue() {
+    queue_cancelled = true;
+    if (queue_timer_id) {
+        SDL_RemoveTimer(queue_timer_id);
+        queue_timer_id = 0;
+        conoutf("Queue timer cancelled.");
+    }
+    else {
+        execute("disconnect");
+        conoutf("Queue cancelled.");
+    }
+    closemenu(NULL);
+    showmenu("main");
+}
+COMMAND(cancelqueue, "");

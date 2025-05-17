@@ -9,3 +9,4 @@ jobs:
     steps:
       - name: Shutdown the server
         run: sudo shutdown now
+

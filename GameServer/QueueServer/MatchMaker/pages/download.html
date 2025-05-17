@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게임 다운로드</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      #navbar-container {
+        margin-bottom: 30px;
+      }
+
+      .content {
+        margin: 0 auto;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .notice {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .download-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 20px auto;
+        display: block;
+      }
+
+      h3 {
+        margin-top: 30px;
+        color: #444;
+      }
+
+      ul.specs {
+        list-style: none;
+        padding-left: 0;
+        display: inline-block;
+        text-align: left;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      ul.specs li::before {
+        content: '•';
+        color: #ff7f27;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
+
+    <div class="content">
+      <p class="notice">
+        🎮 게임 다운로드는 <strong>5월 16일 18시</strong>부터 가능합니다.
+      </p>
+      <a href="" target="_blank">
+        <img
+          src="/image/godownload.png"
+          alt="게임 다운로드 버튼"
+          class="download-img"
+        />
+      </a>
+
+      <h3 style="margin-top: 0; margin-bottom: 0">요구 사양</h3>
+      <ul class="specs">
+        <li>운영체제: Windows 10 이상</li>
+        <li>CPU :</li>
+      </ul>
+    </div>
+    <script>
+      fetch('/navbar.html')
+              .then(res => res.text())
+              .then(html => {
+                const container = document.getElementById('navbar-container');
+                container.innerHTML = html;
+                container.querySelectorAll("script").forEach(oldScript => {
+                  const newScript = document.createElement("script");
+                  if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                  } else {
+                    newScript.textContent = oldScript.textContent;
+                  }
+                  document.body.appendChild(newScript);
+                  oldScript.remove();
+                });
+                const currentPath = window.location.pathname;
+                container.querySelectorAll('a[data-path]').forEach(link => {
+                  const path = link.getAttribute('data-path');
+                  if (path !== '/login.html' && path === currentPath) {
+                    link.classList.add('active');
+                  }
+                });
+              })
+              .then(() => {
+                if (typeof updateLoginArea === "function") updateLoginArea();
+                if (typeof highlightActiveLink === "function") highlightActiveLink();
+                if (typeof adaptNavbarLayout === "function") adaptNavbarLayout();
+              });
+    </script>
+  </body>
+</html>

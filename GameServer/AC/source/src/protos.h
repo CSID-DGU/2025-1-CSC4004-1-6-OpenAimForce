@@ -183,6 +183,7 @@ extern void closemenu(const char *name);
 extern void addchange(const char *desc, int type);
 extern void clearchanges(int type);
 extern void refreshapplymenu(void *menu, bool init);
+//bool jwtLogin(const char* idInput, const char* pwInput);
 
 struct mitem
 {
@@ -1163,6 +1164,9 @@ struct serverconfigfile
     void process();
 };
 
+#define MAX_PLAYERS_PER_TEAM 3
+#define NICKNAME_MAX_LEN 16
+
 // server commandline parsing
 struct servercommandline
 {
@@ -1172,6 +1176,9 @@ struct servercommandline
     string motd, servdesc_full, servdesc_pre, servdesc_suf, voteperm, mapperm;
     int clfilenesting;
     vector<const char *> adminonlymaps; // FIXME: remove this
+
+    char argteam1[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
+    char argteam2[MAX_PLAYERS_PER_TEAM][NICKNAME_MAX_LEN] = {{0}};
 
     servercommandline() :   uprate(0), serverport(CUBE_DEFAULT_SERVER_PORT), syslogfacility(6), filethres(-1), syslogthres(-1), maxdemos(-1),
                             maxclients(DEFAULTCLIENTS), kickthreshold(-5), banthreshold(-6), verbose(0), incoming_limit(10), afk_limit(45000), ban_time(20*60*1000),
@@ -1251,7 +1258,11 @@ struct servercommandline
             }
             case 'y': if(ai < 0) banthreshold = ai; break;
             case 'x': adminpasswd = a; break;
-            case 'p': serverpassword = a; break;
+            case 'p':
+                serverpassword = a;
+                printf("Server password: %s\n", serverpassword);
+                break;
+
             case 'D':
             {
                 if(arg[2]=='I')
@@ -1311,6 +1322,23 @@ struct servercommandline
                 clfilenesting--;
                 break;
             }
+            case 't':
+                if (arg[2] == '1' || arg[2] == '2')
+                {
+                    char (*team)[NICKNAME_MAX_LEN] = arg[2] == '1' ? argteam1 : argteam2;
+                    int count = 0;
+                    char *copy = newstring(a+1);
+                    for (char *p = strtok(copy, ","); p && count < MAX_PLAYERS_PER_TEAM; p = strtok(NULL, ","))
+                    {
+                        strncpy(team[count], p, NICKNAME_MAX_LEN - 1);
+                        team[count][NICKNAME_MAX_LEN - 1] = '\0';
+                        printf("Added allowed player team%d: %s\n", arg[2] == '1' ? 1 : 2, team[count]);
+                        count++;
+                    }
+                    delete[] copy;
+                    break;
+                }
+                else return false;
             default: return false;
         }
         return true;

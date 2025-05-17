@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>당첨자 페이지</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      .date-selector {
+        width: 60%;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+      .date-selector button {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        transition: background 0.2s;
+      }
+
+      .date-selector button.active {
+        background-color: #ff7f27;
+        color: white;
+      }
+
+      .winner-section {
+        display: flex;
+        gap: 40px;
+        margin-top: 20px;
+      }
+
+      .winner-column {
+        flex: 1;
+      }
+
+      .winner-column h3 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .winner-list {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 6px;
+        min-height: 150px;
+      }
+      .report-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding: 15px 20px;
+        background-color: #fff8f0;
+        border: 1px solid #ffcfa5;
+        border-radius: 8px;
+        gap: 20px;
+      }
+
+      .report-section p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #333;
+        flex: 1;
+      }
+
+      .report-button {
+        background-color: #ff7f27;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .report-button:hover {
+        background-color: #ff9966;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+      <div class="date-selector">
+        <button onclick="loadWinners('2023-05-17', this)">5/16</button>
+        <button onclick="loadWinners('2023-05-18', this)">5/17</button>
+        <button onclick="loadWinners('2023-05-19', this)">5/18</button>
+      </div>
+
+      <!-- 당첨자 출력 블록 -->
+      <div class="winner-section" id="winner-section">
+        <div class="winner-column">
+          <h3>니르바나 부원</h3>
+          <div class="winner-list" id="nirvana-list"></div>
+        </div>
+        <div class="winner-column">
+          <h3>재학생</h3>
+          <div class="winner-list" id="student-list"></div>
+        </div>
+      </div>
+      <div class="report-section">
+        <p>
+          당첨자의 정보가 허위로 의심되나요?<br />
+          허위 정보 제보 시 확인 후 상품을 대신 수령하실 수 있습니다!
+        </p>
+        <a href="report.html">
+          <button class="report-button">이의 신청</button>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      fetch('/navbar.html')
+              .then(res => res.text())
+              .then(html => {
+                const container = document.getElementById('navbar-container');
+                container.innerHTML = html;
+                container.querySelectorAll("script").forEach(oldScript => {
+                  const newScript = document.createElement("script");
+                  if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                  } else {
+                    newScript.textContent = oldScript.textContent;
+                  }
+                  document.body.appendChild(newScript);
+                  oldScript.remove();
+                });
+                const currentPath = window.location.pathname;
+                container.querySelectorAll('a[data-path]').forEach(link => {
+                  const path = link.getAttribute('data-path');
+                  if (path !== '/login.html' && path === currentPath) {
+                    link.classList.add('active');
+                  }
+                });
+              })
+              .then(() => {
+                if (typeof updateLoginArea === "function") updateLoginArea();
+                if (typeof highlightActiveLink === "function") highlightActiveLink();
+                if (typeof adaptNavbarLayout === "function") adaptNavbarLayout();
+              });
+
+      // 당첨자 불러오기
+      function loadWinners(date, buttonElement) {
+        // 버튼 스타일 초기화
+        document.querySelectorAll('.date-selector button').forEach((btn) => {
+          btn.classList.remove('active');
+        });
+        if (buttonElement) {
+          buttonElement.classList.add('active');
+        }
+
+        // 샘플 데이터
+        const sampleData = {
+          '2023-05-16': {
+            nirvana: [{ student_id: '20', name: '가나다' }],
+            students: [{ student_id: '21', name: '라마바' }],
+          },
+        };
+
+        const { nirvana, students } = sampleData[date];
+        updateWinners(nirvana, students);
+      }
+
+      function updateWinners(nirvanaList, studentList) {
+        const nirvanaContainer = document.getElementById('nirvana-list');
+        const studentContainer = document.getElementById('student-list');
+
+        nirvanaContainer.innerHTML = nirvanaList
+          .map(
+            ({ student_id, name }) =>
+              `<div>니르바나 ${student_id}학번 ${name}</div>`
+          )
+          .join('');
+
+        studentContainer.innerHTML = studentList
+          .map(({ student_id, name }) => `<div>${student_id}학번 ${name}</div>`)
+          .join('');
+      }
+    </script>
+  </body>
+</html>

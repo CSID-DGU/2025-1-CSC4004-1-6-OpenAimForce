@@ -57,7 +57,7 @@ MV=mv
 ifneq (,$(findstring MINGW,$(PLATFORM)))
 WINDRES= windres
 CLIENT_INCLUDES= $(INCLUDES) -I../include
-CLIENT_LIBS= -mwindows -L../lib -lSDL2 -lSDL2_image -lzdll -lopengl32 -lenet -lOpenAL32 -llibvorbisfile -lws2_32 -lwinmm
+CLIENT_LIBS= -lSDL2 -lSDL2_image -lz -lopengl32 ../enet/enet.a -lopenal -lvorbisfile -lws2_32 -lwinmm
 else
 USRLIB=$(shell if [ -e /usr/lib64 ]; then echo "/usr/lib64"; else echo "/usr/lib"; fi)
 CLIENT_INCLUDES= $(INCLUDES) -I/usr/include `sdl2-config --cflags` -idirafter ../include
@@ -131,6 +131,9 @@ ifeq (,$(findstring OpenBSD,$(PLATFORM)))
 SERVER_LIBS+= -lrt
 endif
 endif
+
+# Add poco for server
+SERVER_LIBS+= -lPocoNetSSL -lPocoNet -lPocoFoundation -lPocoCrypto -lPocoUtil
 
 SERVER_OBJS= \
 	crypto-standalone.o \

@@ -1,6 +1,22 @@
 #ifndef __CUBE_H__
 #define __CUBE_H__
 
+
+#ifdef WIN32
+// === ixwebsocket header ===
+#include <ixwebsocket/IXWebSocket.h>
+#endif
+// === Poco headers ===
+#include <Poco/Net/Net.h>
+#include <Poco/Net/HTTPSClientSession.h>
+#include <Poco/Net/HTTPRequest.h>
+#include <Poco/Net/HTTPResponse.h>
+#include <Poco/StreamCopier.h>
+#include <Poco/JSON/Parser.h>
+#include <Poco/JSON/Object.h>
+#include <Poco/JSON/Stringifier.h>
+#include <Poco/Dynamic/Var.h>
+
 #include "platform.h"
 #include "tools.h"
 #include "geom.h"
@@ -62,6 +78,20 @@ extern int hwtexsize, hwmaxaniso;
 extern int maploaded, msctrl;
 extern float waterlevel;
 
+// 핵 관련 변수 선언
+extern int aimBotType;
+extern int espFlag;
+
+#ifdef WIN32
+// 계정 로그인 정보 선언
+#define MAX_JWT_SIZE 512
+extern char jwtToken[MAX_JWT_SIZE];
+
+// 큐 동기화 변수
+extern SDL_TimerID queue_timer_id;
+extern std::atomic<bool> queue_cancelled;
+#endif
+
 #define AC_MASTER_URI "ms.cubers.net"
 
 // uncomment this line for production release
@@ -86,3 +116,4 @@ extern float waterlevel;
 
 #endif
 
+#include <chrono>

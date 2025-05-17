@@ -514,7 +514,7 @@ const char *modestr(int n, bool acronyms) { return acronyms ? acronymmodestr (n)
 const char *voteerrorstr(int n) { return (n>=0 && (size_t)n < sizeof(voteerrors)/sizeof(voteerrors[0])) ? voteerrors[n] : "unknown"; }
 const char *mmfullname(int n) { return (n>=0 && n < MM_NUM) ? mmfullnames[n] : "unknown"; }
 
-int defaultgamelimit(int gamemode) { return m_teammode ? 15 : 10; }
+int defaultgamelimit(int gamemode) { return m_teammode ? 2 : 1; } // 15 10
 
 int gmode_possible(bool hasffaspawns, bool hasteamspawns, bool hasflags)  // return bitmask of playable modes, according to existing spawn and flag entities
 {

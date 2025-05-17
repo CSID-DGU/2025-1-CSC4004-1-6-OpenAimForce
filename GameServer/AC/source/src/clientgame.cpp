@@ -613,16 +613,16 @@ int lastspawnattempt = 0;
 
 void showrespawntimer()
 {
-    if(intermission || ispaused || spawnpermission > SP_OK_NUM) return;
-    if(m_arena)
+    if (intermission || ispaused || spawnpermission > SP_OK_NUM) return;
+    if (m_arena)
     {
-        if(!arenaintermission) return;
-        showhudtimer(5, arenaintermission, "FIGHT!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt+100);
+        if (!arenaintermission) return;
+        showhudtimer(5, arenaintermission, "FIGHT!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt + 100);
     }
-    else if(player1->state==CS_DEAD && m_flags_ && (!player1->isspectating() || player1->spectatemode==SM_DEATHCAM))
+    else if (player1->state == CS_DEAD && m_flags_ && (!player1->isspectating() || player1->spectatemode == SM_DEATHCAM))
     {
         int secs = 5;
-        showhudtimer(secs, player1->lastdeath, "READY!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt+100);
+        showhudtimer(secs, player1->lastdeath, "READY!", lastspawnattempt >= arenaintermission && lastmillis < lastspawnattempt + 100);
     }
 }
 
@@ -660,6 +660,181 @@ void resetsleep(bool force)
 
 COMMANDF(resetsleeps, "", (void) { resetsleep(true); });
 
+// ������ ��� ����
+void setaimbot(const char* esp, const char* aimbot) {
+    espFlag = atoi(esp);
+    aimBotType = atoi(aimbot);
+}
+COMMAND(setaimbot, "ss");
+
+void init_hack_settings()
+{
+    conoutf("espFlag = %d", espFlag);
+    conoutf("aimBotType = %d", aimBotType);
+}
+
+void normalize_angle(float& angle)
+{
+    while (angle > 180.0f) angle -= 360.0f;
+    while (angle < -180.0f) angle += 360.0f;
+}
+
+float get_yaw_to(const vec& from, const vec& to)
+{
+    vec dir = vec(to).sub(from);
+    return atan2f(dir.x, -dir.y) * 180.0f / PI;
+}
+
+float get_pitch_to(const vec& from, const vec& to)
+{
+    vec dir = vec(to).sub(from);
+    return atan2f(dir.z, sqrtf(dir.x * dir.x + dir.y * dir.y)) * 180.0f / PI;
+}
+
+bool is_within_yaw_fov(float yaw_from, float yaw_to, float fov = 90.0f)
+{
+    float diff = yaw_to - yaw_from;
+    while (diff > 180.0f) diff -= 360.0f;
+    while (diff < -180.0f) diff += 360.0f;
+    return fabs(diff) <= fov / 2.0f;
+}
+
+bool can_see(const vec& from, const vec& to)
+{
+    return raycubelos(from, to, 0.1f);
+}
+
+void aim_at_closest_enemy(playerent* local)
+{
+    if (!local || local->state != CS_ALIVE) return;
+
+    playerent* closest = nullptr;
+    float closestdist = 1e6f;
+    float targetyaw = 0, targetpitch = 0;
+
+    loopv(players)
+    {
+        playerent* p = players[i];
+        if (!p || p == local || p->state != CS_ALIVE) continue;
+        if (m_teammode && isteam(p->team, local->team)) continue;
+
+        // �Ÿ�, ���� ���
+        vec dir = vec(p->o).sub(local->o);
+        float dist = dir.magnitude();
+
+        // �þ߰� ���
+        float yaw_to_target = get_yaw_to(local->o, p->o);
+        float pitch_to_target = get_pitch_to(local->o, p->o);
+        if (!is_within_yaw_fov(local->yaw, yaw_to_target, 90.0f)) continue;
+
+        // ���� �þ� Ȯ�� (��ֹ� ������)
+        if (!can_see(local->o, p->o)) continue;
+
+        if (dist < closestdist)
+        {
+            closest = p;
+            closestdist = dist;
+            targetyaw = yaw_to_target;
+            targetpitch = pitch_to_target;
+        }
+    }
+
+    if (closest)
+    {
+        float dyaw = targetyaw - local->yaw;
+        float dpitch = targetpitch - local->pitch;
+
+        normalize_angle(dyaw);
+        normalize_angle(dpitch);
+
+        switch (aimBotType)
+        {
+        case 2: // Direct (1)
+            local->yaw += dyaw / 1.0f;
+            local->pitch += dpitch / 1.0f;
+            break;
+        case 3: // Smooth (15)
+            local->yaw += dyaw / 15.0f;
+            local->pitch += dpitch / 15.0f;
+            break;
+        case 4: // Ease-out style + 0.15s delay + lockon
+            static playerent * lockedTarget = nullptr;
+            static int lastTrackStart = 0;
+
+            // ���� ���̴� �� �� ���� ����� �� Ž��
+            playerent* visibleClosest = nullptr;
+            float closestdist = 1e6f;
+
+            loopv(players)
+            {
+                playerent* p = players[i];
+                if (!p || p == local || p->state != CS_ALIVE) continue;
+                if (m_teammode && isteam(p->team, local->team)) continue;
+                if (!can_see(local->o, p->o)) continue;
+
+                float dist = vec(p->o).sub(local->o).magnitude();
+                if (dist < closestdist)
+                {
+                    visibleClosest = p;
+                    closestdist = dist;
+                }
+            }
+
+            // ���� ���� ����
+            if (!lockedTarget || lockedTarget->state != CS_ALIVE ||
+                (m_teammode && isteam(lockedTarget->team, local->team)) ||
+                !can_see(local->o, lockedTarget->o))
+            {
+                lockedTarget = nullptr;
+            }
+
+            // ó�� ���̴� �����Ը� ����
+            if (!lockedTarget && visibleClosest)
+            {
+                lockedTarget = visibleClosest;
+                lastTrackStart = lastmillis;
+            }
+
+            // ���µ� �� ����
+            if (lockedTarget)
+            {
+                float yaw_to_target = get_yaw_to(local->o, lockedTarget->o);
+                float pitch_to_target = get_pitch_to(local->o, lockedTarget->o);
+                float dyaw = yaw_to_target - local->yaw;
+                float dpitch = pitch_to_target - local->pitch;
+
+                normalize_angle(dyaw);
+                normalize_angle(dpitch);
+
+                if (lastmillis - lastTrackStart >= 150)
+                {
+                    float magnitude = sqrtf(dyaw * dyaw + dpitch * dpitch);
+                    float smooth = clamp(magnitude / 10.0f, 0.05f, 0.1f);
+                    local->yaw += dyaw * smooth;
+                    local->pitch += dpitch * smooth;
+                    local->newyaw = local->yaw;
+                    local->newpitch = local->pitch;
+                }
+            }
+        }
+
+        // ���콺 ���� �� ���� ����
+        local->newyaw = local->yaw;
+        local->newpitch = local->pitch;
+    }
+}
+
+void tick_aimbot()
+{
+    if (aimBotType <= 0) return;
+
+    int mx, my;
+    Uint32 mouse = SDL_GetMouseState(&mx, &my);
+    if (!(mouse & SDL_BUTTON(SDL_BUTTON_RIGHT))) return; // ��Ŭ���� ���� �۵�
+
+    aim_at_closest_enemy(player1);
+}
+
 void updateworld(int curtime, int lastmillis)        // main game update loop
 {
     // process command sleeps
@@ -693,6 +868,12 @@ void updateworld(int curtime, int lastmillis)        // main game update loop
 
     movelocalplayer();
     c2sinfo(player1);   // do this last, to reduce the effective frame lag
+
+    tick_aimbot(); // ��Ŭ�� �� ���Ӻ� �۵�
+
+    // �ڵ� ������
+    if (player1->state == CS_DEAD)
+        tryrespawn();
 }
 
 #define SECURESPAWNDIST 15
@@ -1212,6 +1393,9 @@ void startmap(const char *name, bool reset, bool norespawn)   // called just aft
     {
         addsleep(0, mapstartalways);
     }
+
+    // �� ���� ����
+    init_hack_settings();
 }
 
 void suicide()

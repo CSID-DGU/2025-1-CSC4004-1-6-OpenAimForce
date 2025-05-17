@@ -404,7 +404,10 @@ struct hline
             execute(action);
             pop("cmdbuf");
         }
-        else if(buf[0]=='/') execute(buf+1);
+        else if(buf[0]=='/')
+        {
+            conoutf("Commands are disabled in this mode.");
+        }
         else toserver(buf);
         popscontext();
     }
