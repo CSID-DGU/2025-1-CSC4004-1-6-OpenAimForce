@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에임핵 데이터 수집 Event</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #ff7f27;
+      color: white;
+      font-size: 1.1vw;
+    }
+
+    .navbar table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .navbar td {
+      vertical-align: middle;
+      padding: 0.8vw 1vw;
+    }
+
+    .navbar .left {
+      text-align: left;
+      width: 20%;
+    }
+
+    .navbar .left img {
+      height: 5vw;
+      margin-left: -1.5vw;
+    }
+
+    .navbar .center {
+      text-align: center;
+      width: 40%;
+      font-size: 2.1vw;
+      font-weight: bold;
+    }
+
+    .navbar .center a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar .center a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar .menu {
+      text-align: right;
+      width: 40%;
+    }
+
+    .navbar .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 0.6vw 1vw;
+      font-size: 1.2vw;
+      transition: background 0.2s ease;
+    }
+
+    .navbar .menu a:hover,
+    .navbar .menu a.active {
+      background-color: #ff9966;
+      border-radius: 0.4vw;
+      font-weight: bold;
+    }
+
+    .navbar .login-button,
+    .navbar .logout-button {
+      background-color: white;
+      color: #ff7f27;
+      border: none;
+      border-radius: 0.4vw;
+      padding: 0.6vw 1vw;
+      font-weight: bold;
+      font-size: 1.2vw;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .navbar .logout-button:hover,
+    .navbar .login-button:hover {
+      background-color: #ffe0cc;
+    }
+
+    .login-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 0.5vw;
+    }
+
+    .login-area span {
+      color: white;
+      font-size: 1vw;
+      line-height: 1.4;
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 0.4vw;
+    }
+
+    @media (max-width: 600px) {
+      .navbar .center {
+        font-size: 4vw;
+      }
+
+      .navbar .menu a,
+      .navbar .login-button,
+      .navbar .logout-button {
+        font-size: 3.5vw;
+        padding: 1.2vw 2vw;
+      }
+
+      .login-area span {
+        font-size: 3vw;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <table id="navbar-table">
+    <tr id="navbar-row">
+      <td class="left">
+        <img src="/image/logo.png" alt="아이콘3" />
+      </td>
+      <td class="center" id="center-cell">
+        <a href="/index.html" class="title-link">에임핵 데이터 수집 Event</a>
+      </td>
+      <td class="menu">
+        <div style="display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 1vw;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5vw;">
+            <a href="/guide.html" data-path="/guide.html">안내</a>
+            <a href="/ladder.html" data-path="/ladder.html">순위</a>
+            <a href="/download.html" data-path="/download.html">게임 다운로드</a>
+          </div>
+          <div class="login-area" id="login-area" style="min-width: fit-content;">
+            <button class="login-button" onclick="location.href='/login.html'">로그인</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<script>
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
+  }
+
+  function updateLoginArea() {
+    const realName = getCookie("real_name");
+    const area = document.getElementById("login-area");
+    if (!area) return;
+
+    if (realName) {
+      area.innerHTML = "";
+      const nameTag = document.createElement("span");
+      nameTag.innerHTML = `환영해요, ${realName}님`;
+
+      const logoutBtn = document.createElement("button");
+      logoutBtn.className = "logout-button";
+      logoutBtn.textContent = "로그아웃";
+      logoutBtn.onclick = () => {
+        document.cookie = "pid=; Max-Age=0; path=/";
+        document.cookie = "real_name=; Max-Age=0; path=/";
+        location.reload();
+      };
+
+      area.appendChild(nameTag);
+      area.appendChild(logoutBtn);
+    }
+  }
+
+  function highlightActiveLink() {
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('a[data-path]').forEach(link => {
+      if (link.getAttribute('data-path') === currentPath) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  function adaptNavbarLayout() {
+    const table = document.getElementById("navbar-table");
+    const mainRow = document.getElementById("navbar-row");
+    const existingTitleRow = document.getElementById("title-row");
+
+    // Move to new row if narrow
+    if (window.innerWidth <= 800 && !existingTitleRow) {
+      const centerCell = document.getElementById("center-cell");
+      if (!centerCell) return;
+
+      const newRow = document.createElement("tr");
+      newRow.id = "title-row";
+
+      const newCell = document.createElement("td");
+      newCell.colSpan = 3;
+      newCell.className = "center";
+      newCell.innerHTML = centerCell.innerHTML;
+
+      newRow.appendChild(newCell);
+      mainRow.parentNode.insertBefore(newRow, mainRow);
+      centerCell.remove();
+    }
+
+    // Restore to original row if wide
+    if (window.innerWidth > 800 && existingTitleRow) {
+      const restoredCell = document.createElement("td");
+      restoredCell.id = "center-cell";
+      restoredCell.className = "center";
+      restoredCell.innerHTML = existingTitleRow.firstChild.innerHTML;
+
+      mainRow.insertBefore(restoredCell, mainRow.children[1]);
+      existingTitleRow.remove();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      updateLoginArea();
+      highlightActiveLink();
+      adaptNavbarLayout();
+    }, 10); // slight delay to ensure mobile DOM readiness
+
+    window.addEventListener("resize", adaptNavbarLayout);
+  });
+</script>
+</body>
+</html>
+
