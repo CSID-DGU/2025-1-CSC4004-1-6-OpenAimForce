@@ -1,0 +1,2044 @@
++ PORT=25000
++ PASSWORD=xLJDK4IlsGzYEM5LFjaPwWMyn6
++ TEAM1=player_pid_18,player_pid_27
++ TEAM2=player_pid_31,player_pid_7
++ [[ -z 25000 ]]
++ [[ -z xLJDK4IlsGzYEM5LFjaPwWMyn6 ]]
++ [[ -z player_pid_18,player_pid_27 ]]
++ [[ -z player_pid_31,player_pid_7 ]]
++ [[ 25000 =~ ^[0-9]+$ ]]
++ echo 'Starting AssaultCube server: external port 25000 → internal port 28763'
+Starting AssaultCube server: external port 25000 → internal port 28763
++ mkdir -p gameLogs
++ script -e -q -c 'docker run -it -p "25000":28763/udp -p "25000":28763/tcp ac:deploy bash -c '\''cd AC && exec ./server.sh -f -n -pxLJDK4IlsGzYEM5LFjaPwWMyn6 -t1player_pid_18,player_pid_27 -t2player_pid_31,player_pid_7'\''' /dev/null
+^@reading commandline parameters from file 'config/servercmdline.txt'
+KEY FAILURE: you provided the (inacceptable) example private key.
+KEY FAILURE: generate your own - read: https://assault.cubers.net/docs/server.html
+Server password: xLJDK4IlsGzYEM5LFjaPwWMyn6
+Added allowed player team1: player_pid_18
+Added allowed player team1: player_pid_27
+Added allowed player team2: player_pid_31
+Added allowed player team2: player_pid_7
+failed to open "logs/serverlog_20250518_15.43.15_local#28763.txt" for writing
+logging started: console(INFO), file(DISABLED), syslog(DISABLED), timestamp(DISABLED)
+logging local AssaultCube server (version -1302, protocol 1300/104) now..
+server is LAN-only - without connection to masterserver
+ACTION REQUIRED: you must provide a PRIVATE SERVER KEY via the '-Y' command line argument
+LAN-only because no master is given
+Server password: "xLJDK4IlsGzYEM5LFjaPwWMyn6"
+could not read config file 'config/servervita.cfg'
+could not read config file 'config/servervita_bak.cfg'
+anticheat: disabled
+dedicated server started, waiting for clients...
+Ctrl-C to exit
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] player_pid_31 client logged in (using serverpassword), AC: -1302|1640, pubkey: 1973eae9abf50c4624e9253803dcb93906247a5d28a1ac3b3216ab12a1e4c189
+
+Game start: deathmatch on ac_arabian, 3 players, 2 minutes, mastermode 0, (map rev 55/27026, official, 'getmap' not prepared)
+initdemoslot(): use slot 0, sequence #1
+Demo recording started (#1).
+setupdemorecord(): sequence #1, deathmatch on ac_arabian
+[x.x.x.x] player_pid_18 client logged in (using serverpassword), AC: -1302|1640, pubkey: 124ce6b93b4650341aed3f1a4fe533b9a459a152bdde91c4ee38b148e6786908
+[x.x.x.x] player_pid_27 client logged in (using serverpassword), AC: -1302|1640, pubkey: bd084055031e87763f107ef55edbb7a728bdc85747c78c8e17291f107c5171b0
+added 44 servermaps
+read 0 map rotation entries from 'config/maprot.cfg'
+read 0 admin passwords from 'config/serverpwd.cfg'
+read 0 (0) blacklist entries from 'config/serverblacklist.cfg', 0 errors
+read 3 (3) IP list entries from 'config/geoip.cfg', 0 errors, 0 concatenated
+read 0 + 0 entries from nickname blacklist file 'config/nicknameblacklist.cfg', 0 errors
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_SPAWN by client player_pid_18
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523622391 µs
+ >> recv : SV_TRYSPAWN by client player_pid_31
+ >> recv : SV_SPAWN by client player_pid_31
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=172, pitch=-1, t=690523631726 µs
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_TRYSPAWN by client player_pid_27
+ >> recv : SV_SPAWN by client player_pid_27
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523634059 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523663187 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=171, pitch=-2, t=690523672339 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523674389 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523705115 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=171, pitch=-2, t=690523711729 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523714249 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523746689 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=171, pitch=-2, t=690523752600 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523753584 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523789381 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=171, pitch=-2, t=690523792275 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523793904 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523830254 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=171, pitch=-2, t=690523833109 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523834261 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=171, pitch=-2, t=690523871446 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523872409 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523874540 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=171, pitch=-2, t=690523912840 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523913701 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523915263 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=172, pitch=-2, t=690523951681 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523954630 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523955394 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=173, pitch=-3, t=690523993807 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690523995504 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690523996383 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524035467 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=173, pitch=-3, t=690524035483 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524038979 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524075470 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=173, pitch=-3, t=690524076407 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524079725 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=173, pitch=-3, t=690524112598 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524114814 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524122023 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=173, pitch=-3, t=690524154221 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524154817 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524163123 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=173, pitch=-3, t=690524193099 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524195664 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524205693 µs
+[MOVE] player_pid_31: x=174.00, y=41.00, z=4.00, yaw=173, pitch=-3, t=690524232600 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524235073 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524246880 µs
+[MOVE] player_pid_31: x=174.00, y=41.19, z=4.00, yaw=173, pitch=-3, t=690524272655 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524274027 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524289207 µs
+[MOVE] player_pid_31: x=174.06, y=41.50, z=4.00, yaw=173, pitch=-3, t=690524314508 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524314976 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524330124 µs
+[MOVE] player_pid_31: x=174.12, y=41.94, z=4.00, yaw=173, pitch=-3, t=690524352132 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524354353 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524372087 µs
+[MOVE] player_pid_31: x=174.19, y=42.38, z=4.00, yaw=173, pitch=-3, t=690524394282 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524395681 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524413638 µs
+[MOVE] player_pid_31: x=174.25, y=42.94, z=4.00, yaw=173, pitch=-3, t=690524432920 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524434582 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524455767 µs
+[MOVE] player_pid_31: x=174.31, y=43.50, z=4.00, yaw=173, pitch=-3, t=690524472197 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524474520 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524497413 µs
+[MOVE] player_pid_31: x=174.38, y=44.06, z=4.00, yaw=173, pitch=-3, t=690524513958 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524514446 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524538923 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524554741 µs
+[MOVE] player_pid_31: x=174.44, y=44.62, z=4.00, yaw=174, pitch=-3, t=690524554785 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524579527 µs
+[MOVE] player_pid_31: x=174.50, y=45.25, z=4.00, yaw=175, pitch=-3, t=690524592570 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524594075 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524622570 µs
+[MOVE] player_pid_31: x=174.56, y=45.88, z=4.00, yaw=176, pitch=-4, t=690524632151 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524635102 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524663321 µs
+[MOVE] player_pid_31: x=174.62, y=46.50, z=4.00, yaw=179, pitch=-5, t=690524672866 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524675976 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524705642 µs
+[MOVE] player_pid_31: x=174.62, y=47.12, z=4.00, yaw=182, pitch=-7, t=690524713593 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524713861 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524746759 µs
+[MOVE] player_pid_27: x=115.00, y=117.00, z=5.00, yaw=159, pitch=0, t=690524753798 µs
+[MOVE] player_pid_31: x=174.69, y=47.75, z=4.00, yaw=182, pitch=-7, t=690524755743 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524790559 µs
+[MOVE] player_pid_31: x=174.69, y=48.38, z=4.00, yaw=182, pitch=-7, t=690524793998 µs
+[MOVE] player_pid_27: x=115.06, y=117.12, z=5.00, yaw=159, pitch=0, t=690524794715 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524830714 µs
+[MOVE] player_pid_27: x=115.12, y=117.44, z=5.00, yaw=159, pitch=0, t=690524834620 µs
+[MOVE] player_pid_31: x=174.69, y=49.06, z=4.00, yaw=182, pitch=-7, t=690524835754 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524872122 µs
+[MOVE] player_pid_27: x=115.31, y=117.81, z=5.00, yaw=159, pitch=0, t=690524874520 µs
+[MOVE] player_pid_31: x=174.69, y=49.69, z=4.00, yaw=182, pitch=-7, t=690524879149 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524913784 µs
+[MOVE] player_pid_31: x=174.62, y=50.31, z=4.00, yaw=182, pitch=-7, t=690524915373 µs
+[MOVE] player_pid_27: x=115.44, y=118.25, z=5.00, yaw=159, pitch=0, t=690524915427 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524954994 µs
+[MOVE] player_pid_27: x=115.62, y=118.69, z=5.00, yaw=159, pitch=0, t=690524955733 µs
+[MOVE] player_pid_31: x=174.62, y=51.00, z=4.00, yaw=182, pitch=-7, t=690524956460 µs
+[MOVE] player_pid_27: x=115.81, y=119.25, z=5.00, yaw=159, pitch=0, t=690524995601 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690524996670 µs
+[MOVE] player_pid_31: x=174.62, y=51.62, z=4.00, yaw=182, pitch=-7, t=690524997241 µs
+[MOVE] player_pid_31: x=174.56, y=52.25, z=4.00, yaw=182, pitch=-7, t=690525034987 µs
+[MOVE] player_pid_27: x=116.00, y=119.75, z=5.00, yaw=159, pitch=0, t=690525035034 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690525040227 µs
+[MOVE] player_pid_27: x=116.19, y=120.31, z=5.00, yaw=160, pitch=0, t=690525073938 µs
+[MOVE] player_pid_31: x=174.56, y=52.94, z=4.00, yaw=182, pitch=-7, t=690525077113 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690525080260 µs
+[MOVE] player_pid_27: x=116.38, y=120.88, z=5.00, yaw=166, pitch=0, t=690525114831 µs
+[MOVE] player_pid_31: x=174.56, y=53.56, z=4.00, yaw=182, pitch=-7, t=690525116144 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690525122092 µs
+[MOVE] player_pid_27: x=116.56, y=121.50, z=5.00, yaw=175, pitch=-1, t=690525155717 µs
+[MOVE] player_pid_31: x=174.50, y=54.19, z=4.00, yaw=182, pitch=-7, t=690525156627 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690525164085 µs
+[MOVE] player_pid_27: x=116.75, y=122.06, z=5.00, yaw=183, pitch=-3, t=690525196640 µs
+[MOVE] player_pid_31: x=174.50, y=54.88, z=4.00, yaw=182, pitch=-7, t=690525198245 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690525206913 µs
+[MOVE] player_pid_27: x=116.81, y=122.69, z=5.00, yaw=186, pitch=-3, t=690525234574 µs
+[MOVE] player_pid_31: x=174.44, y=55.50, z=4.00, yaw=182, pitch=-7, t=690525237716 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=242, pitch=0, t=690525246767 µs
+[MOVE] player_pid_27: x=116.88, y=123.31, z=5.00, yaw=187, pitch=-3, t=690525273904 µs
+[MOVE] player_pid_31: x=174.44, y=56.12, z=4.00, yaw=182, pitch=-7, t=690525276787 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=234, pitch=0, t=690525289485 µs
+[MOVE] player_pid_27: x=116.88, y=123.94, z=5.06, yaw=187, pitch=-3, t=690525316285 µs
+[MOVE] player_pid_31: x=174.44, y=56.75, z=4.00, yaw=182, pitch=-7, t=690525317828 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=208, pitch=0, t=690525330413 µs
+[MOVE] player_pid_27: x=116.88, y=124.56, z=5.94, yaw=187, pitch=-3, t=690525354446 µs
+[MOVE] player_pid_31: x=174.38, y=57.38, z=4.00, yaw=182, pitch=-7, t=690525356964 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=178, pitch=4, t=690525372876 µs
+[MOVE] player_pid_27: x=116.88, y=125.19, z=6.56, yaw=187, pitch=-3, t=690525394417 µs
+[MOVE] player_pid_31: x=174.38, y=58.06, z=4.00, yaw=182, pitch=-7, t=690525397026 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=158, pitch=4, t=690525414370 µs
+[MOVE] player_pid_27: x=116.81, y=125.81, z=7.12, yaw=187, pitch=-3, t=690525435864 µs
+[MOVE] player_pid_31: x=174.38, y=58.69, z=4.00, yaw=182, pitch=-7, t=690525441730 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=157, pitch=4, t=690525455378 µs
+[MOVE] player_pid_27: x=116.81, y=126.44, z=7.56, yaw=187, pitch=-3, t=690525474726 µs
+[MOVE] player_pid_31: x=174.31, y=59.31, z=4.00, yaw=182, pitch=-7, t=690525479602 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=159, pitch=2, t=690525497159 µs
+[MOVE] player_pid_27: x=116.81, y=127.06, z=7.81, yaw=187, pitch=-3, t=690525515631 µs
+[MOVE] player_pid_31: x=174.31, y=59.94, z=4.00, yaw=182, pitch=-7, t=690525518617 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=159, pitch=2, t=690525539533 µs
+[MOVE] player_pid_27: x=116.75, y=127.69, z=8.00, yaw=187, pitch=-3, t=690525554965 µs
+[MOVE] player_pid_31: x=174.25, y=60.62, z=4.00, yaw=182, pitch=-7, t=690525558098 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=159, pitch=2, t=690525580483 µs
+[MOVE] player_pid_27: x=116.75, y=128.31, z=8.12, yaw=187, pitch=-3, t=690525594846 µs
+[MOVE] player_pid_31: x=174.25, y=61.25, z=4.00, yaw=182, pitch=-7, t=690525596783 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=159, pitch=2, t=690525622480 µs
+[MOVE] player_pid_27: x=116.69, y=129.00, z=8.06, yaw=187, pitch=-3, t=690525634754 µs
+[MOVE] player_pid_31: x=174.25, y=61.88, z=4.00, yaw=182, pitch=-7, t=690525637039 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=159, pitch=2, t=690525663465 µs
+[MOVE] player_pid_27: x=116.62, y=129.62, z=7.94, yaw=187, pitch=-3, t=690525674670 µs
+[MOVE] player_pid_31: x=174.19, y=62.50, z=4.00, yaw=182, pitch=-7, t=690525677280 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=159, pitch=2, t=690525705322 µs
+[MOVE] player_pid_27: x=116.62, y=130.25, z=8.25, yaw=187, pitch=-3, t=690525714732 µs
+[MOVE] player_pid_31: x=174.19, y=63.19, z=4.00, yaw=182, pitch=-7, t=690525717792 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=159, pitch=2, t=690525747098 µs
+[MOVE] player_pid_27: x=116.56, y=130.88, z=8.44, yaw=187, pitch=-3, t=690525754496 µs
+[MOVE] player_pid_31: x=174.12, y=63.81, z=4.00, yaw=182, pitch=-7, t=690525758433 µs
+[MOVE] player_pid_18: x=230.00, y=84.00, z=6.00, yaw=170, pitch=0, t=690525789947 µs
+[MOVE] player_pid_27: x=116.50, y=131.50, z=8.81, yaw=187, pitch=-3, t=690525794556 µs
+[MOVE] player_pid_31: x=174.12, y=64.44, z=4.00, yaw=182, pitch=-7, t=690525797468 µs
+[MOVE] player_pid_18: x=230.00, y=84.19, z=6.00, yaw=172, pitch=-1, t=690525830557 µs
+[MOVE] player_pid_27: x=116.44, y=132.12, z=9.12, yaw=187, pitch=-3, t=690525834319 µs
+[MOVE] player_pid_31: x=174.12, y=65.06, z=4.00, yaw=184, pitch=-8, t=690525839087 µs
+[MOVE] player_pid_18: x=230.06, y=84.50, z=6.00, yaw=161, pitch=-5, t=690525872842 µs
+[MOVE] player_pid_27: x=116.44, y=132.75, z=9.25, yaw=187, pitch=-3, t=690525875213 µs
+[MOVE] player_pid_31: x=174.06, y=65.75, z=4.00, yaw=187, pitch=-8, t=690525878856 µs
+[MOVE] player_pid_18: x=230.19, y=84.88, z=6.00, yaw=140, pitch=-8, t=690525913738 µs
+[MOVE] player_pid_27: x=116.31, y=133.38, z=9.75, yaw=187, pitch=-3, t=690525914685 µs
+[MOVE] player_pid_31: x=174.06, y=66.38, z=4.00, yaw=190, pitch=-9, t=690525918187 µs
+[MOVE] player_pid_27: x=116.25, y=134.00, z=10.25, yaw=187, pitch=-3, t=690525954570 µs
+[MOVE] player_pid_31: x=174.12, y=67.06, z=4.00, yaw=200, pitch=-9, t=690525959133 µs
+[MOVE] player_pid_27: x=116.19, y=134.69, z=10.94, yaw=187, pitch=-3, t=690525994398 µs
+[MOVE] player_pid_31: x=174.31, y=67.75, z=4.00, yaw=214, pitch=-10, t=690525998163 µs
+[MOVE] player_pid_27: x=116.12, y=135.31, z=11.50, yaw=187, pitch=-3, t=690526034749 µs
+[MOVE] player_pid_31: x=174.44, y=68.50, z=4.00, yaw=230, pitch=-10, t=690526038119 µs
+[MOVE] player_pid_18: x=231.06, y=86.00, z=6.00, yaw=118, pitch=-7, t=690526065714 µs
+[MOVE] player_pid_27: x=116.06, y=135.94, z=12.00, yaw=187, pitch=-3, t=690526074677 µs
+[MOVE] player_pid_31: x=174.56, y=69.31, z=4.00, yaw=243, pitch=-10, t=690526079114 µs
+[MOVE] player_pid_18: x=231.50, y=86.31, z=6.00, yaw=119, pitch=-7, t=690526112489 µs
+[MOVE] player_pid_27: x=116.00, y=136.56, z=12.31, yaw=188, pitch=-4, t=690526115580 µs
+[MOVE] player_pid_31: x=174.50, y=70.12, z=4.00, yaw=249, pitch=-11, t=690526120769 µs
+[MOVE] player_pid_18: x=232.00, y=86.62, z=6.12, yaw=119, pitch=-7, t=690526150312 µs
+[MOVE] player_pid_27: x=115.94, y=137.19, z=12.56, yaw=188, pitch=-4, t=690526154512 µs
+[MOVE] player_pid_31: x=174.38, y=71.00, z=4.00, yaw=251, pitch=-11, t=690526159518 µs
+[MOVE] player_pid_18: x=232.56, y=86.94, z=6.69, yaw=124, pitch=-7, t=690526191704 µs
+[MOVE] player_pid_27: x=115.88, y=137.81, z=12.69, yaw=188, pitch=-4, t=690526194862 µs
+[MOVE] player_pid_31: x=174.12, y=71.81, z=4.00, yaw=255, pitch=-12, t=690526204287 µs
+[MOVE] player_pid_18: x=233.06, y=87.31, z=7.19, yaw=140, pitch=-9, t=690526233388 µs
+[MOVE] player_pid_27: x=115.75, y=138.44, z=12.69, yaw=188, pitch=-4, t=690526234727 µs
+[MOVE] player_pid_31: x=173.88, y=72.62, z=4.00, yaw=264, pitch=-12, t=690526241546 µs
+[MOVE] player_pid_27: x=115.69, y=139.12, z=12.56, yaw=188, pitch=-4, t=690526274662 µs
+[MOVE] player_pid_18: x=233.56, y=87.69, z=7.75, yaw=162, pitch=-10, t=690526275484 µs
+[MOVE] player_pid_31: x=173.50, y=73.44, z=4.19, yaw=279, pitch=-11, t=690526281701 µs
+[MOVE] player_pid_27: x=115.62, y=139.75, z=12.38, yaw=189, pitch=-4, t=690526314566 µs
+[MOVE] player_pid_18: x=233.94, y=88.19, z=8.06, yaw=183, pitch=-11, t=690526317488 µs
+[MOVE] player_pid_31: x=173.00, y=74.06, z=4.38, yaw=291, pitch=-11, t=690526326182 µs
+[MOVE] player_pid_27: x=115.56, y=140.38, z=12.12, yaw=190, pitch=-4, t=690526355446 µs
+[MOVE] player_pid_18: x=234.19, y=88.69, z=8.62, yaw=190, pitch=-11, t=690526359006 µs
+[MOVE] player_pid_31: x=172.56, y=74.25, z=4.88, yaw=301, pitch=-10, t=690526362889 µs
+[MOVE] player_pid_27: x=115.44, y=141.00, z=11.75, yaw=194, pitch=-4, t=690526394374 µs
+[MOVE] player_pid_18: x=234.31, y=89.25, z=9.00, yaw=190, pitch=-11, t=690526400438 µs
+[MOVE] player_pid_31: x=172.25, y=74.19, z=5.31, yaw=310, pitch=-10, t=690526403358 µs
+[MOVE] player_pid_27: x=115.38, y=141.62, z=11.25, yaw=200, pitch=-4, t=690526435296 µs
+[MOVE] player_pid_18: x=234.38, y=89.88, z=9.00, yaw=190, pitch=-11, t=690526442228 µs
+[MOVE] player_pid_31: x=171.94, y=73.81, z=5.44, yaw=312, pitch=-10, t=690526443371 µs
+[MOVE] player_pid_27: x=115.25, y=142.25, z=10.69, yaw=205, pitch=-5, t=690526474678 µs
+[MOVE] player_pid_18: x=234.38, y=90.50, z=9.00, yaw=190, pitch=-11, t=690526483685 µs
+[MOVE] player_pid_31: x=171.69, y=73.38, z=5.00, yaw=312, pitch=-9, t=690526484743 µs
+[MOVE] player_pid_27: x=115.19, y=142.88, z=10.06, yaw=208, pitch=-5, t=690526515526 µs
+[MOVE] player_pid_31: x=171.50, y=72.88, z=4.94, yaw=312, pitch=-9, t=690526525516 µs
+[MOVE] player_pid_18: x=234.38, y=91.00, z=9.00, yaw=191, pitch=-11, t=690526525957 µs
+[MOVE] player_pid_27: x=115.06, y=143.50, z=10.00, yaw=208, pitch=-5, t=690526554406 µs
+[MOVE] player_pid_18: x=234.38, y=91.38, z=9.00, yaw=194, pitch=-12, t=690526567464 µs
+[MOVE] player_pid_31: x=171.31, y=72.31, z=4.50, yaw=312, pitch=-9, t=690526567683 µs
+[MOVE] player_pid_27: x=114.88, y=144.12, z=10.00, yaw=208, pitch=-5, t=690526595302 µs
+[MOVE] player_pid_31: x=171.19, y=71.69, z=4.25, yaw=310, pitch=-9, t=690526605033 µs
+[MOVE] player_pid_18: x=234.38, y=91.69, z=9.00, yaw=196, pitch=-13, t=690526608408 µs
+[MOVE] player_pid_27: x=114.56, y=144.69, z=10.00, yaw=208, pitch=-5, t=690526635205 µs
+[MOVE] player_pid_31: x=171.12, y=71.06, z=4.00, yaw=307, pitch=-9, t=690526645290 µs
+[MOVE] player_pid_18: x=234.38, y=91.88, z=9.00, yaw=196, pitch=-13, t=690526650674 µs
+[MOVE] player_pid_27: x=114.12, y=145.12, z=10.00, yaw=208, pitch=-5, t=690526675230 µs
+[MOVE] player_pid_31: x=171.12, y=70.31, z=4.00, yaw=303, pitch=-9, t=690526685621 µs
+[MOVE] player_pid_18: x=234.38, y=92.00, z=9.00, yaw=196, pitch=-13, t=690526691758 µs
+[MOVE] player_pid_27: x=113.56, y=145.50, z=10.00, yaw=208, pitch=-5, t=690526714999 µs
+[MOVE] player_pid_31: x=171.06, y=69.56, z=4.00, yaw=297, pitch=-9, t=690526725297 µs
+[MOVE] player_pid_18: x=234.38, y=92.12, z=9.00, yaw=197, pitch=-13, t=690526732981 µs
+[MOVE] player_pid_27: x=112.88, y=145.88, z=10.00, yaw=208, pitch=-5, t=690526754915 µs
+[MOVE] player_pid_31: x=170.81, y=68.75, z=4.00, yaw=290, pitch=-9, t=690526766677 µs
+[MOVE] player_pid_18: x=234.38, y=92.19, z=8.56, yaw=202, pitch=-13, t=690526775762 µs
+[MOVE] player_pid_27: x=112.19, y=146.19, z=10.00, yaw=208, pitch=-5, t=690526794804 µs
+[MOVE] player_pid_31: x=170.56, y=68.00, z=4.00, yaw=283, pitch=-9, t=690526805736 µs
+[MOVE] player_pid_18: x=234.31, y=92.25, z=8.12, yaw=219, pitch=-14, t=690526817235 µs
+[MOVE] player_pid_27: x=111.38, y=146.50, z=10.00, yaw=207, pitch=-5, t=690526835186 µs
+[MOVE] player_pid_31: x=170.25, y=67.19, z=4.00, yaw=277, pitch=-9, t=690526845746 µs
+[MOVE] player_pid_18: x=234.31, y=92.25, z=7.56, yaw=239, pitch=-15, t=690526859430 µs
+[MOVE] player_pid_27: x=110.62, y=146.81, z=10.00, yaw=204, pitch=-5, t=690526873621 µs
+[MOVE] player_pid_31: x=169.88, y=66.44, z=4.00, yaw=273, pitch=-8, t=690526884996 µs
+[MOVE] player_pid_18: x=234.25, y=92.25, z=7.00, yaw=250, pitch=-14, t=690526900736 µs
+[MOVE] player_pid_27: x=109.81, y=147.12, z=10.00, yaw=199, pitch=-5, t=690526914916 µs
+[MOVE] player_pid_31: x=169.44, y=65.69, z=4.00, yaw=270, pitch=-8, t=690526926140 µs
+[MOVE] player_pid_18: x=234.19, y=92.25, z=6.31, yaw=251, pitch=-14, t=690526941410 µs
+[MOVE] player_pid_27: x=109.00, y=147.50, z=10.00, yaw=192, pitch=-4, t=690526954273 µs
+[MOVE] player_pid_31: x=168.94, y=64.94, z=4.00, yaw=267, pitch=-8, t=690526966885 µs
+[MOVE] player_pid_18: x=234.12, y=92.12, z=5.62, yaw=251, pitch=-14, t=690526983058 µs
+[MOVE] player_pid_27: x=108.38, y=147.88, z=10.00, yaw=186, pitch=-3, t=690526995284 µs
+[MOVE] player_pid_31: x=168.38, y=64.25, z=4.00, yaw=263, pitch=-8, t=690527007637 µs
+[MOVE] player_pid_18: x=234.06, y=92.12, z=4.81, yaw=251, pitch=-14, t=690527025670 µs
+[MOVE] player_pid_27: x=107.94, y=148.38, z=10.00, yaw=182, pitch=-3, t=690527035175 µs
+[MOVE] player_pid_31: x=167.81, y=63.75, z=4.00, yaw=257, pitch=-7, t=690527047095 µs
+[MOVE] player_pid_18: x=234.00, y=92.12, z=4.00, yaw=251, pitch=-14, t=690527067094 µs
+[MOVE] player_pid_27: x=107.56, y=148.88, z=10.00, yaw=181, pitch=-2, t=690527074516 µs
+[MOVE] player_pid_31: x=167.19, y=63.44, z=4.00, yaw=251, pitch=-7, t=690527087349 µs
+[MOVE] player_pid_18: x=233.88, y=92.12, z=4.00, yaw=251, pitch=-14, t=690527109011 µs
+[MOVE] player_pid_27: x=107.31, y=149.44, z=10.00, yaw=181, pitch=-2, t=690527114382 µs
+[MOVE] player_pid_31: x=166.62, y=63.25, z=4.00, yaw=242, pitch=-7, t=690527131122 µs
+[MOVE] player_pid_18: x=233.75, y=92.12, z=4.00, yaw=254, pitch=-12, t=690527150442 µs
+[MOVE] player_pid_27: x=107.12, y=150.06, z=10.00, yaw=181, pitch=-2, t=690527155349 µs
+[MOVE] player_pid_31: x=165.94, y=63.12, z=4.00, yaw=229, pitch=-6, t=690527172259 µs
+[MOVE] player_pid_18: x=233.56, y=92.12, z=4.00, yaw=263, pitch=-12, t=690527192070 µs
+[MOVE] player_pid_27: x=107.00, y=150.62, z=10.00, yaw=181, pitch=-2, t=690527194792 µs
+[MOVE] player_pid_31: x=165.25, y=63.00, z=4.00, yaw=218, pitch=-6, t=690527211649 µs
+[MOVE] player_pid_18: x=233.44, y=92.12, z=4.00, yaw=271, pitch=-11, t=690527233655 µs
+[MOVE] player_pid_27: x=106.88, y=151.25, z=10.00, yaw=181, pitch=-2, t=690527234646 µs
+[MOVE] player_pid_31: x=164.50, y=63.00, z=4.00, yaw=215, pitch=-6, t=690527248709 µs
+[MOVE] player_pid_27: x=106.81, y=151.88, z=10.00, yaw=181, pitch=-2, t=690527275042 µs
+[MOVE] player_pid_18: x=233.38, y=92.12, z=4.00, yaw=274, pitch=-11, t=690527275140 µs
+[MOVE] player_pid_31: x=163.69, y=63.00, z=4.00, yaw=215, pitch=-6, t=690527286139 µs
+[MOVE] player_pid_27: x=106.75, y=152.50, z=10.00, yaw=181, pitch=-2, t=690527315425 µs
+[MOVE] player_pid_18: x=233.31, y=92.12, z=4.00, yaw=274, pitch=-11, t=690527316920 µs
+[MOVE] player_pid_31: x=162.88, y=63.06, z=4.00, yaw=215, pitch=-6, t=690527332176 µs
+[MOVE] player_pid_27: x=106.69, y=153.12, z=10.00, yaw=181, pitch=-2, t=690527354723 µs
+[MOVE] player_pid_18: x=233.31, y=92.12, z=4.00, yaw=274, pitch=-11, t=690527358758 µs
+[MOVE] player_pid_31: x=162.00, y=63.12, z=4.00, yaw=215, pitch=-6, t=690527369461 µs
+[MOVE] player_pid_27: x=106.69, y=153.75, z=10.00, yaw=181, pitch=-2, t=690527395108 µs
+[MOVE] player_pid_18: x=233.25, y=92.12, z=4.00, yaw=274, pitch=-11, t=690527400166 µs
+[MOVE] player_pid_31: x=161.19, y=63.25, z=4.00, yaw=214, pitch=-6, t=690527407841 µs
+[MOVE] player_pid_27: x=106.62, y=154.38, z=10.00, yaw=181, pitch=-2, t=690527435074 µs
+[MOVE] player_pid_18: x=233.25, y=92.12, z=4.00, yaw=274, pitch=-11, t=690527441713 µs
+[MOVE] player_pid_31: x=160.44, y=63.50, z=4.00, yaw=212, pitch=-6, t=690527446874 µs
+[MOVE] player_pid_27: x=106.62, y=155.00, z=10.00, yaw=181, pitch=-2, t=690527474949 µs
+[MOVE] player_pid_18: x=233.25, y=92.12, z=4.00, yaw=275, pitch=-10, t=690527483952 µs
+[MOVE] player_pid_31: x=159.88, y=63.81, z=4.00, yaw=210, pitch=-6, t=690527489744 µs
+[MOVE] player_pid_27: x=106.56, y=155.62, z=10.00, yaw=181, pitch=-2, t=690527515350 µs
+[MOVE] player_pid_18: x=233.25, y=92.12, z=4.00, yaw=280, pitch=-6, t=690527525441 µs
+[MOVE] player_pid_31: x=159.31, y=64.25, z=4.00, yaw=205, pitch=-7, t=690527530130 µs
+[MOVE] player_pid_27: x=106.56, y=156.31, z=10.00, yaw=181, pitch=-2, t=690527554641 µs
+[MOVE] player_pid_18: x=233.25, y=92.12, z=4.00, yaw=286, pitch=-1, t=690527567584 µs
+[MOVE] player_pid_31: x=158.88, y=64.69, z=4.00, yaw=198, pitch=-7, t=690527571379 µs
+[MOVE] player_pid_27: x=106.50, y=156.94, z=10.00, yaw=181, pitch=-2, t=690527594977 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527608157 µs
+[MOVE] player_pid_31: x=158.44, y=65.25, z=4.00, yaw=195, pitch=-8, t=690527614395 µs
+[MOVE] player_pid_27: x=106.50, y=157.56, z=10.00, yaw=181, pitch=-2, t=690527634897 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527649998 µs
+[MOVE] player_pid_31: x=158.19, y=65.75, z=4.00, yaw=195, pitch=-8, t=690527653055 µs
+[MOVE] player_pid_27: x=106.50, y=158.19, z=10.00, yaw=181, pitch=-2, t=690527674793 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527691744 µs
+[MOVE] player_pid_31: x=157.88, y=66.31, z=4.00, yaw=195, pitch=-8, t=690527693760 µs
+[MOVE] player_pid_27: x=106.44, y=158.88, z=10.19, yaw=181, pitch=-2, t=690527715611 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527734151 µs
+[MOVE] player_pid_31: x=157.62, y=66.88, z=4.00, yaw=195, pitch=-8, t=690527734198 µs
+[MOVE] player_pid_27: x=106.44, y=159.50, z=10.94, yaw=181, pitch=-2, t=690527754528 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527775450 µs
+[MOVE] player_pid_31: x=157.44, y=67.50, z=4.00, yaw=193, pitch=-8, t=690527775541 µs
+[MOVE] player_pid_27: x=106.44, y=160.12, z=11.56, yaw=180, pitch=-2, t=690527794405 µs
+[MOVE] player_pid_31: x=157.25, y=68.06, z=4.00, yaw=193, pitch=-8, t=690527814365 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527817301 µs
+[MOVE] player_pid_27: x=106.38, y=160.75, z=12.06, yaw=177, pitch=-2, t=690527834809 µs
+[MOVE] player_pid_31: x=157.06, y=68.69, z=4.00, yaw=193, pitch=-8, t=690527854368 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527858077 µs
+[MOVE] player_pid_27: x=106.38, y=161.38, z=12.44, yaw=170, pitch=-2, t=690527875639 µs
+[MOVE] player_pid_31: x=156.88, y=69.31, z=4.00, yaw=193, pitch=-8, t=690527898363 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527900605 µs
+[MOVE] player_pid_27: x=106.38, y=162.06, z=12.75, yaw=158, pitch=0, t=690527915036 µs
+[MOVE] player_pid_31: x=156.69, y=69.94, z=4.00, yaw=193, pitch=-8, t=690527934139 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527942136 µs
+[MOVE] player_pid_27: x=106.38, y=162.69, z=12.88, yaw=145, pitch=1, t=690527955943 µs
+[MOVE] player_pid_31: x=156.56, y=70.56, z=4.00, yaw=193, pitch=-8, t=690527976515 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690527983560 µs
+[MOVE] player_pid_27: x=106.44, y=163.31, z=12.94, yaw=133, pitch=3, t=690527994349 µs
+[MOVE] player_pid_31: x=156.38, y=71.12, z=4.00, yaw=193, pitch=-8, t=690528013885 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528024692 µs
+[MOVE] player_pid_27: x=106.50, y=163.94, z=12.88, yaw=122, pitch=4, t=690528035154 µs
+[MOVE] player_pid_31: x=156.25, y=71.75, z=4.00, yaw=193, pitch=-8, t=690528054903 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528066535 µs
+[MOVE] player_pid_27: x=106.56, y=164.50, z=12.75, yaw=114, pitch=5, t=690528076106 µs
+[MOVE] player_pid_31: x=155.94, y=72.38, z=4.00, yaw=193, pitch=-8, t=690528094212 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528108677 µs
+[MOVE] player_pid_27: x=106.69, y=165.06, z=12.50, yaw=106, pitch=5, t=690528114485 µs
+[MOVE] player_pid_31: x=155.50, y=72.94, z=4.00, yaw=193, pitch=-8, t=690528134439 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528149798 µs
+[MOVE] player_pid_27: x=106.88, y=165.62, z=12.12, yaw=99, pitch=4, t=690528154791 µs
+[MOVE] player_pid_31: x=154.94, y=73.44, z=4.00, yaw=193, pitch=-8, t=690528175430 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528191668 µs
+[SHOOT] player_pid_27: x=106.88, y=165.62, z=12.12, yaw=99, pitch=4, t=690528194796 µs
+[MOVE] player_pid_27: x=107.00, y=166.19, z=11.69, yaw=94, pitch=4, t=690528194869 µs
+[MOVE] player_pid_31: x=154.38, y=74.00, z=4.00, yaw=192, pitch=-8, t=690528215819 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528233657 µs
+[MOVE] player_pid_27: x=107.06, y=166.62, z=11.12, yaw=92, pitch=5, t=690528235099 µs
+[MOVE] player_pid_31: x=153.69, y=74.50, z=4.00, yaw=189, pitch=-9, t=690528254329 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528275691 µs
+[MOVE] player_pid_27: x=107.12, y=167.06, z=10.50, yaw=91, pitch=5, t=690528275977 µs
+[MOVE] player_pid_31: x=153.06, y=75.00, z=4.00, yaw=182, pitch=-10, t=690528296952 µs
+[SHOOT] player_pid_27: x=107.12, y=167.06, z=10.50, yaw=91, pitch=5, t=690528314887 µs
+[MOVE] player_pid_27: x=107.19, y=167.50, z=10.00, yaw=91, pitch=6, t=690528314958 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528317038 µs
+[MOVE] player_pid_31: x=152.56, y=75.56, z=4.00, yaw=169, pitch=-11, t=690528337210 µs
+[MOVE] player_pid_27: x=107.25, y=167.81, z=10.00, yaw=91, pitch=7, t=690528355209 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528359054 µs
+[MOVE] player_pid_31: x=152.25, y=76.12, z=4.00, yaw=157, pitch=-11, t=690528377496 µs
+[MOVE] player_pid_27: x=107.50, y=168.00, z=10.00, yaw=91, pitch=7, t=690528394168 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528400038 µs
+[MOVE] player_pid_31: x=152.12, y=76.75, z=4.00, yaw=144, pitch=-12, t=690528422608 µs
+[SHOOT] player_pid_27: x=107.50, y=168.00, z=10.00, yaw=91, pitch=7, t=690528434215 µs
+[MOVE] player_pid_27: x=107.81, y=168.19, z=10.00, yaw=91, pitch=8, t=690528434283 µs
+[MOVE] player_pid_18: x=233.19, y=92.12, z=4.00, yaw=287, pitch=1, t=690528442099 µs
+[MOVE] player_pid_31: x=152.06, y=77.44, z=4.00, yaw=138, pitch=-13, t=690528461482 µs
+[MOVE] player_pid_27: x=108.12, y=168.31, z=10.00, yaw=91, pitch=9, t=690528474968 µs
+[MOVE] player_pid_18: x=233.12, y=92.12, z=4.00, yaw=287, pitch=1, t=690528484069 µs
+[MOVE] player_pid_31: x=151.94, y=78.12, z=4.00, yaw=138, pitch=-14, t=690528501512 µs
+[MOVE] player_pid_27: x=108.50, y=168.38, z=10.00, yaw=91, pitch=9, t=690528514839 µs
+[MOVE] player_pid_18: x=232.88, y=92.12, z=4.00, yaw=285, pitch=0, t=690528525065 µs
+[MOVE] player_pid_31: x=151.88, y=78.94, z=4.00, yaw=142, pitch=-14, t=690528540774 µs
+[SHOOT] player_pid_27: x=108.50, y=168.38, z=10.00, yaw=91, pitch=9, t=690528554710 µs
+[MOVE] player_pid_27: x=108.94, y=168.44, z=10.00, yaw=91, pitch=10, t=690528554782 µs
+[MOVE] player_pid_18: x=232.56, y=92.12, z=4.00, yaw=268, pitch=0, t=690528566855 µs
+[MOVE] player_pid_31: x=151.81, y=79.75, z=4.00, yaw=142, pitch=-14, t=690528581593 µs
+[MOVE] player_pid_27: x=109.31, y=168.50, z=10.00, yaw=90, pitch=11, t=690528595016 µs
+[MOVE] player_pid_18: x=232.12, y=92.12, z=4.00, yaw=242, pitch=-1, t=690528609115 µs
+[MOVE] player_pid_31: x=151.69, y=80.56, z=4.00, yaw=142, pitch=-14, t=690528621031 µs
+[MOVE] player_pid_27: x=109.75, y=168.56, z=10.00, yaw=90, pitch=11, t=690528634891 µs
+[MOVE] player_pid_18: x=231.50, y=92.12, z=4.00, yaw=223, pitch=-2, t=690528651602 µs
+[MOVE] player_pid_31: x=151.69, y=81.38, z=4.00, yaw=142, pitch=-14, t=690528668547 µs
+[MOVE] player_pid_27: x=110.25, y=168.56, z=10.00, yaw=90, pitch=10, t=690528674920 µs
+[MOVE] player_pid_18: x=230.81, y=92.12, z=4.00, yaw=215, pitch=-3, t=690528692630 µs
+[MOVE] player_pid_31: x=151.94, y=82.00, z=4.06, yaw=142, pitch=-14, t=690528701224 µs
+[MOVE] player_pid_27: x=110.81, y=168.56, z=10.00, yaw=87, pitch=7, t=690528715169 µs
+[MOVE] player_pid_18: x=230.12, y=92.12, z=4.00, yaw=215, pitch=-3, t=690528733142 µs
+[MOVE] player_pid_31: x=152.31, y=82.44, z=4.00, yaw=142, pitch=-13, t=690528741499 µs
+[MOVE] player_pid_27: x=111.38, y=168.56, z=10.00, yaw=84, pitch=6, t=690528754146 µs
+[MOVE] player_pid_18: x=229.44, y=91.94, z=4.38, yaw=215, pitch=-3, t=690528775618 µs
+[MOVE] player_pid_31: x=152.81, y=82.88, z=4.00, yaw=140, pitch=-13, t=690528781537 µs
+[MOVE] player_pid_27: x=112.00, y=168.56, z=10.00, yaw=84, pitch=7, t=690528795027 µs
+[MOVE] player_pid_18: x=228.88, y=91.62, z=4.94, yaw=215, pitch=-3, t=690528816709 µs
+[MOVE] player_pid_31: x=153.44, y=83.19, z=4.00, yaw=140, pitch=-13, t=690528824499 µs
+[MOVE] player_pid_27: x=112.56, y=168.56, z=10.00, yaw=84, pitch=6, t=690528834957 µs
+[MOVE] player_pid_18: x=228.31, y=91.31, z=5.00, yaw=218, pitch=-2, t=690528858688 µs
+[MOVE] player_pid_31: x=154.12, y=83.44, z=4.00, yaw=140, pitch=-13, t=690528864753 µs
+[MOVE] player_pid_27: x=113.19, y=168.50, z=10.00, yaw=84, pitch=6, t=690528875825 µs
+[MOVE] player_pid_18: x=227.69, y=90.94, z=4.88, yaw=213, pitch=-1, t=690528901043 µs
+[MOVE] player_pid_31: x=154.88, y=83.62, z=4.00, yaw=140, pitch=-13, t=690528902704 µs
+[MOVE] player_pid_27: x=113.69, y=168.44, z=10.00, yaw=84, pitch=6, t=690528915200 µs
+[MOVE] player_pid_18: x=227.12, y=90.56, z=4.44, yaw=194, pitch=0, t=690528941890 µs
+[MOVE] player_pid_31: x=155.75, y=83.81, z=4.00, yaw=148, pitch=-9, t=690528950134 µs
+[MOVE] player_pid_27: x=114.00, y=168.25, z=10.00, yaw=84, pitch=6, t=690528954131 µs
+[MOVE] player_pid_31: x=156.56, y=84.00, z=4.00, yaw=158, pitch=-5, t=690528984286 µs
+[MOVE] player_pid_18: x=226.62, y=90.19, z=4.00, yaw=178, pitch=0, t=690528984332 µs
+[MOVE] player_pid_27: x=114.19, y=167.88, z=10.00, yaw=84, pitch=6, t=690528995983 µs
+[MOVE] player_pid_18: x=226.00, y=89.75, z=4.00, yaw=175, pitch=-1, t=690529024767 µs
+[MOVE] player_pid_31: x=157.38, y=84.25, z=4.00, yaw=166, pitch=-2, t=690529025271 µs
+[MOVE] player_pid_27: x=114.31, y=167.50, z=10.00, yaw=84, pitch=6, t=690529035856 µs
+[MOVE] player_pid_31: x=158.19, y=84.56, z=4.00, yaw=169, pitch=-1, t=690529063729 µs
+[MOVE] player_pid_18: x=225.38, y=89.25, z=4.00, yaw=175, pitch=-1, t=690529067203 µs
+[MOVE] player_pid_27: x=114.38, y=167.00, z=10.00, yaw=82, pitch=6, t=690529073823 µs
+[MOVE] player_pid_31: x=158.94, y=84.94, z=4.00, yaw=169, pitch=-1, t=690529103932 µs
+[MOVE] player_pid_18: x=224.69, y=88.69, z=4.00, yaw=175, pitch=0, t=690529109554 µs
+[MOVE] player_pid_27: x=114.44, y=166.44, z=10.00, yaw=74, pitch=5, t=690529114673 µs
+[MOVE] player_pid_31: x=159.75, y=85.38, z=4.00, yaw=169, pitch=-1, t=690529145837 µs
+[MOVE] player_pid_18: x=224.06, y=88.12, z=4.00, yaw=169, pitch=0, t=690529149954 µs
+[MOVE] player_pid_27: x=114.31, y=166.12, z=10.00, yaw=63, pitch=4, t=690529154565 µs
+[MOVE] player_pid_31: x=160.50, y=85.81, z=4.00, yaw=169, pitch=-1, t=690529183917 µs
+[MOVE] player_pid_18: x=223.31, y=87.56, z=4.00, yaw=164, pitch=1, t=690529192547 µs
+[MOVE] player_pid_27: x=114.06, y=166.12, z=10.00, yaw=49, pitch=3, t=690529195457 µs
+[MOVE] player_pid_18: x=222.62, y=87.06, z=4.00, yaw=159, pitch=3, t=690529233613 µs
+[MOVE] player_pid_31: x=161.25, y=86.25, z=4.00, yaw=169, pitch=-1, t=690529234930 µs
+[MOVE] player_pid_27: x=113.56, y=165.94, z=10.00, yaw=33, pitch=3, t=690529235422 µs
+[MOVE] player_pid_31: x=161.81, y=86.75, z=4.00, yaw=169, pitch=-1, t=690529265526 µs
+[MOVE] player_pid_27: x=113.00, y=165.75, z=10.00, yaw=15, pitch=3, t=690529274304 µs
+[MOVE] player_pid_18: x=221.81, y=86.62, z=4.00, yaw=157, pitch=3, t=690529275631 µs
+[MOVE] player_pid_31: x=162.25, y=87.31, z=4.00, yaw=169, pitch=-1, t=690529307387 µs
+[MOVE] player_pid_27: x=112.38, y=165.75, z=10.00, yaw=358, pitch=3, t=690529315168 µs
+[MOVE] player_pid_18: x=221.00, y=86.12, z=4.00, yaw=157, pitch=3, t=690529317380 µs
+[MOVE] player_pid_31: x=162.56, y=87.88, z=4.00, yaw=169, pitch=-1, t=690529345425 µs
+[MOVE] player_pid_27: x=111.69, y=165.81, z=10.00, yaw=348, pitch=3, t=690529355024 µs
+[MOVE] player_pid_18: x=220.19, y=85.75, z=4.00, yaw=157, pitch=3, t=690529358190 µs
+[MOVE] player_pid_31: x=162.62, y=88.50, z=4.00, yaw=169, pitch=-1, t=690529384480 µs
+[MOVE] player_pid_27: x=111.06, y=165.94, z=10.00, yaw=342, pitch=4, t=690529394942 µs
+[MOVE] player_pid_18: x=219.38, y=85.31, z=4.50, yaw=165, pitch=3, t=690529400554 µs
+[MOVE] player_pid_27: x=110.44, y=166.06, z=10.00, yaw=341, pitch=4, t=690529434820 µs
+[MOVE] player_pid_18: x=218.56, y=84.94, z=5.00, yaw=183, pitch=3, t=690529441985 µs
+[MOVE] player_pid_31: x=162.56, y=89.19, z=3.94, yaw=169, pitch=-1, t=690529444126 µs
+[MOVE] player_pid_31: x=162.38, y=89.88, z=3.50, yaw=169, pitch=-2, t=690529467342 µs
+[MOVE] player_pid_27: x=109.81, y=166.19, z=10.00, yaw=341, pitch=4, t=690529475733 µs
+[MOVE] player_pid_18: x=217.75, y=84.69, z=5.25, yaw=199, pitch=5, t=690529483601 µs
+[MOVE] player_pid_31: x=162.19, y=90.56, z=3.06, yaw=168, pitch=-2, t=690529507406 µs
+[MOVE] player_pid_27: x=109.38, y=166.31, z=10.00, yaw=341, pitch=4, t=690529514639 µs
+[MOVE] player_pid_18: x=217.06, y=84.44, z=5.81, yaw=204, pitch=5, t=690529524990 µs
+[MOVE] player_pid_31: x=161.94, y=91.31, z=3.00, yaw=167, pitch=-3, t=690529550386 µs
+[MOVE] player_pid_27: x=109.06, y=166.38, z=10.00, yaw=341, pitch=4, t=690529554964 µs
+[MOVE] player_pid_18: x=216.31, y=84.25, z=6.38, yaw=203, pitch=5, t=690529567198 µs
+[MOVE] player_pid_31: x=161.62, y=92.06, z=3.00, yaw=167, pitch=-3, t=690529592037 µs
+[MOVE] player_pid_27: x=108.81, y=166.44, z=10.00, yaw=341, pitch=4, t=690529594866 µs
+[MOVE] player_pid_18: x=215.56, y=84.25, z=6.94, yaw=202, pitch=4, t=690529608799 µs
+[MOVE] player_pid_27: x=108.69, y=166.44, z=10.00, yaw=341, pitch=4, t=690529634840 µs
+[MOVE] player_pid_31: x=161.25, y=92.81, z=3.00, yaw=168, pitch=-3, t=690529639635 µs
+[MOVE] player_pid_18: x=214.75, y=84.31, z=7.25, yaw=202, pitch=4, t=690529650174 µs
+[MOVE] player_pid_27: x=108.56, y=166.50, z=10.00, yaw=343, pitch=4, t=690529675684 µs
+[MOVE] player_pid_31: x=161.06, y=93.56, z=3.00, yaw=177, pitch=-5, t=690529676785 µs
+[MOVE] player_pid_18: x=213.94, y=84.50, z=7.81, yaw=201, pitch=4, t=690529692667 µs
+[MOVE] player_pid_27: x=108.44, y=166.50, z=10.00, yaw=342, pitch=4, t=690529714605 µs
+[MOVE] player_pid_31: x=161.06, y=94.31, z=3.00, yaw=200, pitch=-4, t=690529719159 µs
+[MOVE] player_pid_18: x=213.12, y=84.69, z=8.31, yaw=201, pitch=4, t=690529733502 µs
+[MOVE] player_pid_27: x=108.38, y=166.50, z=10.00, yaw=340, pitch=4, t=690529754507 µs
+[MOVE] player_pid_31: x=161.25, y=95.06, z=3.00, yaw=214, pitch=-2, t=690529759392 µs
+[MOVE] player_pid_18: x=212.25, y=85.00, z=8.88, yaw=201, pitch=3, t=690529775437 µs
+[MOVE] player_pid_27: x=108.38, y=166.56, z=10.00, yaw=338, pitch=4, t=690529794877 µs
+[MOVE] player_pid_31: x=161.38, y=95.81, z=3.00, yaw=217, pitch=0, t=690529801198 µs
+[MOVE] player_pid_18: x=211.38, y=85.31, z=9.00, yaw=198, pitch=2, t=690529818720 µs
+[MOVE] player_pid_27: x=108.31, y=166.56, z=10.00, yaw=338, pitch=4, t=690529835261 µs
+[MOVE] player_pid_31: x=161.50, y=96.62, z=3.00, yaw=216, pitch=0, t=690529838835 µs
+[MOVE] player_pid_18: x=210.56, y=85.62, z=9.38, yaw=195, pitch=0, t=690529858589 µs
+[MOVE] player_pid_27: x=108.31, y=166.56, z=10.00, yaw=338, pitch=4, t=690529875164 µs
+[MOVE] player_pid_31: x=161.56, y=97.38, z=3.00, yaw=213, pitch=1, t=690529879601 µs
+[MOVE] player_pid_18: x=209.69, y=86.00, z=9.94, yaw=192, pitch=-3, t=690529900475 µs
+[MOVE] player_pid_27: x=108.31, y=166.56, z=10.00, yaw=338, pitch=4, t=690529916507 µs
+[MOVE] player_pid_31: x=161.50, y=98.06, z=3.00, yaw=211, pitch=1, t=690529925212 µs
+[MOVE] player_pid_18: x=208.88, y=86.44, z=10.00, yaw=189, pitch=-3, t=690529941772 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690529955949 µs
+[MOVE] player_pid_31: x=161.25, y=98.69, z=3.00, yaw=211, pitch=1, t=690529959618 µs
+[MOVE] player_pid_18: x=208.06, y=86.94, z=10.00, yaw=184, pitch=-3, t=690529985370 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690529995909 µs
+[MOVE] player_pid_31: x=160.81, y=98.88, z=3.00, yaw=211, pitch=1, t=690530006304 µs
+[MOVE] player_pid_18: x=207.31, y=87.38, z=10.00, yaw=181, pitch=-3, t=690530025503 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530035846 µs
+[MOVE] player_pid_31: x=160.25, y=98.88, z=3.00, yaw=211, pitch=1, t=690530039176 µs
+[MOVE] player_pid_18: x=206.56, y=87.94, z=10.00, yaw=175, pitch=-4, t=690530068872 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530075734 µs
+[MOVE] player_pid_31: x=159.62, y=99.00, z=3.00, yaw=211, pitch=1, t=690530080293 µs
+[MOVE] player_pid_18: x=205.88, y=88.56, z=10.00, yaw=162, pitch=-3, t=690530108776 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530116598 µs
+[MOVE] player_pid_31: x=159.00, y=99.44, z=3.00, yaw=210, pitch=1, t=690530121220 µs
+[MOVE] player_pid_18: x=205.25, y=89.25, z=10.00, yaw=151, pitch=-4, t=690530151163 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530155514 µs
+[MOVE] player_pid_31: x=158.44, y=99.88, z=3.00, yaw=210, pitch=0, t=690530162422 µs
+[MOVE] player_pid_18: x=204.75, y=90.00, z=10.00, yaw=143, pitch=-5, t=690530191819 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530196032 µs
+[MOVE] player_pid_31: x=158.19, y=100.44, z=3.00, yaw=210, pitch=0, t=690530203163 µs
+[MOVE] player_pid_18: x=204.31, y=90.81, z=10.00, yaw=142, pitch=-5, t=690530234219 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530235839 µs
+[MOVE] player_pid_31: x=158.00, y=101.12, z=3.00, yaw=210, pitch=0, t=690530241978 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530274764 µs
+[MOVE] player_pid_18: x=204.00, y=91.62, z=10.00, yaw=142, pitch=-5, t=690530276168 µs
+[MOVE] player_pid_31: x=158.00, y=101.81, z=3.00, yaw=213, pitch=0, t=690530282244 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530315685 µs
+[MOVE] player_pid_18: x=203.75, y=92.50, z=10.00, yaw=142, pitch=-5, t=690530317240 µs
+[MOVE] player_pid_31: x=158.00, y=102.62, z=3.00, yaw=218, pitch=-2, t=690530324111 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530355056 µs
+[MOVE] player_pid_18: x=203.56, y=93.38, z=10.00, yaw=142, pitch=-5, t=690530358961 µs
+[MOVE] player_pid_31: x=158.00, y=103.31, z=3.00, yaw=222, pitch=-3, t=690530364162 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530395410 µs
+[MOVE] player_pid_18: x=203.38, y=94.31, z=10.25, yaw=142, pitch=-5, t=690530401910 µs
+[MOVE] player_pid_31: x=157.88, y=104.00, z=3.00, yaw=223, pitch=-3, t=690530402577 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530435323 µs
+[MOVE] player_pid_18: x=203.19, y=95.19, z=10.81, yaw=143, pitch=-4, t=690530441957 µs
+[MOVE] player_pid_31: x=157.62, y=104.62, z=3.00, yaw=223, pitch=-3, t=690530442802 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530476200 µs
+[MOVE] player_pid_18: x=203.00, y=96.12, z=11.12, yaw=142, pitch=-4, t=690530483826 µs
+[MOVE] player_pid_31: x=157.31, y=105.19, z=3.00, yaw=223, pitch=-3, t=690530486807 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530516118 µs
+[MOVE] player_pid_31: x=157.00, y=105.75, z=3.00, yaw=223, pitch=-4, t=690530524140 µs
+[MOVE] player_pid_18: x=202.88, y=96.88, z=11.69, yaw=140, pitch=-4, t=690530525336 µs
+[MOVE] player_pid_27: x=108.25, y=166.56, z=10.00, yaw=338, pitch=4, t=690530555844 µs
+[MOVE] player_pid_31: x=156.62, y=106.25, z=3.00, yaw=223, pitch=-4, t=690530563314 µs
+[MOVE] player_pid_18: x=202.75, y=97.69, z=12.25, yaw=136, pitch=-4, t=690530568583 µs
+[MOVE] player_pid_27: x=108.25, y=166.50, z=10.00, yaw=338, pitch=4, t=690530595761 µs
+[MOVE] player_pid_31: x=156.25, y=106.75, z=3.00, yaw=223, pitch=-4, t=690530608197 µs
+[MOVE] player_pid_18: x=202.62, y=98.62, z=12.81, yaw=133, pitch=-5, t=690530608493 µs
+[MOVE] player_pid_27: x=108.19, y=166.38, z=10.00, yaw=338, pitch=4, t=690530636214 µs
+[MOVE] player_pid_31: x=155.81, y=107.25, z=3.00, yaw=223, pitch=-5, t=690530644689 µs
+[MOVE] player_pid_18: x=202.56, y=98.88, z=13.00, yaw=129, pitch=-5, t=690530651455 µs
+[MOVE] player_pid_27: x=108.06, y=166.06, z=10.00, yaw=338, pitch=4, t=690530676551 µs
+[MOVE] player_pid_31: x=155.44, y=107.69, z=3.00, yaw=223, pitch=-5, t=690530683506 µs
+[MOVE] player_pid_18: x=202.56, y=98.88, z=13.00, yaw=123, pitch=-4, t=690530692376 µs
+[MOVE] player_pid_27: x=107.94, y=165.69, z=10.00, yaw=338, pitch=4, t=690530715897 µs
+[MOVE] player_pid_31: x=155.00, y=108.19, z=3.00, yaw=223, pitch=-5, t=690530724205 µs
+[MOVE] player_pid_18: x=202.62, y=98.88, z=13.00, yaw=120, pitch=-5, t=690530735373 µs
+[MOVE] player_pid_27: x=107.75, y=165.19, z=10.00, yaw=338, pitch=4, t=690530755744 µs
+[MOVE] player_pid_31: x=154.56, y=108.62, z=3.00, yaw=223, pitch=-5, t=690530768368 µs
+[MOVE] player_pid_18: x=202.75, y=98.88, z=13.00, yaw=119, pitch=-5, t=690530775727 µs
+[MOVE] player_pid_27: x=107.56, y=164.75, z=10.00, yaw=338, pitch=4, t=690530795126 µs
+[MOVE] player_pid_31: x=154.12, y=109.12, z=3.00, yaw=223, pitch=-5, t=690530804168 µs
+[MOVE] player_pid_18: x=202.94, y=98.88, z=13.00, yaw=115, pitch=-5, t=690530816914 µs
+[MOVE] player_pid_27: x=107.31, y=164.19, z=10.00, yaw=338, pitch=4, t=690530836501 µs
+[MOVE] player_pid_31: x=153.69, y=109.62, z=3.50, yaw=223, pitch=-5, t=690530844897 µs
+[MOVE] player_pid_18: x=203.25, y=99.12, z=13.25, yaw=113, pitch=-5, t=690530858459 µs
+[MOVE] player_pid_27: x=107.12, y=163.69, z=10.00, yaw=338, pitch=4, t=690530875856 µs
+[MOVE] player_pid_31: x=153.25, y=110.06, z=4.00, yaw=223, pitch=-5, t=690530883279 µs
+[MOVE] player_pid_18: x=203.69, y=99.69, z=13.81, yaw=113, pitch=-5, t=690530901011 µs
+[MOVE] player_pid_27: x=106.94, y=163.12, z=10.00, yaw=338, pitch=4, t=690530917309 µs
+[MOVE] player_pid_31: x=152.81, y=110.56, z=4.38, yaw=223, pitch=-5, t=690530925904 µs
+[MOVE] player_pid_18: x=204.12, y=100.12, z=14.31, yaw=113, pitch=-5, t=690530942779 µs
+[MOVE] player_pid_27: x=106.69, y=162.56, z=10.00, yaw=338, pitch=4, t=690530955726 µs
+[MOVE] player_pid_31: x=152.31, y=111.00, z=4.50, yaw=223, pitch=-5, t=690530970047 µs
+[MOVE] player_pid_18: x=204.62, y=100.56, z=14.88, yaw=119, pitch=-6, t=690530985093 µs
+[MOVE] player_pid_27: x=106.50, y=161.94, z=10.00, yaw=339, pitch=3, t=690530996615 µs
+[MOVE] player_pid_31: x=151.88, y=111.50, z=4.50, yaw=223, pitch=-5, t=690531006399 µs
+[MOVE] player_pid_18: x=205.12, y=101.06, z=15.00, yaw=128, pitch=-6, t=690531025855 µs
+[MOVE] player_pid_27: x=106.25, y=161.38, z=10.00, yaw=339, pitch=2, t=690531036508 µs
+[MOVE] player_pid_31: x=151.44, y=111.94, z=4.50, yaw=223, pitch=-5, t=690531048921 µs
+[MOVE] player_pid_18: x=205.44, y=101.75, z=15.00, yaw=130, pitch=-6, t=690531067406 µs
+[MOVE] player_pid_27: x=106.00, y=160.81, z=10.00, yaw=340, pitch=2, t=690531076467 µs
+[MOVE] player_pid_31: x=151.00, y=112.44, z=4.25, yaw=223, pitch=-5, t=690531086341 µs
+[MOVE] player_pid_18: x=205.75, y=102.44, z=15.00, yaw=126, pitch=-6, t=690531109262 µs
+[MOVE] player_pid_27: x=105.81, y=160.19, z=10.00, yaw=341, pitch=1, t=690531115870 µs
+[MOVE] player_pid_31: x=150.56, y=112.88, z=4.00, yaw=223, pitch=-5, t=690531126497 µs
+[MOVE] player_pid_18: x=205.94, y=103.25, z=15.00, yaw=121, pitch=-7, t=690531151537 µs
+[MOVE] player_pid_27: x=105.56, y=160.12, z=10.00, yaw=343, pitch=0, t=690531156279 µs
+[MOVE] player_pid_31: x=150.12, y=113.31, z=3.81, yaw=223, pitch=-5, t=690531165378 µs
+[MOVE] player_pid_18: x=206.19, y=104.06, z=15.00, yaw=116, pitch=-8, t=690531192511 µs
+[MOVE] player_pid_27: x=105.38, y=160.12, z=10.00, yaw=346, pitch=0, t=690531197158 µs
+[MOVE] player_pid_31: x=149.69, y=113.81, z=3.38, yaw=223, pitch=-5, t=690531206254 µs
+[MOVE] player_pid_18: x=206.44, y=104.88, z=15.00, yaw=112, pitch=-8, t=690531234590 µs
+[MOVE] player_pid_27: x=105.19, y=160.12, z=10.00, yaw=351, pitch=-2, t=690531235595 µs
+[MOVE] player_pid_31: x=149.25, y=114.25, z=3.00, yaw=223, pitch=-5, t=690531245638 µs
+[MOVE] player_pid_18: x=206.81, y=105.56, z=15.00, yaw=111, pitch=-8, t=690531275808 µs
+[MOVE] player_pid_27: x=105.12, y=160.12, z=10.00, yaw=358, pitch=-4, t=690531276437 µs
+[MOVE] player_pid_31: x=148.81, y=114.75, z=3.00, yaw=223, pitch=-5, t=690531287277 µs
+[MOVE] player_pid_27: x=105.12, y=160.12, z=10.00, yaw=7, pitch=-7, t=690531316764 µs
+[MOVE] player_pid_18: x=207.19, y=106.06, z=15.00, yaw=111, pitch=-8, t=690531317491 µs
+[MOVE] player_pid_31: x=148.38, y=115.19, z=3.00, yaw=223, pitch=-5, t=690531329147 µs
+[MOVE] player_pid_27: x=105.12, y=160.12, z=10.00, yaw=17, pitch=-9, t=690531356685 µs
+[MOVE] player_pid_18: x=207.50, y=106.44, z=15.00, yaw=111, pitch=-8, t=690531359856 µs
+[MOVE] player_pid_31: x=147.94, y=115.69, z=3.00, yaw=223, pitch=-5, t=690531369906 µs
+[MOVE] player_pid_27: x=105.12, y=160.12, z=10.00, yaw=24, pitch=-11, t=690531394659 µs
+[MOVE] player_pid_18: x=207.69, y=106.75, z=15.00, yaw=110, pitch=-8, t=690531401185 µs
+[MOVE] player_pid_31: x=147.50, y=116.12, z=3.00, yaw=224, pitch=-5, t=690531407058 µs
+[MOVE] player_pid_27: x=105.19, y=160.12, z=10.00, yaw=28, pitch=-12, t=690531436574 µs
+[MOVE] player_pid_18: x=207.81, y=106.88, z=15.00, yaw=110, pitch=-8, t=690531442176 µs
+[MOVE] player_pid_31: x=147.06, y=116.56, z=3.00, yaw=226, pitch=-3, t=690531448399 µs
+[MOVE] player_pid_27: x=105.38, y=160.12, z=10.00, yaw=28, pitch=-12, t=690531476457 µs
+[MOVE] player_pid_18: x=207.94, y=107.06, z=15.00, yaw=109, pitch=-8, t=690531484527 µs
+[MOVE] player_pid_31: x=146.56, y=117.06, z=3.00, yaw=233, pitch=0, t=690531488145 µs
+[MOVE] player_pid_27: x=105.56, y=160.12, z=10.00, yaw=28, pitch=-12, t=690531515806 µs
+[MOVE] player_pid_18: x=208.00, y=107.12, z=15.00, yaw=109, pitch=-8, t=690531525617 µs
+[MOVE] player_pid_31: x=146.19, y=117.62, z=3.00, yaw=241, pitch=3, t=690531531056 µs
+[MOVE] player_pid_27: x=105.81, y=160.12, z=10.00, yaw=28, pitch=-12, t=690531557358 µs
+[MOVE] player_pid_18: x=208.06, y=107.19, z=15.00, yaw=109, pitch=-8, t=690531567570 µs
+[MOVE] player_pid_31: x=145.88, y=118.31, z=3.00, yaw=249, pitch=5, t=690531573166 µs
+[MOVE] player_pid_27: x=106.19, y=160.06, z=10.00, yaw=28, pitch=-12, t=690531595342 µs
+[MOVE] player_pid_31: x=145.50, y=119.00, z=3.00, yaw=250, pitch=5, t=690531608574 µs
+[MOVE] player_pid_18: x=208.06, y=107.25, z=15.00, yaw=108, pitch=-8, t=690531609875 µs
+[MOVE] player_pid_27: x=106.69, y=159.62, z=10.00, yaw=28, pitch=-12, t=690531635342 µs
+[MOVE] player_pid_18: x=208.19, y=107.31, z=15.00, yaw=107, pitch=-9, t=690531650739 µs
+[MOVE] player_pid_31: x=145.12, y=119.75, z=3.00, yaw=250, pitch=5, t=690531652338 µs
+[MOVE] player_pid_27: x=107.31, y=159.19, z=10.00, yaw=27, pitch=-12, t=690531676173 µs
+[MOVE] player_pid_31: x=144.75, y=120.50, z=3.00, yaw=250, pitch=5, t=690531688607 µs
+[MOVE] player_pid_18: x=208.44, y=107.38, z=15.00, yaw=106, pitch=-9, t=690531692048 µs
+[MOVE] player_pid_27: x=107.94, y=158.88, z=10.00, yaw=27, pitch=-12, t=690531716140 µs
+[MOVE] player_pid_31: x=144.38, y=121.19, z=3.00, yaw=250, pitch=5, t=690531728635 µs
+[MOVE] player_pid_18: x=208.88, y=107.56, z=15.00, yaw=105, pitch=-9, t=690531735032 µs
+[MOVE] player_pid_27: x=108.69, y=158.50, z=10.00, yaw=25, pitch=-11, t=690531755422 µs
+[MOVE] player_pid_31: x=143.88, y=121.81, z=3.00, yaw=251, pitch=4, t=690531772155 µs
+[MOVE] player_pid_18: x=209.31, y=107.69, z=15.00, yaw=105, pitch=-9, t=690531775503 µs
+[MOVE] player_pid_27: x=109.50, y=158.19, z=10.00, yaw=24, pitch=-11, t=690531796325 µs
+[MOVE] player_pid_31: x=143.38, y=122.25, z=3.00, yaw=251, pitch=3, t=690531812649 µs
+[MOVE] player_pid_18: x=209.81, y=107.81, z=15.00, yaw=105, pitch=-9, t=690531817739 µs
+[MOVE] player_pid_27: x=109.88, y=157.88, z=10.00, yaw=23, pitch=-11, t=690531835625 µs
+[MOVE] player_pid_31: x=142.88, y=122.69, z=3.00, yaw=252, pitch=2, t=690531850796 µs
+[MOVE] player_pid_18: x=210.38, y=108.00, z=15.00, yaw=104, pitch=-9, t=690531858682 µs
+[MOVE] player_pid_27: x=109.88, y=157.44, z=10.00, yaw=23, pitch=-11, t=690531875992 µs
+[MOVE] player_pid_31: x=142.31, y=123.00, z=3.00, yaw=252, pitch=1, t=690531892173 µs
+[MOVE] player_pid_18: x=211.00, y=108.19, z=15.00, yaw=104, pitch=-9, t=690531901136 µs
+[MOVE] player_pid_27: x=109.88, y=157.00, z=10.00, yaw=23, pitch=-11, t=690531915383 µs
+[MOVE] player_pid_31: x=141.69, y=123.12, z=3.00, yaw=252, pitch=1, t=690531931015 µs
+[MOVE] player_pid_18: x=211.56, y=108.31, z=15.00, yaw=104, pitch=-9, t=690531941966 µs
+[MOVE] player_pid_27: x=110.25, y=156.50, z=10.00, yaw=23, pitch=-11, t=690531955767 µs
+[MOVE] player_pid_31: x=141.00, y=123.12, z=3.00, yaw=252, pitch=1, t=690531972202 µs
+[MOVE] player_pid_18: x=212.19, y=108.50, z=15.00, yaw=104, pitch=-9, t=690531984376 µs
+[MOVE] player_pid_27: x=110.62, y=155.94, z=10.00, yaw=23, pitch=-11, t=690531995670 µs
+[MOVE] player_pid_31: x=140.31, y=123.00, z=3.00, yaw=252, pitch=1, t=690532011588 µs
+[MOVE] player_pid_18: x=212.81, y=108.62, z=15.00, yaw=104, pitch=-9, t=690532025212 µs
+[MOVE] player_pid_27: x=110.94, y=155.44, z=10.00, yaw=23, pitch=-11, t=690532035574 µs
+[MOVE] player_pid_31: x=139.56, y=122.81, z=3.00, yaw=252, pitch=1, t=690532053117 µs
+[MOVE] player_pid_18: x=213.44, y=108.81, z=15.00, yaw=105, pitch=-8, t=690532067960 µs
+[MOVE] player_pid_27: x=111.31, y=154.88, z=10.00, yaw=23, pitch=-11, t=690532074966 µs
+[MOVE] player_pid_31: x=138.81, y=122.56, z=3.00, yaw=252, pitch=0, t=690532097179 µs
+[MOVE] player_pid_18: x=214.06, y=109.00, z=15.00, yaw=107, pitch=-8, t=690532108910 µs
+[MOVE] player_pid_27: x=111.56, y=154.31, z=10.00, yaw=23, pitch=-11, t=690532115896 µs
+[MOVE] player_pid_31: x=138.12, y=122.38, z=3.00, yaw=251, pitch=0, t=690532131509 µs
+[MOVE] player_pid_18: x=214.75, y=109.12, z=15.00, yaw=108, pitch=-8, t=690532150872 µs
+[MOVE] player_pid_27: x=111.88, y=153.75, z=10.00, yaw=23, pitch=-11, t=690532156267 µs
+[MOVE] player_pid_31: x=137.38, y=122.31, z=3.00, yaw=251, pitch=0, t=690532172098 µs
+[MOVE] player_pid_18: x=215.44, y=109.12, z=15.00, yaw=108, pitch=-8, t=690532192183 µs
+[MOVE] player_pid_27: x=111.88, y=153.19, z=10.00, yaw=23, pitch=-11, t=690532196121 µs
+[MOVE] player_pid_31: x=136.69, y=122.12, z=3.00, yaw=251, pitch=0, t=690532212118 µs
+[MOVE] player_pid_18: x=216.19, y=108.94, z=15.00, yaw=110, pitch=-8, t=690532234037 µs
+[MOVE] player_pid_27: x=111.88, y=152.56, z=10.00, yaw=23, pitch=-11, t=690532236540 µs
+[MOVE] player_pid_31: x=135.88, y=122.12, z=3.00, yaw=251, pitch=0, t=690532252401 µs
+[MOVE] player_pid_27: x=111.88, y=152.00, z=10.00, yaw=23, pitch=-11, t=690532275930 µs
+[MOVE] player_pid_18: x=216.94, y=108.75, z=15.00, yaw=119, pitch=-9, t=690532275977 µs
+[MOVE] player_pid_31: x=135.12, y=122.12, z=3.00, yaw=251, pitch=0, t=690532293908 µs
+[MOVE] player_pid_27: x=111.88, y=151.44, z=10.00, yaw=23, pitch=-11, t=690532315841 µs
+[MOVE] player_pid_18: x=217.75, y=108.56, z=15.00, yaw=126, pitch=-9, t=690532318412 µs
+[MOVE] player_pid_31: x=134.31, y=122.12, z=3.00, yaw=251, pitch=0, t=690532332168 µs
+[MOVE] player_pid_27: x=111.88, y=150.88, z=10.00, yaw=23, pitch=-11, t=690532355666 µs
+[MOVE] player_pid_18: x=218.62, y=108.38, z=15.00, yaw=126, pitch=-9, t=690532358711 µs
+[MOVE] player_pid_31: x=133.56, y=122.12, z=3.00, yaw=251, pitch=0, t=690532372201 µs
+[MOVE] player_pid_27: x=111.88, y=150.25, z=10.00, yaw=23, pitch=-11, t=690532396051 µs
+[MOVE] player_pid_18: x=219.50, y=108.19, z=15.00, yaw=126, pitch=-9, t=690532401104 µs
+[MOVE] player_pid_31: x=132.75, y=122.00, z=3.00, yaw=251, pitch=0, t=690532413431 µs
+[MOVE] player_pid_27: x=111.88, y=149.69, z=10.00, yaw=23, pitch=-11, t=690532436907 µs
+[MOVE] player_pid_18: x=220.38, y=108.00, z=15.00, yaw=126, pitch=-9, t=690532443238 µs
+[MOVE] player_pid_31: x=131.94, y=121.62, z=3.00, yaw=251, pitch=0, t=690532454037 µs
+[MOVE] player_pid_27: x=111.88, y=149.12, z=10.00, yaw=23, pitch=-11, t=690532475800 µs
+[MOVE] player_pid_18: x=221.31, y=107.88, z=15.00, yaw=127, pitch=-9, t=690532485239 µs
+[MOVE] player_pid_31: x=131.12, y=121.25, z=3.00, yaw=251, pitch=0, t=690532493459 µs
+[MOVE] player_pid_27: x=112.06, y=148.50, z=10.00, yaw=21, pitch=-11, t=690532516228 µs
+[MOVE] player_pid_18: x=222.31, y=107.69, z=15.00, yaw=129, pitch=-9, t=690532529858 µs
+[MOVE] player_pid_31: x=130.31, y=120.88, z=3.00, yaw=250, pitch=0, t=690532535758 µs
+[MOVE] player_pid_27: x=112.31, y=147.94, z=10.00, yaw=17, pitch=-10, t=690532556049 µs
+[MOVE] player_pid_18: x=223.25, y=107.56, z=15.00, yaw=129, pitch=-9, t=690532572082 µs
+[MOVE] player_pid_31: x=129.50, y=120.50, z=3.00, yaw=248, pitch=-1, t=690532574274 µs
+[MOVE] player_pid_27: x=112.56, y=147.31, z=10.00, yaw=13, pitch=-9, t=690532594993 µs
+[MOVE] player_pid_31: x=128.69, y=120.12, z=3.00, yaw=244, pitch=-1, t=690532613606 µs
+[MOVE] player_pid_27: x=112.75, y=146.75, z=10.00, yaw=9, pitch=-8, t=690532635284 µs
+[MOVE] player_pid_18: x=224.62, y=107.38, z=15.00, yaw=128, pitch=-9, t=690532635666 µs
+[MOVE] player_pid_31: x=127.81, y=119.75, z=3.00, yaw=234, pitch=-1, t=690532656155 µs
+[MOVE] player_pid_18: x=225.50, y=107.31, z=15.00, yaw=126, pitch=-9, t=690532674683 µs
+[MOVE] player_pid_27: x=112.94, y=146.12, z=10.00, yaw=7, pitch=-7, t=690532676225 µs
+[MOVE] player_pid_31: x=127.00, y=119.50, z=3.00, yaw=225, pitch=-1, t=690532694276 µs
+[MOVE] player_pid_27: x=113.06, y=145.50, z=10.00, yaw=7, pitch=-7, t=690532715600 µs
+[MOVE] player_pid_18: x=226.62, y=107.12, z=15.00, yaw=124, pitch=-10, t=690532725298 µs
+[MOVE] player_pid_31: x=126.12, y=119.25, z=3.00, yaw=220, pitch=-1, t=690532738270 µs
+[MOVE] player_pid_27: x=113.19, y=144.88, z=10.00, yaw=7, pitch=-7, t=690532756421 µs
+[MOVE] player_pid_18: x=227.62, y=107.06, z=15.00, yaw=121, pitch=-10, t=690532769135 µs
+[MOVE] player_pid_31: x=125.19, y=119.19, z=3.56, yaw=218, pitch=-1, t=690532776889 µs
+[MOVE] player_pid_27: x=113.31, y=144.25, z=10.00, yaw=7, pitch=-7, t=690532795753 µs
+[MOVE] player_pid_18: x=228.44, y=107.06, z=15.00, yaw=114, pitch=-10, t=690532814438 µs
+[MOVE] player_pid_31: x=124.31, y=119.12, z=4.06, yaw=217, pitch=-1, t=690532817655 µs
+[MOVE] player_pid_27: x=113.44, y=143.62, z=10.00, yaw=7, pitch=-7, t=690532835679 µs
+[MOVE] player_pid_18: x=229.25, y=107.19, z=15.00, yaw=99, pitch=-9, t=690532859198 µs
+[MOVE] player_pid_31: x=123.44, y=119.06, z=4.81, yaw=216, pitch=0, t=690532861186 µs
+[MOVE] player_pid_27: x=113.56, y=143.00, z=10.00, yaw=7, pitch=-7, t=690532876593 µs
+[MOVE] player_pid_31: x=122.50, y=119.06, z=5.50, yaw=211, pitch=0, t=690532898077 µs
+[MOVE] player_pid_18: x=230.00, y=107.31, z=15.00, yaw=86, pitch=-9, t=690532901798 µs
+[MOVE] player_pid_27: x=113.62, y=142.31, z=10.00, yaw=7, pitch=-7, t=690532915969 µs
+[MOVE] player_pid_31: x=121.62, y=119.06, z=6.00, yaw=208, pitch=0, t=690532939330 µs
+[MOVE] player_pid_18: x=230.69, y=107.31, z=15.00, yaw=75, pitch=-10, t=690532943042 µs
+[MOVE] player_pid_27: x=113.75, y=142.12, z=10.00, yaw=7, pitch=-7, t=690532956831 µs
+[MOVE] player_pid_31: x=120.69, y=119.12, z=6.44, yaw=206, pitch=0, t=690532980223 µs
+[MOVE] player_pid_18: x=231.38, y=107.31, z=15.00, yaw=64, pitch=-10, t=690532985836 µs
+[MOVE] player_pid_27: x=113.81, y=142.12, z=10.00, yaw=7, pitch=-7, t=690532996749 µs
+[MOVE] player_pid_31: x=119.81, y=119.12, z=6.69, yaw=205, pitch=0, t=690533019564 µs
+[MOVE] player_pid_18: x=232.00, y=107.19, z=15.00, yaw=55, pitch=-10, t=690533025677 µs
+[MOVE] player_pid_27: x=113.94, y=142.12, z=10.00, yaw=7, pitch=-7, t=690533036625 µs
+[MOVE] player_pid_31: x=118.94, y=119.12, z=6.88, yaw=202, pitch=1, t=690533059518 µs
+[MOVE] player_pid_18: x=232.69, y=107.00, z=15.00, yaw=48, pitch=-11, t=690533069037 µs
+[MOVE] player_pid_27: x=114.00, y=142.12, z=10.00, yaw=7, pitch=-7, t=690533077534 µs
+[MOVE] player_pid_31: x=118.12, y=119.12, z=6.94, yaw=197, pitch=1, t=690533100637 µs
+[MOVE] player_pid_18: x=233.31, y=106.88, z=15.00, yaw=48, pitch=-11, t=690533109248 µs
+[MOVE] player_pid_27: x=114.12, y=142.12, z=10.00, yaw=7, pitch=-7, t=690533116446 µs
+[MOVE] player_pid_31: x=117.25, y=119.12, z=6.88, yaw=194, pitch=1, t=690533140381 µs
+[MOVE] player_pid_18: x=234.06, y=106.75, z=15.00, yaw=48, pitch=-11, t=690533150176 µs
+[MOVE] player_pid_27: x=114.19, y=141.56, z=10.00, yaw=7, pitch=-7, t=690533156381 µs
+[MOVE] player_pid_31: x=116.44, y=119.12, z=6.75, yaw=192, pitch=1, t=690533182512 µs
+[MOVE] player_pid_18: x=234.88, y=106.69, z=15.00, yaw=48, pitch=-11, t=690533191985 µs
+[MOVE] player_pid_27: x=114.25, y=140.88, z=10.00, yaw=7, pitch=-7, t=690533196786 µs
+[MOVE] player_pid_31: x=115.62, y=119.06, z=6.50, yaw=191, pitch=2, t=690533225151 µs
+[MOVE] player_pid_18: x=235.69, y=106.69, z=15.00, yaw=48, pitch=-11, t=690533233965 µs
+[MOVE] player_pid_27: x=114.38, y=140.25, z=10.00, yaw=8, pitch=-6, t=690533236702 µs
+[MOVE] player_pid_31: x=114.81, y=119.06, z=6.12, yaw=188, pitch=3, t=690533261920 µs
+[MOVE] player_pid_18: x=236.56, y=106.69, z=15.00, yaw=48, pitch=-11, t=690533276048 µs
+[MOVE] player_pid_27: x=114.44, y=139.62, z=10.00, yaw=10, pitch=-5, t=690533277069 µs
+[MOVE] player_pid_31: x=114.12, y=119.00, z=5.75, yaw=181, pitch=5, t=690533301399 µs
+[MOVE] player_pid_27: x=114.56, y=139.00, z=10.00, yaw=12, pitch=-4, t=690533316929 µs
+[MOVE] player_pid_18: x=237.50, y=106.69, z=15.00, yaw=48, pitch=-11, t=690533317687 µs
+[SHOOT] player_pid_31: x=114.12, y=119.00, z=5.75, yaw=181, pitch=5, t=690533341456 µs
+[MOVE] player_pid_31: x=113.62, y=118.94, z=6.06, yaw=180, pitch=6, t=690533341524 µs
+[MOVE] player_pid_27: x=114.62, y=138.38, z=10.00, yaw=13, pitch=-4, t=690533357412 µs
+[MOVE] player_pid_18: x=238.38, y=106.75, z=15.00, yaw=52, pitch=-10, t=690533359610 µs
+[MOVE] player_pid_31: x=113.25, y=118.75, z=6.00, yaw=180, pitch=7, t=690533382529 µs
+[MOVE] player_pid_27: x=114.75, y=137.75, z=10.00, yaw=13, pitch=-4, t=690533395903 µs
+[MOVE] player_pid_18: x=239.31, y=106.81, z=15.00, yaw=51, pitch=-9, t=690533401886 µs
+[MOVE] player_pid_31: x=113.12, y=118.56, z=6.00, yaw=180, pitch=7, t=690533435070 µs
+[MOVE] player_pid_27: x=114.88, y=137.12, z=10.00, yaw=13, pitch=-4, t=690533437746 µs
+[MOVE] player_pid_18: x=240.25, y=106.88, z=15.00, yaw=42, pitch=-8, t=690533442274 µs
+[SHOOT] player_pid_31: x=113.12, y=118.56, z=6.00, yaw=180, pitch=7, t=690533461481 µs
+[MOVE] player_pid_31: x=113.12, y=118.38, z=6.00, yaw=180, pitch=8, t=690533461550 µs
+[MOVE] player_pid_27: x=115.06, y=136.50, z=10.00, yaw=12, pitch=-5, t=690533477167 µs
+[MOVE] player_pid_18: x=241.19, y=106.88, z=15.00, yaw=29, pitch=-9, t=690533485423 µs
+[MOVE] player_pid_31: x=113.38, y=118.12, z=6.00, yaw=180, pitch=9, t=690533501344 µs
+[MOVE] player_pid_27: x=115.19, y=135.88, z=10.00, yaw=7, pitch=-7, t=690533516124 µs
+[MOVE] player_pid_18: x=242.06, y=106.81, z=15.00, yaw=14, pitch=-10, t=690533525743 µs
+[MOVE] player_pid_31: x=113.69, y=118.00, z=6.00, yaw=180, pitch=9, t=690533540647 µs
+[MOVE] player_pid_27: x=115.25, y=135.31, z=10.00, yaw=0, pitch=-8, t=690533556413 µs
+[MOVE] player_pid_18: x=242.94, y=106.62, z=15.00, yaw=356, pitch=-10, t=690533568360 µs
+[SHOOT] player_pid_31: x=113.69, y=118.00, z=6.00, yaw=180, pitch=9, t=690533580969 µs
+[MOVE] player_pid_31: x=114.12, y=117.81, z=6.00, yaw=180, pitch=10, t=690533581032 µs
+[MOVE] player_pid_27: x=115.38, y=134.88, z=10.00, yaw=354, pitch=-9, t=690533595800 µs
+[MOVE] player_pid_18: x=243.75, y=106.25, z=15.00, yaw=345, pitch=-11, t=690533609207 µs
+[MOVE] player_pid_31: x=114.62, y=117.56, z=5.62, yaw=180, pitch=11, t=690533621911 µs
+[SHOOT] player_pid_27: x=115.38, y=134.88, z=10.00, yaw=354, pitch=-9, t=690533637256 µs
+[MOVE] player_pid_27: x=115.44, y=134.69, z=10.00, yaw=351, pitch=-10, t=690533637315 µs
+[MOVE] player_pid_18: x=244.44, y=105.75, z=15.00, yaw=342, pitch=-11, t=690533650841 µs
+[MOVE] player_pid_31: x=115.06, y=117.31, z=5.19, yaw=179, pitch=9, t=690533661672 µs
+[MOVE] player_pid_27: x=115.50, y=134.62, z=10.00, yaw=351, pitch=-12, t=690533677536 µs
+[MOVE] player_pid_18: x=245.06, y=105.19, z=15.00, yaw=341, pitch=-11, t=690533692605 µs
+[HIT] player_pid_31: x=115.06, y=117.31, z=5.19, yaw=179, pitch=9, t=690533700742 µs
+[SHOOT] player_pid_31: x=115.06, y=117.31, z=5.19, yaw=179, pitch=9, t=690533700776 µs
+[MOVE] player_pid_31: x=115.56, y=117.06, z=5.00, yaw=179, pitch=10, t=690533700818 µs
+[MOVE] player_pid_27: x=115.50, y=134.56, z=10.00, yaw=353, pitch=-15, t=690533716919 µs
+[MOVE] player_pid_18: x=245.62, y=104.50, z=15.00, yaw=341, pitch=-11, t=690533736365 µs
+[MOVE] player_pid_31: x=116.06, y=116.75, z=5.00, yaw=179, pitch=9, t=690533741625 µs
+[SHOOT] player_pid_27: x=115.50, y=134.56, z=10.00, yaw=353, pitch=-15, t=690533756886 µs
+[MOVE] player_pid_27: x=115.56, y=134.75, z=10.00, yaw=354, pitch=-16, t=690533756945 µs
+[MOVE] player_pid_18: x=245.88, y=103.81, z=15.00, yaw=341, pitch=-12, t=690533775768 µs
+[MOVE] player_pid_31: x=116.62, y=116.56, z=5.00, yaw=180, pitch=8, t=690533782059 µs
+[MOVE] player_pid_27: x=115.62, y=134.94, z=10.00, yaw=354, pitch=-16, t=690533796283 µs
+[MOVE] player_pid_18: x=245.88, y=103.12, z=15.00, yaw=338, pitch=-14, t=690533817286 µs
+[HIT] player_pid_31: x=116.62, y=116.56, z=5.00, yaw=180, pitch=8, t=690533829476 µs
+[SHOOT] player_pid_31: x=116.62, y=116.56, z=5.00, yaw=180, pitch=8, t=690533829510 µs
+[MOVE] player_pid_31: x=117.25, y=116.31, z=5.00, yaw=181, pitch=9, t=690533829552 µs
+[MOVE] player_pid_27: x=115.62, y=135.25, z=10.00, yaw=355, pitch=-16, t=690533836568 µs
+[MOVE] player_pid_18: x=245.88, y=102.62, z=15.00, yaw=337, pitch=-15, t=690533859015 µs
+[MOVE] player_pid_31: x=117.88, y=116.06, z=5.00, yaw=183, pitch=10, t=690533864173 µs
+[SHOOT] player_pid_27: x=115.62, y=135.25, z=10.00, yaw=355, pitch=-16, t=690533877014 µs
+[MOVE] player_pid_27: x=115.69, y=135.88, z=10.00, yaw=355, pitch=-16, t=690533877076 µs
+[MOVE] player_pid_18: x=245.88, y=102.31, z=15.00, yaw=336, pitch=-15, t=690533902280 µs
+[MOVE] player_pid_31: x=118.50, y=115.94, z=5.25, yaw=184, pitch=10, t=690533906587 µs
+[MOVE] player_pid_27: x=115.75, y=136.56, z=10.00, yaw=357, pitch=-18, t=690533917270 µs
+[MOVE] player_pid_18: x=245.88, y=102.12, z=15.00, yaw=332, pitch=-16, t=690533942267 µs
+[SHOOT] player_pid_31: x=118.50, y=115.94, z=5.25, yaw=184, pitch=10, t=690533946104 µs
+[MOVE] player_pid_31: x=119.06, y=115.69, z=5.25, yaw=188, pitch=12, t=690533946153 µs
+[MOVE] player_pid_27: x=115.81, y=137.19, z=10.00, yaw=2, pitch=-20, t=690533956216 µs
+[MOVE] player_pid_18: x=245.88, y=102.12, z=15.00, yaw=327, pitch=-17, t=690533984751 µs
+[MOVE] player_pid_31: x=119.25, y=115.50, z=5.25, yaw=192, pitch=12, t=690533987050 µs
+[SHOOT] player_pid_27: x=115.81, y=137.19, z=10.00, yaw=2, pitch=-20, t=690533996596 µs
+[MOVE] player_pid_27: x=115.81, y=137.94, z=10.00, yaw=5, pitch=-21, t=690533996656 µs
+[MOVE] player_pid_18: x=245.88, y=102.12, z=15.00, yaw=320, pitch=-19, t=690534026187 µs
+[MOVE] player_pid_31: x=119.19, y=115.31, z=5.25, yaw=192, pitch=12, t=690534026989 µs
+[MOVE] player_pid_27: x=115.81, y=138.75, z=10.00, yaw=9, pitch=-20, t=690534036441 µs
+[SHOOT] player_pid_31: x=119.19, y=115.31, z=5.25, yaw=192, pitch=12, t=690534068889 µs
+[MOVE] player_pid_31: x=119.00, y=115.00, z=5.38, yaw=192, pitch=13, t=690534068904 µs
+[MOVE] player_pid_18: x=245.88, y=102.12, z=15.00, yaw=314, pitch=-22, t=690534068928 µs
+[MOVE] player_pid_27: x=115.75, y=139.44, z=10.00, yaw=10, pitch=-19, t=690534076316 µs
+[MOVE] player_pid_18: x=245.88, y=102.12, z=15.00, yaw=314, pitch=-22, t=690534108892 µs
+[MOVE] player_pid_31: x=118.69, y=114.75, z=5.75, yaw=193, pitch=12, t=690534110486 µs
+[SHOOT] player_pid_27: x=115.75, y=139.44, z=10.00, yaw=10, pitch=-19, t=690534116202 µs
+[MOVE] player_pid_27: x=115.69, y=140.25, z=10.00, yaw=10, pitch=-17, t=690534116237 µs
+[MOVE] player_pid_31: x=118.31, y=114.50, z=5.75, yaw=192, pitch=11, t=690534148616 µs
+[MOVE] player_pid_18: x=245.69, y=102.12, z=15.00, yaw=314, pitch=-22, t=690534150636 µs
+[MOVE] player_pid_27: x=115.62, y=141.06, z=10.00, yaw=10, pitch=-16, t=690534157000 µs
+[SHOOT] player_pid_31: x=118.31, y=114.50, z=5.75, yaw=192, pitch=11, t=690534190056 µs
+[MOVE] player_pid_31: x=117.88, y=114.12, z=5.75, yaw=190, pitch=11, t=690534190185 µs
+[MOVE] player_pid_18: x=245.44, y=102.12, z=15.00, yaw=314, pitch=-22, t=690534192714 µs
+[MOVE] player_pid_27: x=115.50, y=141.81, z=10.00, yaw=11, pitch=-15, t=690534197403 µs
+[MOVE] player_pid_31: x=117.38, y=113.81, z=6.19, yaw=187, pitch=10, t=690534231511 µs
+[MOVE] player_pid_18: x=245.19, y=102.12, z=15.00, yaw=314, pitch=-22, t=690534235930 µs
+[SHOOT] player_pid_27: x=115.50, y=141.81, z=10.00, yaw=11, pitch=-15, t=690534236836 µs
+[MOVE] player_pid_27: x=115.38, y=142.62, z=10.00, yaw=11, pitch=-13, t=690534236906 µs
+[MOVE] player_pid_31: x=116.81, y=113.62, z=6.25, yaw=183, pitch=9, t=690534274008 µs
+[MOVE] player_pid_27: x=115.25, y=143.31, z=10.00, yaw=10, pitch=-12, t=690534276630 µs
+[MOVE] player_pid_18: x=245.06, y=102.12, z=15.00, yaw=314, pitch=-21, t=690534276676 µs
+[SHOOT] player_pid_31: x=116.81, y=113.62, z=6.25, yaw=183, pitch=9, t=690534315361 µs
+[MOVE] player_pid_31: x=116.25, y=113.25, z=6.25, yaw=178, pitch=7, t=690534315423 µs
+[MOVE] player_pid_27: x=115.19, y=143.81, z=10.00, yaw=9, pitch=-12, t=690534317545 µs
+[MOVE] player_pid_18: x=244.94, y=102.12, z=15.00, yaw=310, pitch=-21, t=690534319268 µs
+[MOVE] player_pid_31: x=115.69, y=113.06, z=6.44, yaw=175, pitch=5, t=690534352237 µs
+[SHOOT] player_pid_27: x=115.19, y=143.81, z=10.00, yaw=9, pitch=-12, t=690534356476 µs
+[MOVE] player_pid_27: x=115.12, y=144.19, z=10.00, yaw=8, pitch=-10, t=690534356537 µs
+[MOVE] player_pid_18: x=244.81, y=101.69, z=15.00, yaw=303, pitch=-22, t=690534360114 µs
+[MOVE] player_pid_31: x=115.06, y=112.88, z=6.75, yaw=175, pitch=5, t=690534395572 µs
+[MOVE] player_pid_27: x=115.06, y=144.56, z=10.00, yaw=7, pitch=-10, t=690534397822 µs
+[MOVE] player_pid_18: x=244.69, y=100.81, z=15.00, yaw=299, pitch=-22, t=690534402569 µs
+[SHOOT] player_pid_31: x=115.06, y=112.88, z=6.75, yaw=175, pitch=5, t=690534432517 µs
+[MOVE] player_pid_31: x=114.50, y=112.75, z=6.75, yaw=174, pitch=5, t=690534432653 µs
+[MOVE] player_pid_27: x=115.00, y=144.88, z=10.00, yaw=5, pitch=-10, t=690534436210 µs
+[MOVE] player_pid_18: x=244.50, y=100.00, z=15.00, yaw=298, pitch=-22, t=690534443126 µs
+[MOVE] player_pid_31: x=114.12, y=112.88, z=6.75, yaw=174, pitch=4, t=690534472706 µs
+[SHOOT] player_pid_27: x=115.00, y=144.88, z=10.00, yaw=5, pitch=-10, t=690534476598 µs
+[MOVE] player_pid_27: x=115.00, y=145.12, z=10.00, yaw=3, pitch=-9, t=690534476659 µs
+[MOVE] player_pid_18: x=244.31, y=99.12, z=14.62, yaw=297, pitch=-22, t=690534485972 µs
+[MOVE] player_pid_31: x=114.12, y=113.12, z=6.69, yaw=174, pitch=4, t=690534512946 µs
+[MOVE] player_pid_27: x=114.94, y=145.38, z=10.00, yaw=3, pitch=-7, t=690534516311 µs
+[MOVE] player_pid_18: x=244.12, y=98.31, z=14.19, yaw=294, pitch=-22, t=690534525651 µs
+[MOVE] player_pid_27: x=114.94, y=145.56, z=10.00, yaw=3, pitch=-7, t=690534557492 µs
+[SHOOT] player_pid_31: x=114.12, y=113.12, z=6.69, yaw=174, pitch=4, t=690534559508 µs
+[MOVE] player_pid_31: x=114.12, y=113.31, z=6.25, yaw=174, pitch=5, t=690534559575 µs
+[MOVE] player_pid_18: x=243.94, y=97.44, z=13.62, yaw=292, pitch=-22, t=690534568064 µs
+[MOVE] player_pid_31: x=114.12, y=113.56, z=6.25, yaw=174, pitch=5, t=690534592364 µs
+[SHOOT] player_pid_27: x=114.94, y=145.56, z=10.00, yaw=3, pitch=-7, t=690534596388 µs
+[MOVE] player_pid_27: x=114.88, y=145.81, z=10.00, yaw=2, pitch=-5, t=690534596459 µs
+[MOVE] player_pid_18: x=243.69, y=96.56, z=13.06, yaw=288, pitch=-21, t=690534609863 µs
+[MOVE] player_pid_31: x=114.12, y=113.94, z=6.25, yaw=174, pitch=4, t=690534632376 µs
+[MOVE] player_pid_27: x=114.88, y=146.06, z=10.00, yaw=0, pitch=-4, t=690534637177 µs
+[MOVE] player_pid_18: x=243.44, y=95.69, z=12.38, yaw=283, pitch=-20, t=690534651882 µs
+[MOVE] player_pid_31: x=114.12, y=114.44, z=5.94, yaw=174, pitch=4, t=690534672388 µs
+[MOVE] player_pid_27: x=114.88, y=146.19, z=10.00, yaw=358, pitch=-3, t=690534677044 µs
+[MOVE] player_pid_18: x=243.19, y=94.81, z=11.69, yaw=280, pitch=-20, t=690534692646 µs
+[MOVE] player_pid_31: x=114.12, y=114.88, z=5.75, yaw=174, pitch=4, t=690534712148 µs
+[SHOOT] player_pid_27: x=114.88, y=146.19, z=10.00, yaw=358, pitch=-3, t=690534717954 µs
+[MOVE] player_pid_27: x=114.88, y=146.44, z=10.00, yaw=357, pitch=-3, t=690534718023 µs
+[MOVE] player_pid_18: x=242.94, y=94.00, z=11.00, yaw=277, pitch=-19, t=690534735220 µs
+[MOVE] player_pid_27: x=114.88, y=146.62, z=10.00, yaw=357, pitch=-2, t=690534756865 µs
+[MOVE] player_pid_31: x=114.12, y=115.44, z=5.50, yaw=175, pitch=4, t=690534763535 µs
+[MOVE] player_pid_18: x=242.62, y=93.12, z=10.62, yaw=272, pitch=-18, t=690534776149 µs
+[SHOOT] player_pid_31: x=114.12, y=115.44, z=5.50, yaw=175, pitch=4, t=690534796495 µs
+[MOVE] player_pid_31: x=114.12, y=115.88, z=5.25, yaw=177, pitch=4, t=690534796554 µs
+[MOVE] player_pid_27: x=114.88, y=146.75, z=10.00, yaw=358, pitch=-3, t=690534796774 µs
+[MOVE] player_pid_18: x=242.31, y=92.31, z=10.12, yaw=268, pitch=-17, t=690534818527 µs
+[SHOOT] player_pid_27: x=114.88, y=146.75, z=10.00, yaw=358, pitch=-3, t=690534836656 µs
+[MOVE] player_pid_27: x=114.88, y=147.00, z=10.00, yaw=359, pitch=-4, t=690534836706 µs
+[MOVE] player_pid_31: x=114.38, y=116.25, z=5.12, yaw=180, pitch=4, t=690534837661 µs
+[MOVE] player_pid_18: x=241.94, y=91.56, z=10.00, yaw=260, pitch=-16, t=690534859807 µs
+[MOVE] player_pid_31: x=114.62, y=116.62, z=5.00, yaw=180, pitch=4, t=690534876959 µs
+[MOVE] player_pid_27: x=114.88, y=147.19, z=10.00, yaw=0, pitch=-4, t=690534877542 µs
+[MOVE] player_pid_18: x=241.38, y=90.81, z=10.00, yaw=252, pitch=-15, t=690534901378 µs
+[HIT] player_pid_31: x=114.62, y=116.62, z=5.00, yaw=180, pitch=4, t=690534917026 µs
+[SHOOT] player_pid_31: x=114.62, y=116.62, z=5.00, yaw=180, pitch=4, t=690534917061 µs
+[MOVE] player_pid_31: x=115.00, y=116.88, z=5.00, yaw=180, pitch=5, t=690534917103 µs
+[MOVE] player_pid_27: x=114.88, y=147.31, z=10.00, yaw=0, pitch=-7, t=690534917345 µs
+[MOVE] player_pid_18: x=240.81, y=90.19, z=10.25, yaw=245, pitch=-15, t=690534942806 µs
+[SHOOT] player_pid_27: x=114.88, y=147.31, z=10.00, yaw=0, pitch=-7, t=690534955836 µs
+[MOVE] player_pid_27: x=114.88, y=147.62, z=10.00, yaw=359, pitch=-8, t=690534955886 µs
+[MOVE] player_pid_31: x=115.44, y=116.94, z=5.00, yaw=180, pitch=6, t=690534964943 µs
+[MOVE] player_pid_18: x=240.12, y=89.62, z=10.81, yaw=243, pitch=-15, t=690534985612 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=359, pitch=-8, t=690534997614 µs
+[MOVE] player_pid_31: x=116.00, y=117.00, z=5.00, yaw=180, pitch=7, t=690534997996 µs
+[MOVE] player_pid_18: x=240.12, y=89.19, z=11.00, yaw=243, pitch=-15, t=690535026119 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=359, pitch=-9, t=690535036515 µs
+[HIT] player_pid_31: x=116.00, y=117.00, z=5.00, yaw=180, pitch=7, t=690535037486 µs
+[SHOOT] player_pid_31: x=116.00, y=117.00, z=5.00, yaw=180, pitch=7, t=690535037518 µs
+[MOVE] player_pid_31: x=116.50, y=116.94, z=5.00, yaw=180, pitch=8, t=690535037561 µs
+[MOVE] player_pid_18: x=239.88, y=88.75, z=11.00, yaw=242, pitch=-15, t=690535068195 µs
+[SHOOT] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=359, pitch=-9, t=690535075984 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=359, pitch=-9, t=690535076052 µs
+[MOVE] player_pid_31: x=117.12, y=116.81, z=5.00, yaw=182, pitch=9, t=690535077859 µs
+[MOVE] player_pid_18: x=239.06, y=88.38, z=11.00, yaw=239, pitch=-15, t=690535110602 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=0, pitch=-8, t=690535116841 µs
+[MOVE] player_pid_31: x=117.69, y=116.75, z=5.00, yaw=184, pitch=9, t=690535117413 µs
+[MOVE] player_pid_18: x=238.19, y=88.06, z=11.00, yaw=235, pitch=-15, t=690535151532 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=0, pitch=-9, t=690535157707 µs
+[MOVE] player_pid_31: x=118.31, y=116.75, z=5.00, yaw=187, pitch=9, t=690535159785 µs
+[MOVE] player_pid_18: x=237.31, y=87.75, z=10.81, yaw=228, pitch=-14, t=690535192944 µs
+[SHOOT] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=0, pitch=-9, t=690535196681 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=2, pitch=-10, t=690535196729 µs
+[MOVE] player_pid_31: x=118.94, y=116.75, z=5.00, yaw=187, pitch=9, t=690535198799 µs
+[MOVE] player_pid_18: x=236.44, y=87.50, z=10.31, yaw=218, pitch=-14, t=690535234847 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=3, pitch=-10, t=690535237477 µs
+[MOVE] player_pid_31: x=119.56, y=116.75, z=5.00, yaw=187, pitch=8, t=690535265720 µs
+[MOVE] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=3, pitch=-9, t=690535276376 µs
+[MOVE] player_pid_18: x=235.56, y=87.25, z=9.81, yaw=206, pitch=-14, t=690535277799 µs
+[MOVE] player_pid_31: x=120.19, y=116.81, z=5.00, yaw=188, pitch=8, t=690535281569 µs
+[SHOOT] player_pid_27: x=114.88, y=147.88, z=10.00, yaw=3, pitch=-9, t=690535316439 µs
+[MOVE] player_pid_27: x=114.81, y=147.88, z=10.00, yaw=6, pitch=-9, t=690535316487 µs
+[MOVE] player_pid_18: x=234.69, y=87.06, z=9.25, yaw=198, pitch=-14, t=690535318781 µs
+[MOVE] player_pid_31: x=120.81, y=116.88, z=5.00, yaw=190, pitch=6, t=690535319738 µs
+[MOVE] player_pid_27: x=114.81, y=147.88, z=10.00, yaw=7, pitch=-8, t=690535357241 µs
+[MOVE] player_pid_18: x=233.81, y=86.94, z=8.62, yaw=195, pitch=-13, t=690535360408 µs
+[MOVE] player_pid_31: x=121.44, y=117.00, z=5.00, yaw=190, pitch=6, t=690535363722 µs
+[MOVE] player_pid_27: x=114.81, y=147.88, z=10.00, yaw=8, pitch=-8, t=690535398186 µs
+[MOVE] player_pid_18: x=232.94, y=86.81, z=8.00, yaw=194, pitch=-13, t=690535401295 µs
+[MOVE] player_pid_31: x=122.06, y=117.31, z=5.00, yaw=190, pitch=4, t=690535401754 µs
+[HIT] player_pid_27: x=114.81, y=147.88, z=10.00, yaw=8, pitch=-8, t=690535437084 µs
+[SHOOT] player_pid_27: x=114.81, y=147.88, z=10.00, yaw=8, pitch=-8, t=690535437118 µs
+[MOVE] player_pid_27: x=114.81, y=147.88, z=10.00, yaw=11, pitch=-7, t=690535437158 µs
+[MOVE] player_pid_18: x=232.06, y=86.75, z=7.56, yaw=197, pitch=-13, t=690535443135 µs
+[MOVE] player_pid_31: x=122.50, y=117.75, z=5.00, yaw=191, pitch=2, t=690535444026 µs
+[MOVE] player_pid_27: x=114.75, y=147.88, z=10.00, yaw=11, pitch=-7, t=690535477415 µs
+[MOVE] player_pid_18: x=231.31, y=86.75, z=7.12, yaw=197, pitch=-13, t=690535484410 µs
+[MOVE] player_pid_31: x=122.81, y=118.12, z=5.00, yaw=192, pitch=2, t=690535485239 µs
+[MOVE] player_pid_27: x=114.75, y=147.88, z=10.00, yaw=11, pitch=-7, t=690535515817 µs
+[MOVE] player_pid_18: x=230.62, y=86.81, z=6.56, yaw=197, pitch=-13, t=690535525681 µs
+[MOVE] player_pid_31: x=123.12, y=118.62, z=5.00, yaw=192, pitch=3, t=690535525725 µs
+[SHOOT] player_pid_27: x=114.75, y=147.88, z=10.00, yaw=11, pitch=-7, t=690535557455 µs
+[MOVE] player_pid_27: x=114.75, y=147.88, z=10.00, yaw=13, pitch=-10, t=690535557515 µs
+[MOVE] player_pid_31: x=123.44, y=119.19, z=4.56, yaw=194, pitch=6, t=690535567656 µs
+[MOVE] player_pid_18: x=230.06, y=86.94, z=6.00, yaw=198, pitch=-13, t=690535569032 µs
+[MOVE] player_pid_27: x=114.69, y=147.88, z=10.00, yaw=14, pitch=-11, t=690535596265 µs
+[MOVE] player_pid_31: x=123.69, y=119.69, z=4.12, yaw=194, pitch=6, t=690535606151 µs
+[MOVE] player_pid_18: x=229.56, y=87.19, z=5.69, yaw=219, pitch=-12, t=690535609981 µs
+[MOVE] player_pid_27: x=114.69, y=147.88, z=10.00, yaw=14, pitch=-10, t=690535637254 µs
+[MOVE] player_pid_31: x=123.81, y=120.06, z=4.00, yaw=194, pitch=6, t=690535645543 µs
+[MOVE] player_pid_18: x=229.12, y=87.44, z=5.19, yaw=244, pitch=-12, t=690535653591 µs
+[SHOOT] player_pid_27: x=114.69, y=147.88, z=10.00, yaw=14, pitch=-10, t=690535676189 µs
+[MOVE] player_pid_27: x=114.62, y=147.88, z=10.00, yaw=14, pitch=-10, t=690535676237 µs
+[SHOOT] player_pid_31: x=123.81, y=120.06, z=4.00, yaw=194, pitch=6, t=690535690222 µs
+[MOVE] player_pid_31: x=123.75, y=120.25, z=4.00, yaw=194, pitch=7, t=690535690280 µs
+[MOVE] player_pid_18: x=228.69, y=87.62, z=5.00, yaw=262, pitch=-11, t=690535693288 µs
+[MOVE] player_pid_27: x=114.56, y=147.88, z=10.00, yaw=14, pitch=-9, t=690535716616 µs
+[MOVE] player_pid_31: x=123.56, y=120.25, z=4.00, yaw=194, pitch=8, t=690535728313 µs
+[MOVE] player_pid_18: x=228.12, y=87.62, z=5.00, yaw=270, pitch=-10, t=690535735669 µs
+[MOVE] player_pid_27: x=114.56, y=147.88, z=10.00, yaw=15, pitch=-9, t=690535756563 µs
+[MOVE] player_pid_31: x=123.19, y=120.19, z=4.00, yaw=194, pitch=8, t=690535772605 µs
+[MOVE] player_pid_18: x=227.56, y=87.44, z=4.75, yaw=270, pitch=-10, t=690535776768 µs
+[SHOOT] player_pid_27: x=114.56, y=147.88, z=10.00, yaw=15, pitch=-9, t=690535797513 µs
+[MOVE] player_pid_27: x=114.50, y=147.88, z=10.00, yaw=16, pitch=-8, t=690535797574 µs
+[SHOOT] player_pid_31: x=123.19, y=120.19, z=4.00, yaw=194, pitch=8, t=690535811765 µs
+[MOVE] player_pid_31: x=122.75, y=119.94, z=4.44, yaw=195, pitch=10, t=690535811827 µs
+[MOVE] player_pid_18: x=227.00, y=87.25, z=4.31, yaw=268, pitch=-10, t=690535817995 µs
+[MOVE] player_pid_27: x=114.44, y=147.88, z=10.00, yaw=17, pitch=-8, t=690535837400 µs
+[MOVE] player_pid_31: x=122.31, y=119.75, z=4.94, yaw=196, pitch=11, t=690535852328 µs
+[MOVE] player_pid_18: x=226.38, y=86.94, z=4.00, yaw=267, pitch=-10, t=690535859718 µs
+[MOVE] player_pid_27: x=114.38, y=147.88, z=10.00, yaw=18, pitch=-8, t=690535876695 µs
+[MOVE] player_pid_31: x=121.81, y=119.50, z=5.00, yaw=196, pitch=11, t=690535891703 µs
+[MOVE] player_pid_18: x=225.81, y=86.62, z=4.00, yaw=264, pitch=-9, t=690535903046 µs
+[SHOOT] player_pid_27: x=114.38, y=147.88, z=10.00, yaw=18, pitch=-8, t=690535919125 µs
+[MOVE] player_pid_27: x=114.38, y=147.88, z=10.00, yaw=18, pitch=-6, t=690535919187 µs
+[SHOOT] player_pid_31: x=121.81, y=119.50, z=5.00, yaw=196, pitch=11, t=690535932173 µs
+[MOVE] player_pid_31: x=121.31, y=119.19, z=5.00, yaw=195, pitch=11, t=690535932230 µs
+[MOVE] player_pid_18: x=225.12, y=86.19, z=4.00, yaw=263, pitch=-9, t=690535942696 µs
+[MOVE] player_pid_27: x=114.31, y=147.88, z=10.00, yaw=18, pitch=-5, t=690535959429 µs
+[MOVE] player_pid_31: x=120.81, y=118.88, z=5.00, yaw=194, pitch=9, t=690535973001 µs
+[MOVE] player_pid_18: x=224.44, y=85.69, z=4.00, yaw=258, pitch=-8, t=690535984916 µs
+[MOVE] player_pid_27: x=114.25, y=147.88, z=10.00, yaw=17, pitch=-6, t=690535999333 µs
+[MOVE] player_pid_31: x=120.25, y=118.62, z=5.00, yaw=192, pitch=7, t=690536014762 µs
+[MOVE] player_pid_18: x=223.75, y=85.25, z=4.00, yaw=248, pitch=-7, t=690536026428 µs
+[MOVE] player_pid_27: x=114.19, y=147.88, z=10.00, yaw=17, pitch=-8, t=690536038657 µs
+[HIT] player_pid_31: x=120.25, y=118.62, z=5.00, yaw=192, pitch=7, t=690536055622 µs
+[SHOOT] player_pid_31: x=120.25, y=118.62, z=5.00, yaw=192, pitch=7, t=690536055635 µs
+[DEAD] player_pid_27: x=114.19, y=147.88, z=10.00, yaw=17, pitch=-8, t=690536055646 µs
+[MOVE] player_pid_31: x=119.69, y=118.25, z=5.00, yaw=189, pitch=6, t=690536055658 µs
+[x.x.x.x] player_pid_31 shredded player_pid_27

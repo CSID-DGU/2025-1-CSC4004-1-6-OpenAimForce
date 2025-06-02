@@ -1,0 +1,6 @@
+dataset/raw
+dataset/*.sqlite
+venv/
+dataset/ip_removed
+dataset/player_data.sqlite
+.idea/*

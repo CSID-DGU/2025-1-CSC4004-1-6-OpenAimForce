@@ -1,0 +1,74 @@
++ PORT=25000
++ PASSWORD=BLapRMPsYgoJhZ1qtFIREQ
++ TEAM1=player_pid_40,player_pid_38
++ TEAM2=player_pid_24,player_pid_34
++ [[ -z 25000 ]]
++ [[ -z BLapRMPsYgoJhZ1qtFIREQ ]]
++ [[ -z player_pid_40,player_pid_38 ]]
++ [[ -z player_pid_24,player_pid_34 ]]
++ [[ 25000 =~ ^[0-9]+$ ]]
++ echo 'Starting AssaultCube server: external port 25000 → internal port 28763'
+Starting AssaultCube server: external port 25000 → internal port 28763
++ mkdir -p gameLogs
++ script -e -q -c 'docker run -it -p "25000":28763/udp -p "25000":28763/tcp ac:deploy bash -c '\''cd AC && exec ./server.sh -f -n -pBLapRMPsYgoJhZ1qtFIREQ -t1player_pid_40,player_pid_38 -t2player_pid_24,player_pid_34'\''' /dev/null
+^@reading commandline parameters from file 'config/servercmdline.txt'
+KEY FAILURE: you provided the (inacceptable) example private key.
+KEY FAILURE: generate your own - read: https://assault.cubers.net/docs/server.html
+Server password: BLapRMPsYgoJhZ1qtFIREQ
+Added allowed player team1: player_pid_40
+Added allowed player team1: player_pid_38
+Added allowed player team2: player_pid_24
+Added allowed player team2: player_pid_34
+failed to open "logs/serverlog_20250519_15.31.14_local#28763.txt" for writing
+logging started: console(INFO), file(DISABLED), syslog(DISABLED), timestamp(DISABLED)
+logging local AssaultCube server (version -1302, protocol 1300/104) now..
+server is LAN-only - without connection to masterserver
+ACTION REQUIRED: you must provide a PRIVATE SERVER KEY via the '-Y' command line argument
+LAN-only because no master is given
+could not read config file 'config/servervita.cfg'
+could not read config file 'config/servervita_bak.cfg'
+Server password: "BLapRMPsYgoJhZ1qtFIREQ"
+anticheat: disabled
+dedicated server started, waiting for clients...
+Ctrl-C to exit
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] player_pid_38 client logged in (using serverpassword), AC: -1302|1640, pubkey: 7911ffe70818f975de103801b6cd73569f4c470fa50944d9ebb439099cbd8dda
+
+Game start: team survivor on ac_complex, 3 players, 5 minutes, mastermode 0, (map rev 20/13461, official, 'getmap' not prepared)
+initdemoslot(): use slot 0, sequence #1
+Demo recording started (#1).
+setupdemorecord(): sequence #1, team survivor on ac_complex
+[x.x.x.x] player_pid_34 client logged in (using serverpassword), AC: -1302|1640, pubkey: 64942590e33419f9d567eabeeaf273f9eeadbbece17b1408bf765263c7990ad5
+[x.x.x.x] player_pid_24 client logged in (using serverpassword), AC: -1302|1640, pubkey: 1dcfa8369930b930a555a34339ae49f431a28cb39d1edf6eac650d4cfb53a4a4
+added 44 servermaps
+read 0 map rotation entries from 'config/maprot.cfg'
+read 0 admin passwords from 'config/serverpwd.cfg'
+read 0 (0) blacklist entries from 'config/serverblacklist.cfg', 0 errors
+read 3 (3) IP list entries from 'config/geoip.cfg', 0 errors, 0 concatenated
+read 0 + 0 entries from nickname blacklist file 'config/nicknameblacklist.cfg', 0 errors
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_34
+ >> recv : SV_TRYSPAWN by client player_pid_24
+ >> recv : SV_TRYSPAWN by client player_pid_24
+ >> recv : SV_TRYSPAWN by client player_pid_24
+ >> recv : SV_TRYSPAWN by client player_pid_24
+ >> recv : SV_TRYSPAWN by client player_pid_24
+ >> recv : SV_TRYSPAWN by client player_pid_24
+ >> recv : SV_TRYSPAWN by client player_pid_24
+ >> recv : SV_TRYSPAWN by client player_pid_24

@@ -1,0 +1,742 @@
++ PORT=25000
++ PASSWORD=KMw2NdXA24drn7cCjNeH8A
++ TEAM1=player_pid_39,player_pid_5
++ TEAM2=player_pid_4,player_pid_18
++ [[ -z 25000 ]]
++ [[ -z KMw2NdXA24drn7cCjNeH8A ]]
++ [[ -z player_pid_39,player_pid_5 ]]
++ [[ -z player_pid_4,player_pid_18 ]]
++ [[ 25000 =~ ^[0-9]+$ ]]
++ echo 'Starting AssaultCube server: external port 25000 → internal port 28763'
+Starting AssaultCube server: external port 25000 → internal port 28763
++ mkdir -p gameLogs
++ script -e -q -c 'docker run -it -p "25000":28763/udp -p "25000":28763/tcp ac:deploy bash -c '\''cd AC && exec ./server.sh -f -n -pKMw2NdXA24drn7cCjNeH8A -t1player_pid_39,player_pid_5 -t2player_pid_4,player_pid_18'\''' /dev/null
+^@reading commandline parameters from file 'config/servercmdline.txt'
+KEY FAILURE: you provided the (inacceptable) example private key.
+KEY FAILURE: generate your own - read: https://assault.cubers.net/docs/server.html
+Server password: KMw2NdXA24drn7cCjNeH8A
+Added allowed player team1: player_pid_39
+Added allowed player team1: player_pid_5
+Added allowed player team2: player_pid_4
+Added allowed player team2: player_pid_18
+failed to open "logs/serverlog_20250520_14.54.45_local#28763.txt" for writing
+logging started: console(INFO), file(DISABLED), syslog(DISABLED), timestamp(DISABLED)
+logging local AssaultCube server (version -1302, protocol 1300/104) now..
+server is LAN-only - without connection to masterserver
+ACTION REQUIRED: you must provide a PRIVATE SERVER KEY via the '-Y' command line argument
+LAN-only because no master is given
+Server password: "KMw2NdXA24drn7cCjNeH8A"
+could not read config file 'config/servervita.cfg'
+could not read config file 'config/servervita_bak.cfg'
+anticheat: disabled
+dedicated server started, waiting for clients...
+Ctrl-C to exit
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] player_pid_4 client logged in (using serverpassword), AC: -1302|1640, pubkey: f607d6ea00f8c642b46024aa06704cdb148b1be8c521509812be66f1630d8374
+
+Game start: team one shot, one kill on ac_arabian, 3 players, 5 minutes, mastermode 0, (map rev 55/27026, official, 'getmap' not prepared)
+initdemoslot(): use slot 0, sequence #1
+Demo recording started (#1).
+setupdemorecord(): sequence #1, team one shot, one kill on ac_arabian
+[x.x.x.x] player_pid_18 client logged in (using serverpassword), AC: -1302|1640, pubkey: aa376b3c5b1bb1fc8bbf13477089616de7114f75e94be795d0f7e13a902d2593
+[x.x.x.x] client connected (--)
+[x.x.x.x] player_pid_39 client logged in (using serverpassword), AC: -1302|1640, pubkey: 20416aca273132cade7f0dfa90e8715c6306864102e61bf65c5339fc92b5f60b
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+[x.x.x.x] Bot client logged in (using serverpassword), AC: -1302|1640, pubkey: 9f4424f08b232acab41f74d4ebfaf3478e2ffa84e66b35972fdefb64d765ee67
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+ >> recv : SV_TRYSPAWN by client player_pid_18
+added 44 servermaps
+read 0 map rotation entries from 'config/maprot.cfg'
+read 0 admin passwords from 'config/serverpwd.cfg'
+read 0 (0) blacklist entries from 'config/serverblacklist.cfg', 0 errors
+ >> recv : SV_TRYSPAWN by client player_pid_18
+read 3 (3) IP list entries from 'config/geoip.cfg', 0 errors, 0 concatenated
+read 0 + 0 entries from nickname blacklist file 'config/nicknameblacklist.cfg', 0 errors
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_TRYSPAWN by client player_pid_39
+ >> recv : SV_SPAWN by client player_pid_18
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=148, pitch=0, t=46493379694 µs
+ >> recv : SV_SPAWN by client player_pid_4
+[MOVE] player_pid_4: x=63.00, y=192.00, z=0.00, yaw=31, pitch=0, t=46493395901 µs
+ >> recv : SV_SPAWN by client player_pid_39
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493414979 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493421099 µs
+ >> recv : SV_SPAWN by client Bot
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493426484 µs
+[MOVE] player_pid_4: x=63.12, y=191.81, z=0.00, yaw=31, pitch=0, t=46493435593 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493453553 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493462954 µs
+[MOVE] player_pid_4: x=63.25, y=191.62, z=-0.12, yaw=31, pitch=0, t=46493476114 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493476807 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493494619 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493504364 µs
+[MOVE] player_pid_4: x=63.44, y=191.25, z=-0.12, yaw=31, pitch=0, t=46493515189 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493526380 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493534271 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493546762 µs
+[MOVE] player_pid_4: x=63.69, y=190.88, z=-0.06, yaw=31, pitch=0, t=46493557825 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493574283 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493576798 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493588017 µs
+[SHOOT] player_pid_4: x=63.69, y=190.88, z=-0.06, yaw=31, pitch=0, t=46493598096 µs
+[MOVE] player_pid_4: x=63.88, y=190.62, z=-0.06, yaw=31, pitch=3, t=46493598158 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493613773 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493626436 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493629721 µs
+[MOVE] player_pid_4: x=64.06, y=190.31, z=-0.06, yaw=31, pitch=4, t=46493637354 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493654183 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493671016 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493676814 µs
+[MOVE] player_pid_4: x=64.25, y=189.94, z=-0.06, yaw=31, pitch=5, t=46493678825 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493694558 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493713432 µs
+[MOVE] player_pid_4: x=64.56, y=189.56, z=-0.06, yaw=31, pitch=5, t=46493717343 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493726856 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493734179 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=144, pitch=0, t=46493754322 µs
+[MOVE] player_pid_4: x=64.81, y=189.06, z=-0.06, yaw=31, pitch=5, t=46493757619 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493773632 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493775264 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=143, pitch=0, t=46493796816 µs
+[MOVE] player_pid_4: x=65.12, y=188.62, z=0.00, yaw=30, pitch=5, t=46493798096 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493814971 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493825391 µs
+[MOVE] player_pid_4: x=65.44, y=188.12, z=0.00, yaw=30, pitch=4, t=46493837721 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=143, pitch=0, t=46493837775 µs
+[MOVE] player_pid_39: x=54.00, y=187.00, z=3.00, yaw=60, pitch=0, t=46493853786 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493875493 µs
+[MOVE] player_pid_4: x=65.75, y=187.56, z=0.00, yaw=29, pitch=4, t=46493877595 µs
+[MOVE] player_pid_18: x=217.00, y=32.00, z=1.00, yaw=143, pitch=0, t=46493879499 µs
+[MOVE] player_pid_39: x=54.12, y=186.94, z=3.00, yaw=60, pitch=0, t=46493894591 µs
+[MOVE] player_pid_4: x=66.06, y=187.06, z=0.00, yaw=26, pitch=4, t=46493917669 µs
+[MOVE] player_pid_18: x=217.06, y=32.06, z=1.00, yaw=137, pitch=0, t=46493922743 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493926001 µs
+[MOVE] player_pid_39: x=54.44, y=186.75, z=3.00, yaw=60, pitch=0, t=46493934005 µs
+[MOVE] player_pid_4: x=66.31, y=186.50, z=0.00, yaw=21, pitch=4, t=46493957806 µs
+[MOVE] player_pid_18: x=217.19, y=32.19, z=1.00, yaw=127, pitch=-1, t=46493963015 µs
+[MOVE] player_pid_39: x=54.75, y=186.56, z=3.00, yaw=60, pitch=0, t=46493976017 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=301, pitch=0, t=46493976317 µs
+[MOVE] player_pid_4: x=66.62, y=185.94, z=0.00, yaw=14, pitch=4, t=46493997928 µs
+[MOVE] player_pid_18: x=217.38, y=32.50, z=1.00, yaw=116, pitch=-1, t=46494004948 µs
+[MOVE] player_pid_39: x=55.12, y=186.38, z=3.00, yaw=63, pitch=0, t=46494015510 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=300, pitch=0, t=46494025975 µs
+[MOVE] player_pid_4: x=66.88, y=185.38, z=0.00, yaw=7, pitch=4, t=46494038052 µs
+[MOVE] player_pid_18: x=217.62, y=33.00, z=1.00, yaw=112, pitch=-1, t=46494046879 µs
+[MOVE] player_pid_39: x=55.38, y=186.25, z=3.00, yaw=68, pitch=-1, t=46494054594 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=299, pitch=0, t=46494076081 µs
+[MOVE] player_pid_4: x=67.06, y=184.81, z=0.00, yaw=2, pitch=4, t=46494078664 µs
+[MOVE] player_pid_18: x=217.94, y=33.62, z=1.00, yaw=112, pitch=-1, t=46494088074 µs
+[MOVE] player_pid_39: x=55.50, y=186.12, z=3.00, yaw=69, pitch=-3, t=46494095288 µs
+[MOVE] player_pid_4: x=67.19, y=184.19, z=0.00, yaw=359, pitch=4, t=46494117094 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=299, pitch=0, t=46494126101 µs
+[MOVE] player_pid_18: x=218.25, y=34.25, z=1.00, yaw=112, pitch=-1, t=46494129860 µs
+[MOVE] player_pid_39: x=55.62, y=186.06, z=3.00, yaw=68, pitch=-4, t=46494135751 µs
+[MOVE] player_pid_4: x=67.25, y=183.56, z=0.00, yaw=359, pitch=4, t=46494158450 µs
+[MOVE] player_pid_18: x=218.69, y=34.75, z=1.00, yaw=112, pitch=-1, t=46494171807 µs
+[MOVE] player_pid_39: x=55.62, y=186.06, z=3.00, yaw=66, pitch=-5, t=46494175286 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=299, pitch=0, t=46494176038 µs
+[MOVE] player_pid_4: x=67.31, y=182.94, z=0.00, yaw=359, pitch=4, t=46494197814 µs
+[MOVE] player_pid_18: x=219.12, y=35.19, z=1.00, yaw=112, pitch=-1, t=46494213726 µs
+[MOVE] player_pid_39: x=55.50, y=186.12, z=3.00, yaw=66, pitch=-5, t=46494215403 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=299, pitch=0, t=46494225155 µs
+[MOVE] player_pid_4: x=67.19, y=182.31, z=0.00, yaw=359, pitch=4, t=46494237563 µs
+[MOVE] player_pid_18: x=219.62, y=35.56, z=1.00, yaw=112, pitch=-1, t=46494254765 µs
+[MOVE] player_pid_39: x=55.19, y=186.19, z=3.00, yaw=65, pitch=-5, t=46494255845 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=298, pitch=0, t=46494275812 µs
+[MOVE] player_pid_4: x=66.88, y=181.69, z=0.00, yaw=359, pitch=4, t=46494277563 µs
+[MOVE] player_pid_39: x=54.81, y=186.38, z=3.00, yaw=63, pitch=-4, t=46494295418 µs
+[MOVE] player_pid_18: x=220.12, y=35.88, z=1.00, yaw=112, pitch=-1, t=46494296376 µs
+[MOVE] player_pid_4: x=66.50, y=181.06, z=0.00, yaw=359, pitch=4, t=46494317264 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=297, pitch=0, t=46494325911 µs
+[MOVE] player_pid_39: x=54.44, y=186.56, z=3.00, yaw=62, pitch=-4, t=46494335581 µs
+[MOVE] player_pid_18: x=220.50, y=36.12, z=1.00, yaw=112, pitch=0, t=46494338594 µs
+[MOVE] player_pid_4: x=66.25, y=180.44, z=0.00, yaw=359, pitch=4, t=46494358326 µs
+[MOVE] player_pid_39: x=53.94, y=186.81, z=3.00, yaw=62, pitch=-4, t=46494375002 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=296, pitch=0, t=46494375958 µs
+[MOVE] player_pid_18: x=220.75, y=36.25, z=1.00, yaw=112, pitch=0, t=46494379998 µs
+[MOVE] player_pid_4: x=66.06, y=179.81, z=0.00, yaw=359, pitch=4, t=46494397469 µs
+[MOVE] player_pid_39: x=53.44, y=187.06, z=3.00, yaw=61, pitch=-4, t=46494415890 µs
+[MOVE] player_pid_18: x=220.94, y=36.38, z=1.00, yaw=116, pitch=0, t=46494421726 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=292, pitch=-1, t=46494427112 µs
+[MOVE] player_pid_4: x=65.88, y=179.19, z=0.00, yaw=359, pitch=4, t=46494437363 µs
+[MOVE] player_pid_39: x=52.94, y=187.31, z=3.00, yaw=61, pitch=-4, t=46494455301 µs
+[MOVE] player_pid_18: x=221.06, y=36.44, z=1.00, yaw=145, pitch=0, t=46494463358 µs
+[MOVE] Bot: x=241.00, y=44.00, z=1.00, yaw=290, pitch=-1, t=46494477416 µs
+[MOVE] player_pid_4: x=65.81, y=178.50, z=0.00, yaw=359, pitch=4, t=46494478056 µs
+[MOVE] player_pid_39: x=52.38, y=187.56, z=3.00, yaw=61, pitch=-4, t=46494495140 µs
+[MOVE] player_pid_18: x=221.31, y=36.44, z=1.00, yaw=194, pitch=0, t=46494505120 µs
+[MOVE] player_pid_4: x=65.69, y=177.88, z=0.00, yaw=359, pitch=4, t=46494517443 µs
+[HIT] Bot: x=241.00, y=44.00, z=1.00, yaw=290, pitch=-1, t=46494526352 µs
+[SHOOT] Bot: x=241.00, y=44.00, z=1.00, yaw=290, pitch=-1, t=46494526386 µs
+[DEAD] player_pid_18: x=221.31, y=36.44, z=1.00, yaw=194, pitch=0, t=46494526419 µs
+[MOVE] Bot: x=241.06, y=44.00, z=1.00, yaw=290, pitch=2, t=46494526455 µs
+[x.x.x.x] Bot punctured their teammate player_pid_18
+[MOVE] player_pid_39: x=51.88, y=187.88, z=3.00, yaw=61, pitch=-4, t=46494535785 µs
+[MOVE] player_pid_4: x=65.62, y=177.25, z=0.00, yaw=359, pitch=4, t=46494558558 µs
+[MOVE] player_pid_39: x=51.38, y=188.12, z=3.00, yaw=60, pitch=-4, t=46494574977 µs
+[MOVE] Bot: x=241.12, y=44.06, z=1.00, yaw=290, pitch=3, t=46494575411 µs
+[MOVE] player_pid_4: x=65.62, y=176.62, z=0.00, yaw=359, pitch=4, t=46494597755 µs
+[MOVE] player_pid_39: x=51.00, y=188.19, z=3.00, yaw=59, pitch=-4, t=46494614285 µs
+[MOVE] Bot: x=241.19, y=44.06, z=1.00, yaw=290, pitch=4, t=46494625683 µs
+[MOVE] player_pid_4: x=65.56, y=175.94, z=0.00, yaw=359, pitch=4, t=46494637780 µs
+[MOVE] player_pid_39: x=50.69, y=188.06, z=3.00, yaw=58, pitch=-4, t=46494655135 µs
+[MOVE] Bot: x=241.25, y=43.94, z=1.00, yaw=290, pitch=3, t=46494676189 µs
+[MOVE] player_pid_4: x=65.56, y=175.31, z=0.00, yaw=359, pitch=4, t=46494677698 µs
+[MOVE] player_pid_39: x=50.31, y=187.88, z=3.00, yaw=56, pitch=-4, t=46494695536 µs
+[MOVE] player_pid_4: x=65.50, y=174.69, z=0.00, yaw=359, pitch=4, t=46494717479 µs
+[MOVE] Bot: x=241.44, y=43.56, z=1.00, yaw=290, pitch=1, t=46494725795 µs
+[MOVE] player_pid_39: x=50.12, y=187.62, z=3.00, yaw=54, pitch=-4, t=46494734875 µs
+[MOVE] player_pid_4: x=65.50, y=174.06, z=0.00, yaw=359, pitch=4, t=46494757530 µs
+[MOVE] player_pid_39: x=50.12, y=187.44, z=3.00, yaw=52, pitch=-5, t=46494774619 µs
+[MOVE] Bot: x=241.62, y=43.12, z=1.00, yaw=290, pitch=1, t=46494776121 µs
+[MOVE] player_pid_4: x=65.50, y=173.44, z=0.00, yaw=359, pitch=4, t=46494798251 µs
+[MOVE] player_pid_39: x=50.12, y=187.31, z=3.00, yaw=50, pitch=-5, t=46494814285 µs
+[MOVE] Bot: x=241.81, y=42.50, z=1.00, yaw=290, pitch=1, t=46494826101 µs
+[MOVE] player_pid_4: x=65.50, y=172.75, z=0.25, yaw=359, pitch=4, t=46494838425 µs
+[MOVE] player_pid_39: x=50.12, y=187.19, z=3.00, yaw=48, pitch=-5, t=46494855082 µs
+[MOVE] Bot: x=242.06, y=41.88, z=1.00, yaw=290, pitch=1, t=46494875912 µs
+[MOVE] player_pid_4: x=65.44, y=172.12, z=0.81, yaw=358, pitch=3, t=46494877539 µs
+[MOVE] player_pid_39: x=50.12, y=186.88, z=3.00, yaw=46, pitch=-5, t=46494895132 µs
+[MOVE] player_pid_4: x=65.44, y=171.50, z=1.00, yaw=356, pitch=3, t=46494917486 µs
+[MOVE] Bot: x=242.31, y=41.19, z=1.00, yaw=290, pitch=1, t=46494925816 µs
+[MOVE] player_pid_39: x=49.81, y=186.56, z=3.50, yaw=45, pitch=-4, t=46494934491 µs
+[MOVE] player_pid_4: x=65.44, y=170.88, z=1.19, yaw=352, pitch=3, t=46494958410 µs
+[MOVE] player_pid_39: x=49.44, y=186.19, z=4.00, yaw=43, pitch=-4, t=46494975401 µs
+[MOVE] Bot: x=242.56, y=40.50, z=1.38, yaw=286, pitch=0, t=46494977433 µs
+[MOVE] player_pid_4: x=65.38, y=170.19, z=1.75, yaw=348, pitch=4, t=46494997942 µs
+[MOVE] player_pid_39: x=49.06, y=185.81, z=4.06, yaw=42, pitch=-4, t=46495013898 µs
+[MOVE] Bot: x=242.81, y=39.75, z=1.56, yaw=274, pitch=-1, t=46495027783 µs
+[MOVE] player_pid_4: x=65.31, y=169.56, z=2.25, yaw=347, pitch=5, t=46495037582 µs
+[MOVE] player_pid_39: x=48.69, y=185.38, z=4.56, yaw=40, pitch=-4, t=46495054877 µs
+[MOVE] Bot: x=242.88, y=39.31, z=1.56, yaw=259, pitch=-3, t=46495077269 µs
+[MOVE] player_pid_4: x=65.25, y=168.94, z=2.81, yaw=347, pitch=5, t=46495078577 µs
+[MOVE] player_pid_39: x=48.44, y=184.81, z=5.00, yaw=39, pitch=-4, t=46495094165 µs
+[MOVE] player_pid_4: x=65.12, y=168.31, z=3.00, yaw=347, pitch=5, t=46495118094 µs
+[MOVE] Bot: x=242.88, y=39.31, z=1.56, yaw=251, pitch=-4, t=46495125884 µs
+[MOVE] player_pid_39: x=48.62, y=184.56, z=5.00, yaw=37, pitch=-4, t=46495134604 µs
+[MOVE] player_pid_4: x=65.00, y=167.69, z=3.00, yaw=347, pitch=5, t=46495157712 µs
+[MOVE] player_pid_39: x=48.94, y=184.31, z=5.00, yaw=35, pitch=-4, t=46495174973 µs
+[MOVE] Bot: x=242.88, y=39.50, z=1.56, yaw=251, pitch=-4, t=46495175688 µs
+[MOVE] player_pid_4: x=64.88, y=167.06, z=3.00, yaw=347, pitch=5, t=46495197929 µs
+[MOVE] player_pid_39: x=49.12, y=183.81, z=4.81, yaw=34, pitch=-4, t=46495214785 µs
+[MOVE] Bot: x=242.88, y=39.88, z=1.56, yaw=251, pitch=-4, t=46495226332 µs
+[MOVE] player_pid_4: x=64.75, y=166.44, z=3.00, yaw=347, pitch=5, t=46495237753 µs
+[MOVE] player_pid_39: x=49.12, y=183.12, z=4.44, yaw=33, pitch=-3, t=46495254417 µs
+[MOVE] Bot: x=242.88, y=40.25, z=1.38, yaw=251, pitch=-4, t=46495275770 µs
+[MOVE] player_pid_4: x=64.62, y=165.81, z=3.00, yaw=347, pitch=5, t=46495277770 µs
+[MOVE] player_pid_39: x=49.12, y=183.12, z=4.00, yaw=33, pitch=-2, t=46495294820 µs
+[MOVE] player_pid_4: x=64.50, y=165.19, z=3.00, yaw=347, pitch=5, t=46495317873 µs
+[MOVE] Bot: x=242.88, y=40.69, z=1.38, yaw=251, pitch=-4, t=46495326317 µs
+[MOVE] player_pid_39: x=49.12, y=183.12, z=4.00, yaw=34, pitch=-2, t=46495334235 µs
+[MOVE] player_pid_4: x=64.38, y=164.56, z=3.00, yaw=350, pitch=3, t=46495358362 µs
+[MOVE] player_pid_39: x=49.19, y=183.12, z=4.00, yaw=34, pitch=-2, t=46495374640 µs
+[MOVE] Bot: x=242.88, y=41.12, z=1.38, yaw=249, pitch=-4, t=46495375781 µs
+[MOVE] player_pid_4: x=64.25, y=163.94, z=3.00, yaw=355, pitch=0, t=46495397796 µs
+[MOVE] player_pid_39: x=49.31, y=183.12, z=4.00, yaw=34, pitch=-2, t=46495414414 µs
+[MOVE] Bot: x=242.88, y=41.56, z=1.00, yaw=241, pitch=-5, t=46495427805 µs
+[MOVE] player_pid_4: x=64.12, y=163.31, z=3.00, yaw=356, pitch=-1, t=46495438108 µs
+[MOVE] player_pid_39: x=49.50, y=183.12, z=4.00, yaw=34, pitch=-2, t=46495454716 µs
+[MOVE] Bot: x=242.88, y=41.62, z=1.00, yaw=233, pitch=-5, t=46495476317 µs
+[MOVE] player_pid_4: x=64.06, y=162.69, z=3.00, yaw=357, pitch=-1, t=46495477356 µs
+[MOVE] player_pid_39: x=49.81, y=183.12, z=4.00, yaw=34, pitch=-2, t=46495494642 µs
+[MOVE] player_pid_4: x=64.00, y=162.06, z=3.00, yaw=357, pitch=-1, t=46495517079 µs
+[MOVE] Bot: x=242.88, y=41.38, z=1.00, yaw=225, pitch=-6, t=46495525693 µs
+[MOVE] player_pid_39: x=50.06, y=183.12, z=4.00, yaw=34, pitch=-2, t=46495534882 µs
+[MOVE] player_pid_4: x=63.94, y=161.38, z=3.00, yaw=357, pitch=-1, t=46495557509 µs
+[MOVE] player_pid_39: x=50.38, y=182.62, z=3.62, yaw=33, pitch=-2, t=46495574753 µs
+[MOVE] Bot: x=242.88, y=41.06, z=1.06, yaw=219, pitch=-5, t=46495575811 µs
+[MOVE] player_pid_4: x=64.00, y=160.75, z=3.00, yaw=358, pitch=-1, t=46495597734 µs
+[MOVE] player_pid_39: x=50.69, y=182.06, z=3.19, yaw=33, pitch=-1, t=46495614607 µs
+[MOVE] Bot: x=242.75, y=40.62, z=1.38, yaw=217, pitch=-5, t=46495625349 µs
+[MOVE] player_pid_4: x=64.19, y=160.12, z=3.00, yaw=358, pitch=-1, t=46495637786 µs
+[MOVE] player_pid_39: x=51.00, y=181.50, z=3.00, yaw=32, pitch=-1, t=46495655098 µs
+[MOVE] Bot: x=242.38, y=40.19, z=1.38, yaw=217, pitch=-5, t=46495675309 µs
+[MOVE] player_pid_4: x=64.50, y=159.44, z=3.00, yaw=358, pitch=-1, t=46495677996 µs
+[MOVE] player_pid_39: x=51.31, y=180.94, z=3.00, yaw=32, pitch=-1, t=46495693855 µs
+[MOVE] player_pid_4: x=64.88, y=158.81, z=3.00, yaw=358, pitch=-1, t=46495718776 µs
+[MOVE] Bot: x=242.00, y=39.75, z=1.56, yaw=217, pitch=-5, t=46495725761 µs
+[MOVE] player_pid_39: x=51.62, y=180.44, z=3.00, yaw=31, pitch=-1, t=46495733877 µs
+[MOVE] player_pid_4: x=65.12, y=158.19, z=3.00, yaw=356, pitch=-1, t=46495757439 µs
+[MOVE] player_pid_39: x=51.94, y=179.88, z=3.00, yaw=30, pitch=-1, t=46495774203 µs
+[MOVE] Bot: x=241.50, y=39.31, z=1.12, yaw=217, pitch=-5, t=46495776330 µs
+[MOVE] player_pid_4: x=65.31, y=157.50, z=2.75, yaw=350, pitch=-2, t=46495797610 µs
+[MOVE] player_pid_39: x=52.31, y=179.31, z=3.00, yaw=30, pitch=-1, t=46495814662 µs
+[MOVE] Bot: x=241.12, y=38.94, z=1.19, yaw=217, pitch=-5, t=46495825991 µs
+[MOVE] player_pid_4: x=65.50, y=156.88, z=2.31, yaw=344, pitch=-3, t=46495837745 µs
+[MOVE] player_pid_39: x=52.62, y=178.75, z=3.00, yaw=30, pitch=-1, t=46495854317 µs
+[MOVE] Bot: x=240.81, y=38.69, z=1.06, yaw=213, pitch=-5, t=46495876428 µs
+[MOVE] player_pid_4: x=65.62, y=156.25, z=2.00, yaw=340, pitch=-3, t=46495878326 µs
+[MOVE] player_pid_39: x=52.88, y=178.19, z=3.00, yaw=30, pitch=-1, t=46495894604 µs
+[MOVE] player_pid_4: x=65.62, y=155.62, z=1.81, yaw=339, pitch=-3, t=46495918325 µs
+[MOVE] Bot: x=240.62, y=38.50, z=1.00, yaw=204, pitch=-5, t=46495926299 µs
+[MOVE] player_pid_39: x=53.00, y=177.50, z=3.00, yaw=30, pitch=-1, t=46495934459 µs
+[MOVE] player_pid_4: x=65.69, y=155.00, z=1.38, yaw=339, pitch=-3, t=46495957767 µs
+[MOVE] player_pid_39: x=53.00, y=176.75, z=3.00, yaw=30, pitch=-1, t=46495974453 µs
+[MOVE] Bot: x=240.50, y=38.38, z=1.00, yaw=193, pitch=-4, t=46495976710 µs
+[MOVE] player_pid_4: x=65.69, y=154.38, z=1.00, yaw=339, pitch=-3, t=46495997738 µs
+[MOVE] player_pid_39: x=52.94, y=176.00, z=3.00, yaw=30, pitch=-1, t=46496014252 µs
+[MOVE] Bot: x=240.44, y=38.19, z=1.00, yaw=187, pitch=-4, t=46496026304 µs
+[MOVE] player_pid_4: x=65.44, y=153.81, z=0.94, yaw=340, pitch=-3, t=46496037771 µs
+[MOVE] player_pid_39: x=52.88, y=175.19, z=3.00, yaw=30, pitch=-1, t=46496055035 µs
+[MOVE] Bot: x=240.44, y=37.75, z=1.00, yaw=187, pitch=-4, t=46496075938 µs
+[MOVE] player_pid_4: x=65.12, y=153.25, z=0.50, yaw=342, pitch=-3, t=46496077089 µs
+[MOVE] player_pid_39: x=52.75, y=174.38, z=3.00, yaw=32, pitch=-1, t=46496094922 µs
+[MOVE] player_pid_4: x=64.81, y=152.75, z=0.06, yaw=345, pitch=-3, t=46496117594 µs
+[MOVE] Bot: x=240.44, y=37.31, z=1.00, yaw=187, pitch=-4, t=46496125294 µs
+[MOVE] player_pid_39: x=52.56, y=173.56, z=3.00, yaw=35, pitch=-1, t=46496134683 µs
+[MOVE] player_pid_4: x=64.44, y=152.19, z=0.00, yaw=347, pitch=-2, t=46496158248 µs
+[MOVE] Bot: x=240.50, y=37.06, z=1.00, yaw=187, pitch=-4, t=46496175813 µs
+[MOVE] player_pid_39: x=52.44, y=172.69, z=3.00, yaw=39, pitch=-1, t=46496175860 µs
+[MOVE] player_pid_4: x=63.94, y=151.69, z=0.00, yaw=348, pitch=-2, t=46496197931 µs
+[MOVE] player_pid_39: x=52.31, y=171.81, z=3.00, yaw=43, pitch=-1, t=46496215619 µs
+[MOVE] Bot: x=240.50, y=36.88, z=1.00, yaw=187, pitch=-4, t=46496225410 µs
+[MOVE] player_pid_4: x=63.56, y=151.12, z=0.00, yaw=349, pitch=-2, t=46496238411 µs
+[MOVE] player_pid_39: x=52.19, y=170.94, z=3.00, yaw=48, pitch=-2, t=46496255640 µs
+[MOVE] Bot: x=240.50, y=36.81, z=1.00, yaw=187, pitch=-4, t=46496275731 µs
+[MOVE] player_pid_4: x=63.06, y=150.62, z=0.00, yaw=350, pitch=-2, t=46496277328 µs
+[MOVE] player_pid_39: x=52.12, y=170.00, z=3.00, yaw=54, pitch=-2, t=46496296164 µs
+[MOVE] player_pid_4: x=62.56, y=150.06, z=0.00, yaw=350, pitch=-2, t=46496317256 µs
+[MOVE] Bot: x=240.50, y=36.69, z=1.00, yaw=185, pitch=-4, t=46496326113 µs
+[MOVE] player_pid_39: x=52.19, y=169.12, z=3.00, yaw=59, pitch=-3, t=46496335433 µs
+[MOVE] player_pid_4: x=61.94, y=149.56, z=0.00, yaw=351, pitch=-2, t=46496358322 µs
+[MOVE] player_pid_39: x=52.25, y=168.25, z=3.00, yaw=63, pitch=-3, t=46496375657 µs
+[MOVE] Bot: x=240.50, y=36.69, z=1.00, yaw=183, pitch=-4, t=46496376931 µs
+[MOVE] player_pid_4: x=61.31, y=149.00, z=0.00, yaw=351, pitch=-2, t=46496397999 µs
+[MOVE] player_pid_39: x=52.38, y=167.38, z=3.00, yaw=66, pitch=-3, t=46496415320 µs
+[MOVE] Bot: x=240.50, y=36.62, z=1.00, yaw=182, pitch=-4, t=46496425559 µs
+[MOVE] player_pid_4: x=60.62, y=148.44, z=0.00, yaw=352, pitch=-2, t=46496439630 µs
+[MOVE] player_pid_39: x=52.62, y=166.56, z=3.00, yaw=68, pitch=-3, t=46496455784 µs
+[MOVE] Bot: x=240.50, y=36.62, z=1.00, yaw=182, pitch=-4, t=46496475514 µs
+[MOVE] player_pid_4: x=59.94, y=147.94, z=0.00, yaw=352, pitch=-2, t=46496478478 µs
+[MOVE] player_pid_39: x=52.94, y=165.88, z=3.00, yaw=70, pitch=-3, t=46496496298 µs
+[MOVE] player_pid_4: x=59.25, y=147.38, z=0.00, yaw=353, pitch=-2, t=46496520101 µs
+[MOVE] Bot: x=240.50, y=36.62, z=1.00, yaw=182, pitch=-4, t=46496525715 µs
+[MOVE] player_pid_39: x=53.31, y=165.31, z=3.00, yaw=72, pitch=-3, t=46496536056 µs
+[MOVE] player_pid_4: x=58.56, y=146.81, z=-0.06, yaw=354, pitch=-2, t=46496560630 µs
+[MOVE] player_pid_39: x=53.75, y=164.88, z=3.00, yaw=75, pitch=-3, t=46496575234 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=183, pitch=-4, t=46496575727 µs
+[MOVE] player_pid_4: x=58.12, y=146.25, z=-0.50, yaw=358, pitch=-2, t=46496601643 µs
+[MOVE] player_pid_39: x=54.25, y=164.50, z=3.00, yaw=76, pitch=-3, t=46496615747 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=190, pitch=-4, t=46496625699 µs
+[MOVE] player_pid_4: x=58.12, y=145.69, z=-0.94, yaw=3, pitch=-2, t=46496640719 µs
+[MOVE] player_pid_39: x=54.81, y=164.25, z=3.00, yaw=77, pitch=-3, t=46496655029 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=208, pitch=-6, t=46496675233 µs
+[MOVE] player_pid_4: x=58.12, y=145.06, z=-1.00, yaw=10, pitch=-2, t=46496681368 µs
+[MOVE] player_pid_39: x=55.38, y=164.00, z=3.00, yaw=77, pitch=-3, t=46496695236 µs
+[MOVE] player_pid_4: x=58.12, y=144.50, z=-1.00, yaw=18, pitch=-2, t=46496720683 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=223, pitch=-8, t=46496725567 µs
+[MOVE] player_pid_39: x=56.00, y=163.75, z=3.00, yaw=73, pitch=-3, t=46496735548 µs
+[MOVE] player_pid_4: x=58.12, y=143.94, z=-1.00, yaw=24, pitch=-3, t=46496760345 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=224, pitch=-8, t=46496775497 µs
+[MOVE] player_pid_39: x=56.62, y=163.69, z=3.00, yaw=65, pitch=-3, t=46496776331 µs
+[MOVE] player_pid_4: x=58.06, y=143.31, z=-1.00, yaw=26, pitch=-3, t=46496801788 µs
+[MOVE] player_pid_39: x=57.31, y=163.75, z=3.00, yaw=56, pitch=-4, t=46496815782 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=224, pitch=-8, t=46496825670 µs
+[MOVE] player_pid_4: x=58.12, y=142.75, z=-1.00, yaw=28, pitch=-3, t=46496841282 µs
+[MOVE] player_pid_39: x=58.06, y=163.81, z=3.00, yaw=50, pitch=-5, t=46496857348 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=224, pitch=-8, t=46496875727 µs
+[MOVE] player_pid_4: x=58.25, y=142.12, z=-1.00, yaw=29, pitch=-3, t=46496881271 µs
+[MOVE] player_pid_39: x=58.94, y=163.88, z=3.00, yaw=46, pitch=-6, t=46496900999 µs
+[MOVE] player_pid_4: x=58.44, y=141.56, z=-1.00, yaw=29, pitch=-3, t=46496920152 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=227, pitch=-8, t=46496926200 µs
+[MOVE] player_pid_39: x=59.75, y=163.94, z=3.00, yaw=45, pitch=-6, t=46496940389 µs
+[MOVE] player_pid_4: x=58.50, y=140.94, z=-1.00, yaw=29, pitch=-3, t=46496961208 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=243, pitch=-7, t=46496976628 µs
+[MOVE] player_pid_39: x=60.44, y=163.81, z=3.00, yaw=45, pitch=-7, t=46496980882 µs
+[MOVE] player_pid_4: x=58.50, y=140.25, z=-1.00, yaw=30, pitch=-3, t=46497001540 µs
+[MOVE] player_pid_39: x=61.06, y=163.56, z=3.00, yaw=45, pitch=-7, t=46497020771 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=259, pitch=-7, t=46497027197 µs
+[MOVE] player_pid_4: x=58.44, y=139.50, z=-1.00, yaw=31, pitch=-3, t=46497041444 µs
+[MOVE] player_pid_39: x=61.62, y=163.31, z=3.00, yaw=44, pitch=-7, t=46497061427 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=266, pitch=-9, t=46497076239 µs
+[MOVE] player_pid_4: x=58.38, y=138.69, z=-1.00, yaw=33, pitch=-3, t=46497081356 µs
+[MOVE] player_pid_39: x=62.12, y=162.88, z=3.00, yaw=43, pitch=-7, t=46497103122 µs
+[MOVE] player_pid_4: x=58.25, y=137.88, z=-1.00, yaw=34, pitch=-3, t=46497121399 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=267, pitch=-9, t=46497126685 µs
+[MOVE] player_pid_39: x=62.44, y=162.38, z=3.00, yaw=43, pitch=-7, t=46497141301 µs
+[MOVE] player_pid_4: x=58.12, y=137.06, z=-1.00, yaw=36, pitch=-3, t=46497160149 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=266, pitch=-9, t=46497176176 µs
+[MOVE] player_pid_39: x=62.69, y=161.69, z=3.00, yaw=43, pitch=-7, t=46497181381 µs
+[MOVE] player_pid_4: x=57.94, y=136.19, z=-1.00, yaw=39, pitch=-3, t=46497201237 µs
+[MOVE] player_pid_39: x=62.81, y=161.00, z=3.00, yaw=43, pitch=-7, t=46497221921 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=266, pitch=-9, t=46497225428 µs
+[MOVE] player_pid_4: x=57.94, y=135.38, z=-1.00, yaw=41, pitch=-3, t=46497240569 µs
+[MOVE] player_pid_39: x=62.94, y=160.19, z=3.00, yaw=43, pitch=-7, t=46497261488 µs
+[MOVE] Bot: x=240.50, y=36.56, z=1.00, yaw=266, pitch=-9, t=46497275652 µs
+[MOVE] player_pid_4: x=58.00, y=134.69, z=-1.00, yaw=44, pitch=-2, t=46497281088 µs
+[MOVE] player_pid_39: x=63.00, y=159.38, z=3.00, yaw=43, pitch=-7, t=46497300770 µs
+[MOVE] player_pid_4: x=58.19, y=134.00, z=-1.00, yaw=46, pitch=-2, t=46497320592 µs
+[MOVE] Bot: x=240.62, y=36.56, z=1.00, yaw=266, pitch=-9, t=46497325671 µs
+[MOVE] player_pid_39: x=63.06, y=158.56, z=3.00, yaw=43, pitch=-7, t=46497341648 µs
+[MOVE] player_pid_4: x=58.44, y=133.44, z=-1.00, yaw=49, pitch=-2, t=46497360164 µs
+[MOVE] Bot: x=241.00, y=36.56, z=1.19, yaw=266, pitch=-9, t=46497376280 µs
+[MOVE] player_pid_39: x=63.06, y=157.69, z=2.94, yaw=43, pitch=-7, t=46497381171 µs
+[MOVE] player_pid_4: x=58.81, y=132.88, z=-1.00, yaw=52, pitch=-2, t=46497401347 µs
+[MOVE] player_pid_39: x=63.06, y=156.81, z=2.50, yaw=43, pitch=-7, t=46497420593 µs
+[MOVE] Bot: x=241.56, y=36.50, z=1.44, yaw=266, pitch=-9, t=46497426050 µs
+[MOVE] player_pid_4: x=59.19, y=132.44, z=-1.00, yaw=55, pitch=-1, t=46497441349 µs
+[MOVE] player_pid_39: x=63.06, y=156.00, z=2.00, yaw=43, pitch=-7, t=46497461191 µs
+[MOVE] Bot: x=242.12, y=36.44, z=1.69, yaw=266, pitch=-9, t=46497476055 µs
+[MOVE] player_pid_4: x=59.62, y=131.94, z=-1.00, yaw=56, pitch=-1, t=46497481178 µs
+[MOVE] player_pid_39: x=63.06, y=155.12, z=1.50, yaw=43, pitch=-7, t=46497500928 µs
+[MOVE] player_pid_4: x=60.06, y=131.50, z=-1.00, yaw=57, pitch=-1, t=46497520804 µs
+[MOVE] Bot: x=242.81, y=36.44, z=2.25, yaw=266, pitch=-9, t=46497526065 µs
+[MOVE] player_pid_39: x=63.06, y=154.25, z=1.00, yaw=43, pitch=-7, t=46497541135 µs
+[MOVE] player_pid_4: x=60.56, y=131.12, z=-1.00, yaw=58, pitch=-1, t=46497561228 µs
+[MOVE] Bot: x=242.88, y=36.38, z=2.25, yaw=266, pitch=-9, t=46497576148 µs
+[MOVE] player_pid_39: x=63.00, y=153.50, z=0.81, yaw=43, pitch=-7, t=46497581475 µs
+[MOVE] player_pid_4: x=61.06, y=130.75, z=-1.00, yaw=58, pitch=-1, t=46497600159 µs
+[MOVE] player_pid_39: x=62.88, y=152.75, z=0.38, yaw=43, pitch=-7, t=46497621630 µs
+[MOVE] Bot: x=242.88, y=36.31, z=2.25, yaw=266, pitch=-9, t=46497626348 µs
+[MOVE] player_pid_4: x=61.56, y=130.38, z=-1.00, yaw=59, pitch=-1, t=46497640712 µs
+[MOVE] player_pid_39: x=62.69, y=152.00, z=0.00, yaw=43, pitch=-7, t=46497661647 µs
+[MOVE] Bot: x=242.88, y=36.25, z=2.25, yaw=266, pitch=-9, t=46497675999 µs
+[MOVE] player_pid_4: x=62.06, y=130.00, z=-1.00, yaw=60, pitch=-1, t=46497680339 µs
+[MOVE] player_pid_39: x=62.50, y=151.38, z=0.00, yaw=43, pitch=-7, t=46497701566 µs
+[MOVE] player_pid_4: x=62.62, y=129.69, z=-1.00, yaw=60, pitch=-1, t=46497720939 µs
+[MOVE] Bot: x=242.88, y=36.25, z=2.25, yaw=266, pitch=-9, t=46497725935 µs
+[MOVE] player_pid_39: x=62.19, y=150.75, z=0.00, yaw=43, pitch=-7, t=46497741633 µs
+[MOVE] player_pid_4: x=63.12, y=129.31, z=-1.00, yaw=60, pitch=-1, t=46497760728 µs
+[MOVE] Bot: x=242.88, y=36.19, z=2.25, yaw=266, pitch=-9, t=46497776078 µs
+[MOVE] player_pid_39: x=61.88, y=150.19, z=0.00, yaw=43, pitch=-7, t=46497780751 µs
+[MOVE] player_pid_4: x=63.69, y=129.00, z=-1.00, yaw=61, pitch=-1, t=46497801194 µs
+[MOVE] player_pid_39: x=61.50, y=149.69, z=0.00, yaw=43, pitch=-7, t=46497821453 µs
+[MOVE] Bot: x=242.88, y=36.12, z=2.25, yaw=266, pitch=-9, t=46497825862 µs
+[MOVE] player_pid_4: x=63.88, y=128.69, z=-1.00, yaw=62, pitch=-1, t=46497841704 µs
+[MOVE] player_pid_39: x=61.12, y=149.25, z=0.00, yaw=42, pitch=-7, t=46497861454 µs
+[MOVE] Bot: x=242.88, y=36.12, z=2.25, yaw=266, pitch=-9, t=46497876052 µs
+[MOVE] player_pid_4: x=63.88, y=128.38, z=-1.00, yaw=63, pitch=-1, t=46497879975 µs
+[MOVE] player_pid_39: x=61.00, y=148.81, z=0.00, yaw=41, pitch=-7, t=46497901760 µs
+[MOVE] player_pid_4: x=63.88, y=128.06, z=-1.00, yaw=66, pitch=-1, t=46497920762 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46497925534 µs
+[MOVE] player_pid_39: x=61.00, y=148.44, z=0.00, yaw=41, pitch=-7, t=46497942348 µs
+[MOVE] player_pid_4: x=64.12, y=127.75, z=-1.00, yaw=68, pitch=-1, t=46497961390 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46497975876 µs
+[MOVE] player_pid_39: x=61.12, y=148.00, z=0.00, yaw=40, pitch=-7, t=46497982221 µs
+[MOVE] player_pid_4: x=64.69, y=127.50, z=-1.00, yaw=73, pitch=0, t=46498000823 µs
+[MOVE] player_pid_39: x=61.31, y=147.56, z=0.00, yaw=38, pitch=-7, t=46498021627 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498025696 µs
+[MOVE] player_pid_4: x=65.31, y=127.25, z=-1.00, yaw=77, pitch=0, t=46498040768 µs
+[MOVE] player_pid_39: x=61.56, y=147.06, z=0.00, yaw=36, pitch=-7, t=46498061524 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498075909 µs
+[MOVE] player_pid_4: x=65.88, y=127.06, z=-1.00, yaw=79, pitch=0, t=46498081232 µs
+[MOVE] player_pid_39: x=61.88, y=146.62, z=-0.25, yaw=34, pitch=-7, t=46498102875 µs
+[MOVE] player_pid_4: x=66.50, y=126.88, z=-1.00, yaw=80, pitch=0, t=46498120350 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498125612 µs
+[MOVE] player_pid_39: x=62.19, y=146.12, z=-0.69, yaw=30, pitch=-8, t=46498141975 µs
+[MOVE] player_pid_4: x=67.12, y=126.69, z=-1.00, yaw=80, pitch=0, t=46498160711 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498175581 µs
+[MOVE] player_pid_39: x=62.50, y=145.62, z=-1.00, yaw=24, pitch=-8, t=46498181273 µs
+[MOVE] player_pid_4: x=67.75, y=126.56, z=-1.00, yaw=80, pitch=0, t=46498200380 µs
+[MOVE] player_pid_39: x=62.62, y=145.06, z=-1.00, yaw=19, pitch=-7, t=46498221169 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498225854 µs
+[MOVE] player_pid_4: x=68.38, y=126.44, z=-1.00, yaw=80, pitch=0, t=46498241146 µs
+[MOVE] player_pid_39: x=62.62, y=144.38, z=-1.00, yaw=15, pitch=-7, t=46498261116 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498276201 µs
+[MOVE] player_pid_4: x=69.00, y=126.31, z=-1.00, yaw=80, pitch=0, t=46498280182 µs
+[MOVE] player_pid_39: x=62.50, y=143.69, z=-1.00, yaw=15, pitch=-7, t=46498301915 µs
+[MOVE] player_pid_4: x=69.62, y=126.19, z=-1.00, yaw=79, pitch=-1, t=46498320152 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498325920 µs
+[MOVE] player_pid_39: x=62.25, y=143.00, z=-1.00, yaw=15, pitch=-7, t=46498341869 µs
+[MOVE] player_pid_4: x=70.25, y=126.06, z=-1.00, yaw=79, pitch=-1, t=46498359983 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498376203 µs
+[MOVE] player_pid_39: x=61.94, y=142.25, z=-1.00, yaw=15, pitch=-7, t=46498381400 µs
+[MOVE] player_pid_4: x=70.88, y=125.94, z=-1.00, yaw=79, pitch=-1, t=46498401806 µs
+[MOVE] player_pid_39: x=61.62, y=141.50, z=-1.00, yaw=15, pitch=-7, t=46498421326 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498426247 µs
+[MOVE] player_pid_4: x=71.50, y=125.81, z=-1.00, yaw=79, pitch=-1, t=46498441329 µs
+[MOVE] player_pid_39: x=61.25, y=140.75, z=-1.00, yaw=15, pitch=-7, t=46498461659 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498475789 µs
+[MOVE] player_pid_4: x=72.12, y=125.69, z=-1.00, yaw=79, pitch=-1, t=46498481280 µs
+[MOVE] player_pid_39: x=60.88, y=140.00, z=-1.00, yaw=15, pitch=-7, t=46498501358 µs
+[MOVE] player_pid_4: x=72.75, y=125.56, z=-1.00, yaw=79, pitch=-1, t=46498521032 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498525678 µs
+[MOVE] player_pid_39: x=60.44, y=139.19, z=-1.00, yaw=15, pitch=-7, t=46498542141 µs
+[MOVE] player_pid_4: x=73.38, y=125.44, z=-1.00, yaw=79, pitch=-1, t=46498560047 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498575687 µs
+[MOVE] player_pid_39: x=60.00, y=138.44, z=-1.00, yaw=15, pitch=-7, t=46498581872 µs
+[MOVE] player_pid_4: x=74.00, y=125.31, z=-1.00, yaw=79, pitch=-1, t=46498600304 µs
+[MOVE] player_pid_39: x=59.62, y=137.69, z=-1.00, yaw=15, pitch=-7, t=46498621738 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498625583 µs
+[MOVE] player_pid_4: x=74.62, y=125.19, z=-1.00, yaw=79, pitch=-1, t=46498640852 µs
+[MOVE] player_pid_39: x=59.19, y=136.88, z=-0.50, yaw=17, pitch=-7, t=46498662266 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498675469 µs
+[MOVE] player_pid_4: x=75.25, y=125.06, z=-1.00, yaw=78, pitch=-1, t=46498680389 µs
+[MOVE] player_pid_39: x=58.75, y=136.12, z=0.25, yaw=21, pitch=-7, t=46498701929 µs
+[MOVE] player_pid_4: x=75.88, y=124.94, z=-1.00, yaw=78, pitch=-1, t=46498720234 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498725740 µs
+[MOVE] player_pid_39: x=58.31, y=135.31, z=0.81, yaw=27, pitch=-8, t=46498741222 µs
+[MOVE] player_pid_4: x=76.50, y=124.81, z=-1.00, yaw=78, pitch=-1, t=46498761190 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498775545 µs
+[MOVE] player_pid_39: x=58.12, y=134.50, z=1.25, yaw=34, pitch=-8, t=46498782390 µs
+[MOVE] player_pid_4: x=77.12, y=124.69, z=-1.00, yaw=76, pitch=-1, t=46498800379 µs
+[MOVE] player_pid_39: x=58.12, y=133.75, z=1.50, yaw=42, pitch=-9, t=46498821591 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498826020 µs
+[MOVE] player_pid_4: x=77.75, y=124.56, z=-1.00, yaw=73, pitch=-2, t=46498841242 µs
+[MOVE] player_pid_39: x=58.12, y=132.94, z=1.69, yaw=48, pitch=-9, t=46498860744 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498875695 µs
+[MOVE] player_pid_4: x=78.38, y=124.44, z=-1.00, yaw=70, pitch=-2, t=46498881477 µs
+[MOVE] player_pid_39: x=58.12, y=132.12, z=1.69, yaw=53, pitch=-9, t=46498902100 µs
+[MOVE] player_pid_4: x=79.00, y=124.25, z=-1.00, yaw=69, pitch=-2, t=46498920452 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498926161 µs
+[MOVE] player_pid_39: x=58.12, y=131.31, z=1.62, yaw=58, pitch=-9, t=46498941894 µs
+[MOVE] player_pid_4: x=79.62, y=124.06, z=-1.00, yaw=69, pitch=-2, t=46498960799 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46498976553 µs
+[MOVE] player_pid_39: x=58.12, y=130.44, z=1.44, yaw=62, pitch=-9, t=46498981660 µs
+[MOVE] player_pid_4: x=80.25, y=123.88, z=-1.00, yaw=69, pitch=-2, t=46499001544 µs
+[MOVE] player_pid_39: x=58.12, y=129.62, z=1.19, yaw=65, pitch=-8, t=46499022070 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499025987 µs
+[MOVE] player_pid_4: x=80.81, y=123.69, z=-1.00, yaw=69, pitch=-2, t=46499040420 µs
+[MOVE] player_pid_39: x=58.12, y=128.81, z=0.81, yaw=68, pitch=-8, t=46499061099 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499076536 µs
+[MOVE] player_pid_4: x=81.44, y=123.44, z=-1.00, yaw=69, pitch=-2, t=46499080918 µs
+[MOVE] player_pid_39: x=57.94, y=128.00, z=-0.12, yaw=71, pitch=-7, t=46499101748 µs
+[MOVE] player_pid_4: x=82.06, y=123.25, z=-1.00, yaw=69, pitch=-2, t=46499120796 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499126022 µs
+[MOVE] player_pid_39: x=57.81, y=127.19, z=-1.00, yaw=74, pitch=-6, t=46499141436 µs
+[MOVE] player_pid_4: x=82.62, y=123.06, z=-1.00, yaw=69, pitch=-2, t=46499160832 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499176567 µs
+[MOVE] player_pid_39: x=57.81, y=126.38, z=-1.00, yaw=79, pitch=-5, t=46499181212 µs
+[MOVE] player_pid_4: x=83.25, y=122.81, z=-1.00, yaw=69, pitch=-2, t=46499200810 µs
+[MOVE] player_pid_39: x=58.00, y=125.75, z=-1.00, yaw=84, pitch=-4, t=46499221844 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499226567 µs
+[MOVE] player_pid_4: x=83.81, y=122.62, z=-1.00, yaw=69, pitch=-2, t=46499240772 µs
+[MOVE] player_pid_39: x=58.31, y=125.25, z=-1.00, yaw=88, pitch=-3, t=46499262100 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499275937 µs
+[MOVE] player_pid_4: x=84.44, y=122.38, z=-1.00, yaw=69, pitch=-2, t=46499280833 µs
+[MOVE] player_pid_39: x=58.69, y=124.94, z=-1.00, yaw=90, pitch=-3, t=46499301404 µs
+[MOVE] player_pid_4: x=85.06, y=122.19, z=-1.00, yaw=69, pitch=-2, t=46499320815 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499326621 µs
+[MOVE] player_pid_39: x=59.19, y=124.69, z=-1.00, yaw=90, pitch=-2, t=46499340983 µs
+[MOVE] player_pid_4: x=85.62, y=121.94, z=-1.00, yaw=69, pitch=-2, t=46499360811 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499376086 µs
+[MOVE] player_pid_39: x=59.69, y=124.50, z=-1.00, yaw=90, pitch=-2, t=46499381402 µs
+[MOVE] player_pid_4: x=86.25, y=121.75, z=-1.00, yaw=69, pitch=-2, t=46499400955 µs
+[MOVE] player_pid_39: x=60.25, y=124.38, z=-1.00, yaw=90, pitch=-2, t=46499421828 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499426106 µs
+[MOVE] player_pid_4: x=86.88, y=121.50, z=-1.00, yaw=69, pitch=-2, t=46499441172 µs
+[MOVE] player_pid_39: x=60.81, y=124.38, z=-1.00, yaw=89, pitch=-2, t=46499461795 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499475771 µs
+[MOVE] player_pid_4: x=87.44, y=121.25, z=-1.00, yaw=69, pitch=-2, t=46499481255 µs
+[MOVE] player_pid_39: x=61.44, y=124.56, z=-1.00, yaw=87, pitch=-2, t=46499501253 µs
+[MOVE] player_pid_4: x=88.06, y=121.06, z=-1.00, yaw=69, pitch=-2, t=46499521589 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499525775 µs
+[MOVE] player_pid_39: x=62.06, y=124.88, z=-1.00, yaw=86, pitch=-1, t=46499541939 µs
+[MOVE] player_pid_4: x=88.69, y=120.81, z=-1.00, yaw=70, pitch=-2, t=46499563936 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499576320 µs
+[MOVE] player_pid_39: x=62.69, y=125.25, z=-1.00, yaw=86, pitch=-1, t=46499582059 µs
+[MOVE] player_pid_4: x=89.31, y=120.62, z=-1.00, yaw=75, pitch=-2, t=46499604120 µs
+[MOVE] player_pid_39: x=63.31, y=125.69, z=-1.00, yaw=84, pitch=-1, t=46499622003 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499625465 µs
+[MOVE] player_pid_4: x=89.88, y=120.38, z=-1.00, yaw=79, pitch=-2, t=46499644236 µs
+[MOVE] player_pid_39: x=64.00, y=126.19, z=-1.00, yaw=81, pitch=-1, t=46499661268 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499675707 µs
+[MOVE] player_pid_4: x=90.50, y=120.25, z=-1.00, yaw=79, pitch=-2, t=46499684262 µs
+[MOVE] player_pid_39: x=64.69, y=126.69, z=-1.00, yaw=79, pitch=0, t=46499702324 µs
+[MOVE] player_pid_4: x=91.12, y=120.06, z=-1.00, yaw=79, pitch=-2, t=46499724227 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499725749 µs
+[MOVE] player_pid_39: x=65.38, y=127.06, z=-1.00, yaw=75, pitch=0, t=46499742004 µs
+[MOVE] player_pid_4: x=91.75, y=119.94, z=-1.00, yaw=79, pitch=-2, t=46499764396 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499775940 µs
+[MOVE] player_pid_39: x=66.00, y=127.31, z=-1.00, yaw=71, pitch=0, t=46499781920 µs
+[MOVE] player_pid_4: x=92.38, y=119.75, z=-1.00, yaw=79, pitch=-2, t=46499804302 µs
+[MOVE] player_pid_39: x=66.69, y=127.38, z=-1.00, yaw=67, pitch=0, t=46499821940 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499826002 µs
+[MOVE] player_pid_4: x=93.00, y=119.62, z=-1.00, yaw=79, pitch=-2, t=46499844232 µs
+[MOVE] player_pid_39: x=67.31, y=127.38, z=-1.00, yaw=66, pitch=0, t=46499861315 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499876528 µs
+[MOVE] player_pid_4: x=93.62, y=119.50, z=-1.00, yaw=80, pitch=-2, t=46499884265 µs
+[MOVE] player_pid_39: x=67.94, y=127.38, z=-1.00, yaw=66, pitch=0, t=46499903093 µs
+[MOVE] player_pid_4: x=94.25, y=119.38, z=-1.00, yaw=82, pitch=-2, t=46499924312 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499925900 µs
+[MOVE] player_pid_39: x=68.62, y=127.44, z=-1.00, yaw=66, pitch=0, t=46499942930 µs
+[MOVE] player_pid_4: x=94.88, y=119.31, z=-1.00, yaw=84, pitch=-2, t=46499963701 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46499976713 µs
+[MOVE] player_pid_39: x=69.38, y=127.56, z=-0.69, yaw=66, pitch=0, t=46499982522 µs
+[MOVE] player_pid_4: x=95.50, y=119.19, z=-1.00, yaw=86, pitch=-2, t=46500004328 µs
+[MOVE] player_pid_39: x=70.12, y=127.75, z=-0.12, yaw=64, pitch=0, t=46500022770 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500025702 µs
+[MOVE] player_pid_4: x=96.12, y=119.12, z=-1.00, yaw=87, pitch=-3, t=46500043104 µs
+[MOVE] player_pid_39: x=70.94, y=127.88, z=0.00, yaw=62, pitch=-1, t=46500063035 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500076267 µs
+[MOVE] player_pid_4: x=96.81, y=119.06, z=-1.00, yaw=89, pitch=-3, t=46500083081 µs
+[MOVE] player_pid_39: x=71.69, y=127.88, z=0.00, yaw=60, pitch=-1, t=46500102420 µs
+[MOVE] player_pid_4: x=97.44, y=119.00, z=-1.00, yaw=90, pitch=-3, t=46500123161 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500126450 µs
+[MOVE] player_pid_39: x=72.56, y=127.88, z=-0.19, yaw=60, pitch=-1, t=46500142687 µs
+[MOVE] player_pid_4: x=98.06, y=119.00, z=-1.00, yaw=90, pitch=-3, t=46500164239 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500176327 µs
+[MOVE] player_pid_39: x=73.38, y=127.88, z=-0.62, yaw=60, pitch=-1, t=46500182370 µs
+[MOVE] player_pid_4: x=98.69, y=118.94, z=-1.00, yaw=91, pitch=-3, t=46500203173 µs
+[MOVE] player_pid_39: x=74.19, y=127.88, z=-1.00, yaw=60, pitch=-1, t=46500222755 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500226095 µs
+[MOVE] player_pid_4: x=99.31, y=118.94, z=-1.00, yaw=91, pitch=-3, t=46500243984 µs
+[MOVE] player_pid_39: x=74.94, y=127.88, z=-1.00, yaw=60, pitch=-1, t=46500261648 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500275980 µs
+[MOVE] player_pid_4: x=100.00, y=118.94, z=-1.00, yaw=91, pitch=-3, t=46500284164 µs
+[MOVE] player_pid_39: x=75.62, y=127.88, z=-1.00, yaw=59, pitch=-1, t=46500302975 µs
+[MOVE] player_pid_4: x=100.62, y=118.94, z=-1.00, yaw=91, pitch=-3, t=46500324356 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500325563 µs
+[MOVE] player_pid_39: x=76.31, y=127.75, z=-1.00, yaw=59, pitch=-1, t=46500342656 µs
+[MOVE] player_pid_4: x=101.25, y=118.94, z=-1.00, yaw=91, pitch=-3, t=46500363274 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500376117 µs
+[MOVE] player_pid_39: x=76.94, y=127.56, z=-1.00, yaw=58, pitch=-1, t=46500382846 µs
+[MOVE] player_pid_4: x=101.88, y=119.00, z=-1.00, yaw=91, pitch=-3, t=46500403170 µs
+[MOVE] player_pid_39: x=77.56, y=127.38, z=-1.00, yaw=58, pitch=-1, t=46500422160 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500425494 µs
+[MOVE] player_pid_4: x=102.56, y=119.00, z=-1.00, yaw=92, pitch=-3, t=46500443235 µs
+[MOVE] player_pid_39: x=78.19, y=127.25, z=-1.00, yaw=58, pitch=-1, t=46500462840 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500476060 µs
+[MOVE] player_pid_4: x=103.19, y=119.00, z=-1.00, yaw=94, pitch=-3, t=46500484409 µs
+[MOVE] player_pid_39: x=78.94, y=127.25, z=-1.00, yaw=58, pitch=-1, t=46500502686 µs
+[MOVE] player_pid_4: x=103.81, y=119.06, z=-1.00, yaw=95, pitch=-3, t=46500523301 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500526013 µs
+[MOVE] player_pid_39: x=79.75, y=127.31, z=-1.00, yaw=58, pitch=-1, t=46500542513 µs
+[MOVE] player_pid_4: x=104.44, y=119.06, z=-1.00, yaw=96, pitch=-3, t=46500563907 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500576616 µs
+[MOVE] player_pid_39: x=80.44, y=127.31, z=-1.00, yaw=58, pitch=-1, t=46500582767 µs
+[MOVE] player_pid_4: x=105.06, y=119.12, z=-1.00, yaw=97, pitch=-3, t=46500604337 µs
+[MOVE] player_pid_39: x=81.12, y=127.19, z=-1.00, yaw=58, pitch=-1, t=46500622605 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500626065 µs
+[MOVE] player_pid_4: x=105.75, y=119.19, z=-1.00, yaw=98, pitch=-3, t=46500643161 µs
+[MOVE] player_pid_39: x=81.81, y=127.00, z=-1.00, yaw=58, pitch=-1, t=46500663304 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500676551 µs
+[x.x.x.x] Bot says: 'sorry'
+[MOVE] player_pid_4: x=106.38, y=119.25, z=-1.00, yaw=98, pitch=-3, t=46500684470 µs
+[MOVE] player_pid_39: x=82.38, y=126.75, z=-1.00, yaw=58, pitch=-1, t=46500703043 µs
+[MOVE] player_pid_4: x=106.88, y=119.31, z=-0.25, yaw=98, pitch=-3, t=46500724101 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500725826 µs
+[MOVE] player_pid_39: x=83.00, y=126.50, z=-1.00, yaw=58, pitch=-1, t=46500743148 µs
+[MOVE] player_pid_4: x=106.88, y=119.44, z=0.31, yaw=98, pitch=-3, t=46500763894 µs
+[MOVE] Bot: x=242.88, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500776495 µs
+[MOVE] player_pid_39: x=83.56, y=126.25, z=-1.00, yaw=58, pitch=-1, t=46500782493 µs
+[MOVE] player_pid_4: x=106.88, y=119.50, z=0.81, yaw=98, pitch=-3, t=46500804228 µs
+[MOVE] player_pid_39: x=84.12, y=125.94, z=-1.00, yaw=58, pitch=-1, t=46500822924 µs
+[MOVE] Bot: x=242.75, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500825918 µs
+[MOVE] player_pid_4: x=106.88, y=119.62, z=1.38, yaw=98, pitch=-3, t=46500844103 µs
+[MOVE] player_pid_39: x=84.69, y=125.62, z=-1.00, yaw=58, pitch=-1, t=46500863150 µs
+[MOVE] Bot: x=242.38, y=36.06, z=2.25, yaw=266, pitch=-9, t=46500876033 µs
+[MOVE] player_pid_4: x=106.88, y=119.69, z=1.88, yaw=98, pitch=-3, t=46500883165 µs
+[MOVE] player_pid_39: x=85.25, y=125.31, z=-1.00, yaw=58, pitch=-1, t=46500902960 µs
+[MOVE] player_pid_4: x=106.88, y=119.81, z=2.44, yaw=98, pitch=-3, t=46500924202 µs
+[MOVE] Bot: x=241.88, y=36.12, z=2.19, yaw=266, pitch=-9, t=46500925367 µs
+[MOVE] player_pid_39: x=85.81, y=125.00, z=-1.00, yaw=58, pitch=-1, t=46500943504 µs
+[MOVE] player_pid_4: x=106.88, y=119.88, z=2.94, yaw=98, pitch=-3, t=46500964185 µs
+[MOVE] Bot: x=241.25, y=36.19, z=1.69, yaw=266, pitch=-9, t=46500975498 µs
+[MOVE] player_pid_39: x=86.38, y=124.69, z=-1.00, yaw=58, pitch=-1, t=46500982778 µs
+[MOVE] player_pid_4: x=106.88, y=120.00, z=3.50, yaw=98, pitch=-3, t=46501003173 µs
+[MOVE] player_pid_39: x=86.94, y=124.38, z=-1.00, yaw=58, pitch=-1, t=46501022507 µs
+[MOVE] Bot: x=240.69, y=36.19, z=1.25, yaw=266, pitch=-9, t=46501026449 µs
+[MOVE] player_pid_4: x=106.88, y=120.06, z=4.00, yaw=98, pitch=-3, t=46501044207 µs
+[MOVE] player_pid_39: x=87.44, y=124.00, z=-1.00, yaw=58, pitch=-1, t=46501063325 µs
+[MOVE] Bot: x=240.06, y=36.25, z=1.00, yaw=266, pitch=-9, t=46501076454 µs
+[MOVE] player_pid_4: x=106.88, y=120.19, z=4.56, yaw=98, pitch=-3, t=46501084207 µs
+[MOVE] player_pid_39: x=88.00, y=123.69, z=-1.00, yaw=58, pitch=-1, t=46501102388 µs
+[MOVE] player_pid_4: x=106.88, y=120.25, z=5.06, yaw=98, pitch=-3, t=46501124274 µs
+[MOVE] Bot: x=239.38, y=36.31, z=1.00, yaw=266, pitch=-9, t=46501126680 µs
+[MOVE] player_pid_39: x=88.56, y=123.38, z=-1.00, yaw=59, pitch=-2, t=46501142552 µs
+[MOVE] player_pid_4: x=106.88, y=120.38, z=5.62, yaw=98, pitch=-3, t=46501164294 µs
+[MOVE] Bot: x=238.62, y=36.31, z=1.00, yaw=266, pitch=-9, t=46501176083 µs
+[MOVE] player_pid_39: x=89.12, y=123.00, z=-1.00, yaw=61, pitch=-2, t=46501182393 µs
+[MOVE] player_pid_4: x=107.38, y=120.44, z=6.56, yaw=98, pitch=-3, t=46501203133 µs
+[MOVE] player_pid_39: x=89.69, y=122.69, z=-1.00, yaw=64, pitch=-2, t=46501222458 µs
+[MOVE] Bot: x=237.88, y=36.38, z=1.00, yaw=265, pitch=-9, t=46501229494 µs
+[MOVE] player_pid_4: x=108.00, y=120.50, z=7.31, yaw=97, pitch=-4, t=46501243146 µs
+[MOVE] player_pid_39: x=90.19, y=122.38, z=-1.00, yaw=69, pitch=-2, t=46501262471 µs
+[MOVE] Bot: x=237.12, y=36.44, z=1.00, yaw=265, pitch=-9, t=46501276395 µs
+[MOVE] player_pid_4: x=108.62, y=120.62, z=8.00, yaw=96, pitch=-4, t=46501283146 µs
+[MOVE] player_pid_39: x=90.81, y=122.12, z=-1.00, yaw=75, pitch=-2, t=46501302828 µs
+[MOVE] player_pid_4: x=109.25, y=120.69, z=8.06, yaw=95, pitch=-4, t=46501323124 µs
+[MOVE] Bot: x=236.31, y=36.50, z=1.00, yaw=265, pitch=-9, t=46501325931 µs
+[MOVE] player_pid_39: x=91.38, y=121.88, z=-1.00, yaw=77, pitch=-2, t=46501342145 µs
+[MOVE] player_pid_4: x=109.88, y=120.81, z=8.00, yaw=92, pitch=-5, t=46501363127 µs
+[MOVE] Bot: x=235.56, y=36.56, z=1.00, yaw=265, pitch=-9, t=46501376456 µs
+[MOVE] player_pid_39: x=92.00, y=121.62, z=-1.00, yaw=78, pitch=-2, t=46501382824 µs
+[MOVE] player_pid_4: x=110.50, y=120.88, z=8.00, yaw=88, pitch=-5, t=46501403175 µs
+[MOVE] player_pid_39: x=92.56, y=121.44, z=-1.00, yaw=78, pitch=-2, t=46501422552 µs
+[MOVE] Bot: x=234.75, y=36.62, z=1.00, yaw=265, pitch=-9, t=46501426441 µs
+[MOVE] player_pid_4: x=111.19, y=120.88, z=8.00, yaw=84, pitch=-5, t=46501443293 µs
+[MOVE] player_pid_39: x=93.19, y=121.31, z=-1.00, yaw=78, pitch=-2, t=46501462293 µs
+[MOVE] Bot: x=234.00, y=36.69, z=1.00, yaw=265, pitch=-9, t=46501476518 µs
+[MOVE] player_pid_4: x=111.81, y=120.88, z=8.00, yaw=81, pitch=-6, t=46501483966 µs
+[MOVE] player_pid_39: x=93.81, y=121.12, z=-1.00, yaw=78, pitch=-2, t=46501502071 µs
+[MOVE] player_pid_4: x=112.44, y=120.88, z=8.00, yaw=81, pitch=-6, t=46501524245 µs
+[MOVE] Bot: x=233.19, y=36.75, z=1.00, yaw=265, pitch=-9, t=46501526057 µs
+[MOVE] player_pid_39: x=94.44, y=121.00, z=-1.00, yaw=78, pitch=-2, t=46501543110 µs
+[MOVE] player_pid_4: x=113.06, y=120.81, z=8.00, yaw=81, pitch=-6, t=46501564268 µs
+[MOVE] Bot: x=232.38, y=36.81, z=1.00, yaw=265, pitch=-8, t=46501576573 µs
+[MOVE] player_pid_39: x=95.06, y=120.88, z=-1.00, yaw=78, pitch=-2, t=46501582870 µs
+[MOVE] player_pid_4: x=113.69, y=120.81, z=7.69, yaw=81, pitch=-6, t=46501604227 µs
+[MOVE] player_pid_39: x=95.69, y=120.88, z=-1.00, yaw=78, pitch=-2, t=46501622776 µs
+[MOVE] Bot: x=231.56, y=36.88, z=0.94, yaw=265, pitch=-8, t=46501626516 µs
+[MOVE] player_pid_4: x=114.31, y=120.75, z=7.25, yaw=81, pitch=-6, t=46501643237 µs
+[MOVE] player_pid_39: x=96.38, y=121.06, z=-1.00, yaw=78, pitch=-2, t=46501662202 µs
+[MOVE] Bot: x=230.81, y=36.75, z=0.94, yaw=266, pitch=-8, t=46501676519 µs
+[MOVE] player_pid_4: x=115.00, y=120.69, z=6.81, yaw=81, pitch=-6, t=46501684239 µs
+[MOVE] player_pid_39: x=97.12, y=121.31, z=-1.00, yaw=78, pitch=-2, t=46501702213 µs
+[MOVE] player_pid_4: x=115.62, y=120.62, z=6.31, yaw=81, pitch=-6, t=46501724328 µs
+[MOVE] Bot: x=229.94, y=36.44, z=1.00, yaw=266, pitch=-7, t=46501725893 µs
+[MOVE] player_pid_39: x=97.81, y=121.62, z=-1.00, yaw=78, pitch=-2, t=46501741805 µs
+[MOVE] player_pid_4: x=116.25, y=120.56, z=5.75, yaw=81, pitch=-6, t=46501763062 µs
+[MOVE] Bot: x=229.12, y=36.00, z=1.00, yaw=266, pitch=-7, t=46501775850 µs
+[MOVE] player_pid_39: x=98.50, y=121.75, z=-1.00, yaw=78, pitch=-2, t=46501782133 µs
+[MOVE] player_pid_4: x=116.88, y=120.50, z=5.12, yaw=81, pitch=-6, t=46501804331 µs
+[MOVE] player_pid_39: x=99.19, y=121.81, z=-1.00, yaw=78, pitch=-2, t=46501822518 µs
+[MOVE] Bot: x=228.31, y=35.44, z=1.00, yaw=267, pitch=-7, t=46501826348 µs
+[MOVE] player_pid_4: x=117.50, y=120.44, z=5.00, yaw=81, pitch=-6, t=46501844289 µs
+[MOVE] player_pid_39: x=99.81, y=121.81, z=-1.00, yaw=78, pitch=-2, t=46501862548 µs
+[MOVE] Bot: x=227.50, y=35.00, z=1.00, yaw=267, pitch=-7, t=46501875493 µs
+[MOVE] player_pid_4: x=118.12, y=120.38, z=5.00, yaw=81, pitch=-6, t=46501884098 µs
+[MOVE] player_pid_39: x=100.44, y=121.81, z=-1.00, yaw=79, pitch=-2, t=46501902374 µs
+[MOVE] player_pid_4: x=118.75, y=120.31, z=5.00, yaw=81, pitch=-6, t=46501924101 µs
+[MOVE] Bot: x=226.69, y=34.75, z=1.00, yaw=267, pitch=-6, t=46501925958 µs
+[MOVE] player_pid_39: x=101.12, y=121.75, z=-1.00, yaw=79, pitch=-2, t=46501943263 µs
+[MOVE] player_pid_4: x=119.44, y=120.19, z=5.00, yaw=81, pitch=-6, t=46501964169 µs
+[MOVE] Bot: x=225.88, y=34.62, z=1.00, yaw=265, pitch=-5, t=46501975807 µs
+[MOVE] player_pid_39: x=101.75, y=121.69, z=-1.00, yaw=79, pitch=-1, t=46501983416 µs
+[MOVE] player_pid_4: x=120.06, y=120.12, z=5.00, yaw=81, pitch=-6, t=46502004277 µs
+[MOVE] player_pid_39: x=102.38, y=121.62, z=-1.00, yaw=80, pitch=-1, t=46502022739 µs
+[MOVE] Bot: x=225.06, y=34.50, z=1.00, yaw=253, pitch=-4, t=46502027714 µs
+[MOVE] player_pid_4: x=120.69, y=120.06, z=5.00, yaw=81, pitch=-6, t=46502044239 µs
+[MOVE] player_pid_39: x=103.06, y=121.50, z=-1.00, yaw=81, pitch=0, t=46502065363 µs
+[MOVE] Bot: x=224.19, y=34.38, z=1.00, yaw=235, pitch=-3, t=46502075983 µs
+[MOVE] player_pid_4: x=121.31, y=119.94, z=5.00, yaw=81, pitch=-6, t=46502084249 µs
+[MOVE] player_pid_39: x=103.69, y=121.44, z=-1.00, yaw=82, pitch=0, t=46502104805 µs
+[MOVE] player_pid_4: x=121.94, y=119.88, z=5.00, yaw=81, pitch=-6, t=46502124282 µs
+[MOVE] Bot: x=223.19, y=34.25, z=1.00, yaw=214, pitch=-1, t=46502126576 µs
+[MOVE] player_pid_39: x=104.31, y=121.31, z=-1.00, yaw=84, pitch=0, t=46502145011 µs
+[MOVE] player_pid_4: x=122.56, y=119.75, z=5.00, yaw=81, pitch=-6, t=46502164213 µs
+[MOVE] Bot: x=222.19, y=34.25, z=1.00, yaw=207, pitch=-1, t=46502175701 µs
+[MOVE] player_pid_39: x=104.94, y=121.25, z=-1.00, yaw=85, pitch=0, t=46502184420 µs
+[MOVE] player_pid_4: x=123.19, y=119.69, z=4.94, yaw=81, pitch=-6, t=46502204277 µs
+[MOVE] player_pid_39: x=105.56, y=121.19, z=-0.81, yaw=85, pitch=1, t=46502224427 µs
+[MOVE] Bot: x=221.25, y=34.19, z=1.00, yaw=207, pitch=-1, t=46502225355 µs
+[MOVE] player_pid_4: x=123.88, y=119.56, z=4.50, yaw=81, pitch=-6, t=46502244210 µs
+[MOVE] player_pid_39: x=106.25, y=121.12, z=-0.06, yaw=86, pitch=1, t=46502264499 µs
+[MOVE] Bot: x=220.38, y=34.06, z=1.00, yaw=207, pitch=-1, t=46502275195 µs
+[MOVE] player_pid_4: x=124.50, y=119.50, z=4.06, yaw=81, pitch=-6, t=46502284094 µs
+[MOVE] player_pid_39: x=106.88, y=121.06, z=0.56, yaw=87, pitch=2, t=46502304402 µs
+[MOVE] player_pid_4: x=125.12, y=119.38, z=4.00, yaw=80, pitch=-8, t=46502324298 µs
+[MOVE] Bot: x=219.56, y=33.81, z=1.00, yaw=207, pitch=-1, t=46502325449 µs
+[MOVE] player_pid_39: x=106.88, y=121.00, z=1.19, yaw=88, pitch=2, t=46502344533 µs
+[MOVE] player_pid_4: x=125.75, y=119.31, z=4.00, yaw=74, pitch=-10, t=46502364172 µs
