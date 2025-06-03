@@ -1,0 +1,2566 @@
++ PORT=25000
++ PASSWORD=qTQJKPt1AkfawCkYlKQIds
++ TEAM1=player_pid_38,player_pid_4
++ TEAM2=player_pid_46,player_pid_5
++ [[ -z 25000 ]]
++ [[ -z qTQJKPt1AkfawCkYlKQIds ]]
++ [[ -z player_pid_38,player_pid_4 ]]
++ [[ -z player_pid_46,player_pid_5 ]]
++ [[ 25000 =~ ^[0-9]+$ ]]
++ echo 'Starting AssaultCube server: external port 25000 → internal port 28763'
+Starting AssaultCube server: external port 25000 → internal port 28763
++ mkdir -p gameLogs
++ script -e -q -c 'docker run -it -p "25000":28763/udp -p "25000":28763/tcp ac:deploy bash -c '\''cd AC && exec ./server.sh -f -n -pqTQJKPt1AkfawCkYlKQIds -t1player_pid_38,player_pid_4 -t2player_pid_46,player_pid_5'\''' /dev/null
+^@reading commandline parameters from file 'config/servercmdline.txt'
+KEY FAILURE: you provided the (inacceptable) example private key.
+KEY FAILURE: generate your own - read: https://assault.cubers.net/docs/server.html
+Server password: qTQJKPt1AkfawCkYlKQIds
+Added allowed player team1: player_pid_38
+Added allowed player team1: player_pid_4
+Added allowed player team2: player_pid_46
+Added allowed player team2: player_pid_5
+failed to open "logs/serverlog_20250520_14.58.55_local#28763.txt" for writing
+logging started: console(INFO), file(DISABLED), syslog(DISABLED), timestamp(DISABLED)
+logging local AssaultCube server (version -1302, protocol 1300/104) now..
+server is LAN-only - without connection to masterserver
+ACTION REQUIRED: you must provide a PRIVATE SERVER KEY via the '-Y' command line argument
+LAN-only because no master is given
+Server password: "qTQJKPt1AkfawCkYlKQIds"
+could not read config file 'config/servervita.cfg'
+could not read config file 'config/servervita_bak.cfg'
+anticheat: disabled
+dedicated server started, waiting for clients...
+Ctrl-C to exit
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] client connected (--)
+[x.x.x.x] player_pid_38 client logged in (using serverpassword), AC: -1302|1640, pubkey: d4bd1d5d7ed309c45fd8e0d69956a7c65999c1a66ef709f54035e1c89faa6e29
+
+Game start: pistol frenzy on ac_arctic2, 3 players, 2 minutes, mastermode 0, (map rev 157/25065, official, 'getmap' not prepared)
+initdemoslot(): use slot 0, sequence #1
+Demo recording started (#1).
+setupdemorecord(): sequence #1, pistol frenzy on ac_arctic2
+[x.x.x.x] player_pid_4 client logged in (using serverpassword), AC: -1302|1640, pubkey: f607d6ea00f8c642b46024aa06704cdb148b1be8c521509812be66f1630d8374
+[x.x.x.x] player_pid_46 client logged in (using serverpassword), AC: -1302|1640, pubkey: 9543262d96582ae4a81861a79ffcc868713f47787dd1d35802de22fa695a83d2
+[x.x.x.x] client connected (--)
+ >> recv : SV_TRYSPAWN by client player_pid_38
+[x.x.x.x] Bot client logged in (using serverpassword), AC: -1302|1640, pubkey: 9f4424f08b232acab41f74d4ebfaf3478e2ffa84e66b35972fdefb64d765ee67
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+added 44 servermaps
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+read 0 map rotation entries from 'config/maprot.cfg'
+read 0 admin passwords from 'config/serverpwd.cfg'
+read 0 (0) blacklist entries from 'config/serverblacklist.cfg', 0 errors
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+read 3 (3) IP list entries from 'config/geoip.cfg', 0 errors, 0 concatenated
+read 0 + 0 entries from nickname blacklist file 'config/nicknameblacklist.cfg', 0 errors
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_TRYSPAWN by client player_pid_4
+ >> recv : SV_SPAWN by client player_pid_4
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46739733316 µs
+ >> recv : SV_TRYSPAWN by client player_pid_46
+ >> recv : SV_SPAWN by client player_pid_46
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739737236 µs
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_TRYSPAWN by client Bot
+ >> recv : SV_SPAWN by client Bot
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46739750833 µs
+ >> recv : SV_TRYSPAWN by client player_pid_38
+ >> recv : SV_SPAWN by client player_pid_38
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739760616 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46739773359 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739776474 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46739789949 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739804804 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46739815882 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739819694 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46739830509 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739849291 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46739856706 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739860430 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46739870063 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739893803 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46739896937 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739903011 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46739910513 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46739937218 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739938390 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739943367 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46739950687 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46739976047 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739982831 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46739986551 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46739990453 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740016163 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740023266 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740027296 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740029932 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740056105 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740065861 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740068050 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740070780 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740096971 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740110162 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740110608 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740111121 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740136116 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740149650 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740152090 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740155550 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740177121 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740190009 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740195207 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740200126 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740217170 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740236059 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740241485 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740244625 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740257137 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740276806 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740289093 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740296140 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740312236 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740319218 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740329096 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740336050 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740361341 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740361921 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740371620 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740376651 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740402447 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740410298 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740416687 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740417133 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740443393 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740457149 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740460899 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740461452 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740486005 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740496159 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740505487 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740511032 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740527060 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740536094 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740549922 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=182, pitch=0, t=46740559443 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740569774 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740576096 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740594444 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=181, pitch=0, t=46740608846 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740610322 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740616112 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740638884 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740653432 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740656120 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=181, pitch=0, t=46740658424 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740682963 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740693957 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740697100 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=180, pitch=0, t=46740708803 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740723453 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740736120 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740736679 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=178, pitch=-1, t=46740758478 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740766221 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740776111 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740777469 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=175, pitch=-1, t=46740809091 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740811712 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740816232 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740820119 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740856114 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740856169 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=169, pitch=-1, t=46740858396 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740860667 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740896076 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740900736 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740903219 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=163, pitch=-1, t=46740908662 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740937475 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740943727 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740944663 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=157, pitch=-1, t=46740958903 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46740977099 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740985260 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46740988772 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741015994 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=155, pitch=-1, t=46741026151 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741026296 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741028330 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741057274 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741069006 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741072793 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=155, pitch=-1, t=46741075531 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741097157 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741111572 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741117041 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=155, pitch=-1, t=46741125400 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741136208 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741152084 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741161555 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=155, pitch=-1, t=46741175808 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741177158 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741193594 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741205062 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741217150 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=153, pitch=-1, t=46741225969 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741236685 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741250612 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741256258 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=152, pitch=0, t=46741275394 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741276832 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741294087 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741296118 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741318618 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=152, pitch=0, t=46741325153 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741335959 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741338612 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741361680 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=152, pitch=0, t=46741375470 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741377152 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741383152 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741402417 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741416110 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=152, pitch=0, t=46741425776 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741428220 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741444380 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741458595 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741471885 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=152, pitch=0, t=46741475355 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741484903 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741502085 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741517509 µs
+[MOVE] Bot: x=160.00, y=40.00, z=-12.00, yaw=151, pitch=0, t=46741526520 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741528058 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741541913 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741560927 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741569468 µs
+[MOVE] Bot: x=160.06, y=40.12, z=-12.00, yaw=150, pitch=-1, t=46741574959 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741581036 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741604926 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741611182 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741622171 µs
+[MOVE] Bot: x=160.25, y=40.50, z=-12.00, yaw=148, pitch=-1, t=46741625021 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741649431 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741653186 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741661180 µs
+[MOVE] Bot: x=160.56, y=40.94, z=-12.00, yaw=146, pitch=-1, t=46741675515 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741694469 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741694516 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741702048 µs
+[MOVE] Bot: x=160.88, y=41.44, z=-12.00, yaw=145, pitch=-1, t=46741725960 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741735596 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741738465 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741741020 µs
+[MOVE] Bot: x=161.25, y=42.00, z=-12.00, yaw=143, pitch=-1, t=46741775577 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741778300 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741781887 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741783507 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741818854 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741821116 µs
+[MOVE] Bot: x=161.62, y=42.62, z=-12.00, yaw=142, pitch=-1, t=46741825561 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741827247 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741859524 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741862165 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741872239 µs
+[MOVE] Bot: x=162.06, y=43.25, z=-12.00, yaw=140, pitch=-2, t=46741876115 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741901927 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741902243 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741916282 µs
+[MOVE] Bot: x=162.56, y=43.88, z=-12.00, yaw=140, pitch=-2, t=46741926889 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741940795 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741944839 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741961283 µs
+[MOVE] Bot: x=163.06, y=44.44, z=-12.00, yaw=140, pitch=-2, t=46741975379 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46741981723 µs
+[x.x.x.x] player_pid_4 says: 'please leave game 5 mins'
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46741985270 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742005290 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742022170 µs
+[MOVE] Bot: x=163.50, y=45.06, z=-12.00, yaw=140, pitch=-2, t=46742024905 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742028328 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742049797 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742061643 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742068966 µs
+[MOVE] Bot: x=164.00, y=45.69, z=-12.00, yaw=140, pitch=-2, t=46742075169 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742094827 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742102196 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742111630 µs
+[MOVE] Bot: x=164.50, y=46.31, z=-12.00, yaw=140, pitch=-2, t=46742125619 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742139337 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742142095 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742152100 µs
+[MOVE] Bot: x=165.00, y=46.94, z=-12.00, yaw=140, pitch=-2, t=46742174898 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742182056 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742183089 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742194896 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742221853 µs
+[MOVE] Bot: x=165.50, y=47.56, z=-12.00, yaw=140, pitch=-2, t=46742225658 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742227605 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742235514 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742261836 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742271623 µs
+[MOVE] Bot: x=166.00, y=48.12, z=-12.00, yaw=140, pitch=-2, t=46742275404 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742276597 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742302137 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742317135 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742319269 µs
+[MOVE] Bot: x=166.56, y=48.75, z=-12.00, yaw=140, pitch=-2, t=46742325121 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742342023 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742359924 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742360600 µs
+[MOVE] Bot: x=167.06, y=49.38, z=-12.00, yaw=140, pitch=-2, t=46742375798 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742382087 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742402582 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742406174 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742421953 µs
+[MOVE] Bot: x=167.56, y=50.00, z=-12.00, yaw=140, pitch=-2, t=46742426396 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742445191 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742450678 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742461599 µs
+[MOVE] Bot: x=168.06, y=50.62, z=-12.00, yaw=141, pitch=-1, t=46742475984 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742486510 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742495232 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742501368 µs
+[MOVE] Bot: x=168.56, y=51.25, z=-12.00, yaw=143, pitch=-1, t=46742526336 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742527539 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742538689 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742541252 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742570194 µs
+[MOVE] Bot: x=169.06, y=51.88, z=-12.00, yaw=146, pitch=0, t=46742575266 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742581084 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742583965 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742610886 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742621123 µs
+[MOVE] Bot: x=169.50, y=52.50, z=-12.00, yaw=151, pitch=0, t=46742626005 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742627449 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742652111 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742661841 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742673047 µs
+[MOVE] Bot: x=169.94, y=53.19, z=-12.00, yaw=156, pitch=0, t=46742675913 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742693215 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742700750 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742716492 µs
+[MOVE] Bot: x=170.31, y=53.88, z=-12.00, yaw=160, pitch=0, t=46742725819 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742735940 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742742015 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742761000 µs
+[MOVE] Bot: x=170.69, y=54.62, z=-12.00, yaw=162, pitch=0, t=46742775663 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742776451 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742781820 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742803478 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742819251 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742821212 µs
+[MOVE] Bot: x=171.00, y=55.38, z=-11.56, yaw=162, pitch=0, t=46742825113 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742844487 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742859813 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742860874 µs
+[MOVE] Bot: x=171.31, y=56.06, z=-11.69, yaw=162, pitch=0, t=46742874900 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742889733 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742900803 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742902525 µs
+[MOVE] Bot: x=171.56, y=56.81, z=-12.00, yaw=162, pitch=0, t=46742925045 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742933316 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742942094 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742943040 µs
+[MOVE] Bot: x=171.81, y=57.56, z=-11.38, yaw=162, pitch=0, t=46742975069 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742979277 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46742982107 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46742986084 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743022171 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743022299 µs
+[MOVE] Bot: x=172.12, y=58.31, z=-11.00, yaw=162, pitch=0, t=46743025293 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743028717 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743061075 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743067314 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743069168 µs
+[MOVE] Bot: x=172.38, y=59.06, z=-10.81, yaw=163, pitch=0, t=46743075405 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743101071 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743106786 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743109747 µs
+[MOVE] Bot: x=172.56, y=59.81, z=-10.19, yaw=163, pitch=0, t=46743124891 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743142091 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743150300 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743152649 µs
+[MOVE] Bot: x=172.81, y=60.62, z=-10.00, yaw=163, pitch=0, t=46743175401 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743181792 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743194097 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743195834 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743220955 µs
+[MOVE] Bot: x=173.00, y=61.19, z=-9.62, yaw=163, pitch=0, t=46743225776 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743236727 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743239056 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743262036 µs
+[MOVE] Bot: x=173.12, y=61.62, z=-9.00, yaw=163, pitch=0, t=46743274768 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743277681 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743283098 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743301972 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743318619 µs
+[MOVE] Bot: x=173.25, y=61.88, z=-9.00, yaw=163, pitch=0, t=46743325356 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743328125 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743342061 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743361494 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743372132 µs
+[MOVE] Bot: x=173.25, y=62.06, z=-9.00, yaw=163, pitch=0, t=46743375152 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743382169 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743402541 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743413135 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743422170 µs
+[MOVE] Bot: x=173.31, y=62.12, z=-9.00, yaw=163, pitch=0, t=46743425274 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743445484 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743456617 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743461103 µs
+[MOVE] Bot: x=173.31, y=62.25, z=-9.00, yaw=163, pitch=0, t=46743474938 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743486074 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743501028 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743503179 µs
+[MOVE] Bot: x=173.38, y=62.25, z=-9.00, yaw=163, pitch=0, t=46743525361 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743526657 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743542101 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743544358 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743569466 µs
+[MOVE] Bot: x=173.38, y=62.31, z=-9.00, yaw=163, pitch=0, t=46743574663 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743580999 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743589929 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743610008 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743621302 µs
+[x.x.x.x] player_pid_4 says: 'please leave game 5 mins'
+[MOVE] Bot: x=173.38, y=62.31, z=-9.00, yaw=163, pitch=0, t=46743625401 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743634450 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743653080 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743661053 µs
+[MOVE] Bot: x=173.38, y=62.31, z=-9.00, yaw=163, pitch=0, t=46743675361 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743677945 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743694050 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743701175 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743722431 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46743725446 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743734936 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743741229 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743766959 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46743774933 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743777861 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743781180 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743812460 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743819423 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743822170 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46743824747 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743855942 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743859934 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743862437 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46743875550 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743900903 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743902264 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743902867 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46743925398 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743941910 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743944330 µs
+[MOVE] player_pid_38: x=205.00, y=198.00, z=-2.75, yaw=316, pitch=0, t=46743944773 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46743974824 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46743981157 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46743985294 µs
+[MOVE] player_pid_38: x=205.00, y=197.94, z=-2.75, yaw=314, pitch=1, t=46743989312 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744022184 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46744024842 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744027979 µs
+[MOVE] player_pid_38: x=204.94, y=197.81, z=-2.75, yaw=314, pitch=1, t=46744034821 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744062117 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744068504 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46744075328 µs
+[MOVE] player_pid_38: x=204.56, y=197.44, z=-2.88, yaw=317, pitch=0, t=46744078241 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744101152 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744111351 µs
+[MOVE] player_pid_38: x=204.12, y=197.00, z=-2.81, yaw=325, pitch=-2, t=46744122275 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46744125525 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744141220 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744152312 µs
+[MOVE] player_pid_38: x=203.75, y=196.50, z=-3.00, yaw=332, pitch=-2, t=46744166807 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46744175218 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744182069 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744195385 µs
+[MOVE] player_pid_38: x=203.31, y=195.94, z=-3.00, yaw=333, pitch=-3, t=46744211829 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744222009 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46744225207 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744235913 µs
+[MOVE] player_pid_38: x=202.94, y=195.38, z=-3.00, yaw=328, pitch=-3, t=46744255600 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744261019 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46744275839 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744276827 µs
+[MOVE] player_pid_38: x=202.56, y=194.81, z=-3.00, yaw=319, pitch=-4, t=46744300614 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744302157 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744320065 µs
+[MOVE] Bot: x=173.38, y=62.38, z=-9.00, yaw=163, pitch=0, t=46744325584 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744341060 µs
+[MOVE] player_pid_38: x=202.19, y=194.31, z=-3.00, yaw=316, pitch=-4, t=46744344647 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744360655 µs
+[MOVE] Bot: x=173.38, y=62.31, z=-9.00, yaw=163, pitch=0, t=46744375165 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744382154 µs
+[MOVE] player_pid_38: x=201.75, y=193.75, z=-3.12, yaw=316, pitch=-4, t=46744389625 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744403251 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744421070 µs
+[MOVE] Bot: x=173.25, y=62.00, z=-9.00, yaw=163, pitch=0, t=46744425181 µs
+[MOVE] player_pid_38: x=201.31, y=193.19, z=-3.31, yaw=317, pitch=-4, t=46744434155 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744443756 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744461948 µs
+[MOVE] Bot: x=173.12, y=61.56, z=-9.00, yaw=163, pitch=0, t=46744474715 µs
+[MOVE] player_pid_38: x=200.88, y=192.69, z=-3.50, yaw=317, pitch=-4, t=46744478158 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744486396 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744505634 µs
+[MOVE] player_pid_38: x=200.44, y=192.12, z=-4.00, yaw=317, pitch=-4, t=46744522168 µs
+[MOVE] Bot: x=172.94, y=61.00, z=-9.00, yaw=163, pitch=0, t=46744525699 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744527002 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744546673 µs
+[MOVE] player_pid_38: x=199.94, y=191.56, z=-4.00, yaw=317, pitch=-4, t=46744567198 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744569598 µs
+[MOVE] Bot: x=172.75, y=60.38, z=-9.44, yaw=163, pitch=0, t=46744575006 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744585661 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744610206 µs
+[MOVE] player_pid_38: x=199.50, y=191.06, z=-4.00, yaw=317, pitch=-4, t=46744612692 µs
+[MOVE] Bot: x=172.56, y=59.75, z=-10.00, yaw=163, pitch=0, t=46744625415 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744625707 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744651218 µs
+[MOVE] player_pid_38: x=199.06, y=190.56, z=-4.00, yaw=318, pitch=-4, t=46744652466 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744665593 µs
+[MOVE] Bot: x=172.38, y=59.06, z=-10.00, yaw=163, pitch=0, t=46744675285 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744694289 µs
+[MOVE] player_pid_38: x=198.62, y=190.06, z=-4.00, yaw=319, pitch=-3, t=46744695978 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744706542 µs
+[MOVE] Bot: x=172.19, y=58.38, z=-10.38, yaw=163, pitch=0, t=46744725706 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744734811 µs
+[MOVE] player_pid_38: x=198.12, y=189.50, z=-4.00, yaw=324, pitch=-3, t=46744740476 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744745677 µs
+[x.x.x.x] player_pid_4 says: 'please leave game 5 mins'
+[MOVE] Bot: x=172.00, y=57.69, z=-10.94, yaw=163, pitch=0, t=46744775094 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744777900 µs
+[SHOOT] player_pid_38: x=198.12, y=189.50, z=-4.00, yaw=324, pitch=-3, t=46744783997 µs
+[MOVE] player_pid_38: x=197.69, y=189.00, z=-4.00, yaw=328, pitch=-2, t=46744784093 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744784659 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744818921 µs
+[MOVE] Bot: x=171.75, y=57.00, z=-11.00, yaw=163, pitch=0, t=46744824759 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744825495 µs
+[MOVE] player_pid_38: x=197.31, y=188.50, z=-4.00, yaw=328, pitch=-1, t=46744827976 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744859491 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744866479 µs
+[MOVE] player_pid_38: x=196.88, y=187.94, z=-4.00, yaw=328, pitch=-1, t=46744873063 µs
+[MOVE] Bot: x=171.56, y=56.25, z=-11.50, yaw=163, pitch=0, t=46744875772 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744902113 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744906415 µs
+[MOVE] player_pid_38: x=196.50, y=187.38, z=-4.00, yaw=328, pitch=-1, t=46744916418 µs
+[MOVE] Bot: x=171.31, y=55.50, z=-12.00, yaw=163, pitch=0, t=46744925398 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744944713 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744945196 µs
+[MOVE] player_pid_38: x=196.12, y=186.75, z=-4.00, yaw=328, pitch=-1, t=46744961289 µs
+[MOVE] Bot: x=171.12, y=54.75, z=-12.00, yaw=163, pitch=0, t=46744976160 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46744985434 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46744985692 µs
+[SHOOT] player_pid_38: x=196.12, y=186.75, z=-4.00, yaw=328, pitch=-1, t=46745000845 µs
+[MOVE] player_pid_38: x=195.81, y=186.31, z=-4.00, yaw=328, pitch=0, t=46745000905 µs
+[MOVE] Bot: x=170.88, y=54.00, z=-12.00, yaw=163, pitch=0, t=46745025422 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745025735 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745028570 µs
+[MOVE] player_pid_38: x=195.50, y=185.75, z=-4.00, yaw=328, pitch=0, t=46745044795 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745065376 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745069634 µs
+[MOVE] Bot: x=170.69, y=53.25, z=-12.00, yaw=163, pitch=0, t=46745075179 µs
+[MOVE] player_pid_38: x=195.12, y=185.19, z=-4.00, yaw=328, pitch=0, t=46745089287 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745106254 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745110223 µs
+[MOVE] Bot: x=170.44, y=52.50, z=-12.00, yaw=163, pitch=0, t=46745125454 µs
+[MOVE] player_pid_38: x=194.75, y=184.56, z=-4.00, yaw=328, pitch=0, t=46745133289 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745145204 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745152822 µs
+[MOVE] Bot: x=170.19, y=51.75, z=-12.00, yaw=163, pitch=0, t=46745175273 µs
+[MOVE] player_pid_38: x=194.44, y=184.00, z=-4.00, yaw=329, pitch=0, t=46745178262 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745185540 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745195546 µs
+[MOVE] player_pid_38: x=194.06, y=183.38, z=-4.00, yaw=330, pitch=0, t=46745223797 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745225047 µs
+[MOVE] Bot: x=170.00, y=51.00, z=-12.00, yaw=163, pitch=0, t=46745225635 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745236041 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745264823 µs
+[MOVE] player_pid_38: x=193.69, y=182.81, z=-3.88, yaw=333, pitch=0, t=46745268315 µs
+[MOVE] Bot: x=169.75, y=50.25, z=-12.00, yaw=163, pitch=0, t=46745275645 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745276977 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745304936 µs
+[MOVE] player_pid_38: x=193.38, y=182.19, z=-3.88, yaw=337, pitch=0, t=46745311099 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745318573 µs
+[MOVE] Bot: x=169.50, y=49.44, z=-12.00, yaw=163, pitch=0, t=46745325535 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745345734 µs
+[MOVE] player_pid_38: x=193.00, y=181.56, z=-3.44, yaw=338, pitch=0, t=46745356120 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=315, pitch=0, t=46745361314 µs
+[MOVE] Bot: x=169.31, y=48.69, z=-12.00, yaw=163, pitch=0, t=46745375177 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745385876 µs
+[MOVE] player_pid_38: x=192.75, y=180.88, z=-3.38, yaw=338, pitch=0, t=46745401544 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=316, pitch=0, t=46745401936 µs
+[MOVE] Bot: x=169.06, y=47.94, z=-12.00, yaw=163, pitch=0, t=46745425338 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745426317 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=320, pitch=0, t=46745444626 µs
+[MOVE] player_pid_38: x=192.44, y=180.25, z=-3.38, yaw=339, pitch=0, t=46745444673 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745465384 µs
+[MOVE] Bot: x=168.81, y=47.19, z=-12.00, yaw=163, pitch=0, t=46745475259 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745485206 µs
+[MOVE] player_pid_38: x=192.19, y=179.62, z=-3.38, yaw=343, pitch=-1, t=46745489151 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745505261 µs
+[MOVE] Bot: x=168.62, y=46.38, z=-12.00, yaw=163, pitch=0, t=46745525711 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745527756 µs
+[MOVE] player_pid_38: x=191.94, y=178.94, z=-3.38, yaw=349, pitch=-1, t=46745534194 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745545010 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745569269 µs
+[MOVE] Bot: x=168.38, y=45.62, z=-12.00, yaw=163, pitch=0, t=46745575229 µs
+[MOVE] player_pid_38: x=191.69, y=178.25, z=-3.56, yaw=355, pitch=-1, t=46745578153 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745584871 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745609798 µs
+[MOVE] player_pid_38: x=191.56, y=177.56, z=-3.75, yaw=0, pitch=-2, t=46745623202 µs
+[MOVE] Bot: x=168.12, y=44.88, z=-12.00, yaw=163, pitch=0, t=46745625108 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745625996 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745655084 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745665668 µs
+[MOVE] player_pid_38: x=191.38, y=176.88, z=-3.81, yaw=0, pitch=-2, t=46745667534 µs
+[MOVE] Bot: x=167.94, y=44.12, z=-12.00, yaw=163, pitch=0, t=46745675842 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745702446 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745705851 µs
+[MOVE] player_pid_38: x=191.31, y=176.19, z=-3.94, yaw=0, pitch=-2, t=46745711471 µs
+[MOVE] Bot: x=167.69, y=43.31, z=-12.00, yaw=163, pitch=0, t=46745725180 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745745557 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745746352 µs
+[MOVE] player_pid_38: x=191.25, y=175.50, z=-4.00, yaw=0, pitch=-2, t=46745756508 µs
+[MOVE] Bot: x=167.44, y=42.56, z=-12.00, yaw=163, pitch=0, t=46745775990 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745785167 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745786567 µs
+[MOVE] player_pid_38: x=191.19, y=174.81, z=-4.00, yaw=0, pitch=-2, t=46745801997 µs
+[MOVE] Bot: x=167.25, y=41.94, z=-12.00, yaw=163, pitch=0, t=46745825153 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745825201 µs
+[MOVE] player_pid_46: x=205.00, y=198.00, z=-2.75, yaw=322, pitch=0, t=46745827343 µs
+[MOVE] player_pid_38: x=191.06, y=174.06, z=-4.00, yaw=0, pitch=-1, t=46745844528 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745866053 µs
+[MOVE] player_pid_46: x=204.94, y=197.94, z=-2.75, yaw=322, pitch=0, t=46745867963 µs
+[MOVE] Bot: x=167.12, y=41.56, z=-12.00, yaw=163, pitch=0, t=46745875594 µs
+[MOVE] player_pid_38: x=190.69, y=173.38, z=-4.00, yaw=3, pitch=-1, t=46745890033 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745906559 µs
+[MOVE] player_pid_46: x=204.81, y=197.75, z=-2.88, yaw=322, pitch=0, t=46745910665 µs
+[MOVE] Bot: x=167.06, y=41.31, z=-12.00, yaw=163, pitch=0, t=46745925414 µs
+[MOVE] player_pid_38: x=190.25, y=172.69, z=-4.00, yaw=8, pitch=0, t=46745933572 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745945106 µs
+[MOVE] player_pid_46: x=204.56, y=197.50, z=-2.88, yaw=322, pitch=0, t=46745953216 µs
+[MOVE] Bot: x=167.00, y=41.12, z=-12.00, yaw=163, pitch=0, t=46745975167 µs
+[MOVE] player_pid_38: x=189.81, y=171.88, z=-4.00, yaw=15, pitch=-1, t=46745978034 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46745985105 µs
+[MOVE] player_pid_46: x=204.31, y=197.12, z=-2.88, yaw=322, pitch=0, t=46745993716 µs
+[MOVE] player_pid_38: x=189.38, y=171.19, z=-4.00, yaw=21, pitch=-1, t=46746018338 µs
+[MOVE] Bot: x=167.00, y=41.00, z=-12.00, yaw=163, pitch=0, t=46746025814 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746026039 µs
+[x.x.x.x] player_pid_4 says: 'please leave game 5 mins'
+[MOVE] player_pid_46: x=204.00, y=196.69, z=-2.81, yaw=322, pitch=0, t=46746036396 µs
+[MOVE] player_pid_38: x=188.94, y=170.38, z=-4.00, yaw=22, pitch=-1, t=46746061777 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746065810 µs
+[MOVE] Bot: x=167.00, y=40.94, z=-12.00, yaw=163, pitch=0, t=46746075139 µs
+[MOVE] player_pid_46: x=203.62, y=196.25, z=-3.00, yaw=322, pitch=0, t=46746076991 µs
+[MOVE] player_pid_38: x=188.50, y=169.62, z=-4.00, yaw=22, pitch=-1, t=46746101298 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746105571 µs
+[MOVE] player_pid_46: x=203.31, y=195.81, z=-3.00, yaw=322, pitch=0, t=46746119649 µs
+[MOVE] Bot: x=166.94, y=40.88, z=-12.00, yaw=163, pitch=0, t=46746125776 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746145730 µs
+[MOVE] player_pid_38: x=188.12, y=168.75, z=-4.00, yaw=23, pitch=-1, t=46746145906 µs
+[MOVE] player_pid_46: x=202.94, y=195.31, z=-3.00, yaw=322, pitch=0, t=46746160210 µs
+[MOVE] Bot: x=166.94, y=40.88, z=-12.00, yaw=163, pitch=0, t=46746175341 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746185454 µs
+[MOVE] player_pid_38: x=187.75, y=167.81, z=-4.00, yaw=36, pitch=-2, t=46746190368 µs
+[MOVE] player_pid_46: x=202.56, y=194.88, z=-3.00, yaw=323, pitch=0, t=46746202879 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746224853 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746225130 µs
+[MOVE] player_pid_38: x=187.44, y=166.88, z=-4.00, yaw=58, pitch=-4, t=46746233856 µs
+[MOVE] player_pid_46: x=202.12, y=194.31, z=-3.00, yaw=331, pitch=0, t=46746243873 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746265020 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746275005 µs
+[MOVE] player_pid_38: x=187.31, y=165.94, z=-4.00, yaw=75, pitch=-5, t=46746279328 µs
+[MOVE] player_pid_46: x=201.81, y=193.81, z=-3.06, yaw=345, pitch=0, t=46746285131 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746305123 µs
+[MOVE] player_pid_38: x=187.38, y=165.06, z=-4.00, yaw=78, pitch=-5, t=46746323599 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746325140 µs
+[MOVE] player_pid_46: x=201.44, y=193.25, z=-3.31, yaw=351, pitch=0, t=46746327917 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746344876 µs
+[MOVE] player_pid_38: x=187.62, y=164.25, z=-4.00, yaw=78, pitch=-5, t=46746367115 µs
+[MOVE] player_pid_46: x=201.19, y=192.69, z=-3.50, yaw=350, pitch=0, t=46746369060 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746375164 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746385213 µs
+[MOVE] player_pid_46: x=200.94, y=192.06, z=-3.69, yaw=350, pitch=0, t=46746409682 µs
+[MOVE] player_pid_38: x=188.00, y=163.62, z=-4.00, yaw=78, pitch=-5, t=46746412184 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746424788 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746425122 µs
+[MOVE] player_pid_46: x=200.75, y=191.50, z=-4.00, yaw=350, pitch=0, t=46746452513 µs
+[MOVE] player_pid_38: x=188.50, y=163.19, z=-4.00, yaw=78, pitch=-5, t=46746456156 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746465376 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746475517 µs
+[MOVE] player_pid_46: x=200.56, y=190.88, z=-4.00, yaw=350, pitch=0, t=46746492961 µs
+[MOVE] player_pid_38: x=189.06, y=162.81, z=-4.00, yaw=75, pitch=-5, t=46746501676 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746506388 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746525068 µs
+[MOVE] player_pid_46: x=200.38, y=190.25, z=-4.00, yaw=350, pitch=0, t=46746535625 µs
+[MOVE] player_pid_38: x=189.62, y=162.50, z=-4.00, yaw=66, pitch=-4, t=46746544696 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746545776 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746575388 µs
+[MOVE] player_pid_46: x=200.25, y=189.62, z=-4.00, yaw=351, pitch=0, t=46746578348 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746585016 µs
+[MOVE] player_pid_38: x=190.25, y=162.19, z=-4.00, yaw=54, pitch=-4, t=46746589722 µs
+[MOVE] player_pid_46: x=200.06, y=188.94, z=-4.00, yaw=351, pitch=0, t=46746619256 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746625140 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746625770 µs
+[MOVE] player_pid_38: x=190.81, y=161.88, z=-4.00, yaw=39, pitch=-4, t=46746634232 µs
+[MOVE] player_pid_46: x=200.00, y=188.31, z=-4.00, yaw=351, pitch=0, t=46746660204 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746666268 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746674874 µs
+[MOVE] player_pid_38: x=191.38, y=161.44, z=-4.00, yaw=33, pitch=-4, t=46746678497 µs
+[MOVE] player_pid_46: x=199.88, y=187.62, z=-4.00, yaw=351, pitch=0, t=46746702961 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746705424 µs
+[MOVE] player_pid_38: x=191.88, y=161.00, z=-4.00, yaw=32, pitch=-4, t=46746724029 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746724785 µs
+[MOVE] player_pid_46: x=199.75, y=187.00, z=-4.00, yaw=351, pitch=0, t=46746743885 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746745342 µs
+[MOVE] player_pid_38: x=192.31, y=160.50, z=-4.00, yaw=32, pitch=-4, t=46746766986 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746775237 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746785358 µs
+[MOVE] player_pid_46: x=199.62, y=186.31, z=-4.00, yaw=351, pitch=0, t=46746786528 µs
+[MOVE] player_pid_38: x=192.81, y=159.94, z=-4.00, yaw=32, pitch=-4, t=46746811534 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746825342 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746825512 µs
+[MOVE] player_pid_46: x=199.56, y=185.69, z=-4.00, yaw=351, pitch=0, t=46746827073 µs
+[MOVE] player_pid_38: x=193.19, y=159.38, z=-4.00, yaw=35, pitch=-4, t=46746856539 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746865363 µs
+[MOVE] player_pid_46: x=199.44, y=185.00, z=-4.00, yaw=351, pitch=0, t=46746869697 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746875707 µs
+[MOVE] player_pid_38: x=193.62, y=158.81, z=-3.88, yaw=50, pitch=-5, t=46746901054 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746905659 µs
+[MOVE] player_pid_46: x=199.38, y=184.38, z=-4.00, yaw=351, pitch=0, t=46746910329 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746925210 µs
+[MOVE] player_pid_38: x=194.06, y=158.38, z=-3.69, yaw=67, pitch=-7, t=46746940538 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746944709 µs
+[MOVE] player_pid_46: x=199.25, y=183.69, z=-4.00, yaw=351, pitch=0, t=46746953012 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46746975650 µs
+[MOVE] player_pid_38: x=194.50, y=157.94, z=-3.44, yaw=79, pitch=-7, t=46746980309 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46746985754 µs
+[MOVE] player_pid_46: x=199.38, y=183.00, z=-4.00, yaw=351, pitch=0, t=46746993784 µs
+[MOVE] player_pid_38: x=195.06, y=157.62, z=-3.31, yaw=81, pitch=-7, t=46747022775 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747025437 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747026600 µs
+[MOVE] player_pid_46: x=199.62, y=182.31, z=-4.00, yaw=351, pitch=0, t=46747036441 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747065160 µs
+[MOVE] player_pid_38: x=195.69, y=157.38, z=-3.31, yaw=81, pitch=-7, t=46747067850 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747075158 µs
+[MOVE] player_pid_46: x=199.94, y=181.56, z=-4.00, yaw=350, pitch=0, t=46747076888 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747106060 µs
+[MOVE] player_pid_38: x=196.31, y=157.12, z=-3.31, yaw=81, pitch=-7, t=46747112314 µs
+[MOVE] player_pid_46: x=200.31, y=180.88, z=-4.00, yaw=350, pitch=0, t=46747117862 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747125397 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747144985 µs
+[MOVE] player_pid_38: x=197.00, y=156.94, z=-3.31, yaw=81, pitch=-7, t=46747155814 µs
+[MOVE] player_pid_46: x=200.56, y=180.12, z=-4.00, yaw=350, pitch=0, t=46747160381 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747175085 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747185015 µs
+[MOVE] player_pid_38: x=197.62, y=156.81, z=-3.31, yaw=81, pitch=-7, t=46747200369 µs
+[MOVE] player_pid_46: x=200.75, y=179.44, z=-4.00, yaw=350, pitch=0, t=46747203092 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747225292 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747225615 µs
+[MOVE] player_pid_46: x=200.81, y=178.75, z=-4.00, yaw=351, pitch=0, t=46747244158 µs
+[MOVE] player_pid_38: x=198.31, y=156.62, z=-3.44, yaw=81, pitch=-8, t=46747244857 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747266127 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747274982 µs
+[MOVE] player_pid_46: x=200.81, y=178.06, z=-4.00, yaw=354, pitch=0, t=46747285018 µs
+[MOVE] player_pid_38: x=198.94, y=156.50, z=-3.50, yaw=79, pitch=-8, t=46747285624 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747305747 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747325078 µs
+[MOVE] player_pid_46: x=200.81, y=177.38, z=-4.00, yaw=356, pitch=0, t=46747327632 µs
+[MOVE] player_pid_38: x=199.62, y=156.38, z=-3.81, yaw=79, pitch=-8, t=46747328078 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747346230 µs
+[MOVE] player_pid_46: x=200.81, y=176.75, z=-4.00, yaw=358, pitch=0, t=46747368258 µs
+[MOVE] player_pid_38: x=200.31, y=156.25, z=-3.94, yaw=79, pitch=-8, t=46747372643 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747375468 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747386066 µs
+[MOVE] player_pid_46: x=200.81, y=176.06, z=-4.00, yaw=359, pitch=0, t=46747410841 µs
+[MOVE] player_pid_38: x=201.00, y=156.12, z=-4.00, yaw=81, pitch=-8, t=46747417138 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747425050 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747425098 µs
+[MOVE] player_pid_46: x=200.81, y=175.38, z=-4.00, yaw=359, pitch=0, t=46747451404 µs
+[MOVE] player_pid_38: x=201.69, y=156.00, z=-4.00, yaw=81, pitch=-9, t=46747462157 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747465719 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747475435 µs
+[MOVE] player_pid_46: x=200.81, y=174.75, z=-4.00, yaw=0, pitch=0, t=46747493979 µs
+[MOVE] player_pid_38: x=202.38, y=155.81, z=-4.00, yaw=50, pitch=-7, t=46747506674 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747508677 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747525287 µs
+[MOVE] player_pid_46: x=200.81, y=174.06, z=-4.00, yaw=3, pitch=0, t=46747536598 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747548027 µs
+[MOVE] player_pid_38: x=203.00, y=155.62, z=-4.00, yaw=2, pitch=-4, t=46747551177 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747575220 µs
+[MOVE] player_pid_46: x=200.81, y=173.38, z=-4.00, yaw=5, pitch=0, t=46747577157 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747588862 µs
+[MOVE] player_pid_38: x=203.25, y=155.25, z=-4.00, yaw=333, pitch=-3, t=46747594765 µs
+[MOVE] player_pid_46: x=200.75, y=172.69, z=-4.00, yaw=10, pitch=0, t=46747618305 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747624973 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747628266 µs
+[MOVE] player_pid_38: x=203.06, y=154.88, z=-4.00, yaw=332, pitch=-3, t=46747639515 µs
+[MOVE] player_pid_46: x=200.56, y=172.00, z=-4.00, yaw=16, pitch=-1, t=46747661382 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747668165 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747675025 µs
+[MOVE] player_pid_38: x=202.69, y=154.50, z=-4.00, yaw=332, pitch=-3, t=46747684439 µs
+[MOVE] player_pid_46: x=200.31, y=171.25, z=-4.00, yaw=18, pitch=-1, t=46747702007 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747708172 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747725572 µs
+[MOVE] player_pid_38: x=202.12, y=154.19, z=-4.00, yaw=332, pitch=-3, t=46747727961 µs
+[MOVE] player_pid_46: x=200.00, y=170.50, z=-4.00, yaw=18, pitch=-1, t=46747744765 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747748955 µs
+[MOVE] player_pid_38: x=201.38, y=153.88, z=-4.00, yaw=332, pitch=-3, t=46747772500 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747775045 µs
+[MOVE] player_pid_46: x=199.62, y=169.69, z=-4.00, yaw=18, pitch=-1, t=46747785235 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747788214 µs
+[MOVE] player_pid_38: x=200.62, y=153.56, z=-4.00, yaw=332, pitch=-3, t=46747816999 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747824971 µs
+[MOVE] player_pid_46: x=199.31, y=168.88, z=-4.00, yaw=18, pitch=-1, t=46747825905 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747828092 µs
+[MOVE] player_pid_38: x=199.75, y=153.25, z=-4.00, yaw=331, pitch=-2, t=46747861526 µs
+[MOVE] player_pid_46: x=198.94, y=168.06, z=-4.00, yaw=18, pitch=-1, t=46747868630 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747869134 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747875286 µs
+[MOVE] player_pid_38: x=198.94, y=153.12, z=-4.00, yaw=333, pitch=-2, t=46747906026 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747908662 µs
+[MOVE] player_pid_46: x=198.75, y=167.31, z=-4.00, yaw=22, pitch=0, t=46747911258 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747925351 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747948946 µs
+[MOVE] player_pid_38: x=198.00, y=152.81, z=-4.00, yaw=338, pitch=-3, t=46747950511 µs
+[MOVE] player_pid_46: x=198.69, y=166.56, z=-4.00, yaw=27, pitch=0, t=46747951775 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46747975557 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46747987729 µs
+[MOVE] player_pid_38: x=197.19, y=152.50, z=-4.00, yaw=342, pitch=-3, t=46747990746 µs
+[MOVE] player_pid_46: x=198.75, y=165.94, z=-4.00, yaw=26, pitch=0, t=46747994389 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748025125 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748028175 µs
+[MOVE] player_pid_38: x=196.31, y=152.12, z=-4.00, yaw=345, pitch=-3, t=46748034258 µs
+[MOVE] player_pid_46: x=198.81, y=165.25, z=-4.00, yaw=20, pitch=-1, t=46748034978 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748068995 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748074993 µs
+[MOVE] player_pid_46: x=198.75, y=164.50, z=-4.00, yaw=8, pitch=-1, t=46748078201 µs
+[MOVE] player_pid_38: x=195.44, y=151.69, z=-4.00, yaw=348, pitch=-3, t=46748078248 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748108017 µs
+[MOVE] player_pid_46: x=198.56, y=163.81, z=-4.00, yaw=359, pitch=-1, t=46748119213 µs
+[MOVE] player_pid_38: x=194.56, y=151.25, z=-4.00, yaw=350, pitch=-3, t=46748122831 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748125511 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748148693 µs
+[MOVE] player_pid_46: x=198.19, y=163.06, z=-4.00, yaw=354, pitch=-1, t=46748159739 µs
+[MOVE] player_pid_38: x=193.69, y=150.75, z=-4.00, yaw=353, pitch=-4, t=46748167829 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748175334 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748188109 µs
+[MOVE] player_pid_46: x=197.75, y=162.44, z=-4.00, yaw=352, pitch=-1, t=46748202335 µs
+[MOVE] player_pid_38: x=192.88, y=150.19, z=-4.00, yaw=357, pitch=-4, t=46748211862 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748225427 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748228120 µs
+[MOVE] player_pid_46: x=197.19, y=161.75, z=-4.00, yaw=352, pitch=-1, t=46748242912 µs
+[MOVE] player_pid_38: x=192.06, y=149.62, z=-4.00, yaw=358, pitch=-4, t=46748256854 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748269116 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748275564 µs
+[MOVE] player_pid_46: x=196.56, y=161.12, z=-4.00, yaw=352, pitch=-1, t=46748286429 µs
+[MOVE] player_pid_38: x=191.50, y=148.94, z=-4.00, yaw=358, pitch=-4, t=46748300604 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748309435 µs
+[x.x.x.x] player_pid_4 says: 'please leave game 5 mins', SPAM detected
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748325540 µs
+[MOVE] player_pid_46: x=195.94, y=160.56, z=-3.94, yaw=352, pitch=-1, t=46748326987 µs
+[MOVE] player_pid_38: x=191.06, y=148.31, z=-4.00, yaw=358, pitch=-4, t=46748345123 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748349304 µs
+[MOVE] player_pid_46: x=195.25, y=159.94, z=-3.88, yaw=352, pitch=-1, t=46748367977 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748375466 µs
+[MOVE] player_pid_38: x=190.81, y=147.69, z=-4.00, yaw=359, pitch=-4, t=46748385619 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748389385 µs
+[MOVE] player_pid_46: x=194.56, y=159.31, z=-3.94, yaw=352, pitch=-1, t=46748410624 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748425301 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748427930 µs
+[MOVE] player_pid_38: x=190.62, y=147.06, z=-4.00, yaw=0, pitch=-4, t=46748428592 µs
+[MOVE] player_pid_46: x=194.00, y=158.75, z=-3.62, yaw=352, pitch=-1, t=46748453302 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748469679 µs
+[MOVE] player_pid_38: x=190.69, y=146.38, z=-4.00, yaw=2, pitch=-4, t=46748473119 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748475735 µs
+[MOVE] player_pid_46: x=193.56, y=158.12, z=-3.88, yaw=352, pitch=-1, t=46748494756 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748508944 µs
+[MOVE] player_pid_38: x=191.00, y=145.62, z=-4.00, yaw=5, pitch=-4, t=46748520663 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748525141 µs
+[MOVE] player_pid_46: x=193.19, y=157.50, z=-3.75, yaw=352, pitch=-1, t=46748535761 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748548649 µs
+[MOVE] player_pid_38: x=191.44, y=145.00, z=-4.00, yaw=8, pitch=-4, t=46748562164 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748575138 µs
+[MOVE] player_pid_46: x=192.94, y=156.81, z=-3.75, yaw=355, pitch=-1, t=46748578372 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748588120 µs
+[MOVE] player_pid_38: x=191.94, y=144.38, z=-4.00, yaw=9, pitch=-4, t=46748606680 µs
+[MOVE] player_pid_46: x=192.69, y=156.19, z=-4.00, yaw=358, pitch=-1, t=46748618904 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748625515 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748629213 µs
+[MOVE] player_pid_38: x=192.62, y=143.75, z=-4.00, yaw=12, pitch=-4, t=46748651953 µs
+[MOVE] player_pid_46: x=192.56, y=155.56, z=-4.00, yaw=1, pitch=-1, t=46748659903 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748668116 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748675094 µs
+[MOVE] player_pid_38: x=193.31, y=143.12, z=-4.00, yaw=14, pitch=-4, t=46748695448 µs
+[MOVE] player_pid_46: x=192.44, y=154.88, z=-4.00, yaw=2, pitch=-1, t=46748702375 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748708196 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748725528 µs
+[MOVE] player_pid_38: x=194.00, y=142.62, z=-4.00, yaw=17, pitch=-4, t=46748735418 µs
+[MOVE] player_pid_46: x=192.38, y=154.25, z=-4.00, yaw=4, pitch=-1, t=46748743480 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748748097 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748775524 µs
+[MOVE] player_pid_38: x=194.75, y=142.06, z=-4.00, yaw=18, pitch=-3, t=46748778438 µs
+[MOVE] player_pid_46: x=192.31, y=153.56, z=-4.00, yaw=5, pitch=-1, t=46748786553 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748788205 µs
+[MOVE] player_pid_38: x=195.50, y=141.62, z=-4.00, yaw=18, pitch=-3, t=46748819446 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748825092 µs
+[x.x.x.x] Bot says: '??'
+[MOVE] player_pid_46: x=192.31, y=152.88, z=-4.00, yaw=7, pitch=-1, t=46748827120 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748827869 µs
+[MOVE] player_pid_38: x=196.31, y=141.12, z=-4.00, yaw=18, pitch=-3, t=46748862414 µs
+[MOVE] player_pid_46: x=192.38, y=152.25, z=-4.00, yaw=7, pitch=-1, t=46748868051 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748869369 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748880044 µs
+[MOVE] player_pid_38: x=197.19, y=140.69, z=-4.00, yaw=17, pitch=-3, t=46748908455 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748908952 µs
+[MOVE] player_pid_46: x=192.38, y=151.56, z=-4.00, yaw=7, pitch=-1, t=46748910752 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748924923 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748948268 µs
+[MOVE] player_pid_38: x=198.06, y=140.19, z=-4.00, yaw=14, pitch=-3, t=46748951170 µs
+[MOVE] player_pid_46: x=192.44, y=150.94, z=-4.00, yaw=7, pitch=-1, t=46748951212 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46748978392 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46748988052 µs
+[MOVE] player_pid_38: x=198.88, y=139.75, z=-4.00, yaw=11, pitch=-2, t=46748993162 µs
+[MOVE] player_pid_46: x=192.50, y=150.25, z=-4.00, yaw=7, pitch=-1, t=46748993885 µs
+[MOVE] Bot: x=166.94, y=40.81, z=-12.00, yaw=163, pitch=0, t=46749024917 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749029120 µs
+[MOVE] player_pid_38: x=199.69, y=139.25, z=-4.00, yaw=11, pitch=-2, t=46749034192 µs
+[MOVE] player_pid_46: x=192.56, y=149.56, z=-4.00, yaw=7, pitch=-1, t=46749036586 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749069674 µs
+[MOVE] Bot: x=166.94, y=40.88, z=-12.00, yaw=163, pitch=0, t=46749075402 µs
+[MOVE] player_pid_46: x=192.69, y=148.94, z=-4.00, yaw=7, pitch=-1, t=46749077090 µs
+[MOVE] player_pid_38: x=200.56, y=138.75, z=-4.00, yaw=11, pitch=-2, t=46749079692 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749108112 µs
+[MOVE] player_pid_46: x=192.75, y=148.25, z=-4.00, yaw=7, pitch=-1, t=46749119771 µs
+[MOVE] player_pid_38: x=201.31, y=138.25, z=-4.00, yaw=11, pitch=-2, t=46749120165 µs
+[MOVE] Bot: x=167.06, y=41.19, z=-12.00, yaw=163, pitch=0, t=46749124994 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749149255 µs
+[MOVE] player_pid_46: x=192.81, y=147.62, z=-4.00, yaw=8, pitch=-1, t=46749160269 µs
+[MOVE] player_pid_38: x=201.94, y=137.69, z=-3.94, yaw=11, pitch=-2, t=46749162171 µs
+[MOVE] Bot: x=167.19, y=41.62, z=-12.00, yaw=163, pitch=0, t=46749175422 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749188594 µs
+[MOVE] player_pid_46: x=192.94, y=146.94, z=-4.00, yaw=8, pitch=-1, t=46749205077 µs
+[MOVE] player_pid_38: x=202.44, y=137.06, z=-3.94, yaw=11, pitch=-2, t=46749206447 µs
+[MOVE] Bot: x=167.31, y=42.19, z=-12.00, yaw=163, pitch=0, t=46749225048 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749228032 µs
+[MOVE] player_pid_46: x=193.00, y=146.31, z=-4.00, yaw=8, pitch=-1, t=46749243433 µs
+[MOVE] player_pid_38: x=202.81, y=136.44, z=-4.00, yaw=11, pitch=-2, t=46749251501 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749269234 µs
+[MOVE] Bot: x=167.56, y=42.81, z=-12.00, yaw=163, pitch=0, t=46749275385 µs
+[MOVE] player_pid_46: x=193.12, y=145.62, z=-4.00, yaw=9, pitch=-1, t=46749284877 µs
+[MOVE] player_pid_38: x=202.88, y=135.75, z=-4.00, yaw=11, pitch=-2, t=46749295475 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749308828 µs
+[MOVE] Bot: x=167.75, y=43.50, z=-12.00, yaw=163, pitch=0, t=46749325441 µs
+[MOVE] player_pid_46: x=193.19, y=145.00, z=-4.00, yaw=10, pitch=0, t=46749327564 µs
+[MOVE] player_pid_38: x=202.88, y=135.12, z=-4.00, yaw=11, pitch=-2, t=46749340501 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749348115 µs
+[MOVE] player_pid_46: x=193.31, y=144.31, z=-4.00, yaw=14, pitch=0, t=46749368601 µs
+[MOVE] Bot: x=167.94, y=44.19, z=-12.00, yaw=163, pitch=0, t=46749375267 µs
+[MOVE] player_pid_38: x=203.06, y=134.44, z=-4.00, yaw=10, pitch=-2, t=46749385020 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749388574 µs
+[MOVE] player_pid_46: x=193.44, y=143.69, z=-4.00, yaw=19, pitch=-1, t=46749411482 µs
+[MOVE] Bot: x=168.19, y=44.94, z=-12.00, yaw=163, pitch=0, t=46749425419 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749429159 µs
+[MOVE] player_pid_38: x=203.56, y=133.81, z=-4.00, yaw=9, pitch=-2, t=46749429462 µs
+[MOVE] player_pid_46: x=193.62, y=143.00, z=-4.00, yaw=25, pitch=0, t=46749454118 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749468114 µs
+[MOVE] player_pid_38: x=204.06, y=133.19, z=-4.00, yaw=7, pitch=-2, t=46749474047 µs
+[MOVE] Bot: x=168.38, y=45.69, z=-12.00, yaw=163, pitch=0, t=46749475396 µs
+[MOVE] player_pid_46: x=193.81, y=142.38, z=-4.00, yaw=28, pitch=0, t=46749494683 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749508032 µs
+[MOVE] player_pid_38: x=204.75, y=132.50, z=-4.00, yaw=5, pitch=-2, t=46749519485 µs
+[MOVE] Bot: x=168.62, y=46.44, z=-12.00, yaw=163, pitch=0, t=46749525947 µs
+[MOVE] player_pid_46: x=194.00, y=141.75, z=-4.00, yaw=28, pitch=0, t=46749535215 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749548205 µs
+[MOVE] player_pid_38: x=205.38, y=131.94, z=-4.00, yaw=3, pitch=-2, t=46749562817 µs
+[MOVE] Bot: x=168.81, y=47.19, z=-12.00, yaw=163, pitch=0, t=46749575197 µs
+[MOVE] player_pid_46: x=194.25, y=141.19, z=-4.00, yaw=28, pitch=0, t=46749577911 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749589080 µs
+[MOVE] player_pid_38: x=206.06, y=131.25, z=-4.00, yaw=2, pitch=-2, t=46749607324 µs
+[MOVE] player_pid_46: x=194.56, y=140.56, z=-4.00, yaw=28, pitch=0, t=46749618488 µs
+[MOVE] Bot: x=169.06, y=47.94, z=-12.00, yaw=163, pitch=0, t=46749625618 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749628710 µs
+[MOVE] player_pid_38: x=206.81, y=130.62, z=-3.81, yaw=0, pitch=-1, t=46749651822 µs
+[MOVE] player_pid_46: x=194.81, y=139.94, z=-4.00, yaw=28, pitch=0, t=46749659536 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749667706 µs
+[MOVE] Bot: x=169.31, y=48.69, z=-12.00, yaw=164, pitch=0, t=46749676098 µs
+[MOVE] player_pid_38: x=207.50, y=129.94, z=-3.69, yaw=359, pitch=-1, t=46749696372 µs
+[MOVE] player_pid_46: x=195.12, y=139.38, z=-4.00, yaw=28, pitch=0, t=46749702357 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749709232 µs
+[MOVE] Bot: x=169.50, y=49.50, z=-12.00, yaw=166, pitch=0, t=46749725567 µs
+[MOVE] player_pid_38: x=208.25, y=129.25, z=-3.62, yaw=359, pitch=-1, t=46749739877 µs
+[MOVE] player_pid_46: x=195.44, y=138.75, z=-4.00, yaw=28, pitch=0, t=46749745076 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749749052 µs
+[MOVE] Bot: x=169.75, y=50.25, z=-12.00, yaw=169, pitch=0, t=46749776991 µs
+[MOVE] player_pid_38: x=208.94, y=128.56, z=-3.62, yaw=359, pitch=-1, t=46749785377 µs
+[MOVE] player_pid_46: x=195.75, y=138.19, z=-4.00, yaw=29, pitch=0, t=46749786186 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749789613 µs
+[MOVE] Bot: x=169.88, y=51.00, z=-12.00, yaw=171, pitch=0, t=46749825619 µs
+[MOVE] player_pid_46: x=196.06, y=137.62, z=-4.00, yaw=33, pitch=0, t=46749826856 µs
+[MOVE] player_pid_38: x=209.62, y=127.88, z=-3.75, yaw=359, pitch=-1, t=46749828946 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749828997 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749868746 µs
+[MOVE] player_pid_46: x=196.38, y=137.00, z=-4.00, yaw=36, pitch=0, t=46749870009 µs
+[MOVE] player_pid_38: x=210.12, y=127.19, z=-3.75, yaw=0, pitch=-1, t=46749874365 µs
+[MOVE] Bot: x=170.06, y=51.81, z=-12.00, yaw=172, pitch=0, t=46749876489 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749907637 µs
+[MOVE] player_pid_46: x=196.75, y=136.44, z=-4.00, yaw=38, pitch=0, t=46749910611 µs
+[MOVE] player_pid_38: x=210.50, y=126.44, z=-3.94, yaw=0, pitch=-1, t=46749919900 µs
+[MOVE] Bot: x=170.19, y=52.56, z=-12.00, yaw=172, pitch=0, t=46749925960 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749948429 µs
+[MOVE] player_pid_46: x=197.12, y=135.88, z=-4.00, yaw=39, pitch=0, t=46749953503 µs
+[MOVE] player_pid_38: x=210.75, y=125.75, z=-3.88, yaw=1, pitch=-1, t=46749963199 µs
+[MOVE] Bot: x=170.31, y=53.38, z=-12.00, yaw=172, pitch=0, t=46749974856 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46749988114 µs
+[MOVE] player_pid_46: x=197.50, y=135.38, z=-4.00, yaw=39, pitch=0, t=46749994063 µs
+[MOVE] player_pid_38: x=210.88, y=125.06, z=-3.88, yaw=0, pitch=-1, t=46750007685 µs
+[MOVE] Bot: x=170.44, y=54.19, z=-12.00, yaw=172, pitch=0, t=46750025280 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750029223 µs
+[MOVE] player_pid_46: x=197.94, y=134.81, z=-4.00, yaw=39, pitch=0, t=46750036829 µs
+[MOVE] player_pid_38: x=210.69, y=124.31, z=-3.88, yaw=359, pitch=-1, t=46750052115 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750068037 µs
+[MOVE] Bot: x=170.56, y=54.94, z=-11.94, yaw=172, pitch=0, t=46750074997 µs
+[MOVE] player_pid_46: x=198.31, y=134.31, z=-4.00, yaw=39, pitch=0, t=46750077409 µs
+[MOVE] player_pid_38: x=210.38, y=123.62, z=-3.88, yaw=358, pitch=-1, t=46750096713 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750107588 µs
+[MOVE] player_pid_46: x=198.69, y=133.81, z=-4.00, yaw=39, pitch=0, t=46750120100 µs
+[MOVE] Bot: x=170.69, y=55.75, z=-11.25, yaw=172, pitch=0, t=46750125678 µs
+[MOVE] player_pid_38: x=209.94, y=122.94, z=-3.81, yaw=358, pitch=-1, t=46750141179 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750149125 µs
+[MOVE] player_pid_46: x=199.12, y=133.25, z=-4.00, yaw=39, pitch=0, t=46750160793 µs
+[MOVE] Bot: x=170.75, y=56.56, z=-10.62, yaw=172, pitch=0, t=46750175103 µs
+[MOVE] player_pid_38: x=209.50, y=122.19, z=-3.88, yaw=358, pitch=-1, t=46750184725 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750188100 µs
+[MOVE] player_pid_46: x=199.56, y=132.75, z=-4.00, yaw=38, pitch=0, t=46750201358 µs
+[MOVE] Bot: x=170.88, y=57.38, z=-9.94, yaw=172, pitch=0, t=46750226596 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750228225 µs
+[MOVE] player_pid_38: x=209.12, y=121.50, z=-3.94, yaw=358, pitch=-1, t=46750229242 µs
+[MOVE] player_pid_46: x=199.94, y=132.19, z=-4.00, yaw=38, pitch=0, t=46750244034 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750269168 µs
+[MOVE] player_pid_38: x=208.94, y=120.81, z=-4.00, yaw=358, pitch=-1, t=46750273307 µs
+[MOVE] Bot: x=171.00, y=58.12, z=-9.56, yaw=172, pitch=0, t=46750276114 µs
+[MOVE] player_pid_46: x=200.38, y=131.69, z=-4.00, yaw=37, pitch=0, t=46750285054 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750308137 µs
+[MOVE] player_pid_38: x=208.75, y=120.06, z=-4.00, yaw=358, pitch=-1, t=46750318015 µs
+[MOVE] Bot: x=171.06, y=58.94, z=-9.25, yaw=172, pitch=0, t=46750325037 µs
+[MOVE] player_pid_46: x=200.75, y=131.19, z=-4.00, yaw=34, pitch=0, t=46750327694 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750348622 µs
+[MOVE] player_pid_38: x=208.62, y=119.38, z=-4.00, yaw=356, pitch=-1, t=46750362095 µs
+[MOVE] player_pid_46: x=201.19, y=130.62, z=-4.00, yaw=31, pitch=0, t=46750368682 µs
+[MOVE] Bot: x=171.19, y=59.69, z=-9.56, yaw=172, pitch=0, t=46750375544 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750388244 µs
+[MOVE] player_pid_38: x=208.56, y=118.69, z=-4.00, yaw=355, pitch=-1, t=46750407044 µs
+[MOVE] player_pid_46: x=201.56, y=130.06, z=-4.00, yaw=27, pitch=0, t=46750411301 µs
+[MOVE] Bot: x=171.31, y=60.50, z=-9.88, yaw=172, pitch=0, t=46750426028 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750428298 µs
+[MOVE] player_pid_38: x=208.44, y=117.94, z=-4.00, yaw=352, pitch=-2, t=46750451557 µs
+[MOVE] player_pid_46: x=201.94, y=129.56, z=-4.00, yaw=24, pitch=0, t=46750451795 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750468898 µs
+[MOVE] Bot: x=171.38, y=61.31, z=-8.75, yaw=172, pitch=0, t=46750474866 µs
+[MOVE] player_pid_46: x=202.25, y=128.94, z=-4.00, yaw=21, pitch=-1, t=46750494731 µs
+[MOVE] player_pid_38: x=208.38, y=117.25, z=-4.00, yaw=349, pitch=-2, t=46750496049 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750508865 µs
+[MOVE] Bot: x=171.50, y=62.12, z=-8.06, yaw=172, pitch=0, t=46750525883 µs
+[MOVE] player_pid_46: x=202.56, y=128.38, z=-4.00, yaw=20, pitch=-1, t=46750537534 µs
+[MOVE] player_pid_38: x=208.31, y=116.56, z=-4.00, yaw=344, pitch=-2, t=46750540053 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750548099 µs
+[MOVE] Bot: x=171.62, y=62.88, z=-7.56, yaw=172, pitch=0, t=46750575331 µs
+[MOVE] player_pid_46: x=202.81, y=127.75, z=-4.00, yaw=18, pitch=-1, t=46750576080 µs
+[MOVE] player_pid_38: x=208.31, y=115.81, z=-4.00, yaw=339, pitch=-2, t=46750584607 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750589328 µs
+[MOVE] player_pid_46: x=203.12, y=127.19, z=-4.00, yaw=18, pitch=-1, t=46750618723 µs
+[MOVE] player_pid_38: x=208.44, y=115.06, z=-4.00, yaw=335, pitch=-2, t=46750623821 µs
+[MOVE] Bot: x=171.69, y=63.69, z=-7.25, yaw=172, pitch=0, t=46750625143 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750629174 µs
+[MOVE] player_pid_46: x=203.38, y=126.56, z=-4.00, yaw=17, pitch=-1, t=46750659899 µs
+[MOVE] player_pid_38: x=208.69, y=114.25, z=-4.00, yaw=331, pitch=-2, t=46750667824 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750668696 µs
+[MOVE] Bot: x=171.81, y=64.50, z=-7.06, yaw=172, pitch=0, t=46750674897 µs
+[MOVE] player_pid_46: x=203.56, y=125.94, z=-4.00, yaw=17, pitch=-1, t=46750702643 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750708246 µs
+[MOVE] player_pid_38: x=208.88, y=113.38, z=-4.00, yaw=328, pitch=-2, t=46750713402 µs
+[MOVE] Bot: x=171.88, y=65.25, z=-6.88, yaw=172, pitch=0, t=46750725388 µs
+[MOVE] player_pid_46: x=203.81, y=125.31, z=-4.00, yaw=17, pitch=-1, t=46750743139 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750748944 µs
+[MOVE] player_pid_38: x=209.12, y=112.44, z=-4.00, yaw=326, pitch=-2, t=46750757867 µs
+[MOVE] Bot: x=172.00, y=66.06, z=-6.62, yaw=172, pitch=0, t=46750774965 µs
+[MOVE] player_pid_46: x=204.00, y=124.69, z=-4.00, yaw=17, pitch=-1, t=46750785804 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750789049 µs
+[MOVE] player_pid_38: x=209.38, y=111.50, z=-4.00, yaw=324, pitch=-2, t=46750801360 µs
+[MOVE] Bot: x=172.12, y=66.88, z=-6.56, yaw=172, pitch=0, t=46750825526 µs
+[MOVE] player_pid_46: x=204.25, y=124.06, z=-4.00, yaw=17, pitch=-1, t=46750826807 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750828713 µs
+[MOVE] player_pid_38: x=209.56, y=110.56, z=-4.00, yaw=322, pitch=-2, t=46750845871 µs
+[MOVE] player_pid_46: x=204.44, y=123.38, z=-4.00, yaw=17, pitch=-1, t=46750867880 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750869348 µs
+[MOVE] Bot: x=172.19, y=67.62, z=-6.00, yaw=171, pitch=-1, t=46750875608 µs
+[MOVE] player_pid_38: x=209.75, y=109.62, z=-4.00, yaw=321, pitch=-2, t=46750890385 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750909343 µs
+[MOVE] player_pid_46: x=204.62, y=122.75, z=-4.00, yaw=17, pitch=-1, t=46750913034 µs
+[MOVE] Bot: x=172.31, y=68.44, z=-6.00, yaw=169, pitch=-2, t=46750925867 µs
+[MOVE] player_pid_38: x=209.88, y=108.62, z=-4.00, yaw=320, pitch=-2, t=46750934399 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750948200 µs
+[MOVE] player_pid_46: x=204.88, y=122.12, z=-4.00, yaw=17, pitch=-1, t=46750951422 µs
+[MOVE] Bot: x=172.44, y=69.25, z=-5.56, yaw=168, pitch=-3, t=46750975775 µs
+[MOVE] player_pid_38: x=210.06, y=107.62, z=-4.00, yaw=318, pitch=-2, t=46750979633 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46750988862 µs
+[MOVE] player_pid_46: x=205.06, y=121.50, z=-4.00, yaw=17, pitch=-1, t=46750994023 µs
+[MOVE] player_pid_38: x=210.12, y=106.75, z=-4.00, yaw=315, pitch=-2, t=46751019616 µs
+[MOVE] Bot: x=172.56, y=70.00, z=-5.00, yaw=168, pitch=-3, t=46751025846 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751028844 µs
+[MOVE] player_pid_46: x=205.25, y=120.81, z=-4.00, yaw=17, pitch=-1, t=46751036623 µs
+[MOVE] player_pid_38: x=210.25, y=105.75, z=-4.00, yaw=311, pitch=-2, t=46751063646 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751068482 µs
+[MOVE] Bot: x=172.69, y=70.81, z=-4.12, yaw=168, pitch=-3, t=46751075438 µs
+[MOVE] player_pid_46: x=205.44, y=120.25, z=-4.00, yaw=17, pitch=-1, t=46751077258 µs
+[MOVE] player_pid_38: x=210.25, y=104.75, z=-4.00, yaw=307, pitch=-2, t=46751107140 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751108701 µs
+[MOVE] player_pid_46: x=205.62, y=119.56, z=-4.00, yaw=16, pitch=-1, t=46751117777 µs
+[MOVE] Bot: x=172.88, y=71.62, z=-3.31, yaw=168, pitch=-3, t=46751125042 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751148643 µs
+[MOVE] player_pid_38: x=210.25, y=103.81, z=-4.00, yaw=305, pitch=-1, t=46751151146 µs
+[MOVE] player_pid_46: x=205.88, y=118.94, z=-4.00, yaw=15, pitch=-1, t=46751160578 µs
+[MOVE] Bot: x=173.00, y=72.38, z=-2.75, yaw=168, pitch=-3, t=46751176021 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751188050 µs
+[MOVE] player_pid_38: x=210.19, y=102.75, z=-4.00, yaw=304, pitch=-1, t=46751195696 µs
+[MOVE] player_pid_46: x=206.06, y=118.31, z=-4.00, yaw=13, pitch=-1, t=46751201150 µs
+[MOVE] Bot: x=173.12, y=73.12, z=-2.31, yaw=161, pitch=-4, t=46751225929 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751228213 µs
+[MOVE] player_pid_38: x=210.06, y=101.81, z=-4.00, yaw=303, pitch=-1, t=46751240738 µs
+[MOVE] player_pid_46: x=206.19, y=117.69, z=-4.00, yaw=9, pitch=-1, t=46751243852 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751269509 µs
+[MOVE] Bot: x=173.31, y=73.81, z=-2.12, yaw=146, pitch=-5, t=46751275844 µs
+[MOVE] player_pid_38: x=209.94, y=100.81, z=-4.00, yaw=303, pitch=-1, t=46751284611 µs
+[MOVE] player_pid_46: x=206.38, y=117.00, z=-4.00, yaw=0, pitch=-2, t=46751284771 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751308840 µs
+[MOVE] Bot: x=173.38, y=74.44, z=-2.06, yaw=132, pitch=-6, t=46751325360 µs
+[MOVE] player_pid_46: x=206.56, y=116.38, z=-4.00, yaw=348, pitch=-2, t=46751327903 µs
+[MOVE] player_pid_38: x=209.56, y=100.06, z=-4.00, yaw=304, pitch=-1, t=46751328869 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751348121 µs
+[MOVE] player_pid_46: x=206.88, y=115.69, z=-4.00, yaw=342, pitch=-1, t=46751368444 µs
+[MOVE] player_pid_38: x=209.06, y=99.62, z=-4.00, yaw=304, pitch=0, t=46751373518 µs
+[MOVE] Bot: x=173.50, y=75.06, z=-2.12, yaw=125, pitch=-6, t=46751375940 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751388332 µs
+[MOVE] player_pid_46: x=207.25, y=114.94, z=-4.00, yaw=342, pitch=-1, t=46751409513 µs
+[MOVE] player_pid_38: x=208.38, y=99.38, z=-4.00, yaw=304, pitch=0, t=46751418477 µs
+[MOVE] Bot: x=173.62, y=75.56, z=-2.44, yaw=125, pitch=-6, t=46751424860 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751427935 µs
+[MOVE] player_pid_46: x=207.62, y=114.12, z=-4.00, yaw=342, pitch=-1, t=46751452181 µs
+[MOVE] player_pid_38: x=207.62, y=99.31, z=-4.00, yaw=304, pitch=0, t=46751462474 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751468618 µs
+[MOVE] Bot: x=173.69, y=76.06, z=-2.81, yaw=125, pitch=-6, t=46751475357 µs
+[MOVE] player_pid_46: x=208.00, y=113.38, z=-4.00, yaw=342, pitch=-1, t=46751492716 µs
+[MOVE] player_pid_38: x=206.75, y=99.25, z=-4.00, yaw=305, pitch=0, t=46751507006 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751509486 µs
+[MOVE] Bot: x=173.81, y=76.50, z=-3.38, yaw=125, pitch=-6, t=46751524793 µs
+[MOVE] player_pid_46: x=208.19, y=112.62, z=-4.00, yaw=342, pitch=-1, t=46751535369 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751548475 µs
+[MOVE] player_pid_38: x=205.88, y=99.31, z=-4.00, yaw=305, pitch=0, t=46751551508 µs
+[MOVE] Bot: x=173.88, y=76.94, z=-4.00, yaw=125, pitch=-6, t=46751575162 µs
+[MOVE] player_pid_46: x=208.31, y=111.94, z=-4.00, yaw=342, pitch=-1, t=46751578174 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751588579 µs
+[MOVE] player_pid_38: x=204.94, y=99.38, z=-4.00, yaw=305, pitch=0, t=46751596029 µs
+[MOVE] player_pid_46: x=208.31, y=111.19, z=-4.00, yaw=342, pitch=-1, t=46751618777 µs
+[MOVE] Bot: x=173.88, y=77.38, z=-3.94, yaw=124, pitch=-6, t=46751625835 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751628838 µs
+[MOVE] player_pid_38: x=204.12, y=99.31, z=-4.00, yaw=305, pitch=0, t=46751641545 µs
+[MOVE] player_pid_46: x=208.31, y=110.50, z=-4.00, yaw=340, pitch=-1, t=46751659945 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751668631 µs
+[MOVE] Bot: x=173.88, y=77.88, z=-4.00, yaw=119, pitch=-5, t=46751675321 µs
+[MOVE] player_pid_38: x=203.50, y=99.00, z=-4.00, yaw=304, pitch=0, t=46751684796 µs
+[MOVE] player_pid_46: x=208.38, y=109.75, z=-4.00, yaw=333, pitch=-1, t=46751702687 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751708698 µs
+[MOVE] Bot: x=174.00, y=78.50, z=-4.00, yaw=116, pitch=-4, t=46751725867 µs
+[MOVE] player_pid_38: x=203.00, y=98.44, z=-3.88, yaw=303, pitch=0, t=46751729858 µs
+[MOVE] player_pid_46: x=208.56, y=109.00, z=-4.00, yaw=327, pitch=-2, t=46751743389 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751748528 µs
+[MOVE] player_pid_38: x=202.56, y=97.75, z=-3.88, yaw=302, pitch=0, t=46751774351 µs
+[MOVE] Bot: x=174.19, y=79.25, z=-4.00, yaw=114, pitch=-4, t=46751775354 µs
+[MOVE] player_pid_46: x=208.69, y=108.19, z=-4.00, yaw=320, pitch=-2, t=46751786128 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751788612 µs
+[MOVE] player_pid_38: x=202.25, y=97.00, z=-3.88, yaw=302, pitch=0, t=46751818372 µs
+[MOVE] Bot: x=174.44, y=80.12, z=-4.00, yaw=114, pitch=-4, t=46751825165 µs
+[MOVE] player_pid_46: x=208.81, y=107.31, z=-4.00, yaw=312, pitch=-2, t=46751827191 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751828958 µs
+[MOVE] player_pid_38: x=201.88, y=96.25, z=-4.00, yaw=300, pitch=0, t=46751862853 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751868521 µs
+[MOVE] player_pid_46: x=208.88, y=106.44, z=-4.00, yaw=306, pitch=-2, t=46751869959 µs
+[MOVE] Bot: x=174.75, y=81.06, z=-4.00, yaw=114, pitch=-4, t=46751875040 µs
+[MOVE] player_pid_38: x=201.44, y=95.62, z=-4.00, yaw=298, pitch=0, t=46751907884 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751908179 µs
+[MOVE] player_pid_46: x=208.88, y=105.56, z=-4.00, yaw=300, pitch=-2, t=46751911103 µs
+[MOVE] Bot: x=175.12, y=82.06, z=-4.00, yaw=114, pitch=-4, t=46751924875 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751948040 µs
+[MOVE] player_pid_46: x=208.81, y=104.69, z=-4.00, yaw=297, pitch=-2, t=46751951690 µs
+[MOVE] player_pid_38: x=200.94, y=95.06, z=-4.00, yaw=296, pitch=0, t=46751952883 µs
+[MOVE] Bot: x=175.50, y=83.06, z=-4.00, yaw=115, pitch=-4, t=46751976252 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46751988066 µs
+[MOVE] player_pid_38: x=200.44, y=94.62, z=-4.00, yaw=294, pitch=0, t=46751993383 µs
+[MOVE] player_pid_46: x=208.69, y=103.75, z=-4.00, yaw=296, pitch=-2, t=46751994433 µs
+[MOVE] Bot: x=175.81, y=84.12, z=-4.00, yaw=115, pitch=-4, t=46752025096 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46752027663 µs
+[MOVE] player_pid_38: x=199.88, y=94.25, z=-4.00, yaw=294, pitch=-1, t=46752035110 µs
+[MOVE] player_pid_46: x=208.50, y=102.81, z=-4.00, yaw=296, pitch=-2, t=46752037048 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46752068644 µs
+[MOVE] Bot: x=176.19, y=85.12, z=-4.00, yaw=115, pitch=-4, t=46752074822 µs
+[MOVE] player_pid_46: x=208.31, y=101.94, z=-4.00, yaw=296, pitch=-2, t=46752077503 µs
+[MOVE] player_pid_38: x=199.31, y=93.88, z=-4.00, yaw=293, pitch=-1, t=46752080180 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46752108742 µs
+[MOVE] player_pid_46: x=208.06, y=101.06, z=-4.00, yaw=296, pitch=-2, t=46752120143 µs
+[MOVE] player_pid_38: x=198.62, y=93.69, z=-4.00, yaw=293, pitch=-1, t=46752124193 µs
+[MOVE] Bot: x=176.56, y=86.19, z=-4.00, yaw=114, pitch=-3, t=46752126419 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46752148920 µs
+[MOVE] player_pid_46: x=207.81, y=100.12, z=-4.00, yaw=297, pitch=-2, t=46752160570 µs
+[MOVE] player_pid_38: x=197.88, y=93.62, z=-4.00, yaw=293, pitch=-1, t=46752168097 µs
+[MOVE] Bot: x=177.00, y=87.25, z=-4.00, yaw=113, pitch=-3, t=46752175307 µs
+[MOVE] player_pid_4: x=95.00, y=77.00, z=-12.00, yaw=326, pitch=0, t=46752188458 µs
+[MOVE] player_pid_46: x=207.56, y=99.25, z=-4.00, yaw=296, pitch=-2, t=46752201173 µs
