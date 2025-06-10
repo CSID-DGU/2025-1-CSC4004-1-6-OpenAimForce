@@ -19,7 +19,7 @@ PADDING_VALUE = -999.0
 
 def extract_sequences_from_log(log_content_lines, player_ingame_id, max_seq_len=None):
     epsilon = 1e-9
-    num_event_features = 10
+    num_event_features = 8
     player_sequence = []
     
     prev_state = {'x': None, 'yaw': None, 'pitch': None, 
@@ -65,9 +65,8 @@ def extract_sequences_from_log(log_content_lines, player_ingame_id, max_seq_len=
                         
                         if prev_state['alpha_yaw'] is not None:
                             features[4] = (alpha_y - prev_state['alpha_yaw']) / dt
-                            features[5] = (alpha_p - prev_state['alpha_pitch']) / dt
                     
-                    features[6] = abs(omega_p) / (abs(omega_y) + epsilon)
+                    features[5] = abs(omega_p) / (abs(omega_y) + epsilon)
                     prev_state['omega_yaw'], prev_state['omega_pitch'] = omega_y, omega_p
                     prev_state['alpha_yaw'], prev_state['alpha_pitch'] = alpha_y, alpha_p
                 
@@ -77,15 +76,15 @@ def extract_sequences_from_log(log_content_lines, player_ingame_id, max_seq_len=
         elif line.startswith(f"[SHOOT] {player_ingame_id}:"):
             cumulative_shots += 1; event_occurred = True
         elif line.startswith(f"[HIT] {player_ingame_id}:"):
-            features[9] = 1; cumulative_hits += 1; event_occurred = True
+            features[7] = 1; cumulative_hits += 1; event_occurred = True
         elif line.startswith(f"[DEAD] {player_ingame_id}:"):
             event_occurred = True 
         elif line.startswith("[DEAD]"):
             if i + 1 < len(log_content_lines) and re.match(r'\[.*?\]\s+' + re.escape(player_ingame_id) + r'\s+\w+\s+\S+', log_content_lines[i+1].strip()):
-                features[7] = 1; event_occurred = True
+                event_occurred = True
         
         if event_occurred:
-            features[8] = cumulative_hits / cumulative_shots if cumulative_shots > 0 else 0.0
+            features[6] = cumulative_hits / cumulative_shots if cumulative_shots > 0 else 0.0
             player_sequence.append(features)
             if current_t is not None: prev_state['t_microsec'] = current_t
 
@@ -178,7 +177,7 @@ print("\nStep 5: Training Model...")
 early_stopping = EarlyStopping(monitor='val_accuracy', patience=100, restore_best_weights=False)
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5, min_lr=1e-8)
 history = model.fit(X_train, y_train, epochs=75, batch_size=16,
-                    validation_split=0.2, # validation_data=(X_test, y_test) 대신 사용
+                    validation_split=0.2, 
                     callbacks=[early_stopping, reduce_lr],
                     class_weight=class_weights_dict,
                     verbose=1)
@@ -213,7 +212,6 @@ plt.title('Accuracy'); plt.xlabel('Epochs'); plt.ylabel('Accuracy'); plt.legend(
 plt.suptitle('Training and Validation Metrics', fontsize=16)
 plt.show()
 
-# 모델 저장
 model_save_filename = "final_aimhack_model.keras"
 model.save(model_save_filename)
 print(f"\nModel saved successfully as {model_save_filename}")
