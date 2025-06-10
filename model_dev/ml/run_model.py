@@ -1,24 +1,12 @@
-import pandas as pd
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Masking, Bidirectional, Dropout, Input
-from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
-from tensorflow.keras.optimizers import Adam
-from sklearn.model_selection import train_test_split
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras import regularizers
-from sklearn.utils import class_weight
-from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
-import matplotlib.pyplot as plt
-import os
-import re
+import pandas as pd
 
-PADDING_VALUE = -999.0
+MODEL_FILENAME = "result/final_aimhack_model.keras" 
 
 def extract_sequences_from_log(log_content_lines, player_id, max_seq_len=None):
-    player_id = "player_pid_" + player_id
+    player_id = "player_pid_" + str(player_id)
     epsilon = 1e-9
     num_event_features = 8
     player_sequence = []
@@ -107,7 +95,7 @@ for index, row in df_filtered.iterrows():
     label = row['label']
     logfile_name = row['logfile_name']
 
-    if not isinstance(logfile_name, str) or not logfile_name.strip(): continue
+    if not isinstance(logfile_name, str) or not logfile_name.strip(): continue;
     
     log_file_full_path = os.path.join(log_file_base_path, "game_" + logfile_name)
     try:
@@ -118,7 +106,6 @@ for index, row in df_filtered.iterrows():
     except Exception as e:
         print(f"Error reading {log_file_full_path}: {e}")
         continue
-        
     sequence = extract_sequences_from_log(log_lines, player_id, max_seq_len=500)
     if sequence:
         all_sequences.append(sequence)
@@ -133,7 +120,6 @@ X_train, X_test, y_train, y_test = train_test_split(
     X_padded, y_array, test_size=0.2, random_state=3, 
     stratify=y_array if len(np.unique(y_array)) > 1 and np.all(np.bincount(y_array) >= 2) else None
 )
-
 num_features = X_train.shape[2]
 feature_indices_to_scale = [i for i in range(num_features) if i not in [7, 9]]
 scalers = {}
@@ -152,66 +138,73 @@ for f_idx in feature_indices_to_scale:
             X_test[:, :, f_idx][actual_data_mask_test] = scaler.transform(values_to_transform_test).flatten()
 print("Feature scaling applied.")
 
-class_weights_dict = class_weight.compute_class_weight('balanced', classes=np.unique(y_train), y=y_train)
-class_weights_dict = dict(enumerate(class_weights_dict))
-print(f"Calculated class weights: {class_weights_dict}")
+if 'X_test' not in locals() or 'y_test' not in locals():
+    exit() 
 
-print("\nStep 4: Defining and Compiling Model...")
-l2_lambda = 0.003
-model = Sequential([
-    Input(shape=(None, num_features), name="input_sequence"),
-    Masking(mask_value=PADDING_VALUE),
-    Bidirectional(LSTM(64, return_sequences=True, kernel_regularizer=regularizers.l2(l2_lambda))),
-    Dropout(0.4),
-    Bidirectional(LSTM(64, return_sequences=False, kernel_regularizer=regularizers.l2(l2_lambda))),
-    Dropout(0.2),
-    Dense(32, activation='relu', kernel_regularizer=regularizers.l2(l2_lambda)),
-    Dropout(0.1),
-    Dense(1, activation='sigmoid')
-])
-opt = Adam(learning_rate=0.001, clipnorm=1.0)
-model.compile(optimizer=opt, loss='binary_crossentropy',
-              metrics=['accuracy', tf.keras.metrics.Precision(name='precision'), tf.keras.metrics.Recall(name='recall')])
-model.summary()
+print(f"Step 4: Loading the saved model from '{MODEL_FILENAME}'...")
+try:
+    loaded_model = tf.keras.models.load_model(MODEL_FILENAME)
+    print("Model loaded successfully.")
+    loaded_model.summary()
+except Exception as e:
+    print(f"Error loading model: {e}")
+    exit()
 
-print("\nStep 5: Training Model...")
-reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5, min_lr=1e-8)
-history = model.fit(X_train, y_train, epochs=100, batch_size=16,
-                    validation_split=0.2, 
-                    callbacks=[reduce_lr],
-                    class_weight=class_weights_dict,
-                    verbose=1)
-print("--- Training Finished ---")
+eval_results = loaded_model.evaluate(X_test, y_test, verbose=1)
 
-print("\nStep 6: Evaluating, Plotting, and Saving...")
-eval_results = model.evaluate(X_test, y_test, verbose=0)
-y_pred_probs = model.predict(X_test, verbose=0)
+
+print("\nStep 5: Generating predictions and calculating detailed metrics...")
+y_pred_probs = loaded_model.predict(X_test, verbose=0)
 y_pred_classes = (y_pred_probs > 0.5).astype(int)
 
+accuracy = accuracy_score(y_test, y_pred_classes)
+precision = precision_score(y_test, y_pred_classes, zero_division=0)
+recall = recall_score(y_test, y_pred_classes, zero_division=0)
+f1 = f1_score(y_test, y_pred_classes, zero_division=0)
 cm = confusion_matrix(y_test, y_pred_classes)
-tn, fp, fn, tp = cm.ravel() if cm.shape == (2, 2) else (0, 0, 0, 0)
-results = {
-    'Accuracy': eval_results[1], 'Precision': eval_results[2], 'Recall': eval_results[3],
-    'F1-Score': f1_score(y_test, y_pred_classes, zero_division=0),
-    'TN': tn, 'FP': fp, 'FN': fn, 'TP': tp,
-    'Best Val Loss': min(history.history.get('val_loss', [np.inf])),
-    'Best Val Accuracy': max(history.history.get('val_accuracy', [0]))
-}
-summary_df = pd.DataFrame([results])
-print(summary_df.to_string())
 
-plt.figure(figsize=(14, 6))
-plt.subplot(1, 2, 1)
-plt.plot(history.history['loss'], label='Train Loss')
-plt.plot(history.history['val_loss'], label='Val Loss')
-plt.title('Loss'); plt.xlabel('Epochs'); plt.ylabel('Loss'); plt.legend(); plt.grid(True)
-plt.subplot(1, 2, 2)
-plt.plot(history.history['accuracy'], label='Train Acc')
-plt.plot(history.history['val_accuracy'], label='Val Acc')
-plt.title('Accuracy'); plt.xlabel('Epochs'); plt.ylabel('Accuracy'); plt.legend(); plt.grid(True)
-plt.suptitle('Training and Validation Metrics', fontsize=16)
-plt.show()
+try:
+    tn, fp, fn, tp = cm.ravel()
+except ValueError:
+    tn, fp, fn, tp = 0, 0, 0, 0 
+    if len(np.unique(y_test)) == 1: 
+         if np.unique(y_test)[0] == 0 and len(np.unique(y_pred_classes)) == 1 and np.unique(y_pred_classes)[0] == 0:
+             tn = len(y_test)
+         elif np.unique(y_test)[0] == 1 and len(np.unique(y_pred_classes)) == 1 and np.unique(y_pred_classes)[0] == 1:
+             tp = len(y_test)
 
-model_save_filename = "result/final_aimhack_model.keras"
-model.save(model_save_filename)
-print(f"\nModel saved successfully as {model_save_filename}")
+print("\n======================================================================")
+print("              Final Model Evaluation on Test Data                 ")
+print("======================================================================")
+print(f"Model File: {MODEL_FILENAME}")
+print(f"Test Data Shape: {X_test.shape}")
+print(f"Test Label Distribution: {dict(zip(*np.unique(y_test, return_counts=True)))}")
+
+print("\n--- Performance Metrics ---")
+print(f"Accuracy:  {accuracy:.4f}")
+print(f"Precision: {precision:.4f}")
+print(f"Recall:    {recall:.4f}")
+print(f"F1-Score:  {f1:.4f}")
+
+print("\n--- Confusion Matrix ---")
+print("                Predicted")
+print("             Normal(0)  Hack(1)")
+print(f"Actual Normal(0) |  {tn:<7d}  |  {fp:<7d} |")
+print(f"Actual Hack(1)   |  {fn:<7d}  |  {tp:<7d} |")
+print("---------------------------------")
+print(f"TN (True Negative):  {tn} - 실제 '정상'을 '정상'으로 올바르게 예측")
+print(f"FP (False Positive): {fp} - 실제 '정상'을 '핵'으로 잘못 예측")
+print(f"FN (False Negative): {fn} - 실제 '핵'을 '정상'으로 잘못 예측 (놓침)")
+print(f"TP (True Positive):  {tp} - 실제 '핵'을 '핵'으로 올바르게 예측")
+print("======================================================================")
+
+table_data = [{
+    'Accuracy': f"{accuracy:.4f}",
+    'Precision': f"{precision:.4f}",
+    'Recall': f"{recall:.4f}",
+    'F1-Score': f"{f1:.4f}",
+    'TN': tn, 'FP': fp, 'FN': fn, 'TP': tp
+}]
+summary_df = pd.DataFrame(table_data)
+print("\n--- Summary Table ---")
+print(summary_df.to_string(index=False))
