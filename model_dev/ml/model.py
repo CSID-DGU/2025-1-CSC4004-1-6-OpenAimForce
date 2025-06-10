@@ -129,7 +129,7 @@ X_padded = pad_sequences(all_sequences, padding='post', dtype='float32', value=P
 y_array = np.array(all_labels)
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X_padded, y_array, test_size=0.2, random_state=42, 
+    X_padded, y_array, test_size=0.2, random_state=3, 
     stratify=y_array if len(np.unique(y_array)) > 1 and np.all(np.bincount(y_array) >= 2) else None
 )
 
@@ -174,11 +174,10 @@ model.compile(optimizer=opt, loss='binary_crossentropy',
 model.summary()
 
 print("\nStep 5: Training Model...")
-early_stopping = EarlyStopping(monitor='val_accuracy', patience=100, restore_best_weights=False)
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5, min_lr=1e-8)
 history = model.fit(X_train, y_train, epochs=75, batch_size=16,
                     validation_split=0.2, 
-                    callbacks=[early_stopping, reduce_lr],
+                    callbacks=[reduce_lr],
                     class_weight=class_weights_dict,
                     verbose=1)
 print("--- Training Finished ---")
