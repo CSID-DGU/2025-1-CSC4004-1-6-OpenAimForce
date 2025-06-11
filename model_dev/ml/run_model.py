@@ -16,7 +16,7 @@ import os
 import re
 
 MODEL_FILENAME = "result/final_aimhack_model.keras" 
-
+PADDING_VALUE = -999.0
 def extract_sequences_from_log(log_content_lines, player_id, max_seq_len=None):
     player_id = "player_pid_" + str(player_id)
     epsilon = 1e-9
