@@ -18,7 +18,7 @@ import re
 PADDING_VALUE = -999.0
 
 def extract_sequences_from_log(log_content_lines, player_id, max_seq_len=None):
-    player_id = "player_pid_" + player_id
+    player_id = "player_pid_" + str(player_id)
     epsilon = 1e-9
     num_event_features = 8
     player_sequence = []
