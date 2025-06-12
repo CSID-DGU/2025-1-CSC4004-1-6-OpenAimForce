@@ -132,6 +132,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X_padded, y_array, test_size=0.2, random_state=3, 
     stratify=y_array if len(np.unique(y_array)) > 1 and np.all(np.bincount(y_array) >= 2) else None
 )
+
 num_features = X_train.shape[2]
 feature_indices_to_scale = [i for i in range(num_features) if i not in [7, 9]]
 scalers = {}
