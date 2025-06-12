@@ -1,0 +1,334 @@
++ PORT=25000
++ PASSWORD=5L5QmVYUNGTFPoTTPDVBEzjGek
++ TEAM1=player_pid_5,player_pid_46
++ TEAM2=player_pid_47,player_pid_4
++ [[ -z 25000 ]]
++ [[ -z 5L5QmVYUNGTFPoTTPDVBEzjGek ]]
++ [[ -z player_pid_5,player_pid_46 ]]
++ [[ -z player_pid_47,player_pid_4 ]]
++ [[ 25000 =~ ^[0-9]+$ ]]
++ echo 'Starting AssaultCube server: external port 25000 → internal port 28763'
+Starting AssaultCube server: external port 25000 → internal port 28763
++ mkdir -p gameLogs
++ script -e -q -c 'docker run -it -p "25000":28763/udp -p "25000":28763/tcp ac:deploy bash -c '\''cd AC && exec ./server.sh -f -n -p5L5QmVYUNGTFPoTTPDVBEzjGek -t1player_pid_5,player_pid_46 -t2player_pid_47,player_pid_4'\''' /dev/null
+^@reading commandline parameters from file 'config/servercmdline.txt'
+KEY FAILURE: you provided the (inacceptable) example private key.
+KEY FAILURE: generate your own - read: https://assault.cubers.net/docs/server.html
+Server password: 5L5QmVYUNGTFPoTTPDVBEzjGek
+Added allowed player team1: player_pid_5
+Added allowed player team1: player_pid_46
+Added allowed player team2: player_pid_47
+Added allowed player team2: player_pid_4
+failed to open "logs/serverlog_20250520_14.55.32_local#28763.txt" for writing
+logging started: console(INFO), file(DISABLED), syslog(DISABLED), timestamp(DISABLED)
+logging local AssaultCube server (version -1302, protocol 1300/104) now..
+server is LAN-only - without connection to masterserver
+ACTION REQUIRED: you must provide a PRIVATE SERVER KEY via the '-Y' command line argument
+LAN-only because no master is given
+could not read config file 'config/servervita.cfg'
+could not read config file 'config/servervita_bak.cfg'
+Server password: "5L5QmVYUNGTFPoTTPDVBEzjGek"
+anticheat: disabled
+dedicated server started, waiting for clients...
+Ctrl-C to exit
+[x.x.x.x] client connected (--)
+[x.x.x.x] Bot client logged in (using serverpassword), AC: -1302|1640, pubkey: 9f4424f08b232acab41f74d4ebfaf3478e2ffa84e66b35972fdefb64d765ee67
+
+Game start: capture the flag on ac_alcove, 1 players, 5 minutes, mastermode 0, (map rev 24/21369, official, 'getmap' not prepared)
+initdemoslot(): use slot 0, sequence #1
+Demo recording started (#1).
+setupdemorecord(): sequence #1, capture the flag on ac_alcove
+added 44 servermaps
+read 0 map rotation entries from 'config/maprot.cfg'
+read 0 admin passwords from 'config/serverpwd.cfg'
+read 0 (0) blacklist entries from 'config/serverblacklist.cfg', 0 errors
+read 3 (3) IP list entries from 'config/geoip.cfg', 0 errors, 0 concatenated
+read 0 + 0 entries from nickname blacklist file 'config/nicknameblacklist.cfg', 0 errors
+ >> recv : SV_SPAWN by client Bot
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46535708923 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46535758938 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46535808912 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46535859601 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46535909779 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46535959120 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536008593 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536058501 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536109135 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536158481 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536208679 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536258767 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536308397 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536358961 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536408635 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=245, pitch=0, t=46536458662 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=242, pitch=0, t=46536509418 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=232, pitch=-1, t=46536559292 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=217, pitch=-1, t=46536609686 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=207, pitch=-1, t=46536660098 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=206, pitch=-1, t=46536709052 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=206, pitch=-1, t=46536758839 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=206, pitch=-1, t=46536809061 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=206, pitch=-1, t=46536859579 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=206, pitch=-1, t=46536909503 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=213, pitch=-1, t=46536959926 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=221, pitch=-2, t=46537009022 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=225, pitch=-3, t=46537059482 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=225, pitch=-3, t=46537108792 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=223, pitch=-3, t=46537159431 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=221, pitch=-4, t=46537208829 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=219, pitch=-4, t=46537259742 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=217, pitch=-4, t=46537309426 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=214, pitch=-4, t=46537359939 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537408817 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537459511 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537509485 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537559475 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537608926 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537659305 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537708865 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537758880 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537809395 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537858635 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537909182 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=212, pitch=-3, t=46537959351 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=211, pitch=-3, t=46538010097 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=211, pitch=-3, t=46538059208 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=211, pitch=-3, t=46538109310 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=211, pitch=-3, t=46538158893 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=211, pitch=-3, t=46538209695 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=213, pitch=-3, t=46538260032 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=220, pitch=-3, t=46538310264 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=231, pitch=-4, t=46538359279 µs
+[MOVE] Bot: x=194.00, y=43.00, z=0.00, yaw=241, pitch=-5, t=46538409669 µs
+[MOVE] Bot: x=193.88, y=42.75, z=0.00, yaw=239, pitch=-6, t=46538459337 µs
+[MOVE] Bot: x=193.69, y=42.38, z=0.00, yaw=239, pitch=-6, t=46538508926 µs
+[MOVE] Bot: x=193.38, y=41.88, z=0.00, yaw=239, pitch=-6, t=46538558765 µs
+[MOVE] Bot: x=193.06, y=41.38, z=0.00, yaw=239, pitch=-6, t=46538608824 µs
+[MOVE] Bot: x=192.69, y=40.75, z=0.00, yaw=242, pitch=-5, t=46538661320 µs
+[MOVE] Bot: x=192.69, y=40.50, z=0.00, yaw=251, pitch=-5, t=46538709410 µs
+[MOVE] Bot: x=192.75, y=40.44, z=0.00, yaw=259, pitch=-5, t=46538759388 µs
+[MOVE] Bot: x=192.81, y=40.38, z=0.00, yaw=261, pitch=-5, t=46538808846 µs
+[MOVE] Bot: x=192.88, y=40.31, z=0.00, yaw=260, pitch=-5, t=46538859389 µs
+[MOVE] Bot: x=192.88, y=40.31, z=0.00, yaw=254, pitch=-6, t=46538909308 µs
+[MOVE] Bot: x=192.94, y=40.31, z=0.00, yaw=240, pitch=-6, t=46538959254 µs
+[MOVE] Bot: x=192.94, y=40.31, z=0.00, yaw=223, pitch=-6, t=46539009319 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=218, pitch=-5, t=46539058872 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=218, pitch=-5, t=46539108875 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=218, pitch=-5, t=46539159237 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=218, pitch=-5, t=46539208638 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=217, pitch=-5, t=46539259239 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=204, pitch=-5, t=46539309416 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=184, pitch=-5, t=46539359799 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=170, pitch=-5, t=46539409105 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=169, pitch=-5, t=46539459696 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=169, pitch=-5, t=46539508700 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=169, pitch=-5, t=46539559283 µs
+[MOVE] Bot: x=192.94, y=40.25, z=0.00, yaw=169, pitch=-5, t=46539609240 µs
+[MOVE] Bot: x=193.06, y=40.19, z=0.00, yaw=168, pitch=-5, t=46539659693 µs
+[MOVE] Bot: x=193.12, y=39.81, z=0.00, yaw=163, pitch=-5, t=46539709133 µs
+[MOVE] Bot: x=193.12, y=39.25, z=0.00, yaw=158, pitch=-5, t=46539759222 µs
+[MOVE] Bot: x=193.12, y=38.69, z=0.00, yaw=157, pitch=-5, t=46539809159 µs
+[MOVE] Bot: x=193.12, y=38.00, z=0.00, yaw=157, pitch=-5, t=46539859432 µs
+[MOVE] Bot: x=193.12, y=37.31, z=0.00, yaw=157, pitch=-5, t=46539909812 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46539959518 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540009381 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540059708 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540109111 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540159309 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540210128 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540259644 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540309269 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=157, pitch=-5, t=46540359361 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=155, pitch=-5, t=46540409595 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=151, pitch=-5, t=46540459925 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=144, pitch=-5, t=46540509376 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=139, pitch=-4, t=46540560411 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46540609321 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46540659417 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46540709136 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46540758677 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46540809220 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46540859578 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=137, pitch=-5, t=46540909456 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=137, pitch=-4, t=46540959079 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46541009652 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=136, pitch=-5, t=46541059477 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=132, pitch=-5, t=46541109865 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=132, pitch=-5, t=46541159050 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=132, pitch=-5, t=46541208941 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=132, pitch=-5, t=46541259109 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=132, pitch=-5, t=46541308673 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=132, pitch=-5, t=46541358984 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=132, pitch=-5, t=46541409752 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=129, pitch=-5, t=46541460427 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=126, pitch=-6, t=46541509826 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=125, pitch=-7, t=46541559663 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=125, pitch=-7, t=46541609063 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=125, pitch=-7, t=46541659031 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=124, pitch=-7, t=46541709219 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=123, pitch=-7, t=46541759143 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=120, pitch=-8, t=46541809813 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=117, pitch=-8, t=46541859140 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=114, pitch=-8, t=46541909251 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=112, pitch=-8, t=46541959554 µs
+[MOVE] Bot: x=193.12, y=37.12, z=0.00, yaw=112, pitch=-9, t=46542011309 µs
+[MOVE] Bot: x=193.25, y=37.19, z=0.00, yaw=121, pitch=-8, t=46542059308 µs
+[MOVE] Bot: x=193.50, y=37.38, z=0.00, yaw=141, pitch=-8, t=46542109454 µs
+[MOVE] Bot: x=193.88, y=37.69, z=0.00, yaw=155, pitch=-8, t=46542159158 µs
+[MOVE] Bot: x=194.25, y=38.19, z=0.00, yaw=157, pitch=-9, t=46542208578 µs
+[MOVE] Bot: x=194.56, y=38.75, z=0.00, yaw=157, pitch=-9, t=46542259516 µs
+[MOVE] Bot: x=194.88, y=39.38, z=0.00, yaw=152, pitch=-8, t=46542309532 µs
+[MOVE] Bot: x=195.00, y=40.19, z=0.00, yaw=155, pitch=-6, t=46542359202 µs
+[MOVE] Bot: x=194.94, y=41.00, z=0.00, yaw=174, pitch=-5, t=46542409138 µs
+[MOVE] Bot: x=194.56, y=41.88, z=0.00, yaw=194, pitch=-5, t=46542461230 µs
+[MOVE] Bot: x=194.19, y=42.62, z=0.00, yaw=199, pitch=-5, t=46542509254 µs
+[MOVE] Bot: x=193.81, y=43.44, z=0.00, yaw=199, pitch=-5, t=46542559176 µs
+[MOVE] Bot: x=193.44, y=44.19, z=0.00, yaw=199, pitch=-5, t=46542609156 µs
+[MOVE] Bot: x=193.12, y=44.94, z=0.00, yaw=198, pitch=-5, t=46542659680 µs
+[MOVE] Bot: x=192.81, y=45.69, z=0.00, yaw=205, pitch=-4, t=46542709454 µs
+[MOVE] Bot: x=192.19, y=46.25, z=0.00, yaw=219, pitch=-4, t=46542759123 µs
+[MOVE] Bot: x=192.12, y=46.69, z=0.00, yaw=232, pitch=-5, t=46542809764 µs
+[MOVE] Bot: x=192.12, y=46.88, z=0.00, yaw=238, pitch=-5, t=46542859547 µs
+[MOVE] Bot: x=192.12, y=46.81, z=0.00, yaw=239, pitch=-5, t=46542908267 µs
+[MOVE] Bot: x=192.12, y=46.62, z=0.00, yaw=239, pitch=-5, t=46542958639 µs
+[MOVE] Bot: x=192.12, y=46.25, z=0.00, yaw=239, pitch=-5, t=46543008540 µs
+[MOVE] Bot: x=191.94, y=45.75, z=0.00, yaw=239, pitch=-5, t=46543059077 µs
+[MOVE] Bot: x=191.44, y=45.19, z=0.00, yaw=238, pitch=-5, t=46543109662 µs
+[MOVE] Bot: x=190.94, y=44.56, z=0.00, yaw=236, pitch=-5, t=46543160171 µs
+[MOVE] Bot: x=190.50, y=43.94, z=0.00, yaw=236, pitch=-5, t=46543209047 µs
+[MOVE] Bot: x=190.00, y=43.38, z=0.00, yaw=236, pitch=-5, t=46543259302 µs
+[MOVE] Bot: x=189.31, y=42.88, z=0.00, yaw=234, pitch=-5, t=46543309747 µs
+[MOVE] Bot: x=188.56, y=42.69, z=-0.19, yaw=231, pitch=-5, t=46543359110 µs
+[MOVE] Bot: x=187.88, y=42.56, z=-0.75, yaw=230, pitch=-5, t=46543409087 µs
+[MOVE] Bot: x=187.19, y=42.56, z=-1.00, yaw=231, pitch=-4, t=46543458721 µs
+[MOVE] Bot: x=186.56, y=42.69, z=-1.00, yaw=231, pitch=-4, t=46543509272 µs
+[MOVE] Bot: x=185.88, y=43.00, z=-1.00, yaw=230, pitch=-4, t=46543559855 µs
+[MOVE] Bot: x=185.38, y=43.44, z=-1.00, yaw=229, pitch=-5, t=46543609160 µs
+[MOVE] Bot: x=184.94, y=44.12, z=-1.00, yaw=232, pitch=-4, t=46543659023 µs
+[MOVE] Bot: x=184.62, y=45.00, z=-1.00, yaw=243, pitch=-5, t=46543709064 µs
+[MOVE] Bot: x=184.38, y=45.88, z=-1.00, yaw=254, pitch=-6, t=46543760449 µs
+[MOVE] Bot: x=184.06, y=46.25, z=-1.00, yaw=253, pitch=-6, t=46543808467 µs
+[MOVE] Bot: x=183.88, y=46.25, z=-1.00, yaw=253, pitch=-6, t=46543858860 µs
+[MOVE] Bot: x=183.62, y=46.00, z=-1.00, yaw=253, pitch=-6, t=46543909115 µs
+[MOVE] Bot: x=183.38, y=45.56, z=-1.00, yaw=253, pitch=-5, t=46543959514 µs
+[MOVE] Bot: x=183.19, y=45.00, z=-1.00, yaw=264, pitch=-4, t=46544009632 µs
+[MOVE] Bot: x=183.00, y=44.31, z=-1.00, yaw=279, pitch=-4, t=46544060067 µs
+[MOVE] Bot: x=182.94, y=43.62, z=-1.00, yaw=290, pitch=-5, t=46544109558 µs
+[MOVE] Bot: x=183.06, y=42.94, z=-1.00, yaw=295, pitch=-5, t=46544159033 µs
+[MOVE] Bot: x=183.19, y=42.25, z=-1.00, yaw=296, pitch=-5, t=46544209735 µs
+[MOVE] Bot: x=183.44, y=41.50, z=-1.00, yaw=297, pitch=-5, t=46544259636 µs
+[MOVE] Bot: x=183.62, y=40.94, z=-1.00, yaw=297, pitch=-5, t=46544309047 µs
+[MOVE] Bot: x=183.69, y=40.75, z=-1.00, yaw=297, pitch=-5, t=46544359108 µs
+[MOVE] Bot: x=183.56, y=40.88, z=-1.00, yaw=297, pitch=-5, t=46544409053 µs
+[MOVE] Bot: x=183.38, y=41.25, z=-1.00, yaw=297, pitch=-5, t=46544459299 µs
+[MOVE] Bot: x=183.12, y=41.69, z=-1.00, yaw=297, pitch=-5, t=46544509116 µs
+[MOVE] Bot: x=182.81, y=42.25, z=-1.00, yaw=296, pitch=-5, t=46544560040 µs
+[MOVE] Bot: x=182.50, y=42.88, z=-1.00, yaw=296, pitch=-5, t=46544609926 µs
+[MOVE] Bot: x=182.19, y=43.50, z=-1.00, yaw=290, pitch=-6, t=46544658977 µs
+[MOVE] Bot: x=181.94, y=44.19, z=-1.00, yaw=274, pitch=-6, t=46544710486 µs
+[MOVE] Bot: x=181.75, y=44.94, z=-1.00, yaw=253, pitch=-6, t=46544760059 µs
+[MOVE] Bot: x=181.69, y=45.62, z=-1.00, yaw=237, pitch=-5, t=46544808821 µs
+[MOVE] Bot: x=181.81, y=46.38, z=-1.00, yaw=237, pitch=-5, t=46544858937 µs
+[MOVE] Bot: x=182.06, y=47.06, z=-1.00, yaw=237, pitch=-5, t=46544908878 µs
+[MOVE] Bot: x=182.38, y=47.75, z=-1.00, yaw=237, pitch=-5, t=46544959809 µs
+[MOVE] Bot: x=182.69, y=48.44, z=-1.00, yaw=239, pitch=-6, t=46545010443 µs
+[MOVE] Bot: x=182.88, y=49.25, z=-1.00, yaw=230, pitch=-5, t=46545059752 µs
+[MOVE] Bot: x=182.94, y=50.19, z=-1.00, yaw=217, pitch=-5, t=46545108945 µs
+[MOVE] Bot: x=183.12, y=51.19, z=-1.00, yaw=205, pitch=-6, t=46545159460 µs
+[MOVE] Bot: x=183.31, y=52.19, z=-1.00, yaw=202, pitch=-6, t=46545209663 µs
+[MOVE] Bot: x=183.62, y=53.19, z=-1.00, yaw=202, pitch=-6, t=46545259645 µs
+[MOVE] Bot: x=183.75, y=54.12, z=-1.00, yaw=202, pitch=-6, t=46545309531 µs
+[MOVE] Bot: x=183.69, y=55.00, z=-1.00, yaw=202, pitch=-6, t=46545359091 µs
+[MOVE] Bot: x=183.56, y=55.81, z=-1.00, yaw=201, pitch=-6, t=46545409944 µs
+[MOVE] Bot: x=183.38, y=56.62, z=-1.00, yaw=201, pitch=-6, t=46545459220 µs
+[MOVE] Bot: x=183.19, y=57.38, z=-1.00, yaw=201, pitch=-6, t=46545510407 µs
+[MOVE] Bot: x=182.94, y=58.19, z=-1.00, yaw=203, pitch=-5, t=46545559516 µs
+[MOVE] Bot: x=182.62, y=58.94, z=-1.00, yaw=213, pitch=-4, t=46545610468 µs
+[MOVE] Bot: x=182.31, y=59.62, z=-1.00, yaw=230, pitch=-4, t=46545659303 µs
+[MOVE] Bot: x=182.12, y=60.25, z=-1.00, yaw=243, pitch=-6, t=46545709874 µs
+[MOVE] Bot: x=182.12, y=60.81, z=-1.00, yaw=245, pitch=-6, t=46545759946 µs
+[MOVE] Bot: x=182.12, y=61.38, z=-1.00, yaw=245, pitch=-6, t=46545808679 µs
+[MOVE] Bot: x=182.12, y=62.19, z=-1.00, yaw=245, pitch=-6, t=46545858478 µs
+[MOVE] Bot: x=181.62, y=63.06, z=-1.00, yaw=244, pitch=-6, t=46545909192 µs
+[MOVE] Bot: x=181.25, y=64.00, z=-1.00, yaw=247, pitch=-5, t=46545958874 µs
+[MOVE] Bot: x=180.75, y=64.94, z=-1.00, yaw=256, pitch=-5, t=46546009365 µs
+[MOVE] Bot: x=180.25, y=65.81, z=-1.00, yaw=261, pitch=-5, t=46546058904 µs
+[MOVE] Bot: x=179.62, y=66.50, z=-1.00, yaw=262, pitch=-6, t=46546109607 µs
+[MOVE] Bot: x=179.00, y=66.94, z=-1.00, yaw=262, pitch=-6, t=46546158474 µs
+[MOVE] Bot: x=178.25, y=67.25, z=-1.00, yaw=264, pitch=-5, t=46546209630 µs
+[MOVE] Bot: x=177.50, y=67.50, z=-1.00, yaw=268, pitch=-5, t=46546259680 µs
+[MOVE] Bot: x=176.75, y=67.62, z=-1.00, yaw=275, pitch=-5, t=46546308968 µs
+[MOVE] Bot: x=176.00, y=67.75, z=-1.00, yaw=284, pitch=-4, t=46546359472 µs
+[MOVE] Bot: x=175.12, y=67.94, z=-1.00, yaw=287, pitch=-4, t=46546408917 µs
+[MOVE] Bot: x=174.25, y=68.25, z=-1.00, yaw=287, pitch=-4, t=46546459060 µs
+[MOVE] Bot: x=173.31, y=68.62, z=-1.00, yaw=287, pitch=-4, t=46546509360 µs
+[MOVE] Bot: x=172.38, y=69.06, z=-1.00, yaw=287, pitch=-4, t=46546559034 µs
+[MOVE] Bot: x=171.38, y=69.56, z=-1.00, yaw=287, pitch=-4, t=46546609860 µs
+[MOVE] Bot: x=170.44, y=69.94, z=-1.00, yaw=288, pitch=-3, t=46546658935 µs
+[MOVE] Bot: x=169.56, y=70.19, z=-1.00, yaw=288, pitch=-3, t=46546708408 µs
+[MOVE] Bot: x=168.69, y=70.19, z=-1.00, yaw=288, pitch=-3, t=46546759383 µs
+[MOVE] Bot: x=167.88, y=70.12, z=-1.00, yaw=288, pitch=-3, t=46546808806 µs
+[MOVE] Bot: x=167.06, y=70.00, z=-1.00, yaw=288, pitch=-3, t=46546859205 µs
+[MOVE] Bot: x=166.31, y=69.81, z=-1.00, yaw=288, pitch=-3, t=46546909339 µs
+[MOVE] Bot: x=165.50, y=69.62, z=-1.00, yaw=288, pitch=-3, t=46546959093 µs
+[MOVE] Bot: x=164.75, y=69.38, z=-0.69, yaw=288, pitch=-3, t=46547022266 µs
+[MOVE] Bot: x=164.00, y=69.12, z=-0.50, yaw=288, pitch=-3, t=46547058896 µs
+[MOVE] Bot: x=163.25, y=68.94, z=-0.50, yaw=284, pitch=-4, t=46547109263 µs
+[MOVE] Bot: x=162.44, y=68.69, z=-0.50, yaw=272, pitch=-4, t=46547159478 µs
+[MOVE] Bot: x=161.69, y=68.56, z=0.38, yaw=260, pitch=-4, t=46547209432 µs
+[MOVE] Bot: x=160.88, y=68.38, z=1.19, yaw=255, pitch=-4, t=46547258990 µs
+[MOVE] Bot: x=160.12, y=68.31, z=1.75, yaw=255, pitch=-4, t=46547308987 µs
+[MOVE] Bot: x=159.38, y=68.19, z=2.12, yaw=255, pitch=-4, t=46547358807 µs
+[MOVE] Bot: x=158.56, y=68.12, z=2.38, yaw=255, pitch=-4, t=46547408959 µs
+[MOVE] Bot: x=157.81, y=68.12, z=2.44, yaw=257, pitch=-4, t=46547459668 µs
+[MOVE] Bot: x=157.00, y=68.06, z=2.31, yaw=250, pitch=-5, t=46547510004 µs
+[MOVE] Bot: x=156.25, y=68.06, z=2.06, yaw=239, pitch=-6, t=46547559326 µs
+[MOVE] Bot: x=155.50, y=68.12, z=1.69, yaw=229, pitch=-7, t=46547608875 µs
+[MOVE] Bot: x=154.75, y=68.19, z=1.12, yaw=227, pitch=-7, t=46547659184 µs
+[MOVE] Bot: x=153.94, y=68.31, z=0.44, yaw=227, pitch=-7, t=46547708624 µs
+[MOVE] Bot: x=153.19, y=68.38, z=0.00, yaw=227, pitch=-7, t=46547758844 µs
+[MOVE] Bot: x=152.31, y=68.44, z=0.00, yaw=230, pitch=-7, t=46547809272 µs
+[MOVE] Bot: x=151.38, y=68.44, z=0.00, yaw=230, pitch=-7, t=46547859928 µs
+[MOVE] Bot: x=150.44, y=68.44, z=0.00, yaw=229, pitch=-7, t=46547909158 µs
+[MOVE] Bot: x=149.38, y=68.38, z=0.00, yaw=227, pitch=-7, t=46547959204 µs
+[MOVE] Bot: x=148.31, y=68.31, z=0.00, yaw=224, pitch=-6, t=46548010412 µs
+[MOVE] Bot: x=147.25, y=68.31, z=0.00, yaw=219, pitch=-5, t=46548059752 µs
+[MOVE] Bot: x=146.12, y=68.38, z=0.00, yaw=213, pitch=-4, t=46548109919 µs
+[MOVE] Bot: x=145.00, y=68.44, z=0.00, yaw=206, pitch=-4, t=46548158776 µs
+[MOVE] Bot: x=143.94, y=68.69, z=0.00, yaw=196, pitch=-3, t=46548211729 µs
+[MOVE] Bot: x=142.88, y=69.00, z=0.00, yaw=188, pitch=-4, t=46548260202 µs
+[MOVE] Bot: x=142.12, y=69.50, z=0.00, yaw=183, pitch=-3, t=46548308618 µs
+[MOVE] Bot: x=141.62, y=70.06, z=0.00, yaw=182, pitch=-4, t=46548358765 µs
+[MOVE] Bot: x=141.31, y=70.75, z=0.00, yaw=182, pitch=-4, t=46548408476 µs
+[MOVE] Bot: x=141.06, y=71.44, z=0.00, yaw=182, pitch=-4, t=46548459106 µs
+[MOVE] Bot: x=140.88, y=72.19, z=0.00, yaw=182, pitch=-4, t=46548509076 µs
+[MOVE] Bot: x=140.75, y=72.94, z=0.00, yaw=182, pitch=-4, t=46548559145 µs
+[MOVE] Bot: x=140.69, y=73.75, z=0.00, yaw=181, pitch=-3, t=46548608854 µs
+[MOVE] Bot: x=140.62, y=74.50, z=0.00, yaw=178, pitch=-3, t=46548659670 µs
+[MOVE] Bot: x=140.56, y=75.31, z=0.00, yaw=178, pitch=-3, t=46548709119 µs
+[MOVE] Bot: x=140.56, y=76.12, z=0.00, yaw=178, pitch=-3, t=46548760978 µs
+[MOVE] Bot: x=140.56, y=76.88, z=0.00, yaw=177, pitch=-3, t=46548808964 µs
+[MOVE] Bot: x=140.56, y=77.69, z=0.00, yaw=176, pitch=-3, t=46548858863 µs
+[MOVE] Bot: x=140.56, y=78.50, z=0.00, yaw=176, pitch=-4, t=46548908716 µs
+[MOVE] Bot: x=140.62, y=79.31, z=0.00, yaw=180, pitch=-3, t=46548959642 µs
+[MOVE] Bot: x=140.62, y=80.12, z=0.00, yaw=195, pitch=-2, t=46549009333 µs
+[MOVE] Bot: x=140.75, y=80.94, z=0.00, yaw=211, pitch=-2, t=46549058877 µs
+[MOVE] Bot: x=140.94, y=81.94, z=0.00, yaw=216, pitch=-2, t=46549108537 µs
+[MOVE] Bot: x=141.12, y=82.94, z=0.00, yaw=216, pitch=-2, t=46549158560 µs
+[MOVE] Bot: x=141.31, y=83.94, z=0.00, yaw=216, pitch=-2, t=46549208652 µs
+[MOVE] Bot: x=141.44, y=85.06, z=0.00, yaw=216, pitch=-2, t=46549259425 µs
+[MOVE] Bot: x=141.62, y=86.12, z=0.00, yaw=218, pitch=-2, t=46549309085 µs
+[MOVE] Bot: x=141.75, y=87.25, z=0.00, yaw=225, pitch=-1, t=46549359814 µs
+[MOVE] Bot: x=141.88, y=88.31, z=0.00, yaw=232, pitch=-1, t=46549409887 µs
+[MOVE] Bot: x=141.81, y=89.44, z=0.00, yaw=239, pitch=-1, t=46549459294 µs
+[MOVE] Bot: x=141.75, y=90.56, z=0.00, yaw=246, pitch=-1, t=46549509824 µs
+[MOVE] Bot: x=141.50, y=91.62, z=0.00, yaw=251, pitch=-1, t=46549561416 µs
+[MOVE] Bot: x=141.19, y=92.69, z=0.00, yaw=255, pitch=-1, t=46549609819 µs
+[MOVE] Bot: x=140.75, y=93.69, z=0.00, yaw=259, pitch=-1, t=46549659052 µs
+[MOVE] Bot: x=140.25, y=94.69, z=0.00, yaw=263, pitch=-1, t=46549709594 µs
+[MOVE] Bot: x=139.69, y=95.69, z=0.00, yaw=266, pitch=-1, t=46549760161 µs
+[MOVE] Bot: x=139.06, y=96.56, z=0.00, yaw=268, pitch=-1, t=46549809026 µs
+[MOVE] Bot: x=138.38, y=97.38, z=0.00, yaw=270, pitch=-1, t=46549859013 µs
+[MOVE] Bot: x=137.62, y=97.94, z=0.00, yaw=271, pitch=-1, t=46549909327 µs
+[MOVE] Bot: x=136.88, y=98.25, z=0.00, yaw=271, pitch=-1, t=46549958892 µs
+[MOVE] Bot: x=136.12, y=98.56, z=-0.50, yaw=271, pitch=-1, t=46550009585 µs
