@@ -1,0 +1,28 @@
+#!/bin/bash
+set -x
+# Usage: ./run_server.sh [PORT] [PASSWORD] [TEAM1] [TEAM2]
+# Example: ./run_server.sh 30000 1234 redteam blueteam
+
+PORT=$1
+PASSWORD=$2
+TEAM1=$3
+TEAM2=$4
+
+if [[ -z "$PORT" || -z "$PASSWORD" || -z "$TEAM1" || -z "$TEAM2" ]]; then
+  echo "Usage: ./run_server.sh [PORT] [PASSWORD] [TEAM1] [TEAM2]"
+  exit 1
+fi
+
+if ! [[ "$PORT" =~ ^[0-9]+$ ]]; then
+  echo "Invalid port: $PORT"
+  echo "Usage: ./run_server.sh [PORT] [PASSWORD] [TEAM1] [TEAM2]"
+  exit 1
+fi
+
+echo "Starting AssaultCube server: external port $PORT → internal port 28763"
+
+# Create gameLogs directory if not exists
+mkdir -p gameLogs
+
+script -e -q -c "docker run -it -p \"$PORT\":28763/udp -p \"$PORT\":28763/tcp ac:deploy bash -c 'cd AC && exec ./server.sh -f -n -p$PASSWORD -t1$TEAM1 -t2$TEAM2'" /dev/null
+

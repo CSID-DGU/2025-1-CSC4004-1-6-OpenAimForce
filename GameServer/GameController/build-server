@@ -8,13 +8,14 @@ CID=$(docker run -it -d ac:base bash)
 
 # Clone specific directory and branch using sparse checkout
 docker exec "$CID" bash -c "
+  sudo timedatectl set-timezone Asia/Seoul
   git init temprepo &&
   cd temprepo &&
   git remote add origin https://github.com/CSID-DGU/2025-1-CSC4004-1-6-OpenAimForce &&
-  git fetch origin game_dev &&
+  git fetch origin main &&
   git sparse-checkout init --cone &&
   git sparse-checkout set GameServer/AC &&
-  git checkout game_dev &&
+  git checkout main &&
   mv GameServer/AC /AC &&
   cd /AC/source/src &&
   make -j8 server_install
@@ -26,3 +27,4 @@ docker commit "$CID" ac:deploy
 # Optionally stop and remove the container
 docker stop "$CID" >/dev/null
 docker rm "$CID" >/dev/null
+
