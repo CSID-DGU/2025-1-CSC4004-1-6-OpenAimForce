@@ -48,36 +48,42 @@ func loggingMiddleware(next http.Handler) http.Handler {
 }
 
 func loadPeriods(filename string) [][2]time.Time {
-	file, err := os.Open(filename)
-	if err != nil {
-		log.Printf("[File Error] %v\n", err)
-		return nil
-	}
-	defer file.Close()
+        file, err := os.Open(filename)
+        if err != nil {
+                log.Printf("[File Error] %v\n", err)
+                return nil
+        }
+        defer file.Close()
 
-	scanner := bufio.NewScanner(file)
-	var periods [][2]time.Time
-	layout := "2006-01-02 15:04"
-	for scanner.Scan() {
-		line := scanner.Text()
-		parts := strings.SplitN(line, ",", 2)
-		if len(parts) != 2 {
-			log.Printf("[Split Error] line: '%s'\n", line)
-			continue
-		}
-		startStr := strings.TrimSpace(parts[0])
-		endStr := strings.TrimSpace(parts[1])
-		start, err1 := time.Parse(layout, startStr)
-		end, err2 := time.Parse(layout, endStr)
-		if err1 == nil && err2 == nil {
-			log.Printf("[Parsed OK] Allowed: %s ~ %s\n", start.Format(layout), end.Format(layout))
-			periods = append(periods, [2]time.Time{start, end})
-		} else {
-			log.Printf("[Parse Error] line: '%s' (start: '%s' [%v], end: '%s' [%v])\n", line, startStr, err1, endStr, err2)
-		}
-	}
-	return periods
+        scanner := bufio.NewScanner(file)
+        var periods [][2]time.Time
+        layout := "2006-01-02 15:04"
+        loc, err := time.LoadLocation("Asia/Seoul")
+        if err != nil {
+                log.Printf("[TZ Load Error] %v\n", err)
+                return nil
+        }
+        for scanner.Scan() {
+                line := scanner.Text()
+                parts := strings.SplitN(line, ",", 2)
+                if len(parts) != 2 {
+                        log.Printf("[Split Error] line: '%s'\n", line)
+                        continue
+                }
+                startStr := strings.TrimSpace(parts[0])
+                endStr := strings.TrimSpace(parts[1])
+                start, err1 := time.ParseInLocation(layout, startStr, loc)
+                end, err2 := time.ParseInLocation(layout, endStr, loc)
+                if err1 == nil && err2 == nil {
+                        log.Printf("[Parsed OK] Allowed: %s ~ %s\n", start.Format(layout), end.Format(layout))
+                        periods = append(periods, [2]time.Time{start, end})
+                } else {
+                        log.Printf("[Parse Error] line: '%s' (start: '%s' [%v], end: '%s' [%v])\n", line, startStr, err1, endStr, err2)
+                }
+        }
+        return periods
 }
+
 
 func splitOnComma(s string) []string {
 	var a, b string
