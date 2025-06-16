@@ -32,7 +32,8 @@ CREATE TABLE Player (
 CREATE TABLE Game (
     game_id INT PRIMARY KEY AUTO_INCREMENT,
     winner ENUM('team1', 'team2', 'draw') NOT NULL,
-    game_time DATETIME NOT NULL
+    game_time DATETIME NOT NULL,
+    logfile_name VARCHAR(42)
 );
 
 CREATE TABLE GameParticipation (
@@ -42,10 +43,23 @@ CREATE TABLE GameParticipation (
     kills INT NOT NULL,
     deaths INT NOT NULL,
     quitTime DATETIME DEFAULT NULL,
+    esp TINYINT(1) NOT NULL,
+    aimhack INT NOT NULL,
     PRIMARY KEY (game_id, pid),
     FOREIGN KEY (game_id) REFERENCES Game(game_id) ON DELETE CASCADE,
     FOREIGN KEY (pid) REFERENCES Player(pid) ON DELETE CASCADE
 );
+
+DELIMITER //
+
+CREATE TRIGGER trg_game_time_to_kst
+BEFORE INSERT ON Game
+FOR EACH ROW
+BEGIN
+    SET NEW.game_time = DATE_ADD(NEW.game_time, INTERVAL 9 HOUR);
+END //
+
+DELIMITER ;
 
 DELIMITER //
 
@@ -64,7 +78,6 @@ BEGIN
 END //
 
 DELIMITER ;
-
 
 INSERT INTO OverwatchTier (tier_id, name, match_group) VALUES
 (0, 'overwatch_unrank', 0),
