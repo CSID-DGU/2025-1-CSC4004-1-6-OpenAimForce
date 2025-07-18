@@ -1,19 +1,19 @@
 ## 25-1-OSSP-6
 ___
 
-### ÁÖÁ¦
-AI¿Í ¼öÇĞÀû ¾Ë°í¸®ÁòÀÇ »óÈ£º¸¿ÏÀû ¿î¿ëÀ» Åë¾Ö °ÔÀÓ ³» ºÎÁ¤ÇàÀ§¸¦ Àû¹ßÇÏ´Â ¶óÀÌºê·¯¸®
+### ì£¼ì œ
+AIì™€ ìˆ˜í•™ì  ì•Œê³ ë¦¬ì¦˜ì˜ ìƒí˜¸ë³´ì™„ì  ìš´ìš©ì„ í†µí•´ ê²Œì„ ë‚´ ë¶€ì •í–‰ìœ„ë¥¼ ì ë°œí•˜ëŠ” ë¼ì´ë¸ŒëŸ¬ë¦¬
 ___
 
-### ÆÀ¿ø ¼Ò°³
-MME 19 Á¶ÁØÇõ [junhyeok0119@gmail.com](mailto:junhyeok0119@gmail.com)
+### íŒ€ì› ì†Œê°œ
+MME 19 ì¡°ì¤€í˜ [junhyeok0119@gmail.com](mailto:junhyeok0119@gmail.com)
 <br />
-CSE 20 Á¤»ó¿ø [schooldog07@dgu.ac.kr](mailto:schooldog07@dgu.ac.kr)
+CSE 20 ì •ìƒì› [schooldog07@dgu.ac.kr](mailto:schooldog07@dgu.ac.kr)
 <br />
-CSE 21 ±èµ¿Çö [kddhhh23@gmail.com](mailto:kddhhh23@gmail.com)
+CSE 21 ê¹€ë™í˜„ [kddhhh23@gmail.com](mailto:kddhhh23@gmail.com)
 <br />
-CSE 23 ±èÀÎÂù [inchan24223@gmail.com](mailto:inchan24223@gmail.com)
+CSE 23 ê¹€ì¸ì°¬ [inchan24223@gmail.com](mailto:inchan24223@gmail.com)
 <br />
-CSE 24 ¾È¼º¹Î [smharryahn@gmail.com](mailto:smharryahn@gmail.com)
+CSE 24 ì•ˆì„±ë¯¼ [smharryahn@gmail.com](mailto:smharryahn@gmail.com)
 <br />
 
